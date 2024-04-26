@@ -1,0 +1,2 @@
+# SenseVirtua
+SenseXR project repository for the 2024 'DIGITAL HERITAGE – IMMERSIVE CULTURAL HERITAGE INNOVATOR CONTEST'
