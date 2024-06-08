@@ -3,7 +3,47 @@ guid: 088e98e10644fb346b84eafa98617e01
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Floor
+    second: {fileID: 2100000, guid: 9f5972853ad3fe4499a4fa366e99910b, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Green
+    second: {fileID: 2100000, guid: e1c75a5ac7c8dbf4e9039a5914f22ee9, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material.001
+    second: {fileID: 2100000, guid: 3e6911fb6bb88724bbcc5604d6f9c68c, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Red
+    second: {fileID: 2100000, guid: 2329aef91f7005c46a5114fe2a00bad6, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Table
+    second: {fileID: 2100000, guid: e1c918da4838c194ebc6e914f63965d3, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Table.001
+    second: {fileID: 2100000, guid: f49ddece71570dc40ad42fa0c814ede8, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: WAlls
+    second: {fileID: 2100000, guid: f30e8617f50fb714599cf74e6380d888, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Yellow
+    second: {fileID: 2100000, guid: 4a8e0708d7bfd7243b072e7c46c6d0ee, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
