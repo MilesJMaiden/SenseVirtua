@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 8798045054096847936}
   - component: {fileID: 1667987011376567640}
   - component: {fileID: 5390728393051368132}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Draw Camera
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -140,7 +140,7 @@ GameObject:
   - component: {fileID: 6906749473627519050}
   - component: {fileID: 6371839806578256067}
   - component: {fileID: 9088757226364295789}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Whiteboard (16_9)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
