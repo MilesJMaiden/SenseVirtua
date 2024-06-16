@@ -26,7 +26,7 @@ public class WhiteboardMarker : MonoBehaviour
         //Set-up
         _renderer = _tip.GetComponent<Renderer>();
         _colours = Enumerable.Repeat(_renderer.material.color, _penSize * _penSize).ToArray();
-        _tipHeight = _tip.localScale.y;
+        _tipHeight = _tip.GetComponent<MeshCollider>().bounds.size.y;
     }
 
     // Update is called once per frame
