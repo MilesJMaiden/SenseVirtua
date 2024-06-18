@@ -6,6 +6,8 @@ TagManager:
   tags:
   - Anchor
   - Whiteboard
+  - Right Hand
+  - Left Hand
   layers:
   - Default
   - TransparentFX
