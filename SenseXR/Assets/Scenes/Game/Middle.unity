@@ -2899,6 +2899,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 83e4e6cca11330d4088d729ab4fc9d9f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &995890422 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3822923185327136605, guid: 04683d61741008c4dbfb1f9b705ada06, type: 3}
+  m_PrefabInstance: {fileID: 995890420}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &995890423 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2027373507797338871, guid: 04683d61741008c4dbfb1f9b705ada06, type: 3}
+  m_PrefabInstance: {fileID: 995890420}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1011882216
 GameObject:
   m_ObjectHideFlags: 0
@@ -13782,6 +13792,14 @@ PrefabInstance:
       propertyPath: m_Mesh
       value: 
       objectReference: {fileID: 1069641946}
+    - target: {fileID: 7472272971401520915, guid: eea0f84c94157c0438b69ea8e51e7a89, type: 3}
+      propertyPath: leftHandModel
+      value: 
+      objectReference: {fileID: 995890422}
+    - target: {fileID: 7472272971401520915, guid: eea0f84c94157c0438b69ea8e51e7a89, type: 3}
+      propertyPath: rightHandModel
+      value: 
+      objectReference: {fileID: 995890423}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
