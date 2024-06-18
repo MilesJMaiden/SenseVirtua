@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class VerticalBillboard : MonoBehaviour
 {
+    public Transform target;
     // Start is called before the first frame update
     void Start()
     {
@@ -13,6 +14,6 @@ public class VerticalBillboard : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        transform.LookAt(target, Vector3.up);
     }
 }
