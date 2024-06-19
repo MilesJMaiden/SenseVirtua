@@ -12,6 +12,7 @@ public class OutlineOnHover : MonoBehaviour
     void Start()
     {
         outline = GetComponent<Outline>();
+        outline.enabled = false;
         var interactable = GetComponent<XRGrabInteractable>();
 
         interactable.hoverEntered.AddListener(OnHoverEntered);
