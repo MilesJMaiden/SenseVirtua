@@ -24,11 +24,11 @@ public class HideHandModelOnGrab : MonoBehaviour
     {
         if(args.interactorObject.transform.tag == "Right Hand")
         {
-            leftHandModel.SetActive(false);
+            rightHandModel.SetActive(false);
         } 
         else if (args.interactorObject.transform.tag == "Left Hand")
         {
-            rightHandModel.SetActive(false);
+            leftHandModel.SetActive(false);
         }
     }
 
@@ -36,11 +36,11 @@ public class HideHandModelOnGrab : MonoBehaviour
     {
         if (args.interactorObject.transform.tag == "Right Hand")
         {
-            leftHandModel.SetActive(true);
+            rightHandModel.SetActive(true);
         }
         else if (args.interactorObject.transform.tag == "Left Hand")
         {
-            rightHandModel.SetActive(true);
+            leftHandModel.SetActive(true);
         }
     }
 

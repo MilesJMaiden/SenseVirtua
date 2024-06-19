@@ -2867,20 +2867,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
-    - target: {fileID: 9014170783809206330, guid: 04683d61741008c4dbfb1f9b705ada06, type: 3}
-      propertyPath: m_BackGroundColor.a
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 9014170783809206330, guid: 04683d61741008c4dbfb1f9b705ada06, type: 3}
-      propertyPath: m_BackGroundColor.b
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 9014170783809206330, guid: 04683d61741008c4dbfb1f9b705ada06, type: 3}
-      propertyPath: m_BackGroundColor.g
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 9014170783809206330, guid: 04683d61741008c4dbfb1f9b705ada06, type: 3}
-      propertyPath: m_BackGroundColor.r
+    - target: {fileID: 7873184977108000993, guid: 04683d61741008c4dbfb1f9b705ada06, type: 3}
+      propertyPath: m_RequestedTrackingOriginMode
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
