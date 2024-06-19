@@ -28,13 +28,17 @@ public class OutlineOnHover : MonoBehaviour
 
     private void OnHoverEntered(HoverEnterEventArgs args)
     {
-        hoverInteractor = args.interactorObject;
-        outline.enabled = true;
+        hoverInteractor = args.interactorObject as XRBaseInteractor;
+        if (hoverInteractor != null)
+        {
+            outline.enabled = true;
+        }
     }
 
     private void OnHoverExited(HoverExitEventArgs args)
     {
-        if (args.interactorObject == hoverInteractor)
+        var exitingInteractor = args.interactorObject as XRBaseInteractor;
+        if (exitingInteractor == hoverInteractor)
         {
             outline.enabled = false;
             hoverInteractor = null;
