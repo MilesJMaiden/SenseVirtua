@@ -5,6 +5,9 @@ TagManager:
   serializedVersion: 2
   tags:
   - Anchor
+  - Whiteboard
+  - Right Hand
+  - Left Hand
   layers:
   - Default
   - TransparentFX
@@ -13,7 +16,7 @@ TagManager:
   - Water
   - UI
   - Marker
-  - 
+  - Whiteboard
   - 
   - 
   - 
