@@ -976,7 +976,7 @@ Transform:
   m_GameObject: {fileID: 470232887}
   serializedVersion: 2
   m_LocalRotation: {x: -0.69351995, y: -0.1379497, z: -0.13794972, w: 0.6935199}
-  m_LocalPosition: {x: 2.815265, y: 2.999898, z: -6.9131947}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 13.096718, y: 13.096718, z: 15}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1016,9 +1016,9 @@ Light:
   serializedVersion: 10
   m_Type: 2
   m_Shape: 0
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 0.26855704, b: 0, a: 1}
   m_Intensity: 1
-  m_Range: 22.65
+  m_Range: 5
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
   m_CookieSize: 10
@@ -2498,7 +2498,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &914909866
 Transform:
   m_ObjectHideFlags: 0
@@ -8457,6 +8457,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1306302913}
+  - component: {fileID: 1306302914}
   m_Layer: 0
   m_Name: Lantern
   m_TagString: Untagged
@@ -8473,7 +8474,7 @@ Transform:
   m_GameObject: {fileID: 1306302912}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 1.5, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -8482,6 +8483,25 @@ Transform:
   - {fileID: 914909866}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1306302914
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1306302912}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a503bbc221bde134289173355a9542fe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  lanternLight: {fileID: 470232890}
+  minIntensity: 0.1
+  maxIntensity: 20
+  intensityFlickerSpeed: 0.01
+  minRange: 2
+  maxRange: 25
+  rangeFlickerSpeed: 0.01
 --- !u!1 &1486677401
 GameObject:
   m_ObjectHideFlags: 0
@@ -14100,7 +14120,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!108 &1815318736
 Light:
   m_ObjectHideFlags: 0
