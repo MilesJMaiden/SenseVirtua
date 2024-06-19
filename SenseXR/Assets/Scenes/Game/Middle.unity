@@ -13728,6 +13728,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 575329622685701517, guid: eea0f84c94157c0438b69ea8e51e7a89, type: 3}
+      propertyPath: outlineWidth
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 836877554990250868, guid: eea0f84c94157c0438b69ea8e51e7a89, type: 3}
       propertyPath: m_Mesh
       value: 
