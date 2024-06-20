@@ -8,7 +8,7 @@ public class BubbleCanvas : MonoBehaviour
 
     public TMP_Text dialogueText; // refer Component
     //List<string> dialogues = new List<string>();
-    bool showing; // 글자가 나오고 있을 때 다른 글자 등장 방지
+    bool showing; // Prevent other letters from appearing when a letter is appearing
 
     //bool dialogueStarted = false;
     public void ShowDialogue(string d, float voiceTime)
@@ -41,7 +41,7 @@ public class BubbleCanvas : MonoBehaviour
         //yield return new WaitForSeconds(1f);
         showing = false;
 
-        //리스트의 첫번째 데이터를 지워라.
+        //Delete first data of List
         //dialogues.RemoveAt(0);
         //if (dialogues.Count > 0)
         //{

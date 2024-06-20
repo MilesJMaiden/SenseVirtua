@@ -87,7 +87,7 @@ public class Voice : MonoBehaviour
 
 
 
-    // 공간 안에 3초동안 있으면 voiceAudio.Play()
+    // If you are in the space for 3 seconds, voiceAudio.Play()
     public bool onSite;
 
     public float timer = 0;
