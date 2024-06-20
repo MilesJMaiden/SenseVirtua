@@ -50,7 +50,25 @@ VisualEffect:
   m_ResourceVersion: 1
   m_PropertySheet:
     m_Float:
-      m_Array: []
+      m_Array:
+      - m_Value: 1.5
+        m_Name: SmokeRate
+        m_Overridden: 1
+      - m_Value: 1.75
+        m_Name: FlameSize
+        m_Overridden: 1
+      - m_Value: 1.4
+        m_Name: FlameLifetime
+        m_Overridden: 1
+      - m_Value: 2.5
+        m_Name: SmokeLifetime
+        m_Overridden: 1
+      - m_Value: 1.75
+        m_Name: SmokeSize
+        m_Overridden: 1
+      - m_Value: 18
+        m_Name: FlamRate
+        m_Overridden: 1
     m_Vector2f:
       m_Array: []
     m_Vector3f:
@@ -141,7 +159,7 @@ Transform:
   m_GameObject: {fileID: 4418091838672320598}
   serializedVersion: 2
   m_LocalRotation: {x: -0.7071068, y: -0, z: -0, w: 0.7071068}
-  m_LocalPosition: {x: -0.58982646, y: -2.210346, z: -8.293149}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
