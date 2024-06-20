@@ -2,8 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-[ExecuteInEditMode]
-public class TwoPointsLine : MonoBehaviour
+public class TwoPointsRenderer : MonoBehaviour
 {
     public Transform pointA;
     public Transform pointB;

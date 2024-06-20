@@ -2904,6 +2904,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 9014170783809206335, guid: 04683d61741008c4dbfb1f9b705ada06, type: 3}
   m_PrefabInstance: {fileID: 995890420}
   m_PrefabAsset: {fileID: 0}
+--- !u!20 &995890424 stripped
+Camera:
+  m_CorrespondingSourceObject: {fileID: 9014170783809206330, guid: 04683d61741008c4dbfb1f9b705ada06, type: 3}
+  m_PrefabInstance: {fileID: 995890420}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1011882216
 GameObject:
   m_ObjectHideFlags: 0
@@ -13266,9 +13271,21 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 322948907041621748, guid: ba1eb1390aa338541acb99ea0eab2664, type: 3}
+      propertyPath: m_Camera
+      value: 
+      objectReference: {fileID: 995890424}
+    - target: {fileID: 2236430003172893976, guid: ba1eb1390aa338541acb99ea0eab2664, type: 3}
+      propertyPath: target
+      value: 
+      objectReference: {fileID: 995890422}
     - target: {fileID: 2433462657557425536, guid: ba1eb1390aa338541acb99ea0eab2664, type: 3}
       propertyPath: m_Name
       value: Interactable
+      objectReference: {fileID: 0}
+    - target: {fileID: 3327304223292125478, guid: ba1eb1390aa338541acb99ea0eab2664, type: 3}
+      propertyPath: m_AddDefaultGrabTransformers
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4257313497314962473, guid: ba1eb1390aa338541acb99ea0eab2664, type: 3}
       propertyPath: m_LocalPosition.x
@@ -13310,10 +13327,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4272566706317237901, guid: ba1eb1390aa338541acb99ea0eab2664, type: 3}
-      propertyPath: target
-      value: 
-      objectReference: {fileID: 995890422}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
