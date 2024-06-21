@@ -3,7 +3,32 @@ guid: 0a2941521a7256c4ebf5d2263c4c3a11
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Carpet
+    second: {fileID: 2100000, guid: 548347de341d4da49aa4158b976f4f37, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Floor
+    second: {fileID: 2100000, guid: c583c574e4b148c48b8cfdc00e7ab2ce, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material.001
+    second: {fileID: 2100000, guid: 1f9cdb2e001a1ab4286fa45c09ef36a5, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material.002
+    second: {fileID: 2100000, guid: edd227b1620bcb04ba1124abe317821b, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: WAlls
+    second: {fileID: 2100000, guid: bad4b087a71ef9c438a94ad430846885, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
