@@ -480,8 +480,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8436a2c6a7ab4204eabf760cfbcfda20, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rightHandModel: {fileID: 0}
-  leftHandModel: {fileID: 0}
+  rightHandModel: {fileID: 5686134208185362930, guid: 1fd3a7c43c8190f4d8c167ebde694364, type: 3}
+  leftHandModel: {fileID: 109434732395284509, guid: 65847589f926b734d9eaed6e25f0046b, type: 3}
 --- !u!1 &3309000123223595580
 GameObject:
   m_ObjectHideFlags: 0
@@ -535,7 +535,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 3e6911fb6bb88724bbcc5604d6f9c68c, type: 2}
+  - {fileID: 2100000, guid: e1c75a5ac7c8dbf4e9039a5914f22ee9, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
