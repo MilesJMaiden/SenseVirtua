@@ -6,6 +6,7 @@ public class CalligraphySuccessTween : MonoBehaviour
 {
     public Transform targetTransform; // Reference to the target transform for final position and rotation
     public float tweenDuration = 2.0f;
+    public float colorTweenDuration = 1.0f; // Independent duration for color tween
     public AudioClip successSound; // Audio clip to play on success
 
     // Public reference to the SpriteRenderer and colors
@@ -19,7 +20,6 @@ public class CalligraphySuccessTween : MonoBehaviour
     public LeanTweenType moveEaseType = LeanTweenType.easeInOutSine;
     public LeanTweenType rotateEaseType = LeanTweenType.easeInOutSine;
     public LeanTweenType finalScaleEaseType = LeanTweenType.easeInOutSine;
-    public LeanTweenType hdrIntensityEaseType = LeanTweenType.easeInOutSine;
 
     private Vector3 initialScale;
     private Vector3 initialPosition;
@@ -39,6 +39,17 @@ public class CalligraphySuccessTween : MonoBehaviour
         if (targetSpriteRenderer == null)
         {
             targetSpriteRenderer = GetComponent<SpriteRenderer>();
+        }
+
+        // Start the color tweening
+        StartColorTweening();
+    }
+
+    void StartColorTweening()
+    {
+        if (targetSpriteRenderer != null)
+        {
+            LeanTween.value(gameObject, 0, 1, colorTweenDuration).setLoopPingPong().setEase(colorEaseType).setOnUpdate(UpdateColor);
         }
     }
 
@@ -64,6 +75,9 @@ public class CalligraphySuccessTween : MonoBehaviour
         {
             targetSpriteRenderer.color = startColor;
         }
+
+        // Restart the color tweening
+        StartColorTweening();
     }
 
     void StepOne()
@@ -73,7 +87,8 @@ public class CalligraphySuccessTween : MonoBehaviour
 
     void StepTwo()
     {
-        LeanTween.value(gameObject, 0, 1, tweenDuration).setOnUpdate(UpdateColor).setEase(colorEaseType).setOnComplete(StepThree);
+        // Proceed to the next step without interrupting the color tweening
+        StepThree();
     }
 
     void StepThree()
@@ -82,9 +97,6 @@ public class CalligraphySuccessTween : MonoBehaviour
         audioSource.playOnAwake = false;
         audioSource.clip = successSound;
         audioSource.PlayOneShot(successSound);
-
-        // Start the color tweening
-        LeanTween.value(gameObject, 0, 1, tweenDuration).setLoopPingPong().setEase(hdrIntensityEaseType).setOnUpdate(UpdateColor);
 
         StepFour();
     }
