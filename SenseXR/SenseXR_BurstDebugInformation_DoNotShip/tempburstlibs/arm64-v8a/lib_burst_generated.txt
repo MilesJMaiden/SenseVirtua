@@ -37,6 +37,9 @@ Library: C:\Users\newhh\SenseVirtua\SenseVirtual\SenseXR\Temp\BurstOutput\tempbu
 --assembly-defines=Unity.InputSystem;
 --assembly-defines=Unity.InputSystem.ForUI;
 --assembly-defines=Unity.Mathematics;
+--assembly-defines=Unity.ProBuilder;
+--assembly-defines=Unity.ProBuilder.KdTree;
+--assembly-defines=Unity.ProBuilder.Poly2Tri;
 --assembly-defines=Unity.RenderPipeline.Universal.ShaderLibrary;
 --assembly-defines=Unity.RenderPipelines.Core.Runtime;
 --assembly-defines=Unity.RenderPipelines.Universal.Runtime;
@@ -100,6 +103,9 @@ Library: C:\Users\newhh\SenseVirtua\SenseVirtual\SenseXR\Temp\BurstOutput\tempbu
 --assembly-defines=Unity.InputSystem;
 --assembly-defines=Unity.InputSystem.ForUI;
 --assembly-defines=Unity.Mathematics;
+--assembly-defines=Unity.ProBuilder;
+--assembly-defines=Unity.ProBuilder.KdTree;
+--assembly-defines=Unity.ProBuilder.Poly2Tri;
 --assembly-defines=Unity.RenderPipeline.Universal.ShaderLibrary;
 --assembly-defines=Unity.RenderPipelines.Core.Runtime;
 --assembly-defines=Unity.RenderPipelines.Universal.Runtime;
