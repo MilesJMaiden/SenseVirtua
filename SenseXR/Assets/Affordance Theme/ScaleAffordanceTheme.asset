@@ -63,9 +63,9 @@ MonoBehaviour:
         z: 0.5
     - stateName: hovered
       animationStateStartValue:
-        x: 0.7
-        y: 0.7
-        z: 0.7
+        x: 0.6
+        y: 0.6
+        z: 0.6
       animationStateEndValue:
         x: 0.5
         y: 0.5
