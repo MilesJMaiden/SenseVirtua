@@ -9,8 +9,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6f7c05e2d6a94808ac5dcf4531f19721, type: 3}
-  m_Name: ScaleAffordanceTheme
+  m_Script: {fileID: 11500000, guid: b5d80f45fb5f4418a5e84a476e517628, type: 3}
+  m_Name: IO_ColorAffordanceTheme
   m_EditorClassIdentifier: 
   m_Comments: 
   m_ReadOnly: 1
@@ -44,65 +44,25 @@ MonoBehaviour:
       m_Variable: {fileID: 0}
     m_List:
     - stateName: disabled
-      animationStateStartValue:
-        x: 0.5
-        y: 0.5
-        z: 0.5
-      animationStateEndValue:
-        x: 0.5
-        y: 0.5
-        z: 0.5
+      animationStateStartValue: {r: 0, g: 0, b: 0, a: 0}
+      animationStateEndValue: {r: 0, g: 0, b: 0, a: 0}
     - stateName: idle
-      animationStateStartValue:
-        x: 0.5
-        y: 0.5
-        z: 0.5
-      animationStateEndValue:
-        x: 0.5
-        y: 0.5
-        z: 0.5
+      animationStateStartValue: {r: 0, g: 0, b: 0, a: 0}
+      animationStateEndValue: {r: 0, g: 0, b: 0, a: 0}
     - stateName: hovered
-      animationStateStartValue:
-        x: 0.6
-        y: 0.6
-        z: 0.6
-      animationStateEndValue:
-        x: 0.5
-        y: 0.5
-        z: 0.5
+      animationStateStartValue: {r: 0, g: 0, b: 0, a: 0}
+      animationStateEndValue: {r: 0, g: 0, b: 0, a: 0}
     - stateName: hoveredPriority
-      animationStateStartValue:
-        x: 0.5
-        y: 0.5
-        z: 0.5
-      animationStateEndValue:
-        x: 0.5
-        y: 0.5
-        z: 0.5
+      animationStateStartValue: {r: 0, g: 0, b: 0, a: 0}
+      animationStateEndValue: {r: 0, g: 0, b: 0, a: 0}
     - stateName: selected
-      animationStateStartValue:
-        x: 0.5
-        y: 0.5
-        z: 0.5
-      animationStateEndValue:
-        x: 0.5
-        y: 0.5
-        z: 0.5
+      animationStateStartValue: {r: 0.53333336, g: 0.60784316, b: 0.6745098, a: 0}
+      animationStateEndValue: {r: 0, g: 0, b: 0, a: 0}
     - stateName: activated
-      animationStateStartValue:
-        x: 0.5
-        y: 0.5
-        z: 0.5
-      animationStateEndValue:
-        x: 0.5
-        y: 0.5
-        z: 0.5
+      animationStateStartValue: {r: 0, g: 0, b: 0, a: 0}
+      animationStateEndValue: {r: 0, g: 0, b: 0, a: 0}
     - stateName: focused
-      animationStateStartValue:
-        x: 0.5
-        y: 0.5
-        z: 0.5
-      animationStateEndValue:
-        x: 0.5
-        y: 0.5
-        z: 0.5
+      animationStateStartValue: {r: 0, g: 0, b: 0, a: 0}
+      animationStateEndValue: {r: 0, g: 0, b: 0, a: 0}
+    m_ColorBlendMode: 0
+    m_BlendAmount: 1
