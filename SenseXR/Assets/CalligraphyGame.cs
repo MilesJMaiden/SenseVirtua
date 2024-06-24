@@ -6,7 +6,7 @@ using System.Collections.Generic;
 public class CalligraphyGame : MonoBehaviour
 {
     public GameObject drawTasks;
-    public GameObject npc; // NPC GameObject for dialogues
+    public GameObject goldenMan; // NPC GameObject for dialogues
     public PlayableDirector playableDirector; // Timeline PlayableDirector
     public float completionThreshold = 0.8f; // Percentage of colliders that need to be triggered
 
