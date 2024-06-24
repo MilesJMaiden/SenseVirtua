@@ -1,21 +1,22 @@
 using UnityEngine;
+using UnityEngine.Playables;
+using System.Collections;
 using System.Collections.Generic;
 
 public class CalligraphyGame : MonoBehaviour
 {
-    [Tooltip("The parent GameObject containing all symbol tasks.")]
     public GameObject drawTasks;
-
-    [Tooltip("The percentage of colliders that need to be triggered to consider a task complete.")]
-    [Range(0, 1)]
-    public float completionThreshold = 0.8f;
+    public GameObject npc; // NPC GameObject for dialogues
+    public PlayableDirector playableDirector; // Timeline PlayableDirector
+    public float completionThreshold = 0.8f; // Percentage of colliders that need to be triggered
 
     private int currentSymbolIndex = 0;
     private List<GameObject> symbols = new List<GameObject>();
+    public bool calligraphyGameCompleted = false;
 
     void Start()
     {
-        // Initialize the symbols list by gathering all children of drawTasks
+        // Initialize the symbols list
         foreach (Transform child in drawTasks.transform)
         {
             symbols.Add(child.gameObject);
@@ -27,7 +28,6 @@ public class CalligraphyGame : MonoBehaviour
 
     void Update()
     {
-        // Check colliders only if there are more symbols to process
         if (currentSymbolIndex < symbols.Count)
         {
             CheckColliders();
@@ -36,24 +36,61 @@ public class CalligraphyGame : MonoBehaviour
 
     void CheckColliders()
     {
-        // Get the current symbol and its collider group component
         GameObject currentSymbol = symbols[currentSymbolIndex];
         SymbolColliderGroup colliderGroup = currentSymbol.GetComponentInChildren<SymbolColliderGroup>();
 
-        // Check if the completion threshold is reached
         if (colliderGroup != null && colliderGroup.IsCompletionThresholdReached(completionThreshold))
         {
             currentSymbolIndex++;
+            if (currentSymbolIndex < symbols.Count)
+            {
+                StartCoroutine(PlayNextDialogue());
+            }
+            else
+            {
+                calligraphyGameCompleted = true;
+            }
             UpdateSymbolVisibility();
+        }
+    }
+
+    IEnumerator PlayNextDialogue()
+    {
+        if (playableDirector != null)
+        {
+            playableDirector.Play();
+            yield return new WaitUntil(() => playableDirector.state != PlayState.Playing);
         }
     }
 
     void UpdateSymbolVisibility()
     {
-        // Enable the current symbol and disable all others
         for (int i = 0; i < symbols.Count; i++)
         {
             symbols[i].SetActive(i == currentSymbolIndex);
+        }
+    }
+
+    // Methods triggered by the Timeline signals
+    public void StartSymbolTask()
+    {
+        if (currentSymbolIndex < symbols.Count)
+        {
+            symbols[currentSymbolIndex].SetActive(true);
+        }
+    }
+
+    public void WaitForDialogue()
+    {
+        StartCoroutine(WaitForDialogueCoroutine());
+    }
+
+    private IEnumerator WaitForDialogueCoroutine()
+    {
+        if (playableDirector != null)
+        {
+            playableDirector.Play();
+            yield return new WaitUntil(() => playableDirector.state != PlayState.Playing);
         }
     }
 }

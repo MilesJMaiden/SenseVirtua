@@ -9,6 +9,7 @@ TagManager:
   - Right Hand
   - Left Hand
   - Post Processing
+  - Paint Brush
   layers:
   - Default
   - TransparentFX
