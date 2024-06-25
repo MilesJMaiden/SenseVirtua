@@ -13,12 +13,15 @@ public class CalligraphyGame : MonoBehaviour
     [Tooltip("Draw tasks in the order they should be completed.")]
     public GameObject[] drawTasks;
 
+    [Tooltip("Success visuals for each draw task.")]
+    public CalligraphySuccessTween[] successVisuals;
+
     [Tooltip("Percentage of colliders that need to be triggered to consider a task complete.")]
     [Range(0, 1)]
     public float completionThreshold = 0.8f;
 
-    [Tooltip("Duration for scaling the task objects.")]
-    public float taskScaleDuration = 1.0f;
+    [Tooltip("Duration for fading in/out the task objects.")]
+    public float taskFadeDuration = 1.0f;
 
     private int currentSymbolIndex = 0;
     public bool calligraphyGameCompleted = false;
@@ -34,7 +37,7 @@ public class CalligraphyGame : MonoBehaviour
 
         // Get the Voice component from GoldenMan
         goldenManVoice = goldenMan.GetComponent<Voice>();
-        goldenManVoice.OnDialogueEnd += EnableFirstTask; // Subscribe to the event
+        goldenManVoice.OnDialogueEnd += OnDialogueEnd; // Subscribe to the event
 
         Debug.Log("Subscribed to OnDialogueEnd event.");
 
@@ -45,14 +48,17 @@ public class CalligraphyGame : MonoBehaviour
         }
     }
 
-    void EnableFirstTask()
+    void OnDialogueEnd()
     {
-        Debug.Log("EnableFirstTask called.");
-        // Enable the first task with a scale tween after the dialogue finishes
-        if (drawTasks.Length > 0)
+        Debug.Log("OnDialogueEnd called. Enabling next task.");
+        // Enable the next task with a fade-in effect after the dialogue finishes
+        if (currentSymbolIndex < drawTasks.Length)
         {
-            Debug.Log("Enabling Symbol1: " + drawTasks[0].name);
-            EnableTaskWithTween(drawTasks[0]);
+            StartCoroutine(FadeInTask(drawTasks[currentSymbolIndex]));
+        }
+        else
+        {
+            Debug.Log("No more tasks to enable.");
         }
     }
 
@@ -71,21 +77,69 @@ public class CalligraphyGame : MonoBehaviour
 
         if (colliderGroup != null && colliderGroup.IsCompletionThresholdReached(completionThreshold))
         {
-            EndSymbolTask();
-            currentSymbolIndex++;
-            if (currentSymbolIndex < drawTasks.Length)
+            Debug.Log("CheckColliders: Threshold reached for " + currentSymbol.name);
+            StartCoroutine(CompleteCurrentTask());
+        }
+    }
+
+    IEnumerator CompleteCurrentTask()
+    {
+        Debug.Log("CompleteCurrentTask started for " + drawTasks[currentSymbolIndex].name);
+        EndSymbolTask();
+        ExecuteSuccessVisuals(currentSymbolIndex);
+
+        yield return StartCoroutine(FadeOutAndDisable(drawTasks[currentSymbolIndex]));
+
+        currentSymbolIndex++;
+        if (currentSymbolIndex < drawTasks.Length)
+        {
+            Debug.Log("CompleteCurrentTask: Starting next dialogue.");
+            StartCoroutine(PlayNextDialogue());
+        }
+        else
+        {
+            calligraphyGameCompleted = true;
+            if (completionObject != null)
             {
-                StartCoroutine(PlayNextDialogue());
+                completionObject.SetActive(true);
             }
-            else
-            {
-                calligraphyGameCompleted = true;
-                if (completionObject != null)
-                {
-                    completionObject.SetActive(true);
-                }
-            }
-            UpdateSymbolVisibility();
+        }
+    }
+
+    IEnumerator FadeOutAndDisable(GameObject task)
+    {
+        Debug.Log("Fading out and disabling: " + task.name);
+
+        HighlightAid highlightAid = task.GetComponent<HighlightAid>();
+        if (highlightAid != null)
+        {
+            highlightAid.FadeOut();
+        }
+
+        yield return new WaitForSeconds(taskFadeDuration);
+        task.SetActive(false); // Ensure the task is disabled after fading out
+    }
+
+    IEnumerator FadeInTask(GameObject task)
+    {
+        Debug.Log("Fading in and enabling: " + task.name);
+
+        task.SetActive(true); // Ensure the task is set active before fading in
+        HighlightAid highlightAid = task.GetComponent<HighlightAid>();
+        if (highlightAid != null)
+        {
+            highlightAid.FadeIn();
+        }
+
+        yield return new WaitForSeconds(taskFadeDuration);
+    }
+
+    void ExecuteSuccessVisuals(int index)
+    {
+        if (successVisuals != null && index < successVisuals.Length)
+        {
+            Debug.Log("Executing success visuals for task index: " + index);
+            successVisuals[index].ExecuteTweenSequence();
         }
     }
 
@@ -97,7 +151,8 @@ public class CalligraphyGame : MonoBehaviour
             goldenManVoice.PlayVoice();
             yield return new WaitUntil(() => !goldenManVoice.playing);
 
-            Debug.Log("Initial dialogue finished.");
+            Debug.Log("Initial dialogue finished. Enabling first task.");
+            OnDialogueEnd();
         }
     }
 
@@ -110,26 +165,7 @@ public class CalligraphyGame : MonoBehaviour
             yield return new WaitUntil(() => !goldenManVoice.playing);
 
             Debug.Log("Next dialogue finished. Enabling next task.");
-            // Enable the next task with a scale tween
-            if (currentSymbolIndex < drawTasks.Length)
-            {
-                EnableTaskWithTween(drawTasks[currentSymbolIndex]);
-            }
-        }
-    }
-
-    void EnableTaskWithTween(GameObject task)
-    {
-        Debug.Log("EnableTaskWithTween: " + task.name);
-        task.SetActive(true);
-        task.transform.localScale = Vector3.zero;
-        LeanTween.scale(task, Vector3.one, taskScaleDuration).setEase(LeanTweenType.easeInOutSine);
-
-        // Start the HighlightAid lerping
-        HighlightAid highlightAid = task.GetComponent<HighlightAid>();
-        if (highlightAid != null)
-        {
-            highlightAid.StartLerping();
+            OnDialogueEnd();
         }
     }
 

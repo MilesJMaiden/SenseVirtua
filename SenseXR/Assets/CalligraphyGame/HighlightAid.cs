@@ -3,18 +3,13 @@ using UnityEditor;
 
 public class HighlightAid : MonoBehaviour
 {
-    // Public reference to the SpriteRenderer and colors
     public SpriteRenderer targetSpriteRenderer;
     public Color colorOne = new Color(1, 1, 1, 0); // White with 0 alpha
     public Color colorTwo = new Color(1, 1, 1, 1); // White with full alpha
 
-    // Duration of the lerp
     public float lerpDuration = 1.0f;
-
-    // Easing type for the lerp
     public LeanTweenType lerpEaseType = LeanTweenType.easeInOutSine;
 
-    // Public toggle for enabling/disabling the lerp
     public bool enableLerp = true;
 
     private bool isLerping = false;
@@ -22,30 +17,20 @@ public class HighlightAid : MonoBehaviour
 
     void Start()
     {
-        // Ensure the sprite renderer is set
         if (targetSpriteRenderer == null)
         {
             targetSpriteRenderer = GetComponent<SpriteRenderer>();
-        }
-
-        // Start the lerping process if enabled
-        if (enableLerp)
-        {
-            StartLerping();
         }
     }
 
     void Update()
     {
-        // Check if the lerp toggle has changed
         if (enableLerp && !isLerping)
         {
-            // Start lerping if it's not already active
             StartLerping();
         }
         else if (!enableLerp && isLerping)
         {
-            // Stop current tween and lerp to colorOne
             StopLerping();
         }
     }
@@ -78,6 +63,27 @@ public class HighlightAid : MonoBehaviour
         }
     }
 
+    public void FadeIn()
+    {
+        if (targetSpriteRenderer != null)
+        {
+            LeanTween.value(gameObject, colorOne, colorTwo, lerpDuration)
+                .setEase(lerpEaseType)
+                .setOnUpdate((Color color) => targetSpriteRenderer.color = color);
+        }
+    }
+
+    public void FadeOut()
+    {
+        if (targetSpriteRenderer != null)
+        {
+            LeanTween.value(gameObject, colorTwo, colorOne, lerpDuration)
+                .setEase(lerpEaseType)
+                .setOnUpdate((Color color) => targetSpriteRenderer.color = color)
+                .setOnComplete(() => gameObject.SetActive(false));
+        }
+    }
+
     void UpdateColor(float t)
     {
         if (targetSpriteRenderer != null)
@@ -103,6 +109,14 @@ public class HighlightAidEditor : Editor
         if (GUILayout.Button("Stop Lerping"))
         {
             script.StopLerping();
+        }
+        if (GUILayout.Button("Fade In"))
+        {
+            script.FadeIn();
+        }
+        if (GUILayout.Button("Fade Out"))
+        {
+            script.FadeOut();
         }
     }
 }
