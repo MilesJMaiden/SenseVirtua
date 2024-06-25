@@ -19,7 +19,7 @@ public class Voice : MonoBehaviour
     [Tooltip("Text component for the next button.")]
     public TMP_Text nextText;
 
-    private bool playing = false;
+    public bool playing = false;
     public bool onSite = false;
     private float timer = 0;
 
@@ -45,9 +45,9 @@ public class Voice : MonoBehaviour
         PlayVoice();
     }
 
-    private void PlayVoice()
+    public void PlayVoice()
     {
-        if (playing)
+        if (playing || currentIdx >= voiceTexts.Length)
             return;
 
         playing = true;

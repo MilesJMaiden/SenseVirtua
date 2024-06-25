@@ -18,9 +18,13 @@ public class CalligraphyGame : MonoBehaviour
     [Range(0, 1)]
     public float completionThreshold = 0.8f;
 
+    [Tooltip("Duration for scaling the task objects.")]
+    public float taskScaleDuration = 1.0f;
+
     private int currentSymbolIndex = 0;
     private List<GameObject> symbols = new List<GameObject>();
     public bool calligraphyGameCompleted = false;
+    private Voice goldenManVoice;
 
     void Start()
     {
@@ -32,6 +36,12 @@ public class CalligraphyGame : MonoBehaviour
 
         // Ensure only the first symbol is active initially
         UpdateSymbolVisibility();
+
+        // Get the Voice component from GoldenMan
+        goldenManVoice = goldenMan.GetComponent<Voice>();
+
+        // Start the initial dialogue
+        StartCoroutine(PlayInitialDialogue());
     }
 
     void Update()
@@ -62,13 +72,41 @@ public class CalligraphyGame : MonoBehaviour
         }
     }
 
+    IEnumerator PlayInitialDialogue()
+    {
+        if (goldenManVoice != null)
+        {
+            goldenManVoice.PlayVoice();
+            yield return new WaitUntil(() => !goldenManVoice.playing);
+
+            // Enable the first task with a scale tween
+            if (symbols.Count > 0)
+            {
+                EnableTaskWithTween(symbols[0]);
+            }
+        }
+    }
+
     IEnumerator PlayNextDialogue()
     {
-        if (playableDirector != null)
+        if (goldenManVoice != null)
         {
-            playableDirector.Play();
-            yield return new WaitUntil(() => playableDirector.state != PlayState.Playing);
+            goldenManVoice.PlayVoice();
+            yield return new WaitUntil(() => !goldenManVoice.playing);
+
+            // Enable the next task with a scale tween
+            if (currentSymbolIndex < symbols.Count)
+            {
+                EnableTaskWithTween(symbols[currentSymbolIndex]);
+            }
         }
+    }
+
+    void EnableTaskWithTween(GameObject task)
+    {
+        task.SetActive(true);
+        task.transform.localScale = Vector3.zero;
+        LeanTween.scale(task, Vector3.one, taskScaleDuration).setEase(LeanTweenType.easeInOutSine);
     }
 
     void UpdateSymbolVisibility()
