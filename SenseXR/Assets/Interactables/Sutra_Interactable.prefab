@@ -1134,6 +1134,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Tooltip  (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 8316135286875413849, guid: c6fa37a572e4e6b48a6f0d567af19416, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
