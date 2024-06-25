@@ -1,5 +1,4 @@
 using UnityEngine;
-using UnityEngine.Playables;
 using System.Collections;
 using System.Collections.Generic;
 
@@ -11,8 +10,8 @@ public class CalligraphyGame : MonoBehaviour
     [Tooltip("The GameObject representing GoldenMan.")]
     public GameObject goldenMan;
 
-    [Tooltip("The PlayableDirector for controlling the timeline.")]
-    public PlayableDirector playableDirector;
+    [Tooltip("Game object to enable when the calligraphy game is completed.")]
+    public GameObject completionObject;
 
     [Tooltip("Percentage of colliders that need to be triggered to consider a task complete.")]
     [Range(0, 1)]
@@ -40,8 +39,11 @@ public class CalligraphyGame : MonoBehaviour
         // Get the Voice component from GoldenMan
         goldenManVoice = goldenMan.GetComponent<Voice>();
 
-        // Start the initial dialogue
-        StartCoroutine(PlayInitialDialogue());
+        // Disable the completion object initially
+        if (completionObject != null)
+        {
+            completionObject.SetActive(false);
+        }
     }
 
     void Update()
@@ -59,46 +61,30 @@ public class CalligraphyGame : MonoBehaviour
 
         if (colliderGroup != null && colliderGroup.IsCompletionThresholdReached(completionThreshold))
         {
+            EndSymbolTask();
             currentSymbolIndex++;
             if (currentSymbolIndex < symbols.Count)
             {
-                StartCoroutine(PlayNextDialogue());
+                PlayNextDialogue();
             }
             else
             {
                 calligraphyGameCompleted = true;
+                if (completionObject != null)
+                {
+                    completionObject.SetActive(true);
+                }
             }
             UpdateSymbolVisibility();
         }
     }
 
-    IEnumerator PlayInitialDialogue()
+    void PlayNextDialogue()
     {
         if (goldenManVoice != null)
         {
             goldenManVoice.PlayVoice();
-            yield return new WaitUntil(() => !goldenManVoice.playing);
-
-            // Enable the first task with a scale tween
-            if (symbols.Count > 0)
-            {
-                EnableTaskWithTween(symbols[0]);
-            }
-        }
-    }
-
-    IEnumerator PlayNextDialogue()
-    {
-        if (goldenManVoice != null)
-        {
-            goldenManVoice.PlayVoice();
-            yield return new WaitUntil(() => !goldenManVoice.playing);
-
-            // Enable the next task with a scale tween
-            if (currentSymbolIndex < symbols.Count)
-            {
-                EnableTaskWithTween(symbols[currentSymbolIndex]);
-            }
+            StartSymbolTask();
         }
     }
 
@@ -109,6 +95,14 @@ public class CalligraphyGame : MonoBehaviour
         LeanTween.scale(task, Vector3.one, taskScaleDuration).setEase(LeanTweenType.easeInOutSine);
     }
 
+    void DisableCurrentTask()
+    {
+        if (currentSymbolIndex - 1 >= 0 && currentSymbolIndex - 1 < symbols.Count)
+        {
+            symbols[currentSymbolIndex - 1].SetActive(false);
+        }
+    }
+
     void UpdateSymbolVisibility()
     {
         for (int i = 0; i < symbols.Count; i++)
@@ -117,26 +111,16 @@ public class CalligraphyGame : MonoBehaviour
         }
     }
 
-    // Methods triggered by the Timeline signals
     public void StartSymbolTask()
     {
         if (currentSymbolIndex < symbols.Count)
         {
-            symbols[currentSymbolIndex].SetActive(true);
+            EnableTaskWithTween(symbols[currentSymbolIndex]);
         }
     }
 
-    public void WaitForDialogue()
+    public void EndSymbolTask()
     {
-        StartCoroutine(WaitForDialogueCoroutine());
-    }
-
-    private IEnumerator WaitForDialogueCoroutine()
-    {
-        if (playableDirector != null)
-        {
-            playableDirector.Play();
-            yield return new WaitUntil(() => playableDirector.state != PlayState.Playing);
-        }
+        DisableCurrentTask();
     }
 }

@@ -2102,6 +2102,7 @@ GameObject:
   - component: {fileID: 3063414909251599721}
   - component: {fileID: 4269756543269244913}
   - component: {fileID: 520465827062193554}
+  - component: {fileID: 3620804130196342480}
   m_Layer: 0
   m_Name: CalligraphyGame
   m_TagString: Untagged
@@ -2165,9 +2166,71 @@ PlayableDirector:
   m_WrapMode: 2
   m_DirectorUpdateMode: 1
   m_InitialTime: 0
-  m_SceneBindings: []
+  m_SceneBindings:
+  - key: {fileID: 9065237519802182738, guid: c0afcb10a7c3f3c4690ae925c5540f41, type: 2}
+    value: {fileID: 3620804130196342480}
   m_ExposedReferences:
     m_References: []
+--- !u!114 &3620804130196342480
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1659223353093337703}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e52de21a22b6dd44c9cc19f810c65059, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Events:
+    m_Signals:
+    - {fileID: 11400000, guid: 8e5a5a51bc9d6f04589f72aeb55d668e, type: 2}
+    - {fileID: 11400000, guid: 21cee2a4587e5844580e2cc260e01045, type: 2}
+    - {fileID: 11400000, guid: 6261c0c246ad5994e8be1b2eda872bdb, type: 2}
+    m_Events:
+    - m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 4269756543269244913}
+          m_TargetAssemblyTypeName: CalligraphyGame, Assembly-CSharp
+          m_MethodName: StartSymbolTask
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+    - m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 4269756543269244913}
+          m_TargetAssemblyTypeName: CalligraphyGame, Assembly-CSharp
+          m_MethodName: WaitForDialogue
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+    - m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 4269756543269244913}
+          m_TargetAssemblyTypeName: CalligraphyGame, Assembly-CSharp
+          m_MethodName: EndSymbolTask
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &1709967224235157858
 GameObject:
   m_ObjectHideFlags: 0
@@ -11770,6 +11833,38 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 3063414909251599721}
     m_Modifications:
+    - target: {fileID: 1422993514330112748, guid: 9d5741ceac130064f96803b2970f39d2, type: 3}
+      propertyPath: voiceClips.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1422993514330112748, guid: 9d5741ceac130064f96803b2970f39d2, type: 3}
+      propertyPath: dialogueTexts.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1422993514330112748, guid: 9d5741ceac130064f96803b2970f39d2, type: 3}
+      propertyPath: voiceClips.Array.data[0]
+      value: 
+      objectReference: {fileID: 8300000, guid: 0862027bc460d5d40aab5d7da18b48c0, type: 3}
+    - target: {fileID: 1422993514330112748, guid: 9d5741ceac130064f96803b2970f39d2, type: 3}
+      propertyPath: voiceClips.Array.data[1]
+      value: 
+      objectReference: {fileID: 8300000, guid: 1f9f7d8093b7da646b3224ddcc2977d8, type: 3}
+    - target: {fileID: 1422993514330112748, guid: 9d5741ceac130064f96803b2970f39d2, type: 3}
+      propertyPath: voiceClips.Array.data[2]
+      value: 
+      objectReference: {fileID: 8300000, guid: 6938a26d34fdb6e42aad3ccadd1d4ad3, type: 3}
+    - target: {fileID: 1422993514330112748, guid: 9d5741ceac130064f96803b2970f39d2, type: 3}
+      propertyPath: dialogueTexts.Array.data[0]
+      value: intro1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1422993514330112748, guid: 9d5741ceac130064f96803b2970f39d2, type: 3}
+      propertyPath: dialogueTexts.Array.data[1]
+      value: intro2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1422993514330112748, guid: 9d5741ceac130064f96803b2970f39d2, type: 3}
+      propertyPath: dialogueTexts.Array.data[2]
+      value: intro3
+      objectReference: {fileID: 0}
     - target: {fileID: 3932196524274680683, guid: 9d5741ceac130064f96803b2970f39d2, type: 3}
       propertyPath: m_Name
       value: GoldenMan

@@ -10,8 +10,8 @@ public class Voice : MonoBehaviour
     [Tooltip("Current index of the voice text.")]
     public int currentIdx = 0;
 
-    [Tooltip("Array of voice texts to be played.")]
-    public string[] voiceTexts;
+    [Tooltip("Array of keys to fetch voice clips and texts.")]
+    public string[] voiceKeys;
 
     [Tooltip("Bubble canvas for displaying dialogues.")]
     public BubbleCanvas bubbleCanvas;
@@ -47,14 +47,15 @@ public class Voice : MonoBehaviour
 
     public void PlayVoice()
     {
-        if (playing || currentIdx >= voiceTexts.Length)
+        if (playing || currentIdx >= voiceKeys.Length)
             return;
 
         playing = true;
-        voiceAudio.clip = TranslationMgr.instance.GetTranslationVoice(voiceTexts[currentIdx]);
+        string key = voiceKeys[currentIdx];
+        voiceAudio.clip = TranslationMgr.instance.GetTranslationVoice(key);
         voiceAudio.Play();
 
-        string txt = TranslationMgr.instance.GetTranslationText(voiceTexts[currentIdx]);
+        string txt = TranslationMgr.instance.GetTranslationText(key);
         bubbleCanvas.ShowDialogue(txt, voiceAudio.clip.length);
         nextText.gameObject.SetActive(false);
 
@@ -64,7 +65,7 @@ public class Voice : MonoBehaviour
 
     private void EndVoice()
     {
-        if (currentIdx >= voiceTexts.Length)
+        if (currentIdx >= voiceKeys.Length)
         {
             bubbleCanvas.gameObject.SetActive(false);
             return;
@@ -80,6 +81,7 @@ public class Voice : MonoBehaviour
         {
             onSite = true;
             timer = 0;
+            PlayVoice();
         }
     }
 

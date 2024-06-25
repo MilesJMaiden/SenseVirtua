@@ -924,12 +924,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   voiceAudio: {fileID: 6882983421677857253}
   currentIdx: 0
-  voiceTexts:
+  voiceKeys:
   - intro1
   - intro2
   - intro3
   bubbleCanvas: {fileID: 3354356563628560311}
   nextText: {fileID: 8716664029549105625}
+  playing: 0
   onSite: 0
 --- !u!82 &6882983421677857253
 AudioSource:
