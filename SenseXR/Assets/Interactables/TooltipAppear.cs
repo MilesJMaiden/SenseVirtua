@@ -9,10 +9,15 @@ public class TooltipAppear : MonoBehaviour
 
     public void Start()
     {
+        
+    }
+    public void CallCoverDissolve()
+    {
         StartCoroutine(CoverDissolve());
     }
     public IEnumerator CoverDissolve()
     {
+        coverMat.SetFloat("_AppearStrength", 0f);
         float timeElapse = 0f;
 
         while (timeElapse < duration)
