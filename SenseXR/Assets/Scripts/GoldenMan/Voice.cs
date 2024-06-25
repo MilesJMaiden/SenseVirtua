@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using UnityEngine;
 using TMPro;
@@ -22,6 +23,8 @@ public class Voice : MonoBehaviour
     public bool playing = false;
     public bool onSite = false;
     private float timer = 0;
+
+    public event Action OnDialogueEnd;
 
     private void Awake()
     {
@@ -52,6 +55,7 @@ public class Voice : MonoBehaviour
 
         playing = true;
         string key = voiceKeys[currentIdx];
+        Debug.Log("Playing voice: " + key);
         voiceAudio.clip = TranslationMgr.instance.GetTranslationVoice(key);
         voiceAudio.Play();
 
@@ -73,6 +77,8 @@ public class Voice : MonoBehaviour
 
         playing = false;
         nextText.gameObject.SetActive(true);
+        Debug.Log("Dialogue ended.");
+        OnDialogueEnd?.Invoke(); // Trigger the event
     }
 
     private void OnTriggerEnter(Collider other)
