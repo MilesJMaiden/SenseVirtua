@@ -1,4 +1,3 @@
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using System;
@@ -10,64 +9,50 @@ public class TranslationMgr : MonoBehaviour
     public TranslationText[] translationTexts;
     public TranslationVoice[] translationVoices;
 
+    private List<Action> listeners = new List<Action>();
+
     private void Awake()
     {
         language = Language.Chinese;
         instance = this;
-
     }
 
     public string GetTranslationText(string key)
     {
-        for (int i = 0; i < translationTexts.Length; i++)
+        foreach (var translation in translationTexts)
         {
-            if (translationTexts[i].key == key)
+            if (translation.key == key)
             {
-                if (language == Language.English)
-                {
-                    return translationTexts[i].english;
-                }
-                else if (language == Language.Chinese)
-                {
-                    return translationTexts[i].chinese;
-                }
+                return language == Language.English ? translation.english : translation.chinese;
             }
         }
         return null;
     }
+
     public AudioClip GetTranslationVoice(string key)
     {
-        for (int i = 0; i < translationVoices.Length; i++)
+        foreach (var translation in translationVoices)
         {
-            if (translationVoices[i].key == key)
+            if (translation.key == key)
             {
-                if (language == Language.English)
-                {
-                    return translationVoices[i].english;
-                }
-                else if (language == Language.Chinese)
-                {
-                    return translationVoices[i].chinese;
-                }
+                return language == Language.English ? translation.english : translation.chinese;
             }
         }
         return null;
     }
 
-    public void ChangeLanguage(Language l)
+    public void ChangeLanguage(Language lang)
     {
-        language = l;
-
-        for (int i = 0; i < list.Count; i++)
+        language = lang;
+        foreach (var listener in listeners)
         {
-            list[i].Invoke();
+            listener.Invoke();
         }
     }
 
-    List<Action> list = new List<Action>(); 
     public void AddListener(Action action)
     {
-        list.Add(action);
+        listeners.Add(action);
     }
 }
 
@@ -78,6 +63,7 @@ public class TranslationText
     public string english;
     public string chinese;
 }
+
 [System.Serializable]
 public class TranslationVoice
 {

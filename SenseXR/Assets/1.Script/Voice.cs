@@ -1,37 +1,43 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 
 public class Voice : MonoBehaviour
 {
+    [Tooltip("AudioSource component for playing voice clips.")]
     public AudioSource voiceAudio;
 
+    [Tooltip("Current index of the voice text.")]
     public int currentIdx = 0;
-    //public AudioClip[] voiceClips;
+
+    [Tooltip("Array of voice texts to be played.")]
     public string[] voiceTexts;
-    //public GameObject nextBtnCanvas;
+
+    [Tooltip("Bubble canvas for displaying dialogues.")]
     public BubbleCanvas bubbleCanvas;
 
+    [Tooltip("Text component for the next button.")]
     public TMP_Text nextText;
+
+    private bool playing = false;
+    public bool onSite = false;
+    private float timer = 0;
 
     private void Awake()
     {
         voiceAudio = GetComponent<AudioSource>();
-        //voiceAudio.clip = voiceClips[currentIdx];
     }
 
     private void Update()
     {
         if (onSite)
         {
+            timer += Time.deltaTime;
             if (timer >= 3 && currentIdx == 0)
             {
                 PlayVoice();
             }
-            timer += Time.deltaTime;
         }
-
     }
 
     public void OnClickedNextBtn()
@@ -39,75 +45,49 @@ public class Voice : MonoBehaviour
         PlayVoice();
     }
 
-
-    public bool playing = false;
-    void PlayVoice()
+    private void PlayVoice()
     {
-        if (playing == true)
+        if (playing)
             return;
-
 
         playing = true;
         voiceAudio.clip = TranslationMgr.instance.GetTranslationVoice(voiceTexts[currentIdx]);
         voiceAudio.Play();
 
         string txt = TranslationMgr.instance.GetTranslationText(voiceTexts[currentIdx]);
-
-        //bubbleCanvas.gameObject.SetActive(true);
         bubbleCanvas.ShowDialogue(txt, voiceAudio.clip.length);
         nextText.gameObject.SetActive(false);
 
-        //voiceAudio.clip.length;
-        //onSite = false;
         currentIdx++;
-
         Invoke("EndVoice", voiceAudio.clip.length);
     }
 
-    void EndVoice()
+    private void EndVoice()
     {
-
-
         if (currentIdx >= voiceTexts.Length)
         {
             bubbleCanvas.gameObject.SetActive(false);
-            //nextBtnCanvas.SetActive(false);
             return;
         }
 
-
         playing = false;
-
-        Debug.Log("EndVoice");
-
-        //nextBtnCanvas.SetActive(true);
         nextText.gameObject.SetActive(true);
-        
     }
 
-
-
-    // If you are in the space for 3 seconds, voiceAudio.Play()
-    public bool onSite;
-
-    public float timer = 0;
-    public void OnTriggerEnter(Collider other)
+    private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Player"))
         {
             onSite = true;
             timer = 0;
-
-            //voiceAudio.Play();
         }
     }
-    public void OnTriggerExit(Collider other)
+
+    private void OnTriggerExit(Collider other)
     {
         if (other.CompareTag("Player"))
         {
             onSite = false;
-
-            //voiceAudio.Play();
         }
     }
 }

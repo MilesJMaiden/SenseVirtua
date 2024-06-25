@@ -5,10 +5,18 @@ using System.Collections.Generic;
 
 public class CalligraphyGame : MonoBehaviour
 {
+    [Tooltip("The parent GameObject containing all symbol tasks.")]
     public GameObject drawTasks;
-    public GameObject goldenMan; // NPC GameObject for dialogues
-    public PlayableDirector playableDirector; // Timeline PlayableDirector
-    public float completionThreshold = 0.8f; // Percentage of colliders that need to be triggered
+
+    [Tooltip("The GameObject representing GoldenMan.")]
+    public GameObject goldenMan;
+
+    [Tooltip("The PlayableDirector for controlling the timeline.")]
+    public PlayableDirector playableDirector;
+
+    [Tooltip("Percentage of colliders that need to be triggered to consider a task complete.")]
+    [Range(0, 1)]
+    public float completionThreshold = 0.8f;
 
     private int currentSymbolIndex = 0;
     private List<GameObject> symbols = new List<GameObject>();
