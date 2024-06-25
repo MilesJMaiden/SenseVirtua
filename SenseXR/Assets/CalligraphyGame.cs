@@ -26,6 +26,7 @@ public class CalligraphyGame : MonoBehaviour
     private int currentSymbolIndex = 0;
     public bool calligraphyGameCompleted = false;
     private Voice goldenManVoice;
+    private bool isProcessingTask = false;
 
     void Start()
     {
@@ -50,7 +51,7 @@ public class CalligraphyGame : MonoBehaviour
 
     void OnDialogueEnd()
     {
-        Debug.Log("OnDialogueEnd called. Enabling next task.");
+        Debug.Log($"OnDialogueEnd called. currentSymbolIndex: {currentSymbolIndex}");
         // Enable the next task with a fade-in effect after the dialogue finishes
         if (currentSymbolIndex < drawTasks.Length)
         {
@@ -64,7 +65,7 @@ public class CalligraphyGame : MonoBehaviour
 
     void Update()
     {
-        if (currentSymbolIndex < drawTasks.Length)
+        if (currentSymbolIndex < drawTasks.Length && !isProcessingTask)
         {
             CheckColliders();
         }
@@ -77,20 +78,22 @@ public class CalligraphyGame : MonoBehaviour
 
         if (colliderGroup != null && colliderGroup.IsCompletionThresholdReached(completionThreshold))
         {
-            Debug.Log("CheckColliders: Threshold reached for " + currentSymbol.name);
+            Debug.Log($"CheckColliders: Threshold reached for {currentSymbol.name}");
+            isProcessingTask = true;
             StartCoroutine(CompleteCurrentTask());
         }
     }
 
     IEnumerator CompleteCurrentTask()
     {
-        Debug.Log("CompleteCurrentTask started for " + drawTasks[currentSymbolIndex].name);
+        Debug.Log($"CompleteCurrentTask started for {drawTasks[currentSymbolIndex].name}");
         EndSymbolTask();
         ExecuteSuccessVisuals(currentSymbolIndex);
 
         yield return StartCoroutine(FadeOutAndDisable(drawTasks[currentSymbolIndex]));
 
         currentSymbolIndex++;
+        Debug.Log($"currentSymbolIndex incremented to {currentSymbolIndex}");
         if (currentSymbolIndex < drawTasks.Length)
         {
             Debug.Log("CompleteCurrentTask: Starting next dialogue.");
@@ -98,17 +101,19 @@ public class CalligraphyGame : MonoBehaviour
         }
         else
         {
+            Debug.Log("All tasks completed.");
             calligraphyGameCompleted = true;
             if (completionObject != null)
             {
                 completionObject.SetActive(true);
             }
         }
+        isProcessingTask = false;
     }
 
     IEnumerator FadeOutAndDisable(GameObject task)
     {
-        Debug.Log("Fading out and disabling: " + task.name);
+        Debug.Log($"Fading out and disabling: {task.name}");
 
         HighlightAid highlightAid = task.GetComponent<HighlightAid>();
         if (highlightAid != null)
@@ -122,7 +127,7 @@ public class CalligraphyGame : MonoBehaviour
 
     IEnumerator FadeInTask(GameObject task)
     {
-        Debug.Log("Fading in and enabling: " + task.name);
+        Debug.Log($"Fading in and enabling: {task.name}");
 
         task.SetActive(true); // Ensure the task is set active before fading in
         HighlightAid highlightAid = task.GetComponent<HighlightAid>();
@@ -138,7 +143,7 @@ public class CalligraphyGame : MonoBehaviour
     {
         if (successVisuals != null && index < successVisuals.Length)
         {
-            Debug.Log("Executing success visuals for task index: " + index);
+            Debug.Log($"Executing success visuals for task index: {index}");
             successVisuals[index].ExecuteTweenSequence();
         }
     }
