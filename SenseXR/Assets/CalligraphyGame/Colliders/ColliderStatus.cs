@@ -7,8 +7,8 @@ public class ColliderStatus : MonoBehaviour
 
     void OnTriggerEnter(Collider other)
     {
-        // Check if the collider is triggered by an object with the "Paintbrush" tag
-        if (other.CompareTag("Paintbrush"))
+        // Check if the collider is triggered by an object with tag
+        if (other.CompareTag("Paint Brush"))
         {
             isTriggered = true;
         }
