@@ -903,6 +903,7 @@ GameObject:
   - component: {fileID: 2774359300166271770}
   - component: {fileID: 8075453371073649823}
   - component: {fileID: 989094551948936319}
+  - component: {fileID: 5288477536744332209}
   m_Layer: 0
   m_Name: Zone3
   m_TagString: Untagged
@@ -961,6 +962,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b01fe3d837a383142a11d01cb5f64e94, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &5288477536744332209
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3326310161543797082}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6d1797c1a73fe4d9609a8744a65ac7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  zoneObject: {fileID: 3326310161543797082}
+  pointLight: {fileID: 5514348279991961479}
+  startingIlluminationRange: 7.5
+  targetIlluminationRange: 11.5
+  illuminationGame: {fileID: 3685280429547686379}
 --- !u!1 &3489356321763121534
 GameObject:
   m_ObjectHideFlags: 0
@@ -1306,6 +1324,7 @@ GameObject:
   - component: {fileID: 7061791921970407212}
   - component: {fileID: 7286268901957857768}
   - component: {fileID: 2447844304793113593}
+  - component: {fileID: 7326066936830818015}
   m_Layer: 0
   m_Name: Zone1
   m_TagString: Untagged
@@ -1364,6 +1383,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b01fe3d837a383142a11d01cb5f64e94, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &7326066936830818015
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3772747410611817286}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6d1797c1a73fe4d9609a8744a65ac7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  zoneObject: {fileID: 3772747410611817286}
+  pointLight: {fileID: 2126138229820542595}
+  startingIlluminationRange: 7.5
+  targetIlluminationRange: 11.5
+  illuminationGame: {fileID: 3685280429547686379}
 --- !u!1 &3839039468658626835
 GameObject:
   m_ObjectHideFlags: 0
@@ -1859,6 +1895,7 @@ GameObject:
   - component: {fileID: 3321955631553184060}
   - component: {fileID: 32866506694508897}
   - component: {fileID: 673500173327232800}
+  - component: {fileID: 5624766044165465170}
   m_Layer: 0
   m_Name: Zone2
   m_TagString: Untagged
@@ -1917,6 +1954,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b01fe3d837a383142a11d01cb5f64e94, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &5624766044165465170
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4788477051078219408}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6d1797c1a73fe4d9609a8744a65ac7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  zoneObject: {fileID: 4788477051078219408}
+  pointLight: {fileID: 8861165188151614672}
+  startingIlluminationRange: 7.5
+  targetIlluminationRange: 11.5
+  illuminationGame: {fileID: 3685280429547686379}
 --- !u!1 &5051311146335877218
 GameObject:
   m_ObjectHideFlags: 0
@@ -2170,31 +2224,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   zones:
-  - zoneObject: {fileID: 3772747410611817286}
-    pointLight: {fileID: 2126138229820542595}
-    startingIlluminationRange: 7.5
-    targetIlluminationRange: 11.5
-    illuminationGame: {fileID: 3685280429547686379}
-  - zoneObject: {fileID: 4788477051078219408}
-    pointLight: {fileID: 8861165188151614672}
-    startingIlluminationRange: 7.5
-    targetIlluminationRange: 11.5
-    illuminationGame: {fileID: 3685280429547686379}
-  - zoneObject: {fileID: 3326310161543797082}
-    pointLight: {fileID: 5514348279991961479}
-    startingIlluminationRange: 7.5
-    targetIlluminationRange: 11.5
-    illuminationGame: {fileID: 3685280429547686379}
-  - zoneObject: {fileID: 7206694020653608573}
-    pointLight: {fileID: 3862679763617834540}
-    startingIlluminationRange: 7.5
-    targetIlluminationRange: 11.5
-    illuminationGame: {fileID: 3685280429547686379}
-  - zoneObject: {fileID: 7843711633960667723}
-    pointLight: {fileID: 4343908655875688235}
-    startingIlluminationRange: 7.5
-    targetIlluminationRange: 11.5
-    illuminationGame: {fileID: 3685280429547686379}
+  - {fileID: 7326066936830818015}
+  - {fileID: 5624766044165465170}
+  - {fileID: 5288477536744332209}
+  - {fileID: 7172061216548828282}
+  - {fileID: 3865033868551062533}
   lantern: {fileID: 5996351694796299338}
   completionPointLight: {fileID: 437819099978026859}
   zonesToIlluminate: 5
@@ -2462,6 +2496,7 @@ GameObject:
   - component: {fileID: 4880706119671484966}
   - component: {fileID: 3059599771789556861}
   - component: {fileID: 3298142575543252366}
+  - component: {fileID: 7172061216548828282}
   m_Layer: 0
   m_Name: Zone4
   m_TagString: Untagged
@@ -2520,6 +2555,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b01fe3d837a383142a11d01cb5f64e94, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &7172061216548828282
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7206694020653608573}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6d1797c1a73fe4d9609a8744a65ac7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  zoneObject: {fileID: 7206694020653608573}
+  pointLight: {fileID: 3862679763617834540}
+  startingIlluminationRange: 7.5
+  targetIlluminationRange: 11.5
+  illuminationGame: {fileID: 3685280429547686379}
 --- !u!1 &7215707426639279332
 GameObject:
   m_ObjectHideFlags: 0
@@ -2773,6 +2825,7 @@ GameObject:
   - component: {fileID: 5522104749022864417}
   - component: {fileID: 3843004640229772776}
   - component: {fileID: 3190717755270032673}
+  - component: {fileID: 3865033868551062533}
   m_Layer: 0
   m_Name: Zone5
   m_TagString: Untagged
@@ -2831,6 +2884,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b01fe3d837a383142a11d01cb5f64e94, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &3865033868551062533
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7843711633960667723}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6d1797c1a73fe4d9609a8744a65ac7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  zoneObject: {fileID: 7843711633960667723}
+  pointLight: {fileID: 4343908655875688235}
+  startingIlluminationRange: 7.5
+  targetIlluminationRange: 11.5
+  illuminationGame: {fileID: 3685280429547686379}
 --- !u!1 &7996696870037700452
 GameObject:
   m_ObjectHideFlags: 0

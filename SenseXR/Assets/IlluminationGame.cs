@@ -28,7 +28,14 @@ public class IlluminationGame : MonoBehaviour
         // Ensure all zones are initialized correctly
         foreach (Zone zone in zones)
         {
-            zone.Initialize(this, tweenDuration, tweenType);
+            if (zone != null)
+            {
+                zone.Initialize(this, tweenDuration, tweenType);
+            }
+            else
+            {
+                Debug.LogError("IlluminationGame: Zone is null in the zones list.");
+            }
         }
 
         // Ensure the completion point light is disabled initially
@@ -96,60 +103,5 @@ public class IlluminationGame : MonoBehaviour
         {
             zones[zoneIndex].ToggleIllumination();
         }
-    }
-}
-
-[System.Serializable]
-public class Zone
-{
-    public GameObject zoneObject;
-    public Light pointLight;
-    public float startingIlluminationRange = 0f;
-    public float targetIlluminationRange = 10f;
-
-    public IlluminationGame illuminationGame;  // Changed to public
-
-    private bool isIlluminated = false;
-    private float tweenDuration;
-    private LeanTweenType tweenType;
-
-    // Initialize the zone with reference to the illumination game, tween duration, and tween type
-    public void Initialize(IlluminationGame game, float duration, LeanTweenType type)
-    {
-        illuminationGame = game;
-        tweenDuration = duration;
-        tweenType = type;
-        pointLight.range = startingIlluminationRange;
-    }
-
-    // Illuminate the zone if it's not already illuminated
-    public void Illuminate()
-    {
-        if (!isIlluminated)
-        {
-            isIlluminated = true;
-            LeanTween.value(pointLight.gameObject, UpdateLightRange, pointLight.range, targetIlluminationRange, tweenDuration).setEase(tweenType);
-            illuminationGame.OnZoneIlluminated();
-        }
-    }
-
-    // Toggle the illumination of the zone
-    public void ToggleIllumination()
-    {
-        if (isIlluminated)
-        {
-            isIlluminated = false;
-            LeanTween.value(pointLight.gameObject, UpdateLightRange, pointLight.range, startingIlluminationRange, tweenDuration).setEase(tweenType);
-        }
-        else
-        {
-            Illuminate();
-        }
-    }
-
-    // Update the light range of the point light
-    private void UpdateLightRange(float value)
-    {
-        pointLight.range = value;
     }
 }
