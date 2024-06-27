@@ -1,5 +1,6 @@
 using UnityEngine;
 
+[System.Serializable]
 public class Zone : MonoBehaviour
 {
     public GameObject zoneObject;
@@ -7,7 +8,7 @@ public class Zone : MonoBehaviour
     public float startingIlluminationRange = 0f;
     public float targetIlluminationRange = 10f;
 
-    public IlluminationGame illuminationGame;  // Public to allow access from ZoneCollider
+    public IlluminationGame illuminationGame; // Public to allow access from ZoneCollider
 
     private bool isIlluminated = false;
     private float tweenDuration;
@@ -38,18 +39,21 @@ public class Zone : MonoBehaviour
         }
     }
 
-    // Toggle the illumination of the zone
-    public void ToggleIllumination()
+    // Reset the illumination of the zone
+    public void ResetIllumination()
     {
         if (isIlluminated)
         {
             isIlluminated = false;
             LeanTween.value(pointLight.gameObject, UpdateLightRange, pointLight.range, startingIlluminationRange, tweenDuration).setEase(tweenType);
+            illuminationGame.OnZoneReset();
         }
-        else
-        {
-            Illuminate();
-        }
+    }
+
+    // Check if the zone is illuminated
+    public bool IsIlluminated()
+    {
+        return isIlluminated;
     }
 
     // Update the light range of the point light

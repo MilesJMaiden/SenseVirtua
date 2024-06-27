@@ -80,6 +80,16 @@ public class IlluminationGame : MonoBehaviour
         }
     }
 
+    // Method to be called when a zone is reset
+    public void OnZoneReset()
+    {
+        illuminatedZonesCount--;
+        if (illuminatedZonesCount < zonesToIlluminate)
+        {
+            // Additional logic if needed when a zone is reset
+        }
+    }
+
     // Method to enable and tween the completion point light
     private void EnableCompletionPointLight()
     {
@@ -143,7 +153,17 @@ public class IlluminationGame : MonoBehaviour
     {
         if (zoneIndex >= 0 && zoneIndex < zones.Count)
         {
-            zones[zoneIndex].ToggleIllumination();
+            Zone zone = zones[zoneIndex];
+            if (zone.IsIlluminated())
+            {
+                zone.ResetIllumination();
+                OnZoneReset();
+            }
+            else
+            {
+                zone.Illuminate();
+                OnZoneIlluminated();
+            }
         }
     }
 }
