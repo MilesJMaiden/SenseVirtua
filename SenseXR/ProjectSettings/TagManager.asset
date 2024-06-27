@@ -10,6 +10,7 @@ TagManager:
   - Left Hand
   - Post Processing
   - Paint Brush
+  - Artifact
   layers:
   - Default
   - TransparentFX
