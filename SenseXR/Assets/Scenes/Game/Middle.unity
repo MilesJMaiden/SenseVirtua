@@ -12417,10 +12417,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 1207836165951669072, guid: 6e469506d618e9741b09344d338ed64b, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 1659223353093337703, guid: 6e469506d618e9741b09344d338ed64b, type: 3}
       propertyPath: m_Name
       value: CaligraphyGame
