@@ -10,7 +10,13 @@ public class IlluminationGame : MonoBehaviour
     public GameObject lantern;
 
     [Tooltip("Game object to enable once a set number of zones are illuminated.")]
-    public GameObject completionPointLight;
+    public GameObject completionPointLightObject;
+
+    [Tooltip("Light component to adjust range for the completion light.")]
+    public Light completionPointLight;
+
+    [Tooltip("Game object to enable when the required number of zones are illuminated.")]
+    public GameObject specialGameObject;
 
     [Tooltip("Number of zones that need to be illuminated to complete the game.")]
     public int zonesToIlluminate = 3;
@@ -20,6 +26,12 @@ public class IlluminationGame : MonoBehaviour
 
     [Tooltip("Type of tween for illuminating the zones.")]
     public LeanTweenType tweenType = LeanTweenType.easeInOutSine;
+
+    [Tooltip("Starting illumination range for the completion light.")]
+    public float completionLightStartRange = 0f;
+
+    [Tooltip("Target illumination range for the completion light.")]
+    public float completionLightTargetRange = 10f;
 
     private int illuminatedZonesCount = 0;
 
@@ -38,10 +50,22 @@ public class IlluminationGame : MonoBehaviour
             }
         }
 
-        // Ensure the completion point light is disabled initially
+        // Ensure the completion point light object is disabled initially
+        if (completionPointLightObject != null)
+        {
+            completionPointLightObject.SetActive(false);
+        }
+
+        // Ensure the special game object is disabled initially
+        if (specialGameObject != null)
+        {
+            specialGameObject.SetActive(false);
+        }
+
+        // Set the initial range of the completion light
         if (completionPointLight != null)
         {
-            completionPointLight.SetActive(false);
+            completionPointLight.range = completionLightStartRange;
         }
     }
 
@@ -52,16 +76,34 @@ public class IlluminationGame : MonoBehaviour
         if (illuminatedZonesCount >= zonesToIlluminate)
         {
             EnableCompletionPointLight();
+            EnableSpecialGameObject();
         }
     }
 
     // Method to enable and tween the completion point light
     private void EnableCompletionPointLight()
     {
+        if (completionPointLightObject != null)
+        {
+            completionPointLightObject.SetActive(true);
+            LeanTween.scale(completionPointLightObject, Vector3.one, tweenDuration).setFrom(Vector3.zero).setEase(tweenType);
+        }
+
         if (completionPointLight != null)
         {
-            completionPointLight.SetActive(true);
-            LeanTween.scale(completionPointLight, Vector3.one, tweenDuration).setFrom(Vector3.zero).setEase(tweenType);
+            LeanTween.value(completionPointLight.gameObject, completionLightStartRange, completionLightTargetRange, tweenDuration)
+                     .setEase(tweenType)
+                     .setOnUpdate((float value) => { completionPointLight.range = value; });
+        }
+    }
+
+    // Method to enable and tween the special game object
+    private void EnableSpecialGameObject()
+    {
+        if (specialGameObject != null)
+        {
+            specialGameObject.SetActive(true);
+            LeanTween.scale(specialGameObject, Vector3.one, tweenDuration).setFrom(Vector3.zero).setEase(tweenType);
         }
     }
 

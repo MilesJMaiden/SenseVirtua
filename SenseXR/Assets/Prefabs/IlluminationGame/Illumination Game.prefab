@@ -46,7 +46,7 @@ Light:
   m_Shape: 0
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_Intensity: 750
-  m_Range: 10
+  m_Range: 5
   m_SpotAngle: 38.300003
   m_InnerSpotAngle: 21.80208
   m_CookieSize: 10
@@ -2230,10 +2230,14 @@ MonoBehaviour:
   - {fileID: 7172061216548828282}
   - {fileID: 3865033868551062533}
   lantern: {fileID: 5996351694796299338}
-  completionPointLight: {fileID: 437819099978026859}
+  completionPointLightObject: {fileID: 437819099978026859}
+  completionPointLight: {fileID: 8928742362164245214}
+  specialGameObject: {fileID: 0}
   zonesToIlluminate: 5
   tweenDuration: 1
   tweenType: 16
+  completionLightStartRange: 5
+  completionLightTargetRange: 12.5
 --- !u!1 &6120205532309298983
 GameObject:
   m_ObjectHideFlags: 0
@@ -3629,6 +3633,10 @@ PrefabInstance:
       propertyPath: m_Colliders.Array.data[0]
       value: 
       objectReference: {fileID: 2389181142047573018}
+    - target: {fileID: 3704646008942954429, guid: 2f23677777e04aa4f95aac3179e1f884, type: 3}
+      propertyPath: m_Constraints
+      value: 126
+      objectReference: {fileID: 0}
     - target: {fileID: 4065860201898903948, guid: 2f23677777e04aa4f95aac3179e1f884, type: 3}
       propertyPath: m_Name
       value: Lantern
