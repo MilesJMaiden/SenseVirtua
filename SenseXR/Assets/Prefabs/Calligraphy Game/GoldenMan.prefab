@@ -906,7 +906,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3932196524274680683}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -1.75, y: 0.5, z: -1.75}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -954,17 +954,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   voiceAudio: {fileID: 6882983421677857253}
   currentIdx: 0
-  voiceKeys:
+  voiceTexts:
   - intro1
   - intro2
   - intro3
-  - intro1
-  - intro2
-  - intro3
+  - intro4
+  - intro5
+  - intro6
   bubbleCanvas: {fileID: 3354356563628560311}
   nextText: {fileID: 8716664029549105625}
   playing: 0
   onSite: 0
+  timer: 0
 --- !u!82 &6882983421677857253
 AudioSource:
   m_ObjectHideFlags: 0
