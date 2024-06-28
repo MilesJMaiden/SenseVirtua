@@ -8,14 +8,13 @@ public class Zone : MonoBehaviour
     public float startingIlluminationRange = 0f;
     public float targetIlluminationRange = 10f;
 
-    public IlluminationGame illuminationGame;  // Public to allow access from ZoneCollider
+    public IlluminationGame illuminationGame;
+    public AudioSource audioSource;
+    private XRGrabInteractable artifactInteractable;
 
     private bool isIlluminated = false;
     private float tweenDuration;
     private LeanTweenType tweenType;
-
-    public AudioSource audioSource;  // Public reference to be set in the inspector
-    private XRGrabInteractable artifactInteractable;
 
     private void Awake()
     {

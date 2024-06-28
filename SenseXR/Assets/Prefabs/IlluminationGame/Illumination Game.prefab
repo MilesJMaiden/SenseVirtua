@@ -1260,7 +1260,7 @@ MonoBehaviour:
   startingIlluminationRange: 7.5
   targetIlluminationRange: 11.5
   illuminationGame: {fileID: 3685280429547686379}
-  audioSource: {fileID: 0}
+  audioSource: {fileID: 2056091261760935384}
 --- !u!1 &3424810540852854284
 GameObject:
   m_ObjectHideFlags: 0
@@ -1811,7 +1811,7 @@ MonoBehaviour:
   startingIlluminationRange: 7.5
   targetIlluminationRange: 11.5
   illuminationGame: {fileID: 3685280429547686379}
-  audioSource: {fileID: 0}
+  audioSource: {fileID: 5314544168030159499}
 --- !u!1 &3839039468658626835
 GameObject:
   m_ObjectHideFlags: 0
@@ -2384,7 +2384,7 @@ MonoBehaviour:
   startingIlluminationRange: 7.5
   targetIlluminationRange: 11.5
   illuminationGame: {fileID: 3685280429547686379}
-  audioSource: {fileID: 0}
+  audioSource: {fileID: 1956747489296682482}
 --- !u!1 &5051311146335877218
 GameObject:
   m_ObjectHideFlags: 0
@@ -2618,13 +2618,13 @@ Transform:
   m_Children:
   - {fileID: 8048541484343500543}
   - {fileID: 8621816747434129708}
+  - {fileID: 724611763952586613}
   - {fileID: 3810034953215360875}
   - {fileID: 7061791921970407212}
   - {fileID: 3321955631553184060}
   - {fileID: 2774359300166271770}
   - {fileID: 4880706119671484966}
   - {fileID: 5522104749022864417}
-  - {fileID: 724611763952586613}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &3685280429547686379
@@ -3077,7 +3077,7 @@ MonoBehaviour:
   startingIlluminationRange: 7.5
   targetIlluminationRange: 11.5
   illuminationGame: {fileID: 3685280429547686379}
-  audioSource: {fileID: 0}
+  audioSource: {fileID: 4346428355890586998}
 --- !u!1 &7215707426639279332
 GameObject:
   m_ObjectHideFlags: 0
@@ -3536,7 +3536,7 @@ MonoBehaviour:
   startingIlluminationRange: 7.5
   targetIlluminationRange: 11.5
   illuminationGame: {fileID: 3685280429547686379}
-  audioSource: {fileID: 0}
+  audioSource: {fileID: 1470114554987933518}
 --- !u!1 &7996696870037700452
 GameObject:
   m_ObjectHideFlags: 0
