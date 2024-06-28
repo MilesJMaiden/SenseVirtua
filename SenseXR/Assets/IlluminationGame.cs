@@ -1,43 +1,29 @@
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class IlluminationGame : MonoBehaviour
 {
-    [Tooltip("List of zones in the scene.")]
     public List<Zone> zones;
-
-    [Tooltip("Lantern object the player will carry.")]
     public GameObject lantern;
-
-    [Tooltip("Game object to enable once a set number of zones are illuminated.")]
     public GameObject completionPointLightObject;
-
-    [Tooltip("Light component to adjust range for the completion light.")]
     public Light completionPointLight;
-
-    [Tooltip("Game object to enable when the required number of zones are illuminated.")]
     public GameObject specialGameObject;
-
-    [Tooltip("Number of zones that need to be illuminated to complete the game.")]
+    public GameObject goldenMan;
     public int zonesToIlluminate = 3;
-
-    [Tooltip("Tween duration for illuminating the zones.")]
     public float tweenDuration = 1.0f;
-
-    [Tooltip("Type of tween for illuminating the zones.")]
     public LeanTweenType tweenType = LeanTweenType.easeInOutSine;
-
-    [Tooltip("Starting illumination range for the completion light.")]
     public float completionLightStartRange = 0f;
-
-    [Tooltip("Target illumination range for the completion light.")]
     public float completionLightTargetRange = 10f;
 
     private int illuminatedZonesCount = 0;
+    private Voice goldenManVoice;
+    private bool allZonesCompleted = false;
 
     void Start()
     {
-        // Ensure all zones are initialized correctly
+        goldenManVoice = goldenMan.GetComponent<Voice>();
+
         foreach (Zone zone in zones)
         {
             if (zone != null)
@@ -50,48 +36,58 @@ public class IlluminationGame : MonoBehaviour
             }
         }
 
-        // Ensure the completion point light object is disabled initially
         if (completionPointLightObject != null)
         {
             completionPointLightObject.SetActive(false);
         }
 
-        // Ensure the special game object is disabled initially
         if (specialGameObject != null)
         {
             specialGameObject.SetActive(false);
         }
 
-        // Set the initial range of the completion light
         if (completionPointLight != null)
         {
             completionPointLight.range = completionLightStartRange;
         }
+
+        goldenManVoice.OnDialogueEnd += OnGoldenManDialogueEnd;
     }
 
-    // Method to be called when a zone is illuminated
+    void OnDestroy()
+    {
+        goldenManVoice.OnDialogueEnd -= OnGoldenManDialogueEnd;
+    }
+
     public void OnZoneIlluminated()
     {
         illuminatedZonesCount++;
-        if (illuminatedZonesCount >= zonesToIlluminate)
+        if (illuminatedZonesCount >= zonesToIlluminate && !allZonesCompleted)
         {
-            EnableCompletionPointLight();
-            EnableSpecialGameObject();
+            allZonesCompleted = true;
+            ReturnToGoldenMan();
         }
     }
 
-    // Method to be called when a zone is reset
     public void OnZoneReset()
     {
         illuminatedZonesCount--;
-        if (illuminatedZonesCount < zonesToIlluminate)
+    }
+
+    private void ReturnToGoldenMan()
+    {
+        goldenManVoice.PlayVoice();
+    }
+
+    private void OnGoldenManDialogueEnd()
+    {
+        if (allZonesCompleted)
         {
-            // Additional logic if needed when a zone is reset
+            CompleteGame();
         }
     }
 
-    // Method to enable and tween the completion point light
-    private void EnableCompletionPointLight()
+    private void CompleteGame()
     {
         if (completionPointLightObject != null)
         {
@@ -105,11 +101,7 @@ public class IlluminationGame : MonoBehaviour
                      .setEase(tweenType)
                      .setOnUpdate((float value) => { completionPointLight.range = value; });
         }
-    }
 
-    // Method to enable and tween the special game object
-    private void EnableSpecialGameObject()
-    {
         if (specialGameObject != null)
         {
             specialGameObject.SetActive(true);
@@ -117,7 +109,7 @@ public class IlluminationGame : MonoBehaviour
         }
     }
 
-    // Context menu methods for toggling zone completion in the editor
+    // Inspector buttons for debugging
     [ContextMenu("Toggle Zone 1 Completion")]
     public void ToggleZone1Completion()
     {
@@ -148,8 +140,7 @@ public class IlluminationGame : MonoBehaviour
         ToggleZoneCompletion(4);
     }
 
-    // Method to toggle the completion status of a zone
-    public void ToggleZoneCompletion(int zoneIndex)
+    private void ToggleZoneCompletion(int zoneIndex)
     {
         if (zoneIndex >= 0 && zoneIndex < zones.Count)
         {

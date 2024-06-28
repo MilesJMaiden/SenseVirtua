@@ -81,6 +81,11 @@ public class Voice : MonoBehaviour
         }
     }
 
+    public bool IsPlaying()
+    {
+        return voiceAudio.isPlaying;
+    }
+
     public bool onSite;
 
     public float timer = 0;

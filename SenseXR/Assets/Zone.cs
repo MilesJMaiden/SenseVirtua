@@ -1,6 +1,6 @@
 using UnityEngine;
+using UnityEngine.XR.Interaction.Toolkit;
 
-[System.Serializable]
 public class Zone : MonoBehaviour
 {
     public GameObject zoneObject;
@@ -8,13 +8,25 @@ public class Zone : MonoBehaviour
     public float startingIlluminationRange = 0f;
     public float targetIlluminationRange = 10f;
 
-    public IlluminationGame illuminationGame; // Public to allow access from ZoneCollider
+    public IlluminationGame illuminationGame;  // Public to allow access from ZoneCollider
 
     private bool isIlluminated = false;
     private float tweenDuration;
     private LeanTweenType tweenType;
 
-    // Initialize the zone with reference to the illumination game, tween duration, and tween type
+    public AudioSource audioSource;  // Public reference to be set in the inspector
+    private XRGrabInteractable artifactInteractable;
+
+    private void Awake()
+    {
+        artifactInteractable = GetComponentInChildren<XRGrabInteractable>();
+
+        if (artifactInteractable != null)
+        {
+            artifactInteractable.selectEntered.AddListener(OnArtifactPickedUp);
+        }
+    }
+
     public void Initialize(IlluminationGame game, float duration, LeanTweenType type)
     {
         illuminationGame = game;
@@ -28,7 +40,6 @@ public class Zone : MonoBehaviour
         }
     }
 
-    // Illuminate the zone if it's not already illuminated
     public void Illuminate()
     {
         if (!isIlluminated)
@@ -39,7 +50,6 @@ public class Zone : MonoBehaviour
         }
     }
 
-    // Reset the illumination of the zone
     public void ResetIllumination()
     {
         if (isIlluminated)
@@ -50,15 +60,21 @@ public class Zone : MonoBehaviour
         }
     }
 
-    // Check if the zone is illuminated
     public bool IsIlluminated()
     {
         return isIlluminated;
     }
 
-    // Update the light range of the point light
     private void UpdateLightRange(float value)
     {
         pointLight.range = value;
+    }
+
+    private void OnArtifactPickedUp(SelectEnterEventArgs args)
+    {
+        if (audioSource != null && audioSource.clip != null)
+        {
+            audioSource.Play();
+        }
     }
 }
