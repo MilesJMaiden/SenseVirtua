@@ -238,6 +238,27 @@ MonoBehaviour:
       and houses numerous scriptures. You may follow me as we ascend the steps or
       stay here to explore. '
     chinese: "\u8FD9\u91CC\u662F\u54EA\uFF1F\u8FD9\u91CC\u662F\u5927\u62A5\u6069\u5BFA\uFF0C\u662F\u5357\u90E8\u5730\u533A\u6700\u5BCC\u76DB\u540D\u7684\u5BFA\u5E99\u3002\u4F60\u76EE\u524D\u6B63\u8EAB\u5904\u7409\u7483\u5854\u4E2D\u3002\u6B64\u5854\u901A\u4F53\u7409\u7483\uFF0C\u72EC\u6B65\u53E4\u4ECA\uFF0C\u85CF\u6709\u4F17\u591A\u7ECF\u4E66\u3002\u4F60\u53EF\u968F\u6211\u62FE\u7EA7\u800C\u4E0A\uFF0C\u6216\u5728\u6B64\u505C\u7559\u63A2\u7D22\u3002"
+  - key: intro4
+    english: 'Where is this? This is the Great Bao''En Temple, the most renowned
+      temple in the southern region. You are currently inside the Porcelain Pagoda.
+      This pagoda, made entirely of glazed tiles, stands unique through the ages
+      and houses numerous scriptures. You may follow me as we ascend the steps or
+      stay here to explore. '
+    chinese: "\u8FD9\u91CC\u662F\u54EA\uFF1F\u8FD9\u91CC\u662F\u5927\u62A5\u6069\u5BFA\uFF0C\u662F\u5357\u90E8\u5730\u533A\u6700\u5BCC\u76DB\u540D\u7684\u5BFA\u5E99\u3002\u4F60\u76EE\u524D\u6B63\u8EAB\u5904\u7409\u7483\u5854\u4E2D\u3002\u6B64\u5854\u901A\u4F53\u7409\u7483\uFF0C\u72EC\u6B65\u53E4\u4ECA\uFF0C\u85CF\u6709\u4F17\u591A\u7ECF\u4E66\u3002\u4F60\u53EF\u968F\u6211\u62FE\u7EA7\u800C\u4E0A\uFF0C\u6216\u5728\u6B64\u505C\u7559\u63A2\u7D22\u3002"
+  - key: intro5
+    english: 'Where is this? This is the Great Bao''En Temple, the most renowned
+      temple in the southern region. You are currently inside the Porcelain Pagoda.
+      This pagoda, made entirely of glazed tiles, stands unique through the ages
+      and houses numerous scriptures. You may follow me as we ascend the steps or
+      stay here to explore. '
+    chinese: "\u8FD9\u91CC\u662F\u54EA\uFF1F\u8FD9\u91CC\u662F\u5927\u62A5\u6069\u5BFA\uFF0C\u662F\u5357\u90E8\u5730\u533A\u6700\u5BCC\u76DB\u540D\u7684\u5BFA\u5E99\u3002\u4F60\u76EE\u524D\u6B63\u8EAB\u5904\u7409\u7483\u5854\u4E2D\u3002\u6B64\u5854\u901A\u4F53\u7409\u7483\uFF0C\u72EC\u6B65\u53E4\u4ECA\uFF0C\u85CF\u6709\u4F17\u591A\u7ECF\u4E66\u3002\u4F60\u53EF\u968F\u6211\u62FE\u7EA7\u800C\u4E0A\uFF0C\u6216\u5728\u6B64\u505C\u7559\u63A2\u7D22\u3002"
+  - key: intro6
+    english: 'Where is this? This is the Great Bao''En Temple, the most renowned
+      temple in the southern region. You are currently inside the Porcelain Pagoda.
+      This pagoda, made entirely of glazed tiles, stands unique through the ages
+      and houses numerous scriptures. You may follow me as we ascend the steps or
+      stay here to explore. '
+    chinese: "\u8FD9\u91CC\u662F\u54EA\uFF1F\u8FD9\u91CC\u662F\u5927\u62A5\u6069\u5BFA\uFF0C\u662F\u5357\u90E8\u5730\u533A\u6700\u5BCC\u76DB\u540D\u7684\u5BFA\u5E99\u3002\u4F60\u76EE\u524D\u6B63\u8EAB\u5904\u7409\u7483\u5854\u4E2D\u3002\u6B64\u5854\u901A\u4F53\u7409\u7483\uFF0C\u72EC\u6B65\u53E4\u4ECA\uFF0C\u85CF\u6709\u4F17\u591A\u7ECF\u4E66\u3002\u4F60\u53EF\u968F\u6211\u62FE\u7EA7\u800C\u4E0A\uFF0C\u6216\u5728\u6B64\u505C\u7559\u63A2\u7D22\u3002"
   translationVoices:
   - key: intro1
     english: {fileID: 8300000, guid: b976b4b7423a7a64facf2ef791f80728, type: 3}
@@ -246,6 +267,15 @@ MonoBehaviour:
     english: {fileID: 8300000, guid: e169cfb4deeb4d24ea9ed0bc78a87536, type: 3}
     chinese: {fileID: 8300000, guid: 1f9f7d8093b7da646b3224ddcc2977d8, type: 3}
   - key: intro3
+    english: {fileID: 8300000, guid: 313d21ad956c224489b9b29cd9320255, type: 3}
+    chinese: {fileID: 8300000, guid: 6938a26d34fdb6e42aad3ccadd1d4ad3, type: 3}
+  - key: intro4
+    english: {fileID: 8300000, guid: 313d21ad956c224489b9b29cd9320255, type: 3}
+    chinese: {fileID: 8300000, guid: 6938a26d34fdb6e42aad3ccadd1d4ad3, type: 3}
+  - key: intro5
+    english: {fileID: 8300000, guid: 313d21ad956c224489b9b29cd9320255, type: 3}
+    chinese: {fileID: 8300000, guid: 6938a26d34fdb6e42aad3ccadd1d4ad3, type: 3}
+  - key: intro6
     english: {fileID: 8300000, guid: 313d21ad956c224489b9b29cd9320255, type: 3}
     chinese: {fileID: 8300000, guid: 6938a26d34fdb6e42aad3ccadd1d4ad3, type: 3}
 --- !u!1 &2696097423927788293
@@ -876,7 +906,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3932196524274680683}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -1.75, y: 0.5, z: -1.75}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -924,14 +954,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   voiceAudio: {fileID: 6882983421677857253}
   currentIdx: 0
-  voiceKeys:
+  voiceTexts:
   - intro1
   - intro2
   - intro3
+  - intro4
+  - intro5
+  - intro6
   bubbleCanvas: {fileID: 3354356563628560311}
   nextText: {fileID: 8716664029549105625}
   playing: 0
   onSite: 0
+  timer: 0
 --- !u!82 &6882983421677857253
 AudioSource:
   m_ObjectHideFlags: 0

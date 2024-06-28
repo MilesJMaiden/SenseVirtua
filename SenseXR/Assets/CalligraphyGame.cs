@@ -1,6 +1,7 @@
 using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor;
 
 public class CalligraphyGame : MonoBehaviour
 {
@@ -23,6 +24,15 @@ public class CalligraphyGame : MonoBehaviour
     [Tooltip("Duration for fading in/out the task objects.")]
     public float taskFadeDuration = 1.0f;
 
+    [Tooltip("VFX prefab to instantiate when a task is completed.")]
+    public GameObject vfxPrefab;
+
+    [Tooltip("Transform where the VFX prefab will be instantiated.")]
+    public Transform vfxSpawnTransform;
+
+    [Tooltip("Game object to enable and tween after the final draw task is completed.")]
+    public GameObject finalCompletionObject;
+
     private int currentSymbolIndex = 0;
     public bool calligraphyGameCompleted = false;
     private Voice goldenManVoice;
@@ -42,10 +52,15 @@ public class CalligraphyGame : MonoBehaviour
 
         Debug.Log("Subscribed to OnDialogueEnd event.");
 
-        // Disable the completion object initially
+        // Disable the completion objects initially
         if (completionObject != null)
         {
             completionObject.SetActive(false);
+        }
+
+        if (finalCompletionObject != null)
+        {
+            finalCompletionObject.SetActive(false);
         }
     }
 
@@ -89,6 +104,7 @@ public class CalligraphyGame : MonoBehaviour
         Debug.Log($"CompleteCurrentTask started for {drawTasks[currentSymbolIndex].name}");
         EndSymbolTask();
         ExecuteSuccessVisuals(currentSymbolIndex);
+        InstantiateVFX();
 
         yield return StartCoroutine(FadeOutAndDisable(drawTasks[currentSymbolIndex]));
 
@@ -106,6 +122,11 @@ public class CalligraphyGame : MonoBehaviour
             if (completionObject != null)
             {
                 completionObject.SetActive(true);
+                TweenCompletionObject();
+            }
+            if (finalCompletionObject != null)
+            {
+                EnableAndTweenFinalCompletionObject();
             }
         }
         isProcessingTask = false;
@@ -208,4 +229,73 @@ public class CalligraphyGame : MonoBehaviour
             StartCoroutine(PlayInitialDialogue());
         }
     }
+
+    private void InstantiateVFX()
+    {
+        if (vfxPrefab != null && vfxSpawnTransform != null)
+        {
+            GameObject vfxInstance = Instantiate(vfxPrefab, vfxSpawnTransform.position, vfxSpawnTransform.rotation);
+            Destroy(vfxInstance, 1f);
+        }
+    }
+
+    private void TweenCompletionObject()
+    {
+        if (completionObject != null)
+        {
+            completionObject.transform.localScale = Vector3.zero;
+            LeanTween.scale(completionObject, Vector3.one, taskFadeDuration).setEase(LeanTweenType.easeInOutSine);
+        }
+    }
+
+    private void EnableAndTweenFinalCompletionObject()
+    {
+        if (finalCompletionObject != null)
+        {
+            finalCompletionObject.SetActive(true);
+            finalCompletionObject.transform.localScale = Vector3.zero;
+            LeanTween.scale(finalCompletionObject, Vector3.one, taskFadeDuration).setEase(LeanTweenType.easeInOutSine);
+        }
+    }
+
+    // Methods for editor buttons
+    public void SkipCurrentDrawTask()
+    {
+        Debug.Log("Skipping current draw task.");
+        if (currentSymbolIndex < drawTasks.Length)
+        {
+            // Simulate completing the current task
+            StartCoroutine(CompleteCurrentTask());
+        }
+    }
+
+    public void SkipCurrentDialogue()
+    {
+        Debug.Log("Skipping current dialogue.");
+        if (goldenManVoice != null)
+        {
+            goldenManVoice.StopVoice();
+        }
+    }
 }
+
+#if UNITY_EDITOR
+[CustomEditor(typeof(CalligraphyGame))]
+public class CalligraphyGameEditor : Editor
+{
+    public override void OnInspectorGUI()
+    {
+        DrawDefaultInspector();
+
+        CalligraphyGame script = (CalligraphyGame)target;
+        if (GUILayout.Button("Skip Current Draw Task"))
+        {
+            script.SkipCurrentDrawTask();
+        }
+        if (GUILayout.Button("Skip Current Dialogue"))
+        {
+            script.SkipCurrentDialogue();
+        }
+    }
+}
+#endif
