@@ -238,7 +238,7 @@ MeshCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 5
-  m_Convex: 0
+  m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!114 &1295409075668968780
@@ -467,8 +467,8 @@ LineRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Positions:
-  - {x: 2.148, y: 0.5, z: 0.708}
-  - {x: 2.466, y: 0.806, z: 0.013999999}
+  - {x: 11.483004, y: 1.962, z: -0.18300012}
+  - {x: 10.789003, y: 2.2680001, z: 0.13499999}
   m_Parameters:
     serializedVersion: 3
     widthMultiplier: 0.005
@@ -708,7 +708,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1016395550957823684
 Transform:
   m_ObjectHideFlags: 0
@@ -717,10 +717,10 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8316135286875413849}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -0.5, y: 0.5, z: 0.5}
-  m_LocalScale: {x: 2, y: 2, z: 2}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: -2, y: -2, z: -2}
+  m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 4898108984348805540}
   - {fileID: 3089232813583895506}
