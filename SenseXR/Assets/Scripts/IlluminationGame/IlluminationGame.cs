@@ -79,6 +79,7 @@ public class IlluminationGame : MonoBehaviour
     {
         // Increment the illuminated zones counter
         illuminatedZonesCount++;
+        Debug.Log("IlluminationGame: Zone illuminated. Total illuminated zones: " + illuminatedZonesCount);
         // Check if all zones are illuminated
         if (illuminatedZonesCount >= zonesToIlluminate && !allZonesCompleted)
         {
@@ -91,12 +92,14 @@ public class IlluminationGame : MonoBehaviour
     {
         // Decrement the illuminated zones counter
         illuminatedZonesCount--;
+        Debug.Log("IlluminationGame: Zone reset. Total illuminated zones: " + illuminatedZonesCount);
     }
 
     public void OnArtifactInteracted()
     {
         // Increment the interacted artifacts counter
         interactedArtifactsCount++;
+        Debug.Log("IlluminationGame: Artifact interacted. Total interacted artifacts: " + interactedArtifactsCount);
         // Check if all artifacts are interacted with
         if (interactedArtifactsCount >= zones.Count * artifactsToInteract)
         {

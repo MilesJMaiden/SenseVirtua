@@ -115,6 +115,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7590692380316796784}
   - component: {fileID: 4786189655211794072}
+  - component: {fileID: 5159555375557946095}
   m_Layer: 0
   m_Name: LanternPodium
   m_TagString: Podium
@@ -159,6 +160,19 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.38, y: 0.5, z: 0.38}
   m_Center: {x: 0, y: 0.65, z: 0}
+--- !u!114 &5159555375557946095
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 375514022506901114}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 33cff901f015923438335bcef380273c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  parentZone: {fileID: 5288477536744332209}
 --- !u!1 &437819099978026859
 GameObject:
   m_ObjectHideFlags: 0
@@ -287,6 +301,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3234512285375352181}
   - component: {fileID: 7947645188870654313}
+  - component: {fileID: 5191963176733562711}
   m_Layer: 0
   m_Name: LanternPodium
   m_TagString: Podium
@@ -331,6 +346,19 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.38, y: 0.5, z: 0.38}
   m_Center: {x: 0, y: 0.65, z: 0}
+--- !u!114 &5191963176733562711
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 521903217750019855}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 33cff901f015923438335bcef380273c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  parentZone: {fileID: 7172061216548828282}
 --- !u!1 &690811313926694077
 GameObject:
   m_ObjectHideFlags: 0
@@ -372,6 +400,7 @@ GameObject:
   m_Component:
   - component: {fileID: 9094811802868775766}
   - component: {fileID: 6241971270168506626}
+  - component: {fileID: 259908114382849987}
   m_Layer: 0
   m_Name: LanternPodium
   m_TagString: Podium
@@ -416,6 +445,19 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.38, y: 0.5, z: 0.38}
   m_Center: {x: 0, y: 0.65, z: 0}
+--- !u!114 &259908114382849987
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 790028007322739051}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 33cff901f015923438335bcef380273c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  parentZone: {fileID: 5624766044165465170}
 --- !u!1 &980525431126077951
 GameObject:
   m_ObjectHideFlags: 0
@@ -1696,6 +1738,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4428309956490062526}
   - component: {fileID: 116927385036577398}
+  - component: {fileID: 4205412530338906095}
   m_Layer: 0
   m_Name: FinalLanternPodium
   m_TagString: Podium
@@ -1742,6 +1785,19 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.38, y: 0.5, z: 0.38}
   m_Center: {x: 0, y: 0.65, z: 0}
+--- !u!114 &4205412530338906095
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3205260127817855968}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 33cff901f015923438335bcef380273c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  parentZone: {fileID: 0}
 --- !u!1 &3214505358399814984
 GameObject:
   m_ObjectHideFlags: 0
@@ -3824,6 +3880,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7033185182382592328}
   - component: {fileID: 6265444750365192585}
+  - component: {fileID: 1079078852697854498}
   m_Layer: 0
   m_Name: LanternPodium
   m_TagString: Podium
@@ -3868,6 +3925,19 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.38, y: 0.5, z: 0.38}
   m_Center: {x: 0, y: 0.65, z: 0}
+--- !u!114 &1079078852697854498
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5836914972138274356}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 33cff901f015923438335bcef380273c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  parentZone: {fileID: 3865033868551062533}
 --- !u!1 &5944343393026013241
 GameObject:
   m_ObjectHideFlags: 0
@@ -4408,6 +4478,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1273999212069222853}
   - component: {fileID: 164850625467904870}
+  - component: {fileID: 618538820596497287}
   m_Layer: 0
   m_Name: LanternPodium
   m_TagString: Podium
@@ -4452,6 +4523,19 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.38, y: 0.5, z: 0.38}
   m_Center: {x: 0, y: 0.65, z: 0}
+--- !u!114 &618538820596497287
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6547544485211075566}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 33cff901f015923438335bcef380273c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  parentZone: {fileID: 7326066936830818015}
 --- !u!1 &6803166154140723010
 GameObject:
   m_ObjectHideFlags: 0

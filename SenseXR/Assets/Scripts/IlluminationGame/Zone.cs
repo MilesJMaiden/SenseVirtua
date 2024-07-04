@@ -17,7 +17,6 @@ public class Zone : MonoBehaviour
     public AudioSource audioSource; // Public reference to be set in the inspector
     public XRGrabInteractable artifactInteractable; // XRGrabInteractable component for the artifact
 
-    private XRGrabInteractable lanternInteractable; // XRGrabInteractable component for the lantern
     private bool isIlluminated = false; // Flag to check if the zone is illuminated
     private bool artifactInteracted = false; // Flag to check if the artifact is interacted with
 
@@ -44,24 +43,23 @@ public class Zone : MonoBehaviour
         }
     }
 
-    private void OnTriggerEnter(Collider other)
-    {
-        if (other.CompareTag("Lantern") && other.CompareTag("Podium"))
-        {
-            PlaceLantern(other.gameObject);
-        }
-    }
-
     public void PlaceLantern(GameObject lantern)
     {
-        lanternInteractable = lantern.GetComponent<XRGrabInteractable>();
+        Debug.Log("PlaceLantern called with lantern: " + lantern.name);
+        XRGrabInteractable lanternInteractable = lantern.GetComponent<XRGrabInteractable>();
         if (lanternInteractable != null)
         {
+            Debug.Log("Disabling XRGrabInteractable on lantern");
             lanternInteractable.enabled = false;
             LeanTween.move(lantern, lanternEndPosition.position, tweenDuration).setEase(tweenType).setOnComplete(() =>
             {
+                Debug.Log("Lantern moved to end position, calling Illuminate");
                 Illuminate();
             });
+        }
+        else
+        {
+            Debug.LogError("Lantern does not have an XRGrabInteractable component");
         }
     }
 
@@ -69,6 +67,7 @@ public class Zone : MonoBehaviour
     {
         if (!isIlluminated)
         {
+            Debug.Log("Illuminating zone");
             isIlluminated = true;
             LeanTween.value(pointLight.gameObject, UpdateLightRange, pointLight.range, targetIlluminationRange, tweenDuration).setEase(tweenType);
             illuminationGame.OnZoneIlluminated();
@@ -79,6 +78,7 @@ public class Zone : MonoBehaviour
     {
         if (isIlluminated)
         {
+            Debug.Log("Resetting illumination");
             isIlluminated = false;
             LeanTween.value(pointLight.gameObject, UpdateLightRange, pointLight.range, startingIlluminationRange, tweenDuration).setEase(tweenType);
             illuminationGame.OnZoneReset();
@@ -97,6 +97,7 @@ public class Zone : MonoBehaviour
 
     private void OnArtifactPickedUp(SelectEnterEventArgs args)
     {
+        Debug.Log("Artifact picked up");
         if (audioSource != null && audioSource.clip != null)
         {
             audioSource.Play();
@@ -105,9 +106,9 @@ public class Zone : MonoBehaviour
         if (!artifactInteracted)
         {
             artifactInteracted = true;
-            LeanTween.move(lanternInteractable.gameObject, lanternStartPosition.position, tweenDuration).setEase(tweenType).setOnComplete(() =>
+            LeanTween.move(args.interactableObject.transform.gameObject, lanternStartPosition.position, tweenDuration).setEase(tweenType).setOnComplete(() =>
             {
-                lanternInteractable.enabled = true;
+                args.interactableObject.transform.GetComponent<XRGrabInteractable>().enabled = true;
                 illuminationGame.OnArtifactInteracted();
             });
         }
