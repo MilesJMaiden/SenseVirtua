@@ -10,6 +10,7 @@ Library: C:\Users\newhh\SenseVirtua\SenseVirtual\SenseXR\Temp\BurstOutput\tempbu
 --target-framework=NetFramework
 --float-mode=Fast
 --assembly-defines=Assembly-CSharp;
+--assembly-defines=Boxophobic.Utils.Scripts;
 --assembly-defines=ControllerSample;
 --assembly-defines=Meta.XR.Audio;
 --assembly-defines=Meta.XR.BuildingBlocks;
@@ -38,9 +39,6 @@ Library: C:\Users\newhh\SenseVirtua\SenseVirtual\SenseXR\Temp\BurstOutput\tempbu
 --assembly-defines=Unity.InputSystem.ForUI;
 --assembly-defines=Unity.Mathematics;
 --assembly-defines=Unity.Postprocessing.Runtime;
---assembly-defines=Unity.ProBuilder;
---assembly-defines=Unity.ProBuilder.KdTree;
---assembly-defines=Unity.ProBuilder.Poly2Tri;
 --assembly-defines=Unity.RenderPipeline.Universal.ShaderLibrary;
 --assembly-defines=Unity.RenderPipelines.Core.Runtime;
 --assembly-defines=Unity.RenderPipelines.Universal.Runtime;
@@ -77,6 +75,7 @@ Library: C:\Users\newhh\SenseVirtua\SenseVirtual\SenseXR\Temp\BurstOutput\tempbu
 --float-precision=Standard
 --target-framework=NetFramework
 --assembly-defines=Assembly-CSharp;
+--assembly-defines=Boxophobic.Utils.Scripts;
 --assembly-defines=ControllerSample;
 --assembly-defines=Meta.XR.Audio;
 --assembly-defines=Meta.XR.BuildingBlocks;
@@ -105,9 +104,6 @@ Library: C:\Users\newhh\SenseVirtua\SenseVirtual\SenseXR\Temp\BurstOutput\tempbu
 --assembly-defines=Unity.InputSystem.ForUI;
 --assembly-defines=Unity.Mathematics;
 --assembly-defines=Unity.Postprocessing.Runtime;
---assembly-defines=Unity.ProBuilder;
---assembly-defines=Unity.ProBuilder.KdTree;
---assembly-defines=Unity.ProBuilder.Poly2Tri;
 --assembly-defines=Unity.RenderPipeline.Universal.ShaderLibrary;
 --assembly-defines=Unity.RenderPipelines.Core.Runtime;
 --assembly-defines=Unity.RenderPipelines.Universal.Runtime;
