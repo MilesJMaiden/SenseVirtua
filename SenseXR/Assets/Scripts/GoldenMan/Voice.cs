@@ -94,6 +94,7 @@ public class Voice : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             onSite = true;
+            bubbleCanvas.gameObject.SetActive(true);
             timer = 0;
         }
     }
@@ -102,6 +103,7 @@ public class Voice : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             onSite = false;
+            bubbleCanvas.gameObject.SetActive(false);
         }
     }
 

@@ -114,7 +114,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7590692380316796784}
-  - component: {fileID: 382778970558257631}
   - component: {fileID: 4786189655211794072}
   m_Layer: 0
   m_Name: LanternPodium
@@ -139,27 +138,6 @@ Transform:
   - {fileID: 606735545001011656}
   m_Father: {fileID: 2774359300166271770}
   m_LocalEulerAnglesHint: {x: 0, y: 45, z: 0}
---- !u!65 &382778970558257631
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 375514022506901114}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 1
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 0.38, y: 1.16, z: 0.38}
-  m_Center: {x: 0, y: -0.19, z: 0}
 --- !u!65 &4786189655211794072
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -308,7 +286,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3234512285375352181}
-  - component: {fileID: 4127134760986218722}
   - component: {fileID: 7947645188870654313}
   m_Layer: 0
   m_Name: LanternPodium
@@ -333,27 +310,6 @@ Transform:
   - {fileID: 4451440821714982407}
   m_Father: {fileID: 4880706119671484966}
   m_LocalEulerAnglesHint: {x: 0, y: 45, z: 0}
---- !u!65 &4127134760986218722
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 521903217750019855}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 1
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 0.38, y: 1.16, z: 0.38}
-  m_Center: {x: 0, y: -0.19, z: 0}
 --- !u!65 &7947645188870654313
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -415,7 +371,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 9094811802868775766}
-  - component: {fileID: 5061508084073343196}
   - component: {fileID: 6241971270168506626}
   m_Layer: 0
   m_Name: LanternPodium
@@ -440,27 +395,6 @@ Transform:
   - {fileID: 2336301343494463199}
   m_Father: {fileID: 3321955631553184060}
   m_LocalEulerAnglesHint: {x: 0, y: 45, z: 0}
---- !u!65 &5061508084073343196
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 790028007322739051}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 1
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 0.38, y: 1.16, z: 0.38}
-  m_Center: {x: 0, y: -0.19, z: 0}
 --- !u!65 &6241971270168506626
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -877,6 +811,37 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 3321955631553184060}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1918742435254514960
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7202681896447541905}
+  m_Layer: 0
+  m_Name: LSP
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7202681896447541905
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1918742435254514960}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0.6, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 4428309956490062526}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2138321935527821090
 GameObject:
@@ -1721,6 +1686,62 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3d0e59aeba1a4354db47229fb8cded6e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &3205260127817855968
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4428309956490062526}
+  - component: {fileID: 116927385036577398}
+  m_Layer: 0
+  m_Name: FinalLanternPodium
+  m_TagString: Podium
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4428309956490062526
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3205260127817855968}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: 0.38268343, z: -0, w: 0.9238796}
+  m_LocalPosition: {x: 2.192031, y: 0.8, z: 2.192031}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 1614729037782097488}
+  - {fileID: 219312980851443599}
+  - {fileID: 7202681896447541905}
+  m_Father: {fileID: 642064430344612219}
+  m_LocalEulerAnglesHint: {x: 0, y: 45, z: 0}
+--- !u!65 &116927385036577398
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3205260127817855968}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.38, y: 0.5, z: 0.38}
+  m_Center: {x: 0, y: 0.65, z: 0}
 --- !u!1 &3214505358399814984
 GameObject:
   m_ObjectHideFlags: 0
@@ -1962,6 +1983,7 @@ MonoBehaviour:
   pointLight: {fileID: 5514348279991961479}
   lanternStartPosition: {fileID: 2422218185236547465}
   lanternEndPosition: {fileID: 757925699842430974}
+  podiumCollider: {fileID: 4786189655211794072}
   startingIlluminationRange: 7.5
   targetIlluminationRange: 11.5
   tweenDuration: 1
@@ -2722,6 +2744,7 @@ MonoBehaviour:
   pointLight: {fileID: 2126138229820542595}
   lanternStartPosition: {fileID: 5330486468459837904}
   lanternEndPosition: {fileID: 6199245521122526569}
+  podiumCollider: {fileID: 164850625467904870}
   startingIlluminationRange: 7.5
   targetIlluminationRange: 11.5
   tweenDuration: 1
@@ -3368,6 +3391,7 @@ MonoBehaviour:
   pointLight: {fileID: 8861165188151614672}
   lanternStartPosition: {fileID: 7908595071137728310}
   lanternEndPosition: {fileID: 9123974492403998439}
+  podiumCollider: {fileID: 6241971270168506626}
   startingIlluminationRange: 7.5
   targetIlluminationRange: 11.5
   tweenDuration: 1
@@ -3599,6 +3623,38 @@ MonoBehaviour:
   m_LightCookieSize: {x: 1, y: 1}
   m_LightCookieOffset: {x: 0, y: 0}
   m_SoftShadowQuality: 0
+--- !u!1 &5210817845474866966
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1614729037782097488}
+  m_Layer: 0
+  m_Name: Mesh
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1614729037782097488
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5210817845474866966}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 2297450541023183530}
+  m_Father: {fileID: 4428309956490062526}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &5358354770591217208
 GameObject:
   m_ObjectHideFlags: 0
@@ -3767,7 +3823,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7033185182382592328}
-  - component: {fileID: 2682910698848801757}
   - component: {fileID: 6265444750365192585}
   m_Layer: 0
   m_Name: LanternPodium
@@ -3792,27 +3847,6 @@ Transform:
   - {fileID: 450104228912556062}
   m_Father: {fileID: 5522104749022864417}
   m_LocalEulerAnglesHint: {x: 0, y: -45, z: 0}
---- !u!65 &2682910698848801757
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5836914972138274356}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 1
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 0.38, y: 1.16, z: 0.38}
-  m_Center: {x: 0, y: -0.19, z: 0}
 --- !u!65 &6265444750365192585
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -3878,6 +3912,7 @@ Transform:
   - {fileID: 6402355926450676572}
   - {fileID: 8783739282092291383}
   - {fileID: 7779759140896262660}
+  - {fileID: 4428309956490062526}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &3685280429547686379
@@ -3906,7 +3941,8 @@ MonoBehaviour:
   goldenMan: {fileID: 4022487251217411671}
   particleEffect: {fileID: 3545996779122272376}
   loopAudioSource: {fileID: 6697245384875683524}
-  lanternFinalPosition: {fileID: 0}
+  lanternFinalStartPosition: {fileID: 7202681896447541905}
+  lanternFinalEndPosition: {fileID: 219312980851443599}
   zonesToIlluminate: 5
   artifactsToInteract: 5
   tweenDuration: 5
@@ -4331,6 +4367,37 @@ Transform:
   m_Children: []
   m_Father: {fileID: 5522104749022864417}
   m_LocalEulerAnglesHint: {x: 0, y: 45, z: 0}
+--- !u!1 &6536361998063303056
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 219312980851443599}
+  m_Layer: 0
+  m_Name: LEP
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &219312980851443599
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6536361998063303056}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 4428309956490062526}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &6547544485211075566
 GameObject:
   m_ObjectHideFlags: 0
@@ -4340,7 +4407,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1273999212069222853}
-  - component: {fileID: 505614152357810580}
   - component: {fileID: 164850625467904870}
   m_Layer: 0
   m_Name: LanternPodium
@@ -4365,27 +4431,6 @@ Transform:
   - {fileID: 6155037802475429620}
   m_Father: {fileID: 7061791921970407212}
   m_LocalEulerAnglesHint: {x: 0, y: 45, z: 0}
---- !u!65 &505614152357810580
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6547544485211075566}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 1
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 0.38, y: 1.16, z: 0.38}
-  m_Center: {x: 0, y: -0.19, z: 0}
 --- !u!65 &164850625467904870
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -4791,6 +4836,7 @@ MonoBehaviour:
   pointLight: {fileID: 3862679763617834540}
   lanternStartPosition: {fileID: 994760923268046937}
   lanternEndPosition: {fileID: 5747143856969421674}
+  podiumCollider: {fileID: 7947645188870654313}
   startingIlluminationRange: 7.5
   targetIlluminationRange: 11.5
   tweenDuration: 1
@@ -5291,6 +5337,7 @@ MonoBehaviour:
   pointLight: {fileID: 4343908655875688235}
   lanternStartPosition: {fileID: 3470153163580851246}
   lanternEndPosition: {fileID: 6516517090365284499}
+  podiumCollider: {fileID: 6265444750365192585}
   startingIlluminationRange: 7.5
   targetIlluminationRange: 11.5
   tweenDuration: 1
@@ -6340,6 +6387,111 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rightHandModel: {fileID: 0}
   leftHandModel: {fileID: 0}
+--- !u!1 &9063452553668567482
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2297450541023183530}
+  - component: {fileID: 8782882036068804186}
+  - component: {fileID: 1629740854270534343}
+  - component: {fileID: 8627699267635003102}
+  m_Layer: 0
+  m_Name: 2024_SXR_mdl_LanternPodium_v1
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2297450541023183530
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9063452553668567482}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0.7071068, y: 0, z: 0, w: 0.7071068}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 110.000015, y: 110, z: 120.55109}
+  m_ConstrainProportionsScale: 1
+  m_Children: []
+  m_Father: {fileID: 1614729037782097488}
+  m_LocalEulerAnglesHint: {x: -90, y: 0, z: 0}
+--- !u!33 &8782882036068804186
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9063452553668567482}
+  m_Mesh: {fileID: -5495902117074765545, guid: 2369cd619d8a9324a95e3b250560d00f, type: 3}
+--- !u!23 &1629740854270534343
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9063452553668567482}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: -1444460858095362738, guid: 2369cd619d8a9324a95e3b250560d00f, type: 3}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &8627699267635003102
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9063452553668567482}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.003, y: 0.003000001, z: 0.009538751}
+  m_Center: {x: 0, y: 1.1641536e-10, z: -0.001535854}
 --- !u!1 &9179758275442864983
 GameObject:
   m_ObjectHideFlags: 0

@@ -12,7 +12,8 @@ public class IlluminationGame : MonoBehaviour
     public GameObject goldenMan; // The Golden Man GameObject
     public GameObject particleEffect; // Particle effect GameObject
     public AudioSource loopAudioSource; // Looping audio source
-    public Transform lanternFinalPosition; // Final position for the lantern
+    public Transform lanternFinalStartPosition; // Starting position for the lantern on the final completion podium
+    public Transform lanternFinalEndPosition; // Final position for the lantern
     public int zonesToIlluminate = 3; // Number of zones to illuminate
     public int artifactsToInteract = 5; // Number of artifacts to interact with in each zone
     public float tweenDuration = 1.0f; // Duration for tweens
@@ -214,10 +215,13 @@ public class IlluminationGame : MonoBehaviour
     {
         if (allZonesCompleted)
         {
-            LeanTween.move(lantern, lanternFinalPosition.position, tweenDuration).setEase(tweenType).setOnComplete(() =>
+            LeanTween.move(lantern, lanternFinalStartPosition.position, tweenDuration).setEase(tweenType).setOnComplete(() =>
             {
-                CompleteGame();
-                lantern.SetActive(false);
+                LeanTween.move(lantern, lanternFinalEndPosition.position, tweenDuration).setEase(tweenType).setOnComplete(() =>
+                {
+                    CompleteGame();
+                    lantern.SetActive(false);
+                });
             });
         }
     }

@@ -7,6 +7,7 @@ public class Zone : MonoBehaviour
     public Light pointLight; // The light component for the zone
     public Transform lanternStartPosition; // Start position for the lantern
     public Transform lanternEndPosition; // End position for the lantern
+    public Collider podiumCollider; // Reference to the podium collider
     public float startingIlluminationRange = 0f; // Initial range of the light
     public float targetIlluminationRange = 10f; // Target range of the light
     public float tweenDuration = 1.0f; // Duration for tweens
@@ -40,6 +41,14 @@ public class Zone : MonoBehaviour
         if (illuminationGame == null)
         {
             Debug.LogError("Zone: IlluminationGame reference is not set.");
+        }
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.CompareTag("Lantern") && other == podiumCollider)
+        {
+            PlaceLantern(other.gameObject);
         }
     }
 
