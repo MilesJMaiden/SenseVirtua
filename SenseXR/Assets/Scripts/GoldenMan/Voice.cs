@@ -1,17 +1,22 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using TMPro;
 
 public class Voice : MonoBehaviour
 {
     public AudioSource voiceAudio;
 
+    public AudioSource specialAudioSource; 
+
     public int currentIdx = 0;
     public string[] voiceTexts;
     public BubbleCanvas bubbleCanvas;
 
     public TMP_Text nextText;
+
+    public GameObject buddhaStatue;
 
     private void Awake()
     {
@@ -66,6 +71,13 @@ public class Voice : MonoBehaviour
         if (currentIdx >= voiceTexts.Length)
         {
             bubbleCanvas.gameObject.SetActive(false);
+
+            // Work only in the Beginning Scene
+            if (SceneManager.GetActiveScene().name == "Beginning")
+            {
+                Invoke("HandleSpecialActions", 10f); 
+            }
+
             return;
         }
 
@@ -102,6 +114,12 @@ public class Voice : MonoBehaviour
             if (currentIdx >= voiceTexts.Length)
             {
                 bubbleCanvas.gameObject.SetActive(false);
+
+                
+                if (SceneManager.GetActiveScene().name == "Beginning")
+                {
+                    Invoke("HandleSpecialActions", 10f); 
+                }
             }
             else
             {
@@ -139,4 +157,20 @@ public class Voice : MonoBehaviour
     }
 
     public event System.Action OnDialogueEnd;
+
+    private void HandleSpecialActions()
+    {
+        // Buddha disappear
+        if (buddhaStatue != null)
+        {
+            buddhaStatue.SetActive(false);
+        }
+
+        // extra sound
+        if (specialAudioSource != null)
+        {
+            specialAudioSource.Play();
+        }
+    }
+
 }
