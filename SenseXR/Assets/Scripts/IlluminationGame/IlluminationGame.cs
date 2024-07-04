@@ -163,66 +163,28 @@ public class IlluminationGame : MonoBehaviour
     }
 
     // Inspector buttons for debugging
-    [ContextMenu("Toggle Zone 1 Completion")]
-    public void ToggleZone1Completion()
+    [ContextMenu("Complete All Zones")]
+    public void CompleteAllZones()
     {
-        ToggleZoneCompletion(0);
-    }
-
-    [ContextMenu("Toggle Zone 2 Completion")]
-    public void ToggleZone2Completion()
-    {
-        ToggleZoneCompletion(1);
-    }
-
-    [ContextMenu("Toggle Zone 3 Completion")]
-    public void ToggleZone3Completion()
-    {
-        ToggleZoneCompletion(2);
-    }
-
-    [ContextMenu("Toggle Zone 4 Completion")]
-    public void ToggleZone4Completion()
-    {
-        ToggleZoneCompletion(3);
-    }
-
-    [ContextMenu("Toggle Zone 5 Completion")]
-    public void ToggleZone5Completion()
-    {
-        ToggleZoneCompletion(4);
-    }
-
-    private void ToggleZoneCompletion(int zoneIndex)
-    {
-        if (zoneIndex >= 0 && zoneIndex < zones.Count)
+        while (illuminatedZonesCount < zonesToIlluminate)
         {
-            Zone zone = zones[zoneIndex];
-            if (zone.IsIlluminated())
-            {
-                zone.ResetIllumination();
-                OnZoneReset();
-            }
-            else
-            {
-                zone.Illuminate();
-                OnZoneIlluminated();
-            }
+            OnZoneIlluminated();
         }
     }
 
-    public void PlaceLanternInFinalTrigger(GameObject lantern)
+    [ContextMenu("Trigger Completion Light")]
+    public void TriggerCompletionLight()
     {
-        if (allZonesCompleted)
+        CompleteGame();
+    }
+
+    [ContextMenu("Trigger Special Game Object")]
+    public void TriggerSpecialGameObject()
+    {
+        if (renderPlane != null)
         {
-            LeanTween.move(lantern, lanternFinalStartPosition.position, tweenDuration).setEase(tweenType).setOnComplete(() =>
-            {
-                LeanTween.move(lantern, lanternFinalEndPosition.position, tweenDuration).setEase(tweenType).setOnComplete(() =>
-                {
-                    CompleteGame();
-                    lantern.SetActive(false);
-                });
-            });
+            renderPlane.SetActive(true);
+            LeanTween.scale(renderPlane, Vector3.one, tweenDuration).setFrom(Vector3.zero).setEase(tweenType);
         }
     }
 }

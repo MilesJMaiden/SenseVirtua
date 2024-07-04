@@ -46,7 +46,7 @@ public class Zone : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("Lantern") && other == podiumCollider)
+        if (other.CompareTag("Lantern") && other.CompareTag("Podium"))
         {
             PlaceLantern(other.gameObject);
         }
