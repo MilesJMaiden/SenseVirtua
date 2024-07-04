@@ -98,7 +98,15 @@ public class Voice : MonoBehaviour
             bubbleCanvas.ShowFullDialogue(txt);
 
             playing = false;
-            nextText.gameObject.SetActive(true);
+            // Check if it's the last dialogue
+            if (currentIdx >= voiceTexts.Length)
+            {
+                bubbleCanvas.gameObject.SetActive(false);
+            }
+            else
+            {
+                nextText.gameObject.SetActive(true);
+            }
 
             OnDialogueEnd?.Invoke();
         }

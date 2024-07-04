@@ -1463,30 +1463,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 704309192393568262, guid: 627a78f2e3bada44cbc0142067ee940e, type: 3}
-      propertyPath: leftHandModel
-      value: 
-      objectReference: {fileID: 1387325330}
-    - target: {fileID: 704309192393568262, guid: 627a78f2e3bada44cbc0142067ee940e, type: 3}
-      propertyPath: rightHandModel
-      value: 
-      objectReference: {fileID: 1387325331}
-    - target: {fileID: 1523528048439820552, guid: 627a78f2e3bada44cbc0142067ee940e, type: 3}
-      propertyPath: leftHandModel
-      value: 
-      objectReference: {fileID: 1387325330}
-    - target: {fileID: 1523528048439820552, guid: 627a78f2e3bada44cbc0142067ee940e, type: 3}
-      propertyPath: rightHandModel
-      value: 
-      objectReference: {fileID: 1387325331}
-    - target: {fileID: 2037231405425485317, guid: 627a78f2e3bada44cbc0142067ee940e, type: 3}
-      propertyPath: leftHandModel
-      value: 
-      objectReference: {fileID: 1387325330}
-    - target: {fileID: 2037231405425485317, guid: 627a78f2e3bada44cbc0142067ee940e, type: 3}
-      propertyPath: rightHandModel
-      value: 
-      objectReference: {fileID: 1387325331}
     - target: {fileID: 2157665164243424633, guid: 627a78f2e3bada44cbc0142067ee940e, type: 3}
       propertyPath: leftHandModel
       value: 
@@ -1499,14 +1475,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Illumination Game
       objectReference: {fileID: 0}
-    - target: {fileID: 6627141102523457232, guid: 627a78f2e3bada44cbc0142067ee940e, type: 3}
-      propertyPath: leftHandModel
-      value: 
-      objectReference: {fileID: 1387325330}
-    - target: {fileID: 6627141102523457232, guid: 627a78f2e3bada44cbc0142067ee940e, type: 3}
-      propertyPath: rightHandModel
-      value: 
-      objectReference: {fileID: 1387325331}
+    - target: {fileID: 7208747045362936903, guid: 627a78f2e3bada44cbc0142067ee940e, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8000859568540591581, guid: 627a78f2e3bada44cbc0142067ee940e, type: 3}
       propertyPath: target
       value: 
