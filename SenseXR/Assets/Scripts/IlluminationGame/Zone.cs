@@ -17,6 +17,7 @@ public class Zone : MonoBehaviour
     public AudioSource audioSource; // Public reference to be set in the inspector
     public XRGrabInteractable artifactInteractable; // XRGrabInteractable component for the artifact
 
+    private XRGrabInteractable lanternInteractable; // Reference to the lantern's XRGrabInteractable component
     private bool isIlluminated = false; // Flag to check if the zone is illuminated
     private bool artifactInteracted = false; // Flag to check if the artifact is interacted with
 
@@ -43,24 +44,43 @@ public class Zone : MonoBehaviour
         }
     }
 
-    public void PlaceLantern(GameObject lantern)
+    private void OnTriggerEnter(Collider other)
     {
-        Debug.Log("PlaceLantern called with lantern: " + lantern.name);
-        XRGrabInteractable lanternInteractable = lantern.GetComponent<XRGrabInteractable>();
+        Debug.Log("OnTriggerEnter called with collider: " + other.name);
+        if (other.CompareTag("Lantern"))
+        {
+            Debug.Log("Lantern entered podium collider");
+            PlaceLanternAtStartPosition(other.gameObject);
+        }
+    }
+
+    public void PlaceLanternAtStartPosition(GameObject lantern)
+    {
+        Debug.Log("PlaceLanternAtStartPosition called with lantern: " + lantern.name);
+        lanternInteractable = lantern.GetComponent<XRGrabInteractable>();
         if (lanternInteractable != null)
         {
             Debug.Log("Disabling XRGrabInteractable on lantern");
             lanternInteractable.enabled = false;
-            LeanTween.move(lantern, lanternEndPosition.position, tweenDuration).setEase(tweenType).setOnComplete(() =>
+            LeanTween.move(lantern, lanternStartPosition.position, tweenDuration).setEase(tweenType).setOnComplete(() =>
             {
-                Debug.Log("Lantern moved to end position, calling Illuminate");
-                Illuminate();
+                PlaceLanternAtEndPosition(lantern);
             });
         }
         else
         {
             Debug.LogError("Lantern does not have an XRGrabInteractable component");
         }
+    }
+
+    public void PlaceLanternAtEndPosition(GameObject lantern)
+    {
+        Debug.Log("PlaceLanternAtEndPosition called with lantern: " + lantern.name);
+        LeanTween.move(lantern, lanternEndPosition.position, tweenDuration).setEase(tweenType).setOnComplete(() =>
+        {
+            Debug.Log("Lantern moved to end position, calling Illuminate");
+            Illuminate();
+        });
     }
 
     public void Illuminate()
