@@ -1423,6 +1423,18 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 116203419371488350, guid: 627a78f2e3bada44cbc0142067ee940e, type: 3}
+      propertyPath: m_Size.x
+      value: 0.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 116203419371488350, guid: 627a78f2e3bada44cbc0142067ee940e, type: 3}
+      propertyPath: m_Size.y
+      value: 0.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 116203419371488350, guid: 627a78f2e3bada44cbc0142067ee940e, type: 3}
+      propertyPath: m_Size.z
+      value: 0.4
+      objectReference: {fileID: 0}
     - target: {fileID: 642064430344612219, guid: 627a78f2e3bada44cbc0142067ee940e, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -1495,6 +1507,10 @@ PrefabInstance:
       propertyPath: rightHandModel
       value: 
       objectReference: {fileID: 1387325331}
+    - target: {fileID: 2389181142047573018, guid: 627a78f2e3bada44cbc0142067ee940e, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3339956170886032473, guid: 627a78f2e3bada44cbc0142067ee940e, type: 3}
       propertyPath: m_IsTrigger
       value: 0
