@@ -12,6 +12,7 @@ TagManager:
   - Paint Brush
   - Artifact
   - Lantern
+  - Podium
   layers:
   - Default
   - TransparentFX
