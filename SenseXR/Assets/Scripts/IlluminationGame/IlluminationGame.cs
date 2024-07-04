@@ -16,7 +16,8 @@ public class IlluminationGame : MonoBehaviour
     public Transform lanternFinalEndPosition; // Final position for the lantern
     public int zonesToIlluminate = 3; // Number of zones to illuminate
     public int artifactsToInteract = 5; // Number of artifacts to interact with in each zone
-    public float tweenDuration = 1.0f; // Duration for tweens
+    public float lanternTweenDuration = 0.5f; // Duration for lantern tweens
+    public float portalTweenDuration = 3.0f; // Duration for portal tweens
     public LeanTweenType tweenType = LeanTweenType.easeInOutSine; // Type of tween for animations
 
     private int illuminatedZonesCount = 0; // Counter for illuminated zones
@@ -34,7 +35,7 @@ public class IlluminationGame : MonoBehaviour
         {
             if (zone != null)
             {
-                zone.Initialize(this, tweenDuration, tweenType);
+                zone.Initialize(this, lanternTweenDuration, tweenType);
             }
             else
             {
@@ -124,7 +125,7 @@ public class IlluminationGame : MonoBehaviour
                 loopAudioSource.Play();
             }
 
-            LeanTween.move(portal, portalEndTransform.position, tweenDuration).setEase(tweenType).setOnComplete(() =>
+            LeanTween.move(portal, portalEndTransform.position, portalTweenDuration).setEase(tweenType).setOnComplete(() =>
             {
                 if (particleEffect != null)
                 {
@@ -161,7 +162,7 @@ public class IlluminationGame : MonoBehaviour
         if (renderPlane != null)
         {
             renderPlane.SetActive(true);
-            LeanTween.scale(renderPlane, Vector3.one, tweenDuration).setFrom(Vector3.zero).setEase(tweenType);
+            LeanTween.scale(renderPlane, Vector3.one, lanternTweenDuration).setFrom(Vector3.zero).setEase(tweenType);
         }
     }
 
@@ -187,7 +188,7 @@ public class IlluminationGame : MonoBehaviour
         if (renderPlane != null)
         {
             renderPlane.SetActive(true);
-            LeanTween.scale(renderPlane, Vector3.one, tweenDuration).setFrom(Vector3.zero).setEase(tweenType);
+            LeanTween.scale(renderPlane, Vector3.one, lanternTweenDuration).setFrom(Vector3.zero).setEase(tweenType);
         }
     }
 }

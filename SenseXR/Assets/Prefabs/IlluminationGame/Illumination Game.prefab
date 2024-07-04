@@ -172,7 +172,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 33cff901f015923438335bcef380273c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  parentZone: {fileID: 5288477536744332209}
 --- !u!1 &437819099978026859
 GameObject:
   m_ObjectHideFlags: 0
@@ -358,7 +357,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 33cff901f015923438335bcef380273c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  parentZone: {fileID: 7172061216548828282}
 --- !u!1 &690811313926694077
 GameObject:
   m_ObjectHideFlags: 0
@@ -457,7 +455,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 33cff901f015923438335bcef380273c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  parentZone: {fileID: 5624766044165465170}
 --- !u!1 &980525431126077951
 GameObject:
   m_ObjectHideFlags: 0
@@ -1797,7 +1794,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 33cff901f015923438335bcef380273c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  parentZone: {fileID: 0}
 --- !u!1 &3290870849903719545
 GameObject:
   m_ObjectHideFlags: 0
@@ -1985,7 +1981,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3326310161543797082}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b01fe3d837a383142a11d01cb5f64e94, type: 3}
   m_Name: 
@@ -2009,7 +2005,7 @@ MonoBehaviour:
   podiumCollider: {fileID: 4786189655211794072}
   startingIlluminationRange: 7.5
   targetIlluminationRange: 11.5
-  tweenDuration: 0.1
+  lanternTweenDuration: 0.5
   tweenType: 16
   illuminationGame: {fileID: 3685280429547686379}
   audioSource: {fileID: 2056091261760935384}
@@ -2412,7 +2408,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3772747410611817286}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b01fe3d837a383142a11d01cb5f64e94, type: 3}
   m_Name: 
@@ -2436,7 +2432,7 @@ MonoBehaviour:
   podiumCollider: {fileID: 164850625467904870}
   startingIlluminationRange: 7.5
   targetIlluminationRange: 11.5
-  tweenDuration: 0.1
+  lanternTweenDuration: 0.5
   tweenType: 16
   illuminationGame: {fileID: 3685280429547686379}
   audioSource: {fileID: 5314544168030159499}
@@ -2692,7 +2688,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4788477051078219408}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b01fe3d837a383142a11d01cb5f64e94, type: 3}
   m_Name: 
@@ -2716,7 +2712,7 @@ MonoBehaviour:
   podiumCollider: {fileID: 6241971270168506626}
   startingIlluminationRange: 7.5
   targetIlluminationRange: 11.5
-  tweenDuration: 0.1
+  lanternTweenDuration: 0.5
   tweenType: 16
   illuminationGame: {fileID: 3685280429547686379}
   audioSource: {fileID: 1956747489296682482}
@@ -3203,7 +3199,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 33cff901f015923438335bcef380273c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  parentZone: {fileID: 3865033868551062533}
 --- !u!1 &5944343393026013241
 GameObject:
   m_ObjectHideFlags: 0
@@ -3281,7 +3276,8 @@ MonoBehaviour:
   lanternFinalEndPosition: {fileID: 219312980851443599}
   zonesToIlluminate: 5
   artifactsToInteract: 5
-  tweenDuration: 1.5
+  lanternTweenDuration: 0.5
+  portalTweenDuration: 3
   tweenType: 16
 --- !u!1 &6076239934690213919
 GameObject:
@@ -3550,7 +3546,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 33cff901f015923438335bcef380273c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  parentZone: {fileID: 7326066936830818015}
 --- !u!1 &6803166154140723010
 GameObject:
   m_ObjectHideFlags: 0
@@ -3913,7 +3908,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7206694020653608573}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b01fe3d837a383142a11d01cb5f64e94, type: 3}
   m_Name: 
@@ -3937,7 +3932,7 @@ MonoBehaviour:
   podiumCollider: {fileID: 7947645188870654313}
   startingIlluminationRange: 7.5
   targetIlluminationRange: 11.5
-  tweenDuration: 0.1
+  lanternTweenDuration: 0.5
   tweenType: 16
   illuminationGame: {fileID: 3685280429547686379}
   audioSource: {fileID: 4346428355890586998}
@@ -4381,7 +4376,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7843711633960667723}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b01fe3d837a383142a11d01cb5f64e94, type: 3}
   m_Name: 
@@ -4405,7 +4400,7 @@ MonoBehaviour:
   podiumCollider: {fileID: 6265444750365192585}
   startingIlluminationRange: 7.5
   targetIlluminationRange: 11.5
-  tweenDuration: 0.1
+  lanternTweenDuration: 0.5
   tweenType: 16
   illuminationGame: {fileID: 3685280429547686379}
   audioSource: {fileID: 1470114554987933518}
