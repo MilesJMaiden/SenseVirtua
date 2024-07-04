@@ -18,7 +18,7 @@ public class PodiumCollider : MonoBehaviour
         if (other.CompareTag("Lantern"))
         {
             Debug.Log("Lantern entered podium collider");
-            parentZone.PlaceLantern(other.gameObject);
+            parentZone.PlaceLanternAtStartPosition(other.gameObject);
         }
     }
 }
