@@ -252,6 +252,7 @@ public class CalligraphyGame : MonoBehaviour
     {
         if (finalCompletionObject != null)
         {
+            StartCoroutine(PlayNextDialogue());
             finalCompletionObject.SetActive(true);
             finalCompletionObject.transform.localScale = Vector3.zero;
             LeanTween.scale(finalCompletionObject, Vector3.one, taskFadeDuration).setEase(LeanTweenType.easeInOutSine);

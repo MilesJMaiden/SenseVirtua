@@ -35,6 +35,11 @@ public class Voice : MonoBehaviour
         PlayVoice();
     }
 
+    public void OnClickedSkipBtn()
+    {
+        SkipVoice();
+    }
+
     public bool playing = false;
 
     public void PlayVoice() // Changed to public
@@ -78,6 +83,24 @@ public class Voice : MonoBehaviour
             voiceAudio.Stop();
             CancelInvoke("EndVoice");
             EndVoice();
+        }
+    }
+
+    public void SkipVoice()
+    {
+        if (playing)
+        {
+            voiceAudio.Stop();
+            CancelInvoke("EndVoice");
+
+            // Show the full text immediately
+            string txt = TranslationMgr.instance.GetTranslationText(voiceTexts[currentIdx - 1]);
+            bubbleCanvas.ShowFullDialogue(txt);
+
+            playing = false;
+            nextText.gameObject.SetActive(true);
+
+            OnDialogueEnd?.Invoke();
         }
     }
 
