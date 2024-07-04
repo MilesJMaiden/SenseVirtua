@@ -176,6 +176,30 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1611732024987958331, guid: 7fe6146d790c9ef4c8b51d06682524f3, type: 3}
+      propertyPath: InitialModule.rotation3D
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1611732024987958331, guid: 7fe6146d790c9ef4c8b51d06682524f3, type: 3}
+      propertyPath: InitialModule.startSize.scalar
+      value: 1.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1611732024987958331, guid: 7fe6146d790c9ef4c8b51d06682524f3, type: 3}
+      propertyPath: InitialModule.startSize.minScalar
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1611732024987958331, guid: 7fe6146d790c9ef4c8b51d06682524f3, type: 3}
+      propertyPath: InitialModule.startColor.maxColor.b
+      value: 0.64705884
+      objectReference: {fileID: 0}
+    - target: {fileID: 1611732024987958331, guid: 7fe6146d790c9ef4c8b51d06682524f3, type: 3}
+      propertyPath: InitialModule.startColor.maxColor.g
+      value: 0.9058824
+      objectReference: {fileID: 0}
+    - target: {fileID: 1611732024987958331, guid: 7fe6146d790c9ef4c8b51d06682524f3, type: 3}
+      propertyPath: InitialModule.startSize.minMaxState
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 2091745444472268945, guid: 7fe6146d790c9ef4c8b51d06682524f3, type: 3}
       propertyPath: CollisionModule.m_EnergyLossOnCollision.scalar
       value: 1
