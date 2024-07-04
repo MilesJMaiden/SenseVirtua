@@ -16,9 +16,10 @@ public class IlluminationGame : MonoBehaviour
     public Transform lanternFinalEndPosition; // Final position for the lantern
     public int zonesToIlluminate = 3; // Number of zones to illuminate
     public int artifactsToInteract = 5; // Number of artifacts to interact with in each zone
-    public float lanternTweenDuration = 0.5f; // Duration for lantern tweens
-    public float portalTweenDuration = 3.0f; // Duration for portal tweens
+    public float lanternTweenDuration = 1.0f; // Duration for lantern tweens
+    public float portalTweenDuration = 2.0f; // Duration for portal tween
     public LeanTweenType tweenType = LeanTweenType.easeInOutSine; // Type of tween for animations
+    public FinalPodium finalPodium; // Reference to the final podium
 
     private int illuminatedZonesCount = 0; // Counter for illuminated zones
     private int interactedArtifactsCount = 0; // Counter for interacted artifacts
@@ -68,6 +69,12 @@ public class IlluminationGame : MonoBehaviour
 
         // Subscribe to the Golden Man's dialogue end event
         goldenManVoice.OnDialogueEnd += OnGoldenManDialogueEnd;
+
+        // Disable the final podium at the start
+        if (finalPodium != null)
+        {
+            finalPodium.gameObject.SetActive(false);
+        }
     }
 
     void OnDestroy()
@@ -136,6 +143,12 @@ public class IlluminationGame : MonoBehaviour
                 {
                     loopAudioSource.Stop();
                     loopAudioSource.enabled = false;
+                }
+
+                // Enable the final podium script
+                if (finalPodium != null)
+                {
+                    finalPodium.EnableFinalPodium();
                 }
             });
         }

@@ -1735,7 +1735,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4428309956490062526}
   - component: {fileID: 116927385036577398}
-  - component: {fileID: 4205412530338906095}
+  - component: {fileID: 7786321763229703947}
   m_Layer: 0
   m_Name: FinalLanternPodium
   m_TagString: Podium
@@ -1782,7 +1782,7 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.38, y: 0.5, z: 0.38}
   m_Center: {x: 0, y: 0.65, z: 0}
---- !u!114 &4205412530338906095
+--- !u!114 &7786321763229703947
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1791,9 +1791,15 @@ MonoBehaviour:
   m_GameObject: {fileID: 3205260127817855968}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 33cff901f015923438335bcef380273c, type: 3}
+  m_Script: {fileID: 11500000, guid: 1375863a276a83b43a58dbcb43ea92bc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  lanternStartPosition: {fileID: 7202681896447541905}
+  lanternEndPosition: {fileID: 219312980851443599}
+  podiumCollider: {fileID: 116927385036577398}
+  tweenDuration: 1
+  tweenType: 16
+  renderPlane: {fileID: 2396145481394573357}
 --- !u!1 &3290870849903719545
 GameObject:
   m_ObjectHideFlags: 0
@@ -3279,6 +3285,7 @@ MonoBehaviour:
   lanternTweenDuration: 0.5
   portalTweenDuration: 3
   tweenType: 16
+  finalPodium: {fileID: 7786321763229703947}
 --- !u!1 &6076239934690213919
 GameObject:
   m_ObjectHideFlags: 0
