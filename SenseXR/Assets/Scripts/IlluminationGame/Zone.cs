@@ -10,7 +10,7 @@ public class Zone : MonoBehaviour
     public Collider podiumCollider; // Reference to the podium collider
     public float startingIlluminationRange = 0f; // Initial range of the light
     public float targetIlluminationRange = 10f; // Target range of the light
-    public float tweenDuration = 1.0f; // Duration for tweens
+    public float tweenDuration = 0.1f; // Duration for tweens, set to a lower value for faster transitions
     public LeanTweenType tweenType = LeanTweenType.easeInOutSine; // Type of tween for animations
 
     public IlluminationGame illuminationGame; // Reference to the IlluminationGame
@@ -62,7 +62,12 @@ public class Zone : MonoBehaviour
         {
             Debug.Log("Disabling XRGrabInteractable on lantern");
             lanternInteractable.enabled = false;
-            LeanTween.move(lantern, lanternStartPosition.position, tweenDuration).setEase(tweenType).setOnComplete(() =>
+
+            // Create a sequence for smooth position and rotation tweens
+            LTSeq seq = LeanTween.sequence();
+            seq.append(LeanTween.move(lantern, lanternStartPosition.position, tweenDuration).setEase(tweenType));
+            seq.append(LeanTween.rotate(lantern, lanternStartPosition.rotation.eulerAngles, tweenDuration).setEase(tweenType));
+            seq.append(() =>
             {
                 PlaceLanternAtEndPosition(lantern);
             });
@@ -76,7 +81,12 @@ public class Zone : MonoBehaviour
     public void PlaceLanternAtEndPosition(GameObject lantern)
     {
         Debug.Log("PlaceLanternAtEndPosition called with lantern: " + lantern.name);
-        LeanTween.move(lantern, lanternEndPosition.position, tweenDuration).setEase(tweenType).setOnComplete(() =>
+
+        // Create a sequence for smooth position and rotation tweens
+        LTSeq seq = LeanTween.sequence();
+        seq.append(LeanTween.move(lantern, lanternEndPosition.position, tweenDuration).setEase(tweenType));
+        seq.append(LeanTween.rotate(lantern, lanternEndPosition.rotation.eulerAngles, tweenDuration).setEase(tweenType));
+        seq.append(() =>
         {
             Debug.Log("Lantern moved to end position, calling Illuminate");
             Illuminate();
@@ -126,7 +136,12 @@ public class Zone : MonoBehaviour
         if (!artifactInteracted)
         {
             artifactInteracted = true;
-            LeanTween.move(args.interactableObject.transform.gameObject, lanternStartPosition.position, tweenDuration).setEase(tweenType).setOnComplete(() =>
+
+            // Create a sequence for smooth position and rotation tweens
+            LTSeq seq = LeanTween.sequence();
+            seq.append(LeanTween.move(args.interactableObject.transform.gameObject, lanternStartPosition.position, tweenDuration).setEase(tweenType));
+            seq.append(LeanTween.rotate(args.interactableObject.transform.gameObject, lanternStartPosition.rotation.eulerAngles, tweenDuration).setEase(tweenType));
+            seq.append(() =>
             {
                 args.interactableObject.transform.GetComponent<XRGrabInteractable>().enabled = true;
                 illuminationGame.OnArtifactInteracted();
