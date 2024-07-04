@@ -10,16 +10,16 @@ public class Zone : MonoBehaviour
     public Collider podiumCollider; // Reference to the podium collider
     public float startingIlluminationRange = 0f; // Initial range of the light
     public float targetIlluminationRange = 10f; // Target range of the light
-    public float tweenDuration = 0.1f; // Duration for tweens, set to a lower value for faster transitions
+    public float lanternTweenDuration = 0.5f; // Duration for lantern tweens
     public LeanTweenType tweenType = LeanTweenType.easeInOutSine; // Type of tween for animations
 
     public IlluminationGame illuminationGame; // Reference to the IlluminationGame
     public AudioSource audioSource; // Public reference to be set in the inspector
     public XRGrabInteractable artifactInteractable; // XRGrabInteractable component for the artifact
 
-    private XRGrabInteractable lanternInteractable; // Reference to the lantern's XRGrabInteractable component
     private bool isIlluminated = false; // Flag to check if the zone is illuminated
     private bool artifactInteracted = false; // Flag to check if the artifact is interacted with
+    private BoxCollider[] lanternColliders; // Array to hold the lantern's colliders
 
     private void Awake()
     {
@@ -34,7 +34,7 @@ public class Zone : MonoBehaviour
     public void Initialize(IlluminationGame game, float duration, LeanTweenType type)
     {
         illuminationGame = game;
-        tweenDuration = duration;
+        lanternTweenDuration = duration;
         tweenType = type;
         pointLight.range = startingIlluminationRange;
 
@@ -44,38 +44,31 @@ public class Zone : MonoBehaviour
         }
     }
 
-    private void OnTriggerEnter(Collider other)
-    {
-        Debug.Log("OnTriggerEnter called with collider: " + other.name);
-        if (other.CompareTag("Lantern"))
-        {
-            Debug.Log("Lantern entered podium collider");
-            PlaceLanternAtStartPosition(other.gameObject);
-        }
-    }
-
     public void PlaceLanternAtStartPosition(GameObject lantern)
     {
         Debug.Log("PlaceLanternAtStartPosition called with lantern: " + lantern.name);
-        lanternInteractable = lantern.GetComponent<XRGrabInteractable>();
-        if (lanternInteractable != null)
-        {
-            Debug.Log("Disabling XRGrabInteractable on lantern");
-            lanternInteractable.enabled = false;
 
-            // Create a sequence for smooth position and rotation tweens
-            LTSeq seq = LeanTween.sequence();
-            seq.append(LeanTween.move(lantern, lanternStartPosition.position, tweenDuration).setEase(tweenType));
-            seq.append(LeanTween.rotate(lantern, lanternStartPosition.rotation.eulerAngles, tweenDuration).setEase(tweenType));
-            seq.append(() =>
-            {
-                PlaceLanternAtEndPosition(lantern);
-            });
-        }
-        else
+        // Disable all box colliders on the lantern
+        lanternColliders = lantern.GetComponentsInChildren<BoxCollider>();
+        if (lanternColliders == null || lanternColliders.Length == 0)
         {
-            Debug.LogError("Lantern does not have an XRGrabInteractable component");
+            Debug.LogError("Zone: No BoxColliders found on the lantern.");
+            return;
         }
+
+        foreach (var collider in lanternColliders)
+        {
+            collider.enabled = false;
+        }
+
+        // Create a sequence for smooth position and rotation tweens
+        LTSeq seq = LeanTween.sequence();
+        seq.append(LeanTween.move(lantern, lanternStartPosition.position, lanternTweenDuration).setEase(tweenType));
+        seq.append(LeanTween.rotate(lantern, lanternStartPosition.rotation.eulerAngles, lanternTweenDuration).setEase(tweenType));
+        seq.append(() =>
+        {
+            PlaceLanternAtEndPosition(lantern);
+        });
     }
 
     public void PlaceLanternAtEndPosition(GameObject lantern)
@@ -84,8 +77,8 @@ public class Zone : MonoBehaviour
 
         // Create a sequence for smooth position and rotation tweens
         LTSeq seq = LeanTween.sequence();
-        seq.append(LeanTween.move(lantern, lanternEndPosition.position, tweenDuration).setEase(tweenType));
-        seq.append(LeanTween.rotate(lantern, lanternEndPosition.rotation.eulerAngles, tweenDuration).setEase(tweenType));
+        seq.append(LeanTween.move(lantern, lanternEndPosition.position, lanternTweenDuration).setEase(tweenType));
+        seq.append(LeanTween.rotate(lantern, lanternEndPosition.rotation.eulerAngles, lanternTweenDuration).setEase(tweenType));
         seq.append(() =>
         {
             Debug.Log("Lantern moved to end position, calling Illuminate");
@@ -99,7 +92,7 @@ public class Zone : MonoBehaviour
         {
             Debug.Log("Illuminating zone");
             isIlluminated = true;
-            LeanTween.value(pointLight.gameObject, UpdateLightRange, pointLight.range, targetIlluminationRange, tweenDuration).setEase(tweenType);
+            LeanTween.value(pointLight.gameObject, UpdateLightRange, pointLight.range, targetIlluminationRange, lanternTweenDuration).setEase(tweenType);
             illuminationGame.OnZoneIlluminated();
         }
     }
@@ -110,7 +103,7 @@ public class Zone : MonoBehaviour
         {
             Debug.Log("Resetting illumination");
             isIlluminated = false;
-            LeanTween.value(pointLight.gameObject, UpdateLightRange, pointLight.range, startingIlluminationRange, tweenDuration).setEase(tweenType);
+            LeanTween.value(pointLight.gameObject, UpdateLightRange, pointLight.range, startingIlluminationRange, lanternTweenDuration).setEase(tweenType);
             illuminationGame.OnZoneReset();
         }
     }
@@ -139,11 +132,19 @@ public class Zone : MonoBehaviour
 
             // Create a sequence for smooth position and rotation tweens
             LTSeq seq = LeanTween.sequence();
-            seq.append(LeanTween.move(args.interactableObject.transform.gameObject, lanternStartPosition.position, tweenDuration).setEase(tweenType));
-            seq.append(LeanTween.rotate(args.interactableObject.transform.gameObject, lanternStartPosition.rotation.eulerAngles, tweenDuration).setEase(tweenType));
+            seq.append(LeanTween.move(args.interactableObject.transform.gameObject, lanternStartPosition.position, lanternTweenDuration).setEase(tweenType));
+            seq.append(LeanTween.rotate(args.interactableObject.transform.gameObject, lanternStartPosition.rotation.eulerAngles, lanternTweenDuration).setEase(tweenType));
             seq.append(() =>
             {
-                args.interactableObject.transform.GetComponent<XRGrabInteractable>().enabled = true;
+                // Enable all box colliders on the lantern
+                foreach (var collider in lanternColliders)
+                {
+                    collider.enabled = true;
+                }
+
+                // Disable the podium collider
+                podiumCollider.enabled = false;
+
                 illuminationGame.OnArtifactInteracted();
             });
         }

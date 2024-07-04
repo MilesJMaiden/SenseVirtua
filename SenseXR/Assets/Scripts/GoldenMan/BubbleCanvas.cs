@@ -7,6 +7,7 @@ public class BubbleCanvas : MonoBehaviour
     [Tooltip("Text component for displaying dialogues.")]
     public TMP_Text dialogueText;
 
+    private Coroutine showTextCoroutine;
     private bool showing = false;
 
     public void ShowDialogue(string message, float voiceTime)
@@ -17,7 +18,19 @@ public class BubbleCanvas : MonoBehaviour
             return;
 
         showing = true;
-        StartCoroutine(ShowText(message, voiceTime));
+        showTextCoroutine = StartCoroutine(ShowText(message, voiceTime));
+        //StartCoroutine(ShowText(message, voiceTime));
+    }
+
+    public void ShowFullDialogue(string text)
+    {
+        if (showTextCoroutine != null)
+        {
+            StopCoroutine(showTextCoroutine);
+            showTextCoroutine = null;
+        }
+        dialogueText.text = text;
+        showing = false;
     }
 
     private IEnumerator ShowText(string message, float voiceTime)
