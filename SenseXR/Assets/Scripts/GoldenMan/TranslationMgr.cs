@@ -13,7 +13,7 @@ public class TranslationMgr : MonoBehaviour
 
     private void Awake()
     {
-        language = Language.Chinese;
+        language = Language.English;
         instance = this;
     }
 

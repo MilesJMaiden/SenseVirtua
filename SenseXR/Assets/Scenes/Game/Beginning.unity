@@ -1927,6 +1927,10 @@ PrefabInstance:
       propertyPath: rightHandModel
       value: 
       objectReference: {fileID: 1387325331}
+    - target: {fileID: 1368025834843418576, guid: 627a78f2e3bada44cbc0142067ee940e, type: 3}
+      propertyPath: voiceTexts.Array.size
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 1523528048439820552, guid: 627a78f2e3bada44cbc0142067ee940e, type: 3}
       propertyPath: leftHandModel
       value: 
@@ -1935,6 +1939,10 @@ PrefabInstance:
       propertyPath: rightHandModel
       value: 
       objectReference: {fileID: 1387325331}
+    - target: {fileID: 1959025625619940746, guid: 627a78f2e3bada44cbc0142067ee940e, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2037231405425485317, guid: 627a78f2e3bada44cbc0142067ee940e, type: 3}
       propertyPath: leftHandModel
       value: 
@@ -1951,6 +1959,80 @@ PrefabInstance:
       propertyPath: rightHandModel
       value: 
       objectReference: {fileID: 1387325331}
+    - target: {fileID: 5772965016820664256, guid: 627a78f2e3bada44cbc0142067ee940e, type: 3}
+      propertyPath: m_fontAsset
+      value: 
+      objectReference: {fileID: 11400000, guid: b5e648e92c33ca9448efcb94274b6eee, type: 2}
+    - target: {fileID: 5772965016820664256, guid: 627a78f2e3bada44cbc0142067ee940e, type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: 5955645865202824022, guid: b5e648e92c33ca9448efcb94274b6eee, type: 2}
+    - target: {fileID: 5772965016820664256, guid: 627a78f2e3bada44cbc0142067ee940e, type: 3}
+      propertyPath: m_hasFontAssetChanged
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5931459988316992922, guid: 627a78f2e3bada44cbc0142067ee940e, type: 3}
+      propertyPath: translationTexts.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 5931459988316992922, guid: 627a78f2e3bada44cbc0142067ee940e, type: 3}
+      propertyPath: translationTexts.Array.data[3].key
+      value: intro3
+      objectReference: {fileID: 0}
+    - target: {fileID: 5931459988316992922, guid: 627a78f2e3bada44cbc0142067ee940e, type: 3}
+      propertyPath: translationTexts.Array.data[0].chinese
+      value: "\u4F60\u7EC8\u4E8E\u9192\u5566\uFF1F\u95E8\u90FD\u843D\u9501\u5566!"
+      objectReference: {fileID: 0}
+    - target: {fileID: 5931459988316992922, guid: 627a78f2e3bada44cbc0142067ee940e, type: 3}
+      propertyPath: translationTexts.Array.data[0].english
+      value: "Ah, I see you\u2019re awake young monk! Fell asleep mid-sweep, did
+        you? Happens to the best of us. "
+      objectReference: {fileID: 0}
+    - target: {fileID: 5931459988316992922, guid: 627a78f2e3bada44cbc0142067ee940e, type: 3}
+      propertyPath: translationTexts.Array.data[1].chinese
+      value: "\u5C0F\u5E08\u7236\u771F\u5012\u9709\u5440\uFF0C\u4F60\u5230\u5929\u4EAE\u624D\u80FD\u51FA\u53BB\u4E86.
+        \u6211\u662F\u8C01? \u6211\u53EA\u662F\u4E2A\u56DB\u6D77\u4E3A\u5BB6\u7684\u6E38\u4FA0. "
+      objectReference: {fileID: 0}
+    - target: {fileID: 5931459988316992922, guid: 627a78f2e3bada44cbc0142067ee940e, type: 3}
+      propertyPath: translationTexts.Array.data[1].english
+      value: 'Unfortunately, you will have to wait until morning to get out. Who
+        am I? I''m just a wandering sage here to chat and maybe share a bit wisdom,
+        but I have been called the Golden Man before. '
+      objectReference: {fileID: 0}
+    - target: {fileID: 5931459988316992922, guid: 627a78f2e3bada44cbc0142067ee940e, type: 3}
+      propertyPath: translationTexts.Array.data[2].chinese
+      value: "\u4F60\uFF1F\u5E08\u7236\u662F\u4E1C\u6E21\u800C\u6765\u7684\u9AD8\u50E7\uFF0C\u7FFB\u8BD1\u7ECF\u4E66\u4E00\u5B9A\u6BD4\u8D2B\u50E7\u5728\u884C\u2026\u2026\u8BD1\u573A\u5728\u4E8C\u697C\uFF0C\u4ECE\u62F1\u95E8\u7A7F\u8FC7\u5E08\u7236\u5C31\u80FD\u770B\u5230\u697C\u68AF\u3002"
+      objectReference: {fileID: 0}
+    - target: {fileID: 5931459988316992922, guid: 627a78f2e3bada44cbc0142067ee940e, type: 3}
+      propertyPath: translationTexts.Array.data[2].english
+      value: 'Seeing as you have nowhere else to go why not take this chance to explore
+        the room a bit without those wise old monks to squash your curiosity. That
+        lantern there should help you see better. '
+      objectReference: {fileID: 0}
+    - target: {fileID: 5931459988316992922, guid: 627a78f2e3bada44cbc0142067ee940e, type: 3}
+      propertyPath: translationVoices.Array.data[0].chinese
+      value: 
+      objectReference: {fileID: 8300000, guid: 38b7d1d7a2e05c9469f1899f748afea8, type: 3}
+    - target: {fileID: 5931459988316992922, guid: 627a78f2e3bada44cbc0142067ee940e, type: 3}
+      propertyPath: translationVoices.Array.data[0].english
+      value: 
+      objectReference: {fileID: 8300000, guid: be86239e7095d7e40903697ba567ed17, type: 3}
+    - target: {fileID: 5931459988316992922, guid: 627a78f2e3bada44cbc0142067ee940e, type: 3}
+      propertyPath: translationVoices.Array.data[1].chinese
+      value: 
+      objectReference: {fileID: 8300000, guid: e09448097146dfe4d8e0448e8a21178c, type: 3}
+    - target: {fileID: 5931459988316992922, guid: 627a78f2e3bada44cbc0142067ee940e, type: 3}
+      propertyPath: translationVoices.Array.data[1].english
+      value: 
+      objectReference: {fileID: 8300000, guid: 945f113f239d7b64abca6cb95921c9de, type: 3}
+    - target: {fileID: 5931459988316992922, guid: 627a78f2e3bada44cbc0142067ee940e, type: 3}
+      propertyPath: translationVoices.Array.data[2].chinese
+      value: 
+      objectReference: {fileID: 8300000, guid: db2a14449bf20ac4db47c83aef5e3932, type: 3}
+    - target: {fileID: 5931459988316992922, guid: 627a78f2e3bada44cbc0142067ee940e, type: 3}
+      propertyPath: translationVoices.Array.data[2].english
+      value: 
+      objectReference: {fileID: 8300000, guid: e6ca41d75e2c75c4bb7fcfbfa8b4b2c8, type: 3}
     - target: {fileID: 5944343393026013241, guid: 627a78f2e3bada44cbc0142067ee940e, type: 3}
       propertyPath: m_Name
       value: Illumination Game
