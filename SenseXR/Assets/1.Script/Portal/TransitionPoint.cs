@@ -11,10 +11,10 @@ public class TransitionPoint : MonoBehaviour
         if (other.CompareTag("Player"))
         {
 
-            FadeEffectCanvas.instance.StartEffect(CompleteFadeOut);
-            //SceneManager.LoadScene(sceneType.ToString());
+            //FadeEffectCanvas.instance.StartEffect(CompleteFadeOut);
 
 
+            SceneTransitionManager.singleton.GoToSceneAsync(sceneType.ToString());
 
         }
 
