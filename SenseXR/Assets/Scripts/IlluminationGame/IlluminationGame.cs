@@ -29,6 +29,8 @@ public class IlluminationGame : MonoBehaviour
     private Voice goldenManVoice; // Reference to the Golden Man's Voice component
     private bool allZonesCompleted = false; // Flag to track if all zones are completed
 
+    public AudioSource endingVoice;
+
     void Start()
     {
         // Initialize the Golden Man's voice component
@@ -170,8 +172,14 @@ public class IlluminationGame : MonoBehaviour
         if (allZonesCompleted)
         {
             MovePortal();
+            Invoke("EndingVoice", 10f);
             //CompleteGame();
         }
+    }
+
+    private void EndingVoice()
+    {
+        endingVoice.Play();
     }
 
     private void OnGoldenManDialogueEnd()
