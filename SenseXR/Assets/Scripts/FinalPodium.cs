@@ -9,6 +9,8 @@ public class FinalPodium : MonoBehaviour
     public float tweenDuration = 1.0f;
     public LeanTweenType tweenType = LeanTweenType.easeInOutSine;
     public GameObject renderPlane;
+    public Light completionLight;
+    public float completionLightEndRange = 10f; // End range for the completion light
     private Component[] lanternComponents;
 
     private void Awake()
@@ -83,6 +85,16 @@ public class FinalPodium : MonoBehaviour
         {
             renderPlane.SetActive(true); // Enable the render plane
             LeanTween.scale(renderPlane, Vector3.one, tweenDuration).setFrom(Vector3.zero).setEase(tweenType);
+        }
+
+        if (completionLight != null)
+        {
+            LeanTween.value(completionLight.gameObject, completionLight.range, completionLightEndRange, tweenDuration)
+                .setEase(tweenType)
+                .setOnUpdate((float value) =>
+                {
+                    completionLight.range = value;
+                });
         }
     }
 }

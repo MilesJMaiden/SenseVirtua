@@ -20,14 +20,14 @@ public class IlluminationGame : MonoBehaviour
     public float portalTweenDuration = 2.0f; // Duration for portal tween
     public LeanTweenType tweenType = LeanTweenType.easeInOutSine; // Type of tween for animations
     public FinalPodium finalPodium; // Reference to the final podium
+    public Light completionLight; // Reference to the completion light
+    public float completionLightStartRange = 0f; // Start range for the completion light
+    public float completionLightEndRange = 10f; // End range for the completion light
 
     private int illuminatedZonesCount = 0; // Counter for illuminated zones
     private int interactedArtifactsCount = 0; // Counter for interacted artifacts
     private Voice goldenManVoice; // Reference to the Golden Man's Voice component
     private bool allZonesCompleted = false; // Flag to track if all zones are completed
-
-    public AudioSource delayedAudioSource; // Audio source to play after the Artifacts interactions
-    public float audioDelay = 10.0f; // Delay for the audio source to play after portal appears
 
     void Start()
     {
@@ -68,6 +68,12 @@ public class IlluminationGame : MonoBehaviour
         if (loopAudioSource != null)
         {
             loopAudioSource.enabled = false;
+        }
+
+        // Set the initial range for the completion light
+        if (completionLight != null)
+        {
+            completionLight.range = completionLightStartRange;
         }
 
         // Subscribe to the Golden Man's dialogue end event
@@ -139,12 +145,13 @@ public class IlluminationGame : MonoBehaviour
             {
                 if (particleEffect != null)
                 {
-                    Destroy(particleEffect);
+                    particleEffect.SetActive(false);
                 }
 
                 if (loopAudioSource != null)
                 {
-                    Destroy(loopAudioSource.gameObject);
+                    loopAudioSource.Stop();
+                    loopAudioSource.enabled = false;
                 }
 
                 // Enable the final podium script
@@ -152,9 +159,6 @@ public class IlluminationGame : MonoBehaviour
                 {
                     finalPodium.EnableFinalPodium();
                 }
-
-                // Invoke the method to play the delayed audio after the specified delay
-                Invoke("PlayDelayedAudio", audioDelay);
             });
         }
     }
@@ -210,11 +214,16 @@ public class IlluminationGame : MonoBehaviour
         }
     }
 
-    private void PlayDelayedAudio()
+    public void TweenCompletionLight()
     {
-        if (delayedAudioSource != null)
+        if (completionLight != null)
         {
-            delayedAudioSource.Play();
+            LeanTween.value(completionLight.gameObject, completionLightStartRange, completionLightEndRange, lanternTweenDuration)
+                .setEase(tweenType)
+                .setOnUpdate((float value) =>
+                {
+                    completionLight.range = value;
+                });
         }
     }
 }

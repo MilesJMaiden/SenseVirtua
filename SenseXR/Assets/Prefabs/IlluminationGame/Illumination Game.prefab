@@ -1800,6 +1800,8 @@ MonoBehaviour:
   tweenDuration: 1
   tweenType: 16
   renderPlane: {fileID: 2396145481394573357}
+  completionLight: {fileID: 0}
+  completionLightEndRange: 10
 --- !u!1 &3290870849903719545
 GameObject:
   m_ObjectHideFlags: 0
@@ -3593,6 +3595,9 @@ MonoBehaviour:
   portalTweenDuration: 3
   tweenType: 16
   finalPodium: {fileID: 7786321763229703947}
+  completionLight: {fileID: 8928742362164245214}
+  completionLightStartRange: 0
+  completionLightEndRange: 10
   delayedAudioSource: {fileID: 7839976543428733365}
   audioDelay: 10
 --- !u!1 &6076239934690213919
