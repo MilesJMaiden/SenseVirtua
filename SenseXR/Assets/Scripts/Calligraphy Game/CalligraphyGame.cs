@@ -1,6 +1,6 @@
-using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
+using UnityEngine;
 using UnityEditor;
 
 public class CalligraphyGame : MonoBehaviour
@@ -37,6 +37,7 @@ public class CalligraphyGame : MonoBehaviour
     public bool calligraphyGameCompleted = false;
     private Voice goldenManVoice;
     private bool isProcessingTask = false;
+    private Whiteboard whiteboard;
 
     void Start()
     {
@@ -61,6 +62,14 @@ public class CalligraphyGame : MonoBehaviour
         if (finalCompletionObject != null)
         {
             finalCompletionObject.SetActive(false);
+        }
+
+        // Get the Whiteboard component
+        whiteboard = FindObjectOfType<Whiteboard>();
+
+        if (whiteboard == null)
+        {
+            Debug.LogError("Whiteboard component not found in the scene.");
         }
     }
 
@@ -130,6 +139,12 @@ public class CalligraphyGame : MonoBehaviour
             }
         }
         isProcessingTask = false;
+
+        // Reset the whiteboard texture after completing each task
+        if (whiteboard != null)
+        {
+            whiteboard.ResetTexture();
+        }
     }
 
     IEnumerator FadeOutAndDisable(GameObject task)

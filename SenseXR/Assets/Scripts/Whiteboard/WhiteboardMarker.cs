@@ -9,6 +9,7 @@ public class WhiteboardMarker : MonoBehaviour
     //Marker
     [SerializeField] private Transform _tip;
     [SerializeField] private int _penSize = 32;
+    [SerializeField] private int _brushEdges = 8; // Number of edges for the brush (more edges = more circular)
 
     private Renderer _renderer;
     private Color[] _colours;
@@ -25,8 +26,10 @@ public class WhiteboardMarker : MonoBehaviour
     {
         //Set-up
         _renderer = _tip.GetComponent<Renderer>();
-        _colours = Enumerable.Repeat(_renderer.material.color, _penSize * _penSize).ToArray();
         _tipHeight = _tip.GetComponent<MeshCollider>().bounds.size.y;
+
+        // Generate circular brush texture
+        _colours = GenerateCircularBrush(_penSize, _brushEdges, _renderer.material.color);
     }
 
     // Update is called once per frame
@@ -85,11 +88,45 @@ public class WhiteboardMarker : MonoBehaviour
                 _touchedLastFrame = true;
 
                 return;
-
             }
         }
 
         _whiteboard = null;
         _touchedLastFrame = false;
+    }
+
+    private Color[] GenerateCircularBrush(int size, int edges, Color color)
+    {
+        Color[] brush = new Color[size * size];
+        float radius = size / 2f;
+        Vector2 center = new Vector2(radius, radius);
+
+        for (int y = 0; y < size; y++)
+        {
+            for (int x = 0; x < size; x++)
+            {
+                Vector2 point = new Vector2(x, y);
+                float distance = Vector2.Distance(center, point);
+                if (distance <= radius)
+                {
+                    float angle = Mathf.Atan2(point.y - center.y, point.x - center.x) * Mathf.Rad2Deg;
+                    angle = (angle < 0) ? angle + 360 : angle;
+                    float segment = 360f / edges;
+                    if (Mathf.Floor(angle / segment) == angle / segment)
+                    {
+                        brush[x + y * size] = color;
+                    }
+                    else if (edges >= 16 && distance <= radius * 0.9f)
+                    {
+                        brush[x + y * size] = color;
+                    }
+                }
+                else
+                {
+                    brush[x + y * size] = new Color(0, 0, 0, 0);
+                }
+            }
+        }
+        return brush;
     }
 }
