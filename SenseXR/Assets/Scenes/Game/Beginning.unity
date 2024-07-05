@@ -1627,11 +1627,11 @@ PrefabInstance:
       objectReference: {fileID: 1387325331}
     - target: {fileID: 3685280429547686379, guid: 627a78f2e3bada44cbc0142067ee940e, type: 3}
       propertyPath: zonesToIlluminate
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3685280429547686379, guid: 627a78f2e3bada44cbc0142067ee940e, type: 3}
       propertyPath: artifactsToInteract
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5944343393026013241, guid: 627a78f2e3bada44cbc0142067ee940e, type: 3}
       propertyPath: m_Name

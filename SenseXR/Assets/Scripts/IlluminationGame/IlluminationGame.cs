@@ -14,8 +14,8 @@ public class IlluminationGame : MonoBehaviour
     public AudioSource loopAudioSource; // Looping audio source
     public Transform lanternFinalStartPosition; // Starting position for the lantern on the final completion podium
     public Transform lanternFinalEndPosition; // Final position for the lantern
-    public int zonesToIlluminate = 3; // Number of zones to illuminate
-    public int artifactsToInteract = 5; // Number of artifacts to interact with in each zone
+    public int zonesToIlluminate; // Number of zones to illuminate
+    public int artifactsToInteract; // Number of artifacts to interact with in each zone
     public float lanternTweenDuration = 1.0f; // Duration for lantern tweens
     public float portalTweenDuration = 2.0f; // Duration for portal tween
     public LeanTweenType tweenType = LeanTweenType.easeInOutSine; // Type of tween for animations
@@ -32,7 +32,7 @@ public class IlluminationGame : MonoBehaviour
     void Start()
     {
         // Initialize the Golden Man's voice component
-        goldenManVoice = goldenMan.GetComponent<Voice>();
+        //goldenManVoice = goldenMan.GetComponent<Voice>();
 
         // Initialize each zone
         foreach (Zone zone in zones)
@@ -77,7 +77,7 @@ public class IlluminationGame : MonoBehaviour
         }
 
         // Subscribe to the Golden Man's dialogue end event
-        goldenManVoice.OnDialogueEnd += OnGoldenManDialogueEnd;
+        //goldenManVoice.OnDialogueEnd += OnGoldenManDialogueEnd;
 
         // Disable the final podium at the start
         if (finalPodium != null)
@@ -89,7 +89,7 @@ public class IlluminationGame : MonoBehaviour
     void OnDestroy()
     {
         // Unsubscribe from the Golden Man's dialogue end event
-        goldenManVoice.OnDialogueEnd -= OnGoldenManDialogueEnd;
+        //goldenManVoice.OnDialogueEnd -= OnGoldenManDialogueEnd;
     }
 
     public void OnZoneIlluminated()
@@ -166,16 +166,21 @@ public class IlluminationGame : MonoBehaviour
     private void ReturnToGoldenMan()
     {
         // Trigger the Golden Man's voice
-        goldenManVoice.PlayVoice();
+        //goldenManVoice.PlayVoice();
+        if (allZonesCompleted)
+        {
+            MovePortal();
+            //CompleteGame();
+        }
     }
 
     private void OnGoldenManDialogueEnd()
     {
         // Check if all zones are completed and finalize the game
-        if (allZonesCompleted)
-        {
-            CompleteGame();
-        }
+        //if (allZonesCompleted)
+        //{
+        //    CompleteGame();
+        //}
     }
 
     private void CompleteGame()
