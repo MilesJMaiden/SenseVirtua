@@ -46,7 +46,7 @@ AudioSource:
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
-  Loop: 0
+  Loop: 1
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
@@ -54,7 +54,7 @@ AudioSource:
   DopplerLevel: 1
   MinDistance: 1
   MaxDistance: 15
-  Pan2D: 0
+  Pan2D: 0.5
   rolloffMode: 0
   BypassEffects: 0
   BypassListenerEffects: 0
@@ -88,7 +88,7 @@ AudioSource:
     m_Curve:
     - serializedVersion: 3
       time: 0
-      value: 0.376
+      value: 0.7
       inSlope: 0
       outSlope: 0
       tangentMode: 0
@@ -182,7 +182,7 @@ AudioSource:
   DopplerLevel: 1
   MinDistance: 1
   MaxDistance: 15
-  Pan2D: 0
+  Pan2D: 0.5
   rolloffMode: 0
   BypassEffects: 0
   BypassListenerEffects: 0
@@ -216,7 +216,7 @@ AudioSource:
     m_Curve:
     - serializedVersion: 3
       time: 0
-      value: 0.5
+      value: 0.7
       inSlope: 0
       outSlope: 0
       tangentMode: 0
@@ -316,7 +316,7 @@ Transform:
   m_GameObject: {fileID: 8094315671099348798}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: -0.08, y: 0, z: 3.3}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -334,7 +334,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: b2ddcda4f03dee042a629a50d1f20cf7, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 0.515
+  m_Volume: 1
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -344,7 +344,7 @@ AudioSource:
   DopplerLevel: 1
   MinDistance: 1
   MaxDistance: 15
-  Pan2D: 0
+  Pan2D: 0.5
   rolloffMode: 0
   BypassEffects: 0
   BypassListenerEffects: 0
@@ -378,7 +378,7 @@ AudioSource:
     m_Curve:
     - serializedVersion: 3
       time: 0
-      value: 0.5
+      value: 0.65
       inSlope: 0
       outSlope: 0
       tangentMode: 0
