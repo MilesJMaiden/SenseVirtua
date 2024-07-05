@@ -10,6 +10,7 @@ public class GlazeRepair : MonoBehaviour
     public GameObject wholePiece;
     public bool isLeftHandPiece;
     public MeshRenderer wholeLeftMeshrenderer;
+    public AudioSource glazeAudio;
 
     private XRGrabInteractable grabInteractable;
     public bool isCombined = false;
@@ -59,6 +60,10 @@ public class GlazeRepair : MonoBehaviour
 
         // Enable the right-left mesh
         wholeLeftMeshrenderer.enabled = true;
+
+        // Play the audio clip
+        glazeAudio.Play();
+        
 
         
     }

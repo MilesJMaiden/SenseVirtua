@@ -52,7 +52,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &2498837621132920422
 Transform:
   m_ObjectHideFlags: 0
@@ -358,11 +358,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b6915046cb70ede4fb402c82837d8740, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  otherPiece: {fileID: 0}
+  otherPiece: {fileID: 2568367584983196551, guid: 7d1abd0ada5bd5b4fa2f2e95385e48be, type: 3}
   leftPiece: {fileID: 1855347952103674724}
-  wholePiece: {fileID: 0}
+  wholePiece: {fileID: 2568367584983196551, guid: 7d1abd0ada5bd5b4fa2f2e95385e48be, type: 3}
   isLeftHandPiece: 0
   wholeLeftMeshrenderer: {fileID: 0}
+  glazeAudio: {fileID: 0}
   isCombined: 0
 --- !u!1 &3038749692585439172
 GameObject:
