@@ -6183,7 +6183,7 @@ PrefabInstance:
     - target: {fileID: 7015775361734783118, guid: f5382ac697ac6d445930f7e5ee488dc3, type: 3}
       propertyPath: m_Renderer
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 4551403683612801675}
     - target: {fileID: 8732534775963978059, guid: f5382ac697ac6d445930f7e5ee488dc3, type: 3}
       propertyPath: m_Name
       value: Artifact4
@@ -6587,6 +6587,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5f92fe51f47d77e40a0a9829513e9f1f, type: 3}
+--- !u!23 &4551403683612801675 stripped
+MeshRenderer:
+  m_CorrespondingSourceObject: {fileID: 7071182760956848314, guid: 5f92fe51f47d77e40a0a9829513e9f1f, type: 3}
+  m_PrefabInstance: {fileID: 6703668280371434033}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &6521933221983860186 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 5f92fe51f47d77e40a0a9829513e9f1f, type: 3}

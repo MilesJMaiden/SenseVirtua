@@ -909,7 +909,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1410cbaaadf84a7aaa6459d37ad21b3a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Renderer: {fileID: 5541695667158867111}
+  m_Renderer: {fileID: 1573203735329779943}
   m_MaterialIndex: 0
 --- !u!114 &2698917483066488169
 MonoBehaviour:
@@ -1162,7 +1162,7 @@ MonoBehaviour:
   m_ValueUpdated:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 403550428608545925}
+      - m_Target: {fileID: 4595538786890215263}
         m_TargetAssemblyTypeName: UnityEngine.Transform, UnityEngine
         m_MethodName: set_localScale
         m_Mode: 0
