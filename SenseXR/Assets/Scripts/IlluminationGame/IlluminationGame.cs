@@ -139,13 +139,12 @@ public class IlluminationGame : MonoBehaviour
             {
                 if (particleEffect != null)
                 {
-                    particleEffect.SetActive(false);
+                    Destroy(particleEffect);
                 }
 
                 if (loopAudioSource != null)
                 {
-                    loopAudioSource.Stop();
-                    loopAudioSource.enabled = false;
+                    Destroy(loopAudioSource.gameObject);
                 }
 
                 // Enable the final podium script
@@ -208,6 +207,14 @@ public class IlluminationGame : MonoBehaviour
         {
             renderPlane.SetActive(true);
             LeanTween.scale(renderPlane, Vector3.one, lanternTweenDuration).setFrom(Vector3.zero).setEase(tweenType);
+        }
+    }
+
+    private void PlayDelayedAudio()
+    {
+        if (delayedAudioSource != null)
+        {
+            delayedAudioSource.Play();
         }
     }
 }
