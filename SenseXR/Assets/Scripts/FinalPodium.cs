@@ -9,7 +9,7 @@ public class FinalPodium : MonoBehaviour
     public float tweenDuration = 1.0f;
     public LeanTweenType tweenType = LeanTweenType.easeInOutSine;
     public GameObject renderPlane;
-    private BoxCollider[] lanternColliders;
+    private Component[] lanternComponents;
 
     private void Awake()
     {
@@ -28,17 +28,14 @@ public class FinalPodium : MonoBehaviour
     {
         if (other.CompareTag("Lantern"))
         {
-            lanternColliders = other.GetComponentsInChildren<BoxCollider>();
+            lanternComponents = other.GetComponentsInChildren<Component>();
             PlaceLanternAtStartPosition(other.gameObject);
         }
     }
 
     private void PlaceLanternAtStartPosition(GameObject lantern)
     {
-        foreach (var collider in lanternColliders)
-        {
-            collider.enabled = false;
-        }
+        EnableDisableLanternComponents(false);
 
         LTSeq seq = LeanTween.sequence();
         seq.append(LeanTween.move(lantern, lanternStartPosition.position, tweenDuration).setEase(tweenType));
@@ -56,14 +53,28 @@ public class FinalPodium : MonoBehaviour
         seq.append(LeanTween.rotate(lantern, lanternEndPosition.rotation.eulerAngles, tweenDuration).setEase(tweenType));
         seq.append(() =>
         {
-            foreach (var collider in lanternColliders)
-            {
-                collider.enabled = true;
-            }
-
+            EnableDisableLanternComponents(true);
             podiumCollider.enabled = false;
             ExecuteFinalRenderSceneTween();
         });
+    }
+
+    private void EnableDisableLanternComponents(bool enable)
+    {
+        foreach (var component in lanternComponents)
+        {
+            if (component is MeshRenderer)
+                continue;
+
+            if (component is Behaviour behaviour)
+            {
+                behaviour.enabled = enable;
+            }
+            else if (component is Collider collider)
+            {
+                collider.enabled = enable;
+            }
+        }
     }
 
     private void ExecuteFinalRenderSceneTween()
