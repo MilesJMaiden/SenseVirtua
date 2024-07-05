@@ -751,8 +751,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b6915046cb70ede4fb402c82837d8740, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  otherPiece: {fileID: 0}
-  leftPiece: {fileID: 0}
+  otherPiece: {fileID: 1855347952103674724, guid: 861f836a423256a4699e39772723166a, type: 3}
+  leftPiece: {fileID: 1855347952103674724, guid: 861f836a423256a4699e39772723166a, type: 3}
   wholePiece: {fileID: 2568367584983196551}
   isLeftHandPiece: 0
   wholeLeftMeshrenderer: {fileID: 4860143350526959703}
