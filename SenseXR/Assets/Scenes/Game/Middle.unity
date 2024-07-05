@@ -12447,6 +12447,113 @@ PrefabInstance:
       propertyPath: m_text
       value: ...
       objectReference: {fileID: 0}
+    - target: {fileID: 6732751975913171016, guid: 6e469506d618e9741b09344d338ed64b, type: 3}
+      propertyPath: m_fontSize
+      value: 87
+      objectReference: {fileID: 0}
+    - target: {fileID: 6732751975913171016, guid: 6e469506d618e9741b09344d338ed64b, type: 3}
+      propertyPath: m_fontSizeBase
+      value: 87
+      objectReference: {fileID: 0}
+    - target: {fileID: 6855318893118151186, guid: 6e469506d618e9741b09344d338ed64b, type: 3}
+      propertyPath: translationTexts.Array.data[0].chinese
+      value: "\u54CE\u54DF\uFF01\u5DEE\u70B9\u649E\u5230\u5E08\u7236\u3002\u5728\u8FD9\u5EA7\u7409\u7483\u5854\u91CC,
+        \u6211\u4EEC\u7FFB\u8BD1\u8BB0\u5F55\u4E86\u51E0\u767E\u5E74\u65E0\u6570\u5B9D\u8D35\u7684\u667A\u6167\u548C\u6587\u5316\u2026\u2026\u4F46\u662F\u8FD8\u6709\u5F88\u591A\u5DE5\u4F5C\u8981\u505A\uFF01\u7B14\u548C\u7EB8\u90FD\u5728\u684C\u5B50\u4E0A\u653E\u597D\u4E86,
+        \u8D76\u7D27\u5F00\u59CB\u5427\u3002"
+      objectReference: {fileID: 0}
+    - target: {fileID: 6855318893118151186, guid: 6e469506d618e9741b09344d338ed64b, type: 3}
+      propertyPath: translationTexts.Array.data[0].english
+      value: 'Oops! Nearly bumped into you, apologies. At this temple, priceless
+        wisdom has been translated here for centuries to record the valuable culture
+        and lessons... But there''s still work to be done! The brush and paper are
+        all set on the table for you to get to work. '
+      objectReference: {fileID: 0}
+    - target: {fileID: 6855318893118151186, guid: 6e469506d618e9741b09344d338ed64b, type: 3}
+      propertyPath: translationTexts.Array.data[1].chinese
+      value: "\u5E72\u5F97\u597D\uFF01\u636E\u8BF4\u8FD9\u5E45\u58C1\u753B\u63CF\u7ED8\u7684\u662F\u5EB7\u50E7\u4F1A\u4ECE\u6D77\u5916\u800C\u6765\u3002\u4E09\u56FD\u65F6\u671F,
+        \u5EB7\u50E7\u4F1A\u4ECE\u6D77\u4E0A\u8FDC\u6E21\u4E2D\u56FD, \u5728\u5EFA\u4E1A\uFF08\u5357\u4EAC\uFF09\u7ACB\u9053\u573A\u4F20\u626C\u4F5B\u6559\u3002 "
+      objectReference: {fileID: 0}
+    - target: {fileID: 6855318893118151186, guid: 6e469506d618e9741b09344d338ed64b, type: 3}
+      propertyPath: translationTexts.Array.data[1].english
+      value: Well done! They say that this mural depicts the Kang Seng-Hui coming
+        from Overseas. In the 220-280 AD, the Kang Monk Association established a
+        business and passed on the Dharma in Nanjing.
+      objectReference: {fileID: 0}
+    - target: {fileID: 6855318893118151186, guid: 6e469506d618e9741b09344d338ed64b, type: 3}
+      propertyPath: translationTexts.Array.data[2].chinese
+      value: "\u8FD9\u526F\u753B\u7684\u753B\u9762\u4E2D\u95F4\u6709\u4E00\u5927\u5E10,
+        \u5E10\u5185\u83B2\u5EA7\u4E0A\u820D\u5229\u653E\u5149\u8292, \u5E10\u5916\u5E1D\u738B\u5B59\u6743\u4E0E\u50E7\u4EBA\u6B63\u8C08\u8BBA\u4F5B\u6CD5\u3002"
+      objectReference: {fileID: 0}
+    - target: {fileID: 6855318893118151186, guid: 6e469506d618e9741b09344d338ed64b, type: 3}
+      propertyPath: translationTexts.Array.data[2].english
+      value: 'This mural depicts the Sun Quan Temple relics. A large tent is painted
+        in the middle with relics on the Lotus Throne shining brightly inside the
+        tent. Outside the tent, the emperor and monks are seen conferring. '
+      objectReference: {fileID: 0}
+    - target: {fileID: 6855318893118151186, guid: 6e469506d618e9741b09344d338ed64b, type: 3}
+      propertyPath: translationTexts.Array.data[3].chinese
+      value: "\u770B\u770B\u4F60\u753B\u7684\u5C4B\u6A90\uFF01\u8FD9\u526F\u753B\u8BB2\u5F97\u662F\u5B59\u6743\u5EB7\u50E7\u4F1A\u9020\u5EFA\u521D\u5BFA,
+        \u4E5F\u5C31\u662F\u5927\u62A5\u6069\u5BFA\u7684\u524D\u8EAB\u3002"
+      objectReference: {fileID: 0}
+    - target: {fileID: 6855318893118151186, guid: 6e469506d618e9741b09344d338ed64b, type: 3}
+      propertyPath: translationTexts.Array.data[3].english
+      value: 'Here we see an illustration of Kang Seng-Hui, a monk, built the Jianchu
+        Temple, which is the predecessor of this Porcelain tower. '
+      objectReference: {fileID: 0}
+    - target: {fileID: 6855318893118151186, guid: 6e469506d618e9741b09344d338ed64b, type: 3}
+      propertyPath: translationTexts.Array.data[4].chinese
+      value: "\u8FD9\u5E45\u753B\u5219\u662F\u5EFA\u521D\u5BFA\u5EFA\u7ACB\u540E,
+        \u4F5B\u6CD5\u5728\u5357\u4EAC\u4F20\u64AD\uFF0C\u5B59\u6743\u4E4B\u5B59\u5B59\u7693\u8DEA\u8FCE\u5EB7\u50E7\u4F1A\u8BB2\u6388\u4F5B\u6CD5\u3002\u55EF\uFF0C\u6216\u8BB8\u6211\u5C0F\u77A7\u4F60\u4E86\uFF0C\u5E74\u8F7B\u4EBA\u3002\u5E72\u5F97\u4E0D\u9519\u3002\u5929\u5FEB\u4EAE\u4E86,
+        \u4F46\u8FD9\u697C\u91CC\u8FD8\u6709\u4E00\u4E2A\u5730\u65B9\u4F60\u8BE5\u53BB\u770B\u770B\u3002\u4E0A\u697C\u5427,
+        \u4F60\u6765\u9886\u8DEF\u3002"
+      objectReference: {fileID: 0}
+    - target: {fileID: 6855318893118151186, guid: 6e469506d618e9741b09344d338ed64b, type: 3}
+      propertyPath: translationTexts.Array.data[4].english
+      value: 'The final mural depicts Sun Hao kneeled to welcome the Monk Kang Seng-hui.
+        Hmm. Maybe I underestimated you monk. This is good work. The sun is on its
+        way up but there is one more place I want you to see. Those stairs should
+        take you there. You lead the way. '
+      objectReference: {fileID: 0}
+    - target: {fileID: 6855318893118151186, guid: 6e469506d618e9741b09344d338ed64b, type: 3}
+      propertyPath: translationVoices.Array.data[0].chinese
+      value: 
+      objectReference: {fileID: 8300000, guid: 4252dbc304233e64d9444018538b7329, type: 3}
+    - target: {fileID: 6855318893118151186, guid: 6e469506d618e9741b09344d338ed64b, type: 3}
+      propertyPath: translationVoices.Array.data[0].english
+      value: 
+      objectReference: {fileID: 8300000, guid: 406fec7f629d2894a9fe918451f5881a, type: 3}
+    - target: {fileID: 6855318893118151186, guid: 6e469506d618e9741b09344d338ed64b, type: 3}
+      propertyPath: translationVoices.Array.data[1].chinese
+      value: 
+      objectReference: {fileID: 8300000, guid: 50b4bb5e206c602498dffdcca7951ffb, type: 3}
+    - target: {fileID: 6855318893118151186, guid: 6e469506d618e9741b09344d338ed64b, type: 3}
+      propertyPath: translationVoices.Array.data[1].english
+      value: 
+      objectReference: {fileID: 8300000, guid: 2c9ded259dd21c64e8929540d3898494, type: 3}
+    - target: {fileID: 6855318893118151186, guid: 6e469506d618e9741b09344d338ed64b, type: 3}
+      propertyPath: translationVoices.Array.data[2].chinese
+      value: 
+      objectReference: {fileID: 8300000, guid: 9d63f0ed9d62b814e9c7334b03a90a39, type: 3}
+    - target: {fileID: 6855318893118151186, guid: 6e469506d618e9741b09344d338ed64b, type: 3}
+      propertyPath: translationVoices.Array.data[2].english
+      value: 
+      objectReference: {fileID: 8300000, guid: 023c4e2613b4c3f45ae3e3aebc3c2d3c, type: 3}
+    - target: {fileID: 6855318893118151186, guid: 6e469506d618e9741b09344d338ed64b, type: 3}
+      propertyPath: translationVoices.Array.data[3].chinese
+      value: 
+      objectReference: {fileID: 8300000, guid: 5948dd3e082e6054a86000149f9c9a5e, type: 3}
+    - target: {fileID: 6855318893118151186, guid: 6e469506d618e9741b09344d338ed64b, type: 3}
+      propertyPath: translationVoices.Array.data[3].english
+      value: 
+      objectReference: {fileID: 8300000, guid: 0aa9271c38792dd41a781c28e95a0f1f, type: 3}
+    - target: {fileID: 6855318893118151186, guid: 6e469506d618e9741b09344d338ed64b, type: 3}
+      propertyPath: translationVoices.Array.data[4].chinese
+      value: 
+      objectReference: {fileID: 8300000, guid: 6570d686c3acebe49afae32c65a723c9, type: 3}
+    - target: {fileID: 6855318893118151186, guid: 6e469506d618e9741b09344d338ed64b, type: 3}
+      propertyPath: translationVoices.Array.data[4].english
+      value: 
+      objectReference: {fileID: 8300000, guid: 0737fe333dfac124a8376fb208dafa5f, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

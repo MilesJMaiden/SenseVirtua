@@ -577,79 +577,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 479710794808476351, guid: 9a76a62d0e93d6e478eb6dcd4b710eaf, type: 3}
   m_PrefabInstance: {fileID: 663462137}
   m_PrefabAsset: {fileID: 0}
---- !u!1001 &829251791
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 7009727265490571566, guid: d8cecbc858b32c34a8af726b48a524ba, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -0.08
-      objectReference: {fileID: 0}
-    - target: {fileID: 7009727265490571566, guid: d8cecbc858b32c34a8af726b48a524ba, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 3.3
-      objectReference: {fileID: 0}
-    - target: {fileID: 7467107845477257428, guid: d8cecbc858b32c34a8af726b48a524ba, type: 3}
-      propertyPath: m_Name
-      value: AmbientSoundsFirst
-      objectReference: {fileID: 0}
-    - target: {fileID: 7897859661315984332, guid: d8cecbc858b32c34a8af726b48a524ba, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7897859661315984332, guid: d8cecbc858b32c34a8af726b48a524ba, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0.9733811
-      objectReference: {fileID: 0}
-    - target: {fileID: 7897859661315984332, guid: d8cecbc858b32c34a8af726b48a524ba, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: -21.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 7897859661315984332, guid: d8cecbc858b32c34a8af726b48a524ba, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7897859661315984332, guid: d8cecbc858b32c34a8af726b48a524ba, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7897859661315984332, guid: d8cecbc858b32c34a8af726b48a524ba, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7897859661315984332, guid: d8cecbc858b32c34a8af726b48a524ba, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7897859661315984332, guid: d8cecbc858b32c34a8af726b48a524ba, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7897859661315984332, guid: d8cecbc858b32c34a8af726b48a524ba, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7897859661315984332, guid: d8cecbc858b32c34a8af726b48a524ba, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8234928432869606353, guid: d8cecbc858b32c34a8af726b48a524ba, type: 3}
-      propertyPath: panLevelCustomCurve.m_Curve.Array.data[0].value
-      value: 0.64
-      objectReference: {fileID: 0}
-    - target: {fileID: 8419147742373621279, guid: d8cecbc858b32c34a8af726b48a524ba, type: 3}
-      propertyPath: panLevelCustomCurve.m_Curve.Array.data[0].value
-      value: 0.63
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: d8cecbc858b32c34a8af726b48a524ba, type: 3}
 --- !u!1 &848868853
 GameObject:
   m_ObjectHideFlags: 0
@@ -1056,7 +983,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 1048fbc578ec48e45918397bae9e07d3, type: 2}
+  - {fileID: 2100000, guid: e6635f4d2e0bbce4cbb6d955583f0340, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1111,7 +1038,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 4134505312059479865, guid: 04683d61741008c4dbfb1f9b705ada06, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.23
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4134505312059479865, guid: 04683d61741008c4dbfb1f9b705ada06, type: 3}
       propertyPath: m_LocalPosition.y
@@ -1119,7 +1046,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4134505312059479865, guid: 04683d61741008c4dbfb1f9b705ada06, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -3.01
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 4134505312059479865, guid: 04683d61741008c4dbfb1f9b705ada06, type: 3}
       propertyPath: m_LocalRotation.w
@@ -1174,6 +1101,11 @@ GameObject:
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2027373507797338871, guid: 04683d61741008c4dbfb1f9b705ada06, type: 3}
   m_PrefabInstance: {fileID: 1387325329}
+  m_PrefabAsset: {fileID: 0}
+--- !u!82 &1482741651 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 7839976543428733365, guid: 627a78f2e3bada44cbc0142067ee940e, type: 3}
+  m_PrefabInstance: {fileID: 5120715424736625808}
   m_PrefabAsset: {fileID: 0}
 --- !u!114 &1982102850 stripped
 MonoBehaviour:
@@ -1879,6 +1811,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1387325331}
     - target: {fileID: 3685280429547686379, guid: 627a78f2e3bada44cbc0142067ee940e, type: 3}
+      propertyPath: endingVoice
+      value: 
+      objectReference: {fileID: 1482741651}
+    - target: {fileID: 3685280429547686379, guid: 627a78f2e3bada44cbc0142067ee940e, type: 3}
       propertyPath: zonesToIlluminate
       value: 1
       objectReference: {fileID: 0}
@@ -1886,14 +1822,59 @@ PrefabInstance:
       propertyPath: artifactsToInteract
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 5379862927040044210, guid: 627a78f2e3bada44cbc0142067ee940e, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -0.4
+    - target: {fileID: 5931459988316992922, guid: 627a78f2e3bada44cbc0142067ee940e, type: 3}
+      propertyPath: translationTexts.Array.data[0].chinese
+      value: "\u7761\u7740\u4E86\u5427\uFF1F\u6211\u672C\u6765\u4EE5\u4E3A\u4F60\u8EAB\u5728\u4F5B\u95E8\uFF0C\u80FD\u8868\u73B0\u5F97\u66F4\u597D\u3002
+        \u518D\u6709\u534A\u4E2A\u65F6\u8FB0\u5C31\u65E5\u51FA\u4E86\uFF0C\u52A8\u52A8\u817F\u5427\uFF01 "
       objectReference: {fileID: 0}
-    - target: {fileID: 5674520552862518064, guid: 627a78f2e3bada44cbc0142067ee940e, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -0.3
+    - target: {fileID: 5931459988316992922, guid: 627a78f2e3bada44cbc0142067ee940e, type: 3}
+      propertyPath: translationTexts.Array.data[0].english
+      value: 'Fell asleep, did you? I would expect better from a disciple of Buddha.
+        There is an hour before sunrise, so be helpful and turn the lights on. '
       objectReference: {fileID: 0}
+    - target: {fileID: 5931459988316992922, guid: 627a78f2e3bada44cbc0142067ee940e, type: 3}
+      propertyPath: translationTexts.Array.data[1].chinese
+      value: "\u6211\u662F\u8C01\uFF1F\u5C31\u8BF4\u6211\u5728\u8FD9\u91CC\u5F85\u4E86\u5F88\u4E45\u5427\u3002\u8FD9\u4E9B\u5E74\uFF0C\u89C1\u8FC7\u4E0D\u5C11\u50CF\u4F60\u8FD9\u6837\u7684\u61D2\u5C0F\u9B3C\u2026\u2026"
+      objectReference: {fileID: 0}
+    - target: {fileID: 5931459988316992922, guid: 627a78f2e3bada44cbc0142067ee940e, type: 3}
+      propertyPath: translationTexts.Array.data[1].english
+      value: Who am I? Let's just say I've been here a long time. And I've seen a
+        lot of lazy monks like you over the years....
+      objectReference: {fileID: 0}
+    - target: {fileID: 5931459988316992922, guid: 627a78f2e3bada44cbc0142067ee940e, type: 3}
+      propertyPath: translationTexts.Array.data[2].chinese
+      value: "\u4E0D\u7BA1\u600E\u6837\uFF0C\u522B\u518D\u5077\u61D2\u4E86\uFF01\u6211\u7D2F\u4E86\uFF0C\u5FEB\u628A\u706F\u70B9\u4E0A\u5427.
+        \u5DE6\u8FB9\u6709\u4E00\u76CF\u706F\u7B3C."
+      objectReference: {fileID: 0}
+    - target: {fileID: 5931459988316992922, guid: 627a78f2e3bada44cbc0142067ee940e, type: 3}
+      propertyPath: translationTexts.Array.data[2].english
+      value: 'Anyway, make yourself helpful! My eyes are tired. Get some lights on
+        in here... There is a the lantern on the left. '
+      objectReference: {fileID: 0}
+    - target: {fileID: 5931459988316992922, guid: 627a78f2e3bada44cbc0142067ee940e, type: 3}
+      propertyPath: translationVoices.Array.data[0].chinese
+      value: 
+      objectReference: {fileID: 8300000, guid: 21c2b1b555320464488012edf201a5d4, type: 3}
+    - target: {fileID: 5931459988316992922, guid: 627a78f2e3bada44cbc0142067ee940e, type: 3}
+      propertyPath: translationVoices.Array.data[0].english
+      value: 
+      objectReference: {fileID: 8300000, guid: 90980c258801a2c4eb3e0d51a69edc21, type: 3}
+    - target: {fileID: 5931459988316992922, guid: 627a78f2e3bada44cbc0142067ee940e, type: 3}
+      propertyPath: translationVoices.Array.data[1].chinese
+      value: 
+      objectReference: {fileID: 8300000, guid: 2fd494bcf84ed8c408d692c74d4f354a, type: 3}
+    - target: {fileID: 5931459988316992922, guid: 627a78f2e3bada44cbc0142067ee940e, type: 3}
+      propertyPath: translationVoices.Array.data[1].english
+      value: 
+      objectReference: {fileID: 8300000, guid: 1bd5891dc3e55474db24783ef0a18f31, type: 3}
+    - target: {fileID: 5931459988316992922, guid: 627a78f2e3bada44cbc0142067ee940e, type: 3}
+      propertyPath: translationVoices.Array.data[2].chinese
+      value: 
+      objectReference: {fileID: 8300000, guid: da40d0910d690d947babf1a7e1a6274d, type: 3}
+    - target: {fileID: 5931459988316992922, guid: 627a78f2e3bada44cbc0142067ee940e, type: 3}
+      propertyPath: translationVoices.Array.data[2].english
+      value: 
+      objectReference: {fileID: 8300000, guid: ddd2a0e6e2f81c647bd6c4f6f1940f46, type: 3}
     - target: {fileID: 5944343393026013241, guid: 627a78f2e3bada44cbc0142067ee940e, type: 3}
       propertyPath: m_Name
       value: Illumination Game
@@ -1910,6 +1891,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7839976543428733365, guid: 627a78f2e3bada44cbc0142067ee940e, type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 4a86904c28d2f0942b5f08d6e64bb49c, type: 3}
     - target: {fileID: 8000859568540591581, guid: 627a78f2e3bada44cbc0142067ee940e, type: 3}
       propertyPath: target
       value: 
@@ -2623,4 +2608,3 @@ SceneRoots:
   - {fileID: 4981343196449038480}
   - {fileID: 5120715424736625808}
   - {fileID: 137096699}
-  - {fileID: 829251791}
