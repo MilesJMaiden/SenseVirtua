@@ -26,6 +26,9 @@ public class IlluminationGame : MonoBehaviour
     private Voice goldenManVoice; // Reference to the Golden Man's Voice component
     private bool allZonesCompleted = false; // Flag to track if all zones are completed
 
+    public AudioSource delayedAudioSource; // Audio source to play after the Artifacts interactions
+    public float audioDelay = 10.0f; // Delay for the audio source to play after portal appears
+
     void Start()
     {
         // Initialize the Golden Man's voice component
@@ -150,6 +153,9 @@ public class IlluminationGame : MonoBehaviour
                 {
                     finalPodium.EnableFinalPodium();
                 }
+
+                // Invoke the method to play the delayed audio after the specified delay
+                Invoke("PlayDelayedAudio", audioDelay);
             });
         }
     }
