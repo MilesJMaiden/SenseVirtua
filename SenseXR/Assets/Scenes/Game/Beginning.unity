@@ -1705,6 +1705,7 @@ GameObject:
   - component: {fileID: 3626178875584972297}
   - component: {fileID: 756870095236534159}
   - component: {fileID: 3154734998011152402}
+  - component: {fileID: 5422712805334330843}
   m_Layer: 0
   m_Name: Walls
   m_TagString: Untagged
@@ -1712,6 +1713,28 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!64 &5422712805334330843
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5422712805334330842}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 5
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 2186430941476567602, guid: 397979601c529f041a319c40eb09eff0, type: 3}
 --- !u!1 &5650497535540148778
 GameObject:
   m_ObjectHideFlags: 0
