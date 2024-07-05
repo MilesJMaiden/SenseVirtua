@@ -53,7 +53,7 @@ public class FinalPodium : MonoBehaviour
         seq.append(LeanTween.rotate(lantern, lanternEndPosition.rotation.eulerAngles, tweenDuration).setEase(tweenType));
         seq.append(() =>
         {
-            EnableDisableLanternComponents(true);
+            EnableDisableLanternComponents(false); // Disable components after reaching end position
             podiumCollider.enabled = false;
             ExecuteFinalRenderSceneTween();
         });

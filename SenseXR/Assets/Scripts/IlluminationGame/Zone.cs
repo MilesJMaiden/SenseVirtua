@@ -65,7 +65,7 @@ public class Zone : MonoBehaviour
         seq.append(LeanTween.rotate(lantern, lanternEndPosition.rotation.eulerAngles, tweenDuration).setEase(tweenType));
         seq.append(() =>
         {
-            EnableDisableLanternComponents(true);
+            EnableDisableLanternComponents(false); // Disable components after reaching end position
             podiumCollider.enabled = false;
             Illuminate();
         });
@@ -132,10 +132,16 @@ public class Zone : MonoBehaviour
         if (!artifactInteracted)
         {
             artifactInteracted = true;
-            LeanTween.move(args.interactableObject.transform.gameObject, lanternStartPosition.position, tweenDuration).setEase(tweenType).setOnComplete(() =>
+            GameObject lantern = args.interactableObject.transform.gameObject;
+
+            LeanTween.move(lantern, lanternStartPosition.position, tweenDuration).setEase(tweenType).setOnComplete(() =>
             {
-                args.interactableObject.transform.GetComponent<XRGrabInteractable>().enabled = true;
-                illuminationGame.OnArtifactInteracted();
+                LeanTween.rotate(lantern, lanternStartPosition.rotation.eulerAngles, tweenDuration).setEase(tweenType).setOnComplete(() =>
+                {
+                    EnableDisableLanternComponents(true); // Re-enable components after returning to start position
+                    args.interactableObject.transform.GetComponent<XRGrabInteractable>().enabled = true;
+                    illuminationGame.OnArtifactInteracted();
+                });
             });
         }
     }
