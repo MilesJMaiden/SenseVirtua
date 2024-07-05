@@ -7,7 +7,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Skybox Cubemap Extended Night
+  m_Name: Skybox Cubemap Extended Day 1
   m_Shader: {fileID: 4800000, guid: 82881a2d011b0964696411c822cdd00b, type: 3}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
@@ -21,7 +21,7 @@ Material:
   m_CustomRenderQueue: -1
   stringTagMap: {}
   disabledShaderPasses: []
-  m_LockedProperties: _CubemapPosition
+  m_LockedProperties: _EnableFog
   m_SavedProperties:
     serializedVersion: 3
     m_TexEnvs:
@@ -70,7 +70,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _Tex:
-        m_Texture: {fileID: 8900000, guid: fa41734a337674542975482c8fe96ea1, type: 3}
+        m_Texture: {fileID: 8900000, guid: beb1457d375110e468b8d8e1f29fccea, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _Texture0:
@@ -93,14 +93,14 @@ Material:
     - _DstBlend: 0
     - _EnableFog: 1
     - _EnableRotation: 1
-    - _Exposure: 1
-    - _Float0: -0.21
-    - _FogFill: 0.019
-    - _FogHeight: 0.941
-    - _FogIntensity: 0.395
+    - _Exposure: 0.63
+    - _Float0: 0
+    - _FogFill: 0
+    - _FogHeight: 0.2
+    - _FogIntensity: 0.264
     - _FogMessage: 0
     - _FogPosition: 0
-    - _FogSmoothness: 0.5
+    - _FogSmoothness: 0.01
     - _Fogg: 1
     - _GlossMapScale: 1
     - _Glossiness: 0.5
@@ -125,5 +125,5 @@ Material:
     - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
     - _Tex_HDR: {r: 1, g: 1, b: 0, a: 0}
-    - _TintColor: {r: 0.5597484, g: 0.5597484, b: 0.5597484, a: 1}
+    - _TintColor: {r: 0.27625486, g: 0.28831697, b: 0.3018868, a: 1}
   m_BuildTextureStacks: []
