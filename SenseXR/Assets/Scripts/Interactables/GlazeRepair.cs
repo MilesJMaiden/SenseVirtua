@@ -15,11 +15,17 @@ public class GlazeRepair : MonoBehaviour
     private XRGrabInteractable grabInteractable;
     public bool isCombined = false;
 
+
     void Start()
     {
         grabInteractable = GetComponent<XRGrabInteractable>();
         grabInteractable.onSelectExited.AddListener(OnRelease);
 
+    }
+
+    void OnDestroy()
+    {
+        grabInteractable.onSelectExited.RemoveListener(OnRelease);
     }
 
     void OnCollisionEnter(Collision collision)
@@ -63,6 +69,8 @@ public class GlazeRepair : MonoBehaviour
 
         // Play the audio clip
         glazeAudio.Play();
+
+        isCombined = false;
         
 
         

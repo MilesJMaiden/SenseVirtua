@@ -6034,6 +6034,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4839292529206866470, guid: 861f836a423256a4699e39772723166a, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.18
+      objectReference: {fileID: 0}
+    - target: {fileID: 4839292529206866470, guid: 861f836a423256a4699e39772723166a, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4839292529206866470, guid: 861f836a423256a4699e39772723166a, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0
+      objectReference: {fileID: 0}
     - target: {fileID: 7764846333275798353, guid: 861f836a423256a4699e39772723166a, type: 3}
       propertyPath: glazeAudio
       value: 
