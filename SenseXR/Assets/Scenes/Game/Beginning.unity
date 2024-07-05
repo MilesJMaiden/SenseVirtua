@@ -1704,6 +1704,7 @@ GameObject:
   - component: {fileID: 8884199003534153696}
   - component: {fileID: 735497347592330712}
   - component: {fileID: 3430137263387319313}
+  - component: {fileID: 8884199003534153697}
   m_Layer: 0
   m_Name: Stairs
   m_TagString: Untagged
@@ -2457,6 +2458,28 @@ Transform:
   m_Children: []
   m_Father: {fileID: 147252846}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!64 &8884199003534153697
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3991042997924468761}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 5
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 4104380202958562290, guid: 397979601c529f041a319c40eb09eff0, type: 3}
 --- !u!4 &8924840672075941999
 Transform:
   m_ObjectHideFlags: 0
