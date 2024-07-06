@@ -8,9 +8,7 @@ public class GameManager : MonoBehaviour
     public GameObject hammer;
     public GameObject bell;
     public GameObject charm;
-    public Transform charmStartPosition;
-    public Transform charmEndPosition;
-    public FadeScreen fadeScreen; // Reference to the FadeScreen component
+    public FadeScreen fadeScreen; //see player
     public float tweenDuration = 1.0f;
     public LeanTweenType tweenType = LeanTweenType.easeInOutSine;
 
@@ -62,13 +60,11 @@ public class GameManager : MonoBehaviour
     private void EnableCharm()
     {
         charm.SetActive(true);
-        LeanTween.move(charm, charmStartPosition.position, tweenDuration).setEase(tweenType).setOnComplete(() =>
-        {
+
             LeanTween.scale(charm, Vector3.one, tweenDuration).setFrom(Vector3.zero).setEase(tweenType).setOnComplete(() =>
             {
                 charm.GetComponent<XRGrabInteractable>().enabled = true;
             });
-        });
     }
 
     public void OnCharmGrabbed()
