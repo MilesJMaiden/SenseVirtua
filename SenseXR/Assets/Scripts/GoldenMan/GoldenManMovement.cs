@@ -31,6 +31,7 @@ public class GoldenManMovement : MonoBehaviour
             {
                 // Loop the floating animation
                 StartFloating();
+
             });
         });
     }
