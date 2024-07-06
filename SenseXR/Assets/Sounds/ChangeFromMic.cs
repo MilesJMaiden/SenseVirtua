@@ -7,11 +7,11 @@ public class ChangeFromMic : MonoBehaviour
     public AudioSource source;
     public AudioLoudnessDetection detector;
     public ParticleSystem audioFeedbackPS;
+    public GameManager gameManager;
 
     public float loudnessSensibility = 100;
     public float threshold = 0.1f;
 
-    
     void Update()
     {
         float loudness = detector.GetLoudnessFromMicrophone() * loudnessSensibility;
@@ -21,10 +21,10 @@ public class ChangeFromMic : MonoBehaviour
         else if (loudness > threshold && audioFeedbackPS.isStopped)
             audioFeedbackPS.Play();
 
-
-        if (loudness < threshold)
-            loudness = 0;
-
+        if (loudness > threshold)
+        {
+            gameManager.OnPlayerVoiceInput();
+        }
     }
 
     private void OnDisable()

@@ -48,11 +48,22 @@ public class TranslationMgr : MonoBehaviour
         {
             listener.Invoke();
         }
+
+        UpdateCurrentDialogueAndVoice();
     }
 
     public void AddListener(Action action)
     {
         listeners.Add(action);
+    }
+
+    private void UpdateCurrentDialogueAndVoice()
+    {
+        Voice[] voices = FindObjectsOfType<Voice>();
+        foreach (var voice in voices)
+        {
+            voice.UpdateDialogueAndVoice();
+        }
     }
 }
 

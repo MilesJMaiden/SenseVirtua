@@ -156,6 +156,34 @@ public class Voice : MonoBehaviour
         }
     }
 
+    // Update dialogue and voice based on the current language
+    public void UpdateDialogueAndVoice()
+    {
+        // Update the voice audio clip and text to the current language
+        voiceAudio.clip = TranslationMgr.instance.GetTranslationVoice(voiceTexts[currentIdx > 0 ? currentIdx - 1 : 0]);
+        string txt = TranslationMgr.instance.GetTranslationText(voiceTexts[currentIdx > 0 ? currentIdx - 1 : 0]);
+
+        // Play the updated voice and show the updated text if playing or if at the start
+        if (playing || currentIdx == 0)
+        {
+            StopVoice();
+
+            voiceAudio.Play();
+            bubbleCanvas.ShowFullDialogue(txt);
+
+            // Schedule the end of the current voice
+            Invoke("EndVoice", voiceAudio.clip.length);
+
+            playing = true;
+        }
+        else
+        {
+            voiceAudio.clip = TranslationMgr.instance.GetTranslationVoice(voiceTexts[currentIdx > 0 ? currentIdx - 1 : 0]);
+            bubbleCanvas.ShowFullDialogue(txt);
+        }
+    }
+
+
     public event System.Action OnDialogueEnd;
 
     private void HandleSpecialActions()
