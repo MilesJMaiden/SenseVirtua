@@ -105,6 +105,37 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.003, y: 0.003000001, z: 0.009538751}
   m_Center: {x: 0, y: 1.1641536e-10, z: -0.001535854}
+--- !u!1 &258682086432148559
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1397308034958580505}
+  m_Layer: 0
+  m_Name: LFP
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1397308034958580505
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 258682086432148559}
+  serializedVersion: 2
+  m_LocalRotation: {x: -4.884981e-15, y: 0.25881872, z: -2.3314681e-15, w: 0.965926}
+  m_LocalPosition: {x: -0.91923916, y: -0.3619999, z: 0.35355297}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 3321955631553184060}
+  m_LocalEulerAnglesHint: {x: 0, y: 30, z: 0}
 --- !u!1 &375514022506901114
 GameObject:
   m_ObjectHideFlags: 0
@@ -1990,6 +2021,7 @@ Transform:
   - {fileID: 1230953015170353906}
   - {fileID: 7590692380316796784}
   - {fileID: 2422218185236547465}
+  - {fileID: 2413470839051525895}
   - {fileID: 757925699842430974}
   m_Father: {fileID: 642064430344612219}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -2042,6 +2074,7 @@ MonoBehaviour:
   pointLight: {fileID: 5514348279991961479}
   lanternStartPosition: {fileID: 2422218185236547465}
   lanternEndPosition: {fileID: 757925699842430974}
+  finalPoint: {fileID: 2413470839051525895}
   podiumCollider: {fileID: 4786189655211794072}
   startingIlluminationRange: 7.5
   targetIlluminationRange: 11.5
@@ -2417,6 +2450,7 @@ Transform:
   - {fileID: 6070071996467247686}
   - {fileID: 1273999212069222853}
   - {fileID: 5330486468459837904}
+  - {fileID: 3286462652574313485}
   - {fileID: 6199245521122526569}
   - {fileID: 8859435294533921507}
   m_Father: {fileID: 642064430344612219}
@@ -2470,6 +2504,7 @@ MonoBehaviour:
   pointLight: {fileID: 2126138229820542595}
   lanternStartPosition: {fileID: 5330486468459837904}
   lanternEndPosition: {fileID: 6199245521122526569}
+  finalPoint: {fileID: 3286462652574313485}
   podiumCollider: {fileID: 164850625467904870}
   startingIlluminationRange: 7.5
   targetIlluminationRange: 11.5
@@ -2731,6 +2766,7 @@ Transform:
   - {fileID: 6758209559498424455}
   - {fileID: 9094811802868775766}
   - {fileID: 7908595071137728310}
+  - {fileID: 1397308034958580505}
   - {fileID: 9123974492403998439}
   m_Father: {fileID: 642064430344612219}
   m_LocalEulerAnglesHint: {x: 0, y: -45, z: 0}
@@ -2783,6 +2819,7 @@ MonoBehaviour:
   pointLight: {fileID: 8861165188151614672}
   lanternStartPosition: {fileID: 7908595071137728310}
   lanternEndPosition: {fileID: 9123974492403998439}
+  finalPoint: {fileID: 1397308034958580505}
   podiumCollider: {fileID: 6241971270168506626}
   startingIlluminationRange: 7.5
   targetIlluminationRange: 11.5
@@ -2928,6 +2965,37 @@ Transform:
   m_Children: []
   m_Father: {fileID: 5674520552862518064}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &4882032693797484492
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2413470839051525895}
+  m_Layer: 0
+  m_Name: LFP
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2413470839051525895
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4882032693797484492}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0.0000000019450141, y: 0.13052769, z: -0.000000014773679, w: 0.9914447}
+  m_LocalPosition: {x: -0.90000004, y: -0.36199963, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 2774359300166271770}
+  m_LocalEulerAnglesHint: {x: 0, y: 15, z: 0}
 --- !u!1 &5051311146335877218
 GameObject:
   m_ObjectHideFlags: 0
@@ -3981,6 +4049,37 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.003, y: 0.003000001, z: 0.009538751}
   m_Center: {x: 0, y: 1.1641536e-10, z: -0.001535854}
+--- !u!1 &7080662740619157083
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7712194719341827536}
+  m_Layer: 0
+  m_Name: LFP
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7712194719341827536
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7080662740619157083}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: 0.13052727, z: -0, w: 0.9914447}
+  m_LocalPosition: {x: -0.919239, y: -0.3619994, z: 0.21213219}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 4880706119671484966}
+  m_LocalEulerAnglesHint: {x: 0, y: 15, z: 0}
 --- !u!1 &7206694020653608573
 GameObject:
   m_ObjectHideFlags: 0
@@ -4019,6 +4118,7 @@ Transform:
   - {fileID: 3926420475372602588}
   - {fileID: 3488376429493904248}
   - {fileID: 994760923268046937}
+  - {fileID: 7712194719341827536}
   - {fileID: 5747143856969421674}
   - {fileID: 3234512285375352181}
   m_Father: {fileID: 642064430344612219}
@@ -4072,6 +4172,7 @@ MonoBehaviour:
   pointLight: {fileID: 3862679763617834540}
   lanternStartPosition: {fileID: 994760923268046937}
   lanternEndPosition: {fileID: 5747143856969421674}
+  finalPoint: {fileID: 7712194719341827536}
   podiumCollider: {fileID: 7947645188870654313}
   startingIlluminationRange: 7.5
   targetIlluminationRange: 11.5
@@ -4546,6 +4647,37 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!1 &7477109177474089783
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3286462652574313485}
+  m_Layer: 0
+  m_Name: LFP
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &3286462652574313485
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7477109177474089783}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: 0.25882038, z: -0, w: 0.96592546}
+  m_LocalPosition: {x: -1.0000129, y: -0.362, z: 0.245}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 7061791921970407212}
+  m_LocalEulerAnglesHint: {x: 0, y: 30, z: 0}
 --- !u!1 &7530686859197587618
 GameObject:
   m_ObjectHideFlags: 0
@@ -4616,6 +4748,7 @@ Transform:
   - {fileID: 7693893462190267372}
   - {fileID: 4307256877818913611}
   - {fileID: 3470153163580851246}
+  - {fileID: 5611033221863565432}
   - {fileID: 6516517090365284499}
   - {fileID: 7033185182382592328}
   m_Father: {fileID: 642064430344612219}
@@ -4669,6 +4802,7 @@ MonoBehaviour:
   pointLight: {fileID: 4343908655875688235}
   lanternStartPosition: {fileID: 3470153163580851246}
   lanternEndPosition: {fileID: 6516517090365284499}
+  finalPoint: {fileID: 5611033221863565432}
   podiumCollider: {fileID: 6265444750365192585}
   startingIlluminationRange: 7.5
   targetIlluminationRange: 11.5
@@ -5090,6 +5224,37 @@ Transform:
   m_Children: []
   m_Father: {fileID: 642064430344612219}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &8804132915348975730
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5611033221863565432}
+  m_Layer: 0
+  m_Name: LFP
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5611033221863565432
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8804132915348975730}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: 0.25881955, z: -0, w: 0.9659257}
+  m_LocalPosition: {x: -1.0000132, y: -0.3619994, z: 0.19999874}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 5522104749022864417}
+  m_LocalEulerAnglesHint: {x: 0, y: 30, z: 0}
 --- !u!1 &8871671955508499010
 GameObject:
   m_ObjectHideFlags: 0

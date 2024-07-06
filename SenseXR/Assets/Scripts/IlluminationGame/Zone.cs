@@ -7,6 +7,7 @@ public class Zone : MonoBehaviour
     public Light pointLight; // The light component for the zone
     public Transform lanternStartPosition; // Start position for the lantern
     public Transform lanternEndPosition; // End position for the lantern
+    public Transform finalPoint; // Final point for the lantern to move to
     public Collider podiumCollider; // Reference to the podium collider
     public float startingIlluminationRange = 0f; // Initial range of the light
     public float targetIlluminationRange = 10f; // Target range of the light
@@ -135,8 +136,8 @@ public class Zone : MonoBehaviour
             GameObject lantern = args.interactableObject.transform.gameObject;
 
             LTSeq seq = LeanTween.sequence();
-            seq.append(LeanTween.move(lantern, lanternStartPosition.position, tweenDuration).setEase(tweenType));
-            seq.append(LeanTween.rotate(lantern, lanternStartPosition.rotation.eulerAngles, tweenDuration).setEase(tweenType));
+            seq.append(LeanTween.move(lantern, finalPoint.position, tweenDuration).setEase(tweenType));
+            seq.append(LeanTween.rotate(lantern, finalPoint.rotation.eulerAngles, tweenDuration).setEase(tweenType));
             seq.append(() =>
             {
                 EnableDisableLanternComponents(true); // Re-enable components after returning to start position
@@ -145,5 +146,4 @@ public class Zone : MonoBehaviour
             });
         }
     }
-
 }
