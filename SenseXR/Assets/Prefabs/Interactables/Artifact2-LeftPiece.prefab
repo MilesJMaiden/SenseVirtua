@@ -25,7 +25,7 @@ Transform:
   m_GameObject: {fileID: 654141136011483340}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
-  m_LocalPosition: {x: 0.0013333338, y: -3.5122363e-11, z: -7.450581e-10}
+  m_LocalPosition: {x: 0.18, y: 0, z: -0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -61,7 +61,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1855347952103674724}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -2.2204458e-16, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 7.8529997, y: 1.806, z: -7.601}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -345,7 +345,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b6915046cb70ede4fb402c82837d8740, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  otherPiece: {fileID: 2568367584983196551, guid: 7d1abd0ada5bd5b4fa2f2e95385e48be, type: 3}
+  otherPiece: {fileID: 0}
   leftPiece: {fileID: 1855347952103674724}
   wholePiece: {fileID: 2568367584983196551, guid: 7d1abd0ada5bd5b4fa2f2e95385e48be, type: 3}
   isLeftHandPiece: 0
