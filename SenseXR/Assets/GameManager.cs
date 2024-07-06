@@ -13,8 +13,8 @@ public class GameManager : MonoBehaviour
     public FadeScreen fadeScreen;
     public float tweenDuration = 1.0f;
     public LeanTweenType tweenType = LeanTweenType.easeInOutSine;
-    public float chantVolumeIncreaseDuration = 10.0f;
-    public float waitTimerDuration = 1.0f;
+    public float chantVolumeIncreaseDuration = 3.0f;
+    public float waitTimerDuration = 5.0f;
 
     private void Start()
     {
@@ -22,7 +22,9 @@ public class GameManager : MonoBehaviour
         bell.SetActive(false);
         charm.SetActive(false);
         changeFromMicObject.SetActive(false);
-        chantAudioSource.enabled = false;
+
+        chantAudioSource.enabled = true; // Enable chantAudioSource on start
+        chantAudioSource.volume = 0; // Start with volume at 0
     }
 
     private void OnEnable()
@@ -58,7 +60,6 @@ public class GameManager : MonoBehaviour
 
     private IEnumerator IncreaseChantVolume()
     {
-        chantAudioSource.enabled = true;
         float elapsedTime = 0;
         float initialVolume = chantAudioSource.volume;
 
@@ -96,6 +97,7 @@ public class GameManager : MonoBehaviour
 
     private void EnableCharm()
     {
+
         charm.SetActive(true);
         LeanTween.scale(charm, Vector3.one, tweenDuration).setFrom(Vector3.zero).setEase(tweenType).setOnComplete(() =>
         {
@@ -112,12 +114,14 @@ public class GameManager : MonoBehaviour
     {
         StartCoroutine(ScaleDownHammerAndBell());
         goldenManVoice.PlayVoice();
+
+        EnableCharm();
     }
 
     private IEnumerator ScaleDownHammerAndBell()
     {
-        yield return new WaitForSeconds(tweenDuration);
         LeanTween.scale(hammer, Vector3.zero, tweenDuration).setEase(tweenType).setOnComplete(() => hammer.SetActive(false));
         LeanTween.scale(bell, Vector3.zero, tweenDuration).setEase(tweenType).setOnComplete(() => bell.SetActive(false));
+        yield return new WaitForSeconds(tweenDuration);
     }
 }

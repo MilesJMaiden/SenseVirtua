@@ -3487,8 +3487,8 @@ MonoBehaviour:
   fadeScreen: {fileID: 1957981630}
   tweenDuration: 1
   tweenType: 16
-  chantVolumeIncreaseDuration: 3
-  waitTimerDuration: 3
+  chantVolumeIncreaseDuration: 10
+  waitTimerDuration: 1
 --- !u!4 &818922621
 Transform:
   m_ObjectHideFlags: 0
