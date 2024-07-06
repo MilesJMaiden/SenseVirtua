@@ -2,37 +2,23 @@ using UnityEngine;
 
 public class BellHit : MonoBehaviour
 {
-    public AudioClip bellSound;
-    public GameObject bell;
-    public GameObject hammer;
-    public float tweenDuration = 1.0f;
-    public LeanTweenType tweenType = LeanTweenType.easeInOutSine;
+    public GameObject hitAudioPrefab;
+    public GameManager gameManager;
 
-    private void OnCollisionEnter(Collision collision)
+    private void OnTriggerEnter(Collider other)
     {
-        if (collision.gameObject.CompareTag("Hammer"))
+        if (other.CompareTag("Hammer"))
         {
-            PlayBellSound(collision.contacts[0].point);
+            // Instantiate the hit audio source at the hit position
+            GameObject hitAudio = Instantiate(hitAudioPrefab, other.transform.position, Quaternion.identity);
+            AudioSource audioSource = hitAudio.GetComponent<AudioSource>();
+            audioSource.Play();
 
-            //Wait time??
-            LeanTween.scale(hammer, Vector3.zero, tweenDuration).setEase(tweenType).setOnComplete(() =>
-            {
-                hammer.SetActive(false);
-            });
-            LeanTween.scale(bell, Vector3.zero, tweenDuration).setEase(tweenType).setOnComplete(() =>
-            {
-                bell.SetActive(false);
-            });
+            // Destroy the audio source after it has played
+            Destroy(hitAudio, audioSource.clip.length);
+
+            // Inform the GameManager that the bell was hit
+            gameManager.OnBellHit();
         }
-    }
-
-    private void PlayBellSound(Vector3 hitPosition)
-    {
-        GameObject audioObject = new GameObject("BellSound");
-        audioObject.transform.position = hitPosition;
-        AudioSource audioSource = audioObject.AddComponent<AudioSource>();
-        audioSource.clip = bellSound;
-        audioSource.Play();
-        Destroy(audioObject, bellSound.length);
     }
 }
