@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.017946457, g: 0.07345814, b: 0.21212241, a: 1}
+  m_IndirectSpecularColor: {r: 0.017958537, g: 0.07346693, b: 0.21211922, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -12877,6 +12877,38 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 260406354978157555, guid: 6e469506d618e9741b09344d338ed64b, type: 3}
+      propertyPath: m_Colliders.Array.data[0]
+      value: 
+      objectReference: {fileID: 4524430778033017966}
+    - target: {fileID: 260406354978157555, guid: 6e469506d618e9741b09344d338ed64b, type: 3}
+      propertyPath: m_InteractionLayers.m_Bits
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 260406354978157555, guid: 6e469506d618e9741b09344d338ed64b, type: 3}
+      propertyPath: m_SelectExited.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 4524430778033017965}
+    - target: {fileID: 260406354978157555, guid: 6e469506d618e9741b09344d338ed64b, type: 3}
+      propertyPath: m_SelectEntered.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 4524430778033017965}
+    - target: {fileID: 260406354978157555, guid: 6e469506d618e9741b09344d338ed64b, type: 3}
+      propertyPath: m_SelectExited.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: Play
+      objectReference: {fileID: 0}
+    - target: {fileID: 260406354978157555, guid: 6e469506d618e9741b09344d338ed64b, type: 3}
+      propertyPath: m_SelectEntered.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: Stop
+      objectReference: {fileID: 0}
+    - target: {fileID: 260406354978157555, guid: 6e469506d618e9741b09344d338ed64b, type: 3}
+      propertyPath: m_SelectExited.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: UnityEngine.ParticleSystem, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 260406354978157555, guid: 6e469506d618e9741b09344d338ed64b, type: 3}
+      propertyPath: m_SelectEntered.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: UnityEngine.ParticleSystem, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 1510896257691389673, guid: 6e469506d618e9741b09344d338ed64b, type: 3}
       propertyPath: m_SizeDelta.x
       value: 1769.3
@@ -13308,6 +13340,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8627963770103120675, guid: 6e469506d618e9741b09344d338ed64b, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8682650410834816588, guid: 6e469506d618e9741b09344d338ed64b, type: 3}
       propertyPath: m_text
       value: "\u4E2D\u6587"
@@ -13357,6 +13393,16 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6e469506d618e9741b09344d338ed64b, type: 3}
+--- !u!198 &4524430778033017965 stripped
+ParticleSystem:
+  m_CorrespondingSourceObject: {fileID: 2906480412589033601, guid: 6e469506d618e9741b09344d338ed64b, type: 3}
+  m_PrefabInstance: {fileID: 4524430778033017964}
+  m_PrefabAsset: {fileID: 0}
+--- !u!64 &4524430778033017966 stripped
+MeshCollider:
+  m_CorrespondingSourceObject: {fileID: 8097112977116813905, guid: 6e469506d618e9741b09344d338ed64b, type: 3}
+  m_PrefabInstance: {fileID: 4524430778033017964}
+  m_PrefabAsset: {fileID: 0}
 --- !u!65 &4525423923469628114
 BoxCollider:
   m_ObjectHideFlags: 0
