@@ -134,15 +134,16 @@ public class Zone : MonoBehaviour
             artifactInteracted = true;
             GameObject lantern = args.interactableObject.transform.gameObject;
 
-            LeanTween.move(lantern, lanternStartPosition.position, tweenDuration).setEase(tweenType).setOnComplete(() =>
+            LTSeq seq = LeanTween.sequence();
+            seq.append(LeanTween.move(lantern, lanternStartPosition.position, tweenDuration).setEase(tweenType));
+            seq.append(LeanTween.rotate(lantern, lanternStartPosition.rotation.eulerAngles, tweenDuration).setEase(tweenType));
+            seq.append(() =>
             {
-                LeanTween.rotate(lantern, lanternStartPosition.rotation.eulerAngles, tweenDuration).setEase(tweenType).setOnComplete(() =>
-                {
-                    EnableDisableLanternComponents(true); // Re-enable components after returning to start position
-                    args.interactableObject.transform.GetComponent<XRGrabInteractable>().enabled = true;
-                    illuminationGame.OnArtifactInteracted();
-                });
+                EnableDisableLanternComponents(true); // Re-enable components after returning to start position
+                args.interactableObject.transform.GetComponent<XRGrabInteractable>().enabled = true;
+                illuminationGame.OnArtifactInteracted();
             });
         }
     }
+
 }
