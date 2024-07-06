@@ -10,7 +10,7 @@ public class GameManager : MonoBehaviour
     public GameObject charm;
     public Transform charmStartPosition;
     public Transform charmEndPosition;
-    public CanvasGroup fadeCanvas;
+    public FadeScreen fadeScreen; // Reference to the FadeScreen component
     public float tweenDuration = 1.0f;
     public LeanTweenType tweenType = LeanTweenType.easeInOutSine;
 
@@ -73,9 +73,6 @@ public class GameManager : MonoBehaviour
 
     public void OnCharmGrabbed()
     {
-        LeanTween.alphaCanvas(fadeCanvas, 1, tweenDuration).setEase(tweenType).setOnComplete(() =>
-        {
-            // End the game
-        });
+        fadeScreen.FadeOut();
     }
 }
