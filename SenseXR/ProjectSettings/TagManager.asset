@@ -13,6 +13,7 @@ TagManager:
   - Artifact
   - Lantern
   - Podium
+  - Hammer
   layers:
   - Default
   - TransparentFX

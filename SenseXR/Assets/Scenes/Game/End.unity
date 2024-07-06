@@ -10684,8 +10684,8 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8015215797019304905}
-  m_LocalRotation: {x: -0, y: 0.9238796, z: -0, w: -0.38268325}
-  m_LocalPosition: {x: 0, y: 0, z: 0.987437}
+  m_LocalRotation: {x: 0, y: 0.8433915, z: -0, w: -0.5372995}
+  m_LocalPosition: {x: 0, y: 0, z: 1.48}
   m_LocalScale: {x: 0.0010000002, y: 0.001, z: 0.01}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -10695,10 +10695,10 @@ RectTransform:
   - {fileID: 160229866134286554}
   - {fileID: 6330372172719024023}
   m_Father: {fileID: 7242756483197456753}
-  m_LocalEulerAnglesHint: {x: 0, y: 225, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 245, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: -1.0732236, y: 0.75}
+  m_AnchoredPosition: {x: -2.57, y: -0.64}
   m_SizeDelta: {x: 1920, y: 1080}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &103258878419348436
@@ -10771,21 +10771,6 @@ RectTransform:
   m_AnchoredPosition: {x: 692.49976, y: 462.3846}
   m_SizeDelta: {x: 467.5, y: 61.7}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!4 &190012584447768903
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6464110072168464102}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -0.0038}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 2594381309619810052}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &202531506625547149
 GameObject:
   m_ObjectHideFlags: 0
@@ -13876,27 +13861,6 @@ MonoBehaviour:
       and houses numerous scriptures. You may follow me as we ascend the steps or
       stay here to explore. '
     chinese: "\u8FD9\u91CC\u662F\u54EA\uFF1F\u8FD9\u91CC\u662F\u5927\u62A5\u6069\u5BFA\uFF0C\u662F\u5357\u90E8\u5730\u533A\u6700\u5BCC\u76DB\u540D\u7684\u5BFA\u5E99\u3002\u4F60\u76EE\u524D\u6B63\u8EAB\u5904\u7409\u7483\u5854\u4E2D\u3002\u6B64\u5854\u901A\u4F53\u7409\u7483\uFF0C\u72EC\u6B65\u53E4\u4ECA\uFF0C\u85CF\u6709\u4F17\u591A\u7ECF\u4E66\u3002\u4F60\u53EF\u968F\u6211\u62FE\u7EA7\u800C\u4E0A\uFF0C\u6216\u5728\u6B64\u505C\u7559\u63A2\u7D22\u3002"
-  - key: intro4
-    english: 'Where is this? This is the Great Bao''En Temple, the most renowned
-      temple in the southern region. You are currently inside the Porcelain Pagoda.
-      This pagoda, made entirely of glazed tiles, stands unique through the ages
-      and houses numerous scriptures. You may follow me as we ascend the steps or
-      stay here to explore. '
-    chinese: "\u8FD9\u91CC\u662F\u54EA\uFF1F\u8FD9\u91CC\u662F\u5927\u62A5\u6069\u5BFA\uFF0C\u662F\u5357\u90E8\u5730\u533A\u6700\u5BCC\u76DB\u540D\u7684\u5BFA\u5E99\u3002\u4F60\u76EE\u524D\u6B63\u8EAB\u5904\u7409\u7483\u5854\u4E2D\u3002\u6B64\u5854\u901A\u4F53\u7409\u7483\uFF0C\u72EC\u6B65\u53E4\u4ECA\uFF0C\u85CF\u6709\u4F17\u591A\u7ECF\u4E66\u3002\u4F60\u53EF\u968F\u6211\u62FE\u7EA7\u800C\u4E0A\uFF0C\u6216\u5728\u6B64\u505C\u7559\u63A2\u7D22\u3002"
-  - key: intro5
-    english: 'Where is this? This is the Great Bao''En Temple, the most renowned
-      temple in the southern region. You are currently inside the Porcelain Pagoda.
-      This pagoda, made entirely of glazed tiles, stands unique through the ages
-      and houses numerous scriptures. You may follow me as we ascend the steps or
-      stay here to explore. '
-    chinese: "\u8FD9\u91CC\u662F\u54EA\uFF1F\u8FD9\u91CC\u662F\u5927\u62A5\u6069\u5BFA\uFF0C\u662F\u5357\u90E8\u5730\u533A\u6700\u5BCC\u76DB\u540D\u7684\u5BFA\u5E99\u3002\u4F60\u76EE\u524D\u6B63\u8EAB\u5904\u7409\u7483\u5854\u4E2D\u3002\u6B64\u5854\u901A\u4F53\u7409\u7483\uFF0C\u72EC\u6B65\u53E4\u4ECA\uFF0C\u85CF\u6709\u4F17\u591A\u7ECF\u4E66\u3002\u4F60\u53EF\u968F\u6211\u62FE\u7EA7\u800C\u4E0A\uFF0C\u6216\u5728\u6B64\u505C\u7559\u63A2\u7D22\u3002"
-  - key: intro6
-    english: 'Where is this? This is the Great Bao''En Temple, the most renowned
-      temple in the southern region. You are currently inside the Porcelain Pagoda.
-      This pagoda, made entirely of glazed tiles, stands unique through the ages
-      and houses numerous scriptures. You may follow me as we ascend the steps or
-      stay here to explore. '
-    chinese: "\u8FD9\u91CC\u662F\u54EA\uFF1F\u8FD9\u91CC\u662F\u5927\u62A5\u6069\u5BFA\uFF0C\u662F\u5357\u90E8\u5730\u533A\u6700\u5BCC\u76DB\u540D\u7684\u5BFA\u5E99\u3002\u4F60\u76EE\u524D\u6B63\u8EAB\u5904\u7409\u7483\u5854\u4E2D\u3002\u6B64\u5854\u901A\u4F53\u7409\u7483\uFF0C\u72EC\u6B65\u53E4\u4ECA\uFF0C\u85CF\u6709\u4F17\u591A\u7ECF\u4E66\u3002\u4F60\u53EF\u968F\u6211\u62FE\u7EA7\u800C\u4E0A\uFF0C\u6216\u5728\u6B64\u505C\u7559\u63A2\u7D22\u3002"
   translationVoices:
   - key: intro1
     english: {fileID: 8300000, guid: b976b4b7423a7a64facf2ef791f80728, type: 3}
@@ -13905,15 +13869,6 @@ MonoBehaviour:
     english: {fileID: 8300000, guid: e169cfb4deeb4d24ea9ed0bc78a87536, type: 3}
     chinese: {fileID: 8300000, guid: 1f9f7d8093b7da646b3224ddcc2977d8, type: 3}
   - key: intro3
-    english: {fileID: 8300000, guid: 313d21ad956c224489b9b29cd9320255, type: 3}
-    chinese: {fileID: 8300000, guid: 6938a26d34fdb6e42aad3ccadd1d4ad3, type: 3}
-  - key: intro4
-    english: {fileID: 8300000, guid: 313d21ad956c224489b9b29cd9320255, type: 3}
-    chinese: {fileID: 8300000, guid: 6938a26d34fdb6e42aad3ccadd1d4ad3, type: 3}
-  - key: intro5
-    english: {fileID: 8300000, guid: 313d21ad956c224489b9b29cd9320255, type: 3}
-    chinese: {fileID: 8300000, guid: 6938a26d34fdb6e42aad3ccadd1d4ad3, type: 3}
-  - key: intro6
     english: {fileID: 8300000, guid: 313d21ad956c224489b9b29cd9320255, type: 3}
     chinese: {fileID: 8300000, guid: 6938a26d34fdb6e42aad3ccadd1d4ad3, type: 3}
 --- !u!222 &2262049029423602304
@@ -14290,7 +14245,6 @@ Transform:
   m_LocalScale: {x: 100, y: 100, z: 100}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 190012584447768903}
   - {fileID: 2055175420164258751}
   m_Father: {fileID: 4723045340106194254}
   m_LocalEulerAnglesHint: {x: -90, y: 171.88, z: 0}
@@ -16038,6 +15992,10 @@ PrefabInstance:
     - target: {fileID: 2396657492526048025, guid: 58d4f003f8da460458df7e1b9c6248fa, type: 3}
       propertyPath: m_Name
       value: CloudSeperator
+      objectReference: {fileID: 0}
+    - target: {fileID: 2396657492526048025, guid: 58d4f003f8da460458df7e1b9c6248fa, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6124402648267263407, guid: 58d4f003f8da460458df7e1b9c6248fa, type: 3}
       propertyPath: player
@@ -47687,22 +47645,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1625457014}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &6464110072168464102
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 190012584447768903}
-  m_Layer: 0
-  m_Name: Cushions
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
 --- !u!33 &6493780832684947943
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -49705,7 +49647,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!23 &8029351154541184117
 MeshRenderer:
   m_ObjectHideFlags: 0
