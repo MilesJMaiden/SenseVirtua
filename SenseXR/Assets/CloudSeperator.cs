@@ -10,7 +10,6 @@ public class CloudSeparator : MonoBehaviour
     public Transform object1EndPos; // The end position of the first object
     public Transform object2StartPos; // The start position of the second object
     public Transform object2EndPos; // The end position of the second object
-    public float movementSpeed = 1.0f; // Speed of the movement
 
     private bool movementEnabled = true; // Boolean to enable/disable movement
 
@@ -19,26 +18,28 @@ public class CloudSeparator : MonoBehaviour
         if (movementEnabled)
         {
             float distance = Vector3.Distance(player.position, setPoint.position);
-            float t = Mathf.Clamp01(distance / Vector3.Distance(object1StartPos.position, object1EndPos.position));
+            float maxDistance = Vector3.Distance(object1EndPos.position, object1StartPos.position); // Max distance for normalization
+            float t = Mathf.Clamp01(distance / maxDistance);
 
-            object1.position = Vector3.Lerp(object1StartPos.position, object1EndPos.position, t * movementSpeed * Time.deltaTime);
-            object2.position = Vector3.Lerp(object2StartPos.position, object2EndPos.position, t * movementSpeed * Time.deltaTime);
+            object1.position = Vector3.Lerp(object1EndPos.position, object1StartPos.position, t);
+            object2.position = Vector3.Lerp(object2EndPos.position, object2StartPos.position, t);
         }
     }
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("Player"))
+        if (movementEnabled && other.CompareTag("Player"))
         {
+            Debug.Log("Player entered the trigger collider. Disabling movement.");
             movementEnabled = false;
+            DisableObjects();
         }
     }
 
-    private void OnTriggerExit(Collider other)
+    private void DisableObjects()
     {
-        if (other.CompareTag("Player"))
-        {
-            movementEnabled = true;
-        }
+        object1.gameObject.SetActive(false);
+        object2.gameObject.SetActive(false);
+        Debug.Log("Objects disabled. Movement is now permanently disabled.");
     }
 }

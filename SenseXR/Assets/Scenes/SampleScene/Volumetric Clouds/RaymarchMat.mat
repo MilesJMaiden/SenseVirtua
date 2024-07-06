@@ -51,7 +51,7 @@ Material:
     - _densityScale: 0.11
     - _lightAbsorb: 2
     - _lightStepSize: 0.06
-    - _numLightSteps: 16
+    - _numLightSteps: 0
     - _numSteps: 64
     - _stepSize: 0.075
     - _transmittance: 0.97
