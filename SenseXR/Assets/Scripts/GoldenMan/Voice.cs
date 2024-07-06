@@ -72,20 +72,22 @@ public class Voice : MonoBehaviour
         {
             bubbleCanvas.gameObject.SetActive(false);
 
-            // Work only in the Beginning Scene
             if (SceneManager.GetActiveScene().name == "Beginning")
             {
-                Invoke("HandleSpecialActions", 10f); 
+                Invoke("HandleSpecialActions", 10f);
             }
+
+            Debug.Log("Final dialogue ended, triggering OnDialogueEnd event.");
+            OnDialogueEnd?.Invoke();
 
             return;
         }
 
         playing = false;
-
         nextText.gameObject.SetActive(true);
 
-        OnDialogueEnd?.Invoke();
+        Debug.Log("Dialogue ended, triggering OnDialogueEnd event.");
+        OnDialogueEnd?.Invoke(); 
     }
 
     public void StopVoice()

@@ -7324,7 +7324,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1506545037}
-  - component: {fileID: 1506545038}
   m_Layer: 0
   m_Name: LotusGroup
   m_TagString: Untagged
@@ -7442,27 +7441,6 @@ Transform:
   - {fileID: 949365112}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!95 &1506545038
-Animator:
-  serializedVersion: 5
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1506545036}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 09c03c17fb82a2747a40adda3893ace7, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorStateOnDisable: 0
-  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &1522854424
 GameObject:
   m_ObjectHideFlags: 0
@@ -11744,21 +11722,6 @@ MonoBehaviour:
   m_DefaultSpriteDPI: 96
   m_DynamicPixelsPerUnit: 1
   m_PresetInfoIsWorld: 1
---- !u!4 &755268963230006098
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1161508822776842756}
-  serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 7242756483197456753}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &782623846525368498
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -12323,23 +12286,6 @@ MonoBehaviour:
   startPoint: {fileID: 3389961294504068053}
   endPoint: {fileID: 6872796336886213563}
   floatDuration: 3
---- !u!1 &1161508822776842756
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 755268963230006098}
-  - component: {fileID: 2256986304077452840}
-  m_Layer: 0
-  m_Name: TranslationManager
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 0
 --- !u!4 &1173160977214344298
 Transform:
   m_ObjectHideFlags: 0
@@ -13911,52 +13857,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &2256986304077452840
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1161508822776842756}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c343abfdfb01fdf4e9618ddd3a789d35, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  language: 0
-  translationTexts:
-  - key: intro1
-    english: "You find the hidden spot of this tower.  I must apologize but I haven\u2019t
-      been wholly truthful about who I am. I am the teacher of teachers and leader
-      of those on their spiritual journey. Once a figure in the dreams of Emperor
-      Ming of Han, Lui Zhuang, I now lead wandering souls such as yourself on their
-      journey to enlightenment. Do you hear the Buddhist chants?  You can join too
-      if you\u2019d like. Try responding to it with your voice.  Like this AHHH."
-    chinese: "\u4F60\u53D1\u73B0\u4E86\u8FD9\u5EA7\u5854\u7684\u79D8\u5BC6\u3002\u62B1\u6B49\uFF0C\u6211\u4E4B\u524D\u5E76\u4E0D\u5766\u8BDA\u3002
-      \u543E\u4E43\u5E08\u4E2D\u4E4B\u5E08\uFF0C\u7075\u4FEE\u4E4B\u5F15\u3002\u66FE\u73B0\u6C49\u660E\u5E1D\u68A6\u4E2D\uFF0C\u4ECA\u5F15\u6C5D\u7B49\u8FF7\u9014\u4F17\u751F\uFF0C\u5F52\u5411\u89C9\u609F\u4E4B\u9053\u3002
-      \u6C5D\u542C\u5230\u68B5\u5457\u4E86\u5417\u3002  \u82E5\u613F\u610F\uFF0C\u6C5D\u4EA6\u53EF\u52A0\u5165\u3002\u8BD5\u4EE5\u58F0\u97F3\u56DE\u5E94\uFF0C\u5982\u6B64\uFF1A\u963F\u2014\u2014"
-  - key: intro2
-    english: "Huijue be along soon to unlock the temple, you should be on your way. 
-      I\u2019ll leave a \u201Cbell\u201D here for you. Ring it when you are ready
-      to depart."
-    chinese: "\u6167\u89C9\u5373\u5C06\u6765\u5F00\u5BFA\u95E8\uFF0C\u4F60\u8BE5\u52A8\u8EAB\u4E86\u3002
-      \u6211\u5728\u6B64\u7559\u4E00\u94C3\uFF0C\u4E3A\u6C5D\u542F\u7A0B\u4E4B\u7528\u3002\u5F85\u6C5D\u51C6\u5907\u597D\u65F6\uFF0C\u8F7B\u8F7B\u6572\u54CD\u6B64\u94C3\uFF0C\u4FBF\u53EF\u542F\u7A0B\u3002"
-  - key: intro3
-    english: Bye bye.
-    chinese: "\u518D\u4F1A."
-  translationVoices:
-  - key: intro1
-    english: {fileID: 8300000, guid: 3ea5cfe8c3b94774ea74ff43652b3fb4, type: 3}
-    chinese: {fileID: 8300000, guid: 171f9062fb70ae84ea7d8ca5a606710d, type: 3}
-  - key: intro2
-    english: {fileID: 8300000, guid: 0d0fde2d4238928468c3d8d97ab8073e, type: 3}
-    chinese: {fileID: 8300000, guid: f76f6d5da4b456c44a19aae630c61dee, type: 3}
-  - key: intro3
-    english: {fileID: 8300000, guid: 5d3eb784230bc224f8dfe3efe08684e5, type: 3}
-    chinese: {fileID: 8300000, guid: 718b785ff82b7334e8c6680176f94436, type: 3}
-  - key: intro3
-    english: {fileID: 8300000, guid: 313d21ad956c224489b9b29cd9320255, type: 3}
-    chinese: {fileID: 8300000, guid: 6938a26d34fdb6e42aad3ccadd1d4ad3, type: 3}
 --- !u!222 &2262049029423602304
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -49092,7 +48992,6 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 755268963230006098}
   - {fileID: 91847753617860841}
   - {fileID: 2508841949812042615}
   - {fileID: 79463548390627768}
