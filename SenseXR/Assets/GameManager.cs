@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.XR.Interaction.Toolkit;
+using System.Collections;
 
 public class GameManager : MonoBehaviour
 {
@@ -9,17 +10,19 @@ public class GameManager : MonoBehaviour
     public GameObject hammer;
     public GameObject bell;
     public GameObject charm;
-    public FadeScreen fadeScreen; // Reference to the FadeScreen component
+    public FadeScreen fadeScreen;
     public float tweenDuration = 1.0f;
     public LeanTweenType tweenType = LeanTweenType.easeInOutSine;
+    public float chantVolumeIncreaseDuration = 10.0f;
+    public float waitTimerDuration = 1.0f;
 
     private void Start()
     {
-        // Disable hammer and bell at start
         hammer.SetActive(false);
         bell.SetActive(false);
-        changeFromMicObject.SetActive(false); // Disable ChangeFromMic object at start
-        chantAudioSource.enabled = false; // Disable Chant audio source at start
+        charm.SetActive(false);
+        changeFromMicObject.SetActive(false);
+        chantAudioSource.enabled = false;
     }
 
     private void OnEnable()
@@ -50,8 +53,25 @@ public class GameManager : MonoBehaviour
 
     private void EnableVoiceInteractor()
     {
-        changeFromMicObject.SetActive(true);
+        StartCoroutine(IncreaseChantVolume());
+    }
+
+    private IEnumerator IncreaseChantVolume()
+    {
         chantAudioSource.enabled = true;
+        float elapsedTime = 0;
+        float initialVolume = chantAudioSource.volume;
+
+        while (elapsedTime < chantVolumeIncreaseDuration)
+        {
+            chantAudioSource.volume = Mathf.Lerp(initialVolume, 1.0f, elapsedTime / chantVolumeIncreaseDuration);
+            elapsedTime += Time.deltaTime;
+            yield return null;
+        }
+
+        chantAudioSource.volume = 1.0f;
+        yield return new WaitForSeconds(waitTimerDuration);
+        changeFromMicObject.SetActive(true);
     }
 
     public void OnPlayerVoiceInput()
@@ -77,12 +97,10 @@ public class GameManager : MonoBehaviour
     private void EnableCharm()
     {
         charm.SetActive(true);
+        LeanTween.scale(charm, Vector3.one, tweenDuration).setFrom(Vector3.zero).setEase(tweenType).setOnComplete(() =>
         {
-            LeanTween.scale(charm, Vector3.one, tweenDuration).setFrom(Vector3.zero).setEase(tweenType).setOnComplete(() =>
-            {
-                charm.GetComponent<XRGrabInteractable>().enabled = true;
-            });
-        };
+            charm.GetComponent<XRGrabInteractable>().enabled = true;
+        });
     }
 
     public void OnCharmGrabbed()
@@ -92,6 +110,14 @@ public class GameManager : MonoBehaviour
 
     public void OnBellHit()
     {
+        StartCoroutine(ScaleDownHammerAndBell());
         goldenManVoice.PlayVoice();
+    }
+
+    private IEnumerator ScaleDownHammerAndBell()
+    {
+        yield return new WaitForSeconds(tweenDuration);
+        LeanTween.scale(hammer, Vector3.zero, tweenDuration).setEase(tweenType).setOnComplete(() => hammer.SetActive(false));
+        LeanTween.scale(bell, Vector3.zero, tweenDuration).setEase(tweenType).setOnComplete(() => bell.SetActive(false));
     }
 }

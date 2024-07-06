@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class BellHit : MonoBehaviour
+public class BellHitDetection : MonoBehaviour
 {
     public GameObject hitAudioPrefab;
     public GameManager gameManager;

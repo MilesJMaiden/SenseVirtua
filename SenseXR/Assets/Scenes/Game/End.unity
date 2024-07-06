@@ -3487,6 +3487,8 @@ MonoBehaviour:
   fadeScreen: {fileID: 1957981630}
   tweenDuration: 1
   tweenType: 16
+  chantVolumeIncreaseDuration: 3
+  waitTimerDuration: 3
 --- !u!4 &818922621
 Transform:
   m_ObjectHideFlags: 0
@@ -5648,7 +5650,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1139800558
 Transform:
   m_ObjectHideFlags: 0
@@ -12337,7 +12339,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1173160977214344298
 Transform:
   m_ObjectHideFlags: 0
@@ -13207,9 +13209,6 @@ MonoBehaviour:
   - intro1
   - intro2
   - intro3
-  - intro4
-  - intro5
-  - intro6
   bubbleCanvas: {fileID: 2665851455327972613}
   nextText: {fileID: 8252247647980598123}
   buddhaStatue: {fileID: 0}
@@ -13927,42 +13926,34 @@ MonoBehaviour:
   language: 0
   translationTexts:
   - key: intro1
-    english: Friends from afar, how delightful it is to have you here. Surely, you've
-      heard of the renowned Porcelain Tower and come to Nanjing for spiritual practice.
-      This tower reaches into the clouds, its Buddha lamps forever alight, imbued
-      with all things spiritual. Take a moment to observe your surroundings and listen
-      attentively to the tower's whispers.
-    chinese: "\u6709\u670B\u81EA\u8FDC\u65B9\u6765\uFF0C\u4E0D\u4EA6\u4E50\u4E4E\u3002\u60F3\u5FC5\u4F60\u662F\u542C\u95FB\u74F7\u5854\u76DB\u540D\uFF0C\u524D\u6765\u91D1\u9675\u4FEE\u4E60\u7684\u5F1F\u5B50\u3002\u6B64\u5854\u9AD8\u8038\u5165\u4E91\uFF0C\u4F5B\u706F\u6C38\u660E\uFF0C\u4E00\u5207\u6709\u7075\u3002\u4F60\u4E14\u89C2\u5BDF\u56DB\u5468\uFF0C\u9759\u542C\u5854\u8A00\u3002"
+    english: "You find the hidden spot of this tower.  I must apologize but I haven\u2019t
+      been wholly truthful about who I am. I am the teacher of teachers and leader
+      of those on their spiritual journey. Once a figure in the dreams of Emperor
+      Ming of Han, Lui Zhuang, I now lead wandering souls such as yourself on their
+      journey to enlightenment. Do you hear the Buddhist chants?  You can join too
+      if you\u2019d like. Try responding to it with your voice.  Like this AHHH."
+    chinese: "\u4F60\u53D1\u73B0\u4E86\u8FD9\u5EA7\u5854\u7684\u79D8\u5BC6\u3002\u62B1\u6B49\uFF0C\u6211\u4E4B\u524D\u5E76\u4E0D\u5766\u8BDA\u3002
+      \u543E\u4E43\u5E08\u4E2D\u4E4B\u5E08\uFF0C\u7075\u4FEE\u4E4B\u5F15\u3002\u66FE\u73B0\u6C49\u660E\u5E1D\u68A6\u4E2D\uFF0C\u4ECA\u5F15\u6C5D\u7B49\u8FF7\u9014\u4F17\u751F\uFF0C\u5F52\u5411\u89C9\u609F\u4E4B\u9053\u3002
+      \u6C5D\u542C\u5230\u68B5\u5457\u4E86\u5417\u3002  \u82E5\u613F\u610F\uFF0C\u6C5D\u4EA6\u53EF\u52A0\u5165\u3002\u8BD5\u4EE5\u58F0\u97F3\u56DE\u5E94\uFF0C\u5982\u6B64\uFF1A\u963F\u2014\u2014"
   - key: intro2
-    english: Who am I? Who am I? I first appeared in the dream of Emperor Ming of
-      Han, Liu Zhuang, guiding him with visions. Following his dream, Liu Zhuang
-      sent emissaries to the West in search of Buddhist teachings. I have since traveled
-      far and wide, seeking a place where fate would have me reside.
-    chinese: "\u6211\u662F\u8C01\uFF1F\u6211\u521D\u73B0\u8EAB\u4E8E\u6C49\u660E\u5E1D\u5218\u5E84\u68A6\u4E2D\uFF0C\u7ED9\u4E88\u4ED6\u68A6\u4E2D\u6307\u5F15\u3002\u800C\u540E\u5218\u5E84\u6D3E\u9063\u4F7F\u81E3\u897F\u6C42\u4F5B\u6CD5\uFF0C\u6211\u4FBF\u6E38\u5386\u56DB\u65B9\uFF0C\u5BFB\u627E\u6709\u7F18\u7684\u6816\u5C45\u4E4B\u6240\u3002"
+    english: "Huijue be along soon to unlock the temple, you should be on your way. 
+      I\u2019ll leave a \u201Cbell\u201D here for you. Ring it when you are ready
+      to depart."
+    chinese: "\u6167\u89C9\u5373\u5C06\u6765\u5F00\u5BFA\u95E8\uFF0C\u4F60\u8BE5\u52A8\u8EAB\u4E86\u3002
+      \u6211\u5728\u6B64\u7559\u4E00\u94C3\uFF0C\u4E3A\u6C5D\u542F\u7A0B\u4E4B\u7528\u3002\u5F85\u6C5D\u51C6\u5907\u597D\u65F6\uFF0C\u8F7B\u8F7B\u6572\u54CD\u6B64\u94C3\uFF0C\u4FBF\u53EF\u542F\u7A0B\u3002"
   - key: intro3
-    english: 'Where is this? This is the Great Bao''En Temple, the most renowned
-      temple in the southern region. You are currently inside the Porcelain Pagoda.
-      This pagoda, made entirely of glazed tiles, stands unique through the ages
-      and houses numerous scriptures. You may follow me as we ascend the steps or
-      stay here to explore. '
-    chinese: "\u8FD9\u91CC\u662F\u54EA\uFF1F\u8FD9\u91CC\u662F\u5927\u62A5\u6069\u5BFA\uFF0C\u662F\u5357\u90E8\u5730\u533A\u6700\u5BCC\u76DB\u540D\u7684\u5BFA\u5E99\u3002\u4F60\u76EE\u524D\u6B63\u8EAB\u5904\u7409\u7483\u5854\u4E2D\u3002\u6B64\u5854\u901A\u4F53\u7409\u7483\uFF0C\u72EC\u6B65\u53E4\u4ECA\uFF0C\u85CF\u6709\u4F17\u591A\u7ECF\u4E66\u3002\u4F60\u53EF\u968F\u6211\u62FE\u7EA7\u800C\u4E0A\uFF0C\u6216\u5728\u6B64\u505C\u7559\u63A2\u7D22\u3002"
-  - key: intro3
-    english: 'Where is this? This is the Great Bao''En Temple, the most renowned
-      temple in the southern region. You are currently inside the Porcelain Pagoda.
-      This pagoda, made entirely of glazed tiles, stands unique through the ages
-      and houses numerous scriptures. You may follow me as we ascend the steps or
-      stay here to explore. '
-    chinese: "\u8FD9\u91CC\u662F\u54EA\uFF1F\u8FD9\u91CC\u662F\u5927\u62A5\u6069\u5BFA\uFF0C\u662F\u5357\u90E8\u5730\u533A\u6700\u5BCC\u76DB\u540D\u7684\u5BFA\u5E99\u3002\u4F60\u76EE\u524D\u6B63\u8EAB\u5904\u7409\u7483\u5854\u4E2D\u3002\u6B64\u5854\u901A\u4F53\u7409\u7483\uFF0C\u72EC\u6B65\u53E4\u4ECA\uFF0C\u85CF\u6709\u4F17\u591A\u7ECF\u4E66\u3002\u4F60\u53EF\u968F\u6211\u62FE\u7EA7\u800C\u4E0A\uFF0C\u6216\u5728\u6B64\u505C\u7559\u63A2\u7D22\u3002"
+    english: Bye bye.
+    chinese: "\u518D\u4F1A."
   translationVoices:
   - key: intro1
-    english: {fileID: 8300000, guid: b976b4b7423a7a64facf2ef791f80728, type: 3}
-    chinese: {fileID: 8300000, guid: 0862027bc460d5d40aab5d7da18b48c0, type: 3}
+    english: {fileID: 8300000, guid: 3ea5cfe8c3b94774ea74ff43652b3fb4, type: 3}
+    chinese: {fileID: 8300000, guid: 171f9062fb70ae84ea7d8ca5a606710d, type: 3}
   - key: intro2
-    english: {fileID: 8300000, guid: e169cfb4deeb4d24ea9ed0bc78a87536, type: 3}
-    chinese: {fileID: 8300000, guid: 1f9f7d8093b7da646b3224ddcc2977d8, type: 3}
+    english: {fileID: 8300000, guid: 0d0fde2d4238928468c3d8d97ab8073e, type: 3}
+    chinese: {fileID: 8300000, guid: f76f6d5da4b456c44a19aae630c61dee, type: 3}
   - key: intro3
-    english: {fileID: 8300000, guid: 313d21ad956c224489b9b29cd9320255, type: 3}
-    chinese: {fileID: 8300000, guid: 6938a26d34fdb6e42aad3ccadd1d4ad3, type: 3}
+    english: {fileID: 8300000, guid: 5d3eb784230bc224f8dfe3efe08684e5, type: 3}
+    chinese: {fileID: 8300000, guid: 718b785ff82b7334e8c6680176f94436, type: 3}
   - key: intro3
     english: {fileID: 8300000, guid: 313d21ad956c224489b9b29cd9320255, type: 3}
     chinese: {fileID: 8300000, guid: 6938a26d34fdb6e42aad3ccadd1d4ad3, type: 3}
@@ -15695,6 +15686,10 @@ PrefabInstance:
     - target: {fileID: 7442024162168846976, guid: be8071aebc0bff246bce7ed3ea0cbf64, type: 3}
       propertyPath: m_Name
       value: BellBowl
+      objectReference: {fileID: 0}
+    - target: {fileID: 7442024162168846976, guid: be8071aebc0bff246bce7ed3ea0cbf64, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -45128,15 +45123,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7793741268986528516, guid: 0289513613f42c24fa847e1fa9d2e8bf, type: 3}
       propertyPath: m_LocalScale.x
-      value: 0.5
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7793741268986528516, guid: 0289513613f42c24fa847e1fa9d2e8bf, type: 3}
       propertyPath: m_LocalScale.y
-      value: 0.5
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7793741268986528516, guid: 0289513613f42c24fa847e1fa9d2e8bf, type: 3}
       propertyPath: m_LocalScale.z
-      value: 0.5
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7793741268986528516, guid: 0289513613f42c24fa847e1fa9d2e8bf, type: 3}
       propertyPath: m_LocalPosition.x
@@ -47811,35 +47806,34 @@ MonoBehaviour:
   language: 0
   translationTexts:
   - key: intro1
-    english: Friends from afar, how delightful it is to have you here. Surely, you've
-      heard of the renowned Porcelain Tower and come to Nanjing for spiritual practice.
-      This tower reaches into the clouds, its Buddha lamps forever alight, imbued
-      with all things spiritual. Take a moment to observe your surroundings and listen
-      attentively to the tower's whispers.
-    chinese: "\u6709\u670B\u81EA\u8FDC\u65B9\u6765\uFF0C\u4E0D\u4EA6\u4E50\u4E4E\u3002\u60F3\u5FC5\u4F60\u662F\u542C\u95FB\u74F7\u5854\u76DB\u540D\uFF0C\u524D\u6765\u91D1\u9675\u4FEE\u4E60\u7684\u5F1F\u5B50\u3002\u6B64\u5854\u9AD8\u8038\u5165\u4E91\uFF0C\u4F5B\u706F\u6C38\u660E\uFF0C\u4E00\u5207\u6709\u7075\u3002\u4F60\u4E14\u89C2\u5BDF\u56DB\u5468\uFF0C\u9759\u542C\u5854\u8A00\u3002"
+    english: "You find the hidden spot of this tower.  I must apologize but I haven\u2019t
+      been wholly truthful about who I am. I am the teacher of teachers and leader
+      of those on their spiritual journey. Once a figure in the dreams of Emperor
+      Ming of Han, Lui Zhuang, I now lead wandering souls such as yourself on their
+      journey to enlightenment. Do you hear the Buddhist chants?  You can join too
+      if you\u2019d like. Try responding to it with your voice.  Like this AHHH."
+    chinese: "\u4F60\u53D1\u73B0\u4E86\u8FD9\u5EA7\u5854\u7684\u79D8\u5BC6\u3002\u62B1\u6B49\uFF0C\u6211\u4E4B\u524D\u5E76\u4E0D\u5766\u8BDA\u3002
+      \u543E\u4E43\u5E08\u4E2D\u4E4B\u5E08\uFF0C\u7075\u4FEE\u4E4B\u5F15\u3002\u66FE\u73B0\u6C49\u660E\u5E1D\u68A6\u4E2D\uFF0C\u4ECA\u5F15\u6C5D\u7B49\u8FF7\u9014\u4F17\u751F\uFF0C\u5F52\u5411\u89C9\u609F\u4E4B\u9053\u3002
+      \u6C5D\u542C\u5230\u68B5\u5457\u4E86\u5417\u3002  \u82E5\u613F\u610F\uFF0C\u6C5D\u4EA6\u53EF\u52A0\u5165\u3002\u8BD5\u4EE5\u58F0\u97F3\u56DE\u5E94\uFF0C\u5982\u6B64\uFF1A\u963F\u2014\u2014"
   - key: intro2
-    english: Who am I? Who am I? I first appeared in the dream of Emperor Ming of
-      Han, Liu Zhuang, guiding him with visions. Following his dream, Liu Zhuang
-      sent emissaries to the West in search of Buddhist teachings. I have since traveled
-      far and wide, seeking a place where fate would have me reside.
-    chinese: "\u6211\u662F\u8C01\uFF1F\u6211\u521D\u73B0\u8EAB\u4E8E\u6C49\u660E\u5E1D\u5218\u5E84\u68A6\u4E2D\uFF0C\u7ED9\u4E88\u4ED6\u68A6\u4E2D\u6307\u5F15\u3002\u800C\u540E\u5218\u5E84\u6D3E\u9063\u4F7F\u81E3\u897F\u6C42\u4F5B\u6CD5\uFF0C\u6211\u4FBF\u6E38\u5386\u56DB\u65B9\uFF0C\u5BFB\u627E\u6709\u7F18\u7684\u6816\u5C45\u4E4B\u6240\u3002"
+    english: "Huijue be along soon to unlock the temple, you should be on your way. 
+      I\u2019ll leave a \u201Cbell\u201D here for you. Ring it when you are ready
+      to depart."
+    chinese: "\u6167\u89C9\u5373\u5C06\u6765\u5F00\u5BFA\u95E8\uFF0C\u4F60\u8BE5\u52A8\u8EAB\u4E86\u3002
+      \u6211\u5728\u6B64\u7559\u4E00\u94C3\uFF0C\u4E3A\u6C5D\u542F\u7A0B\u4E4B\u7528\u3002\u5F85\u6C5D\u51C6\u5907\u597D\u65F6\uFF0C\u8F7B\u8F7B\u6572\u54CD\u6B64\u94C3\uFF0C\u4FBF\u53EF\u542F\u7A0B\u3002"
   - key: intro3
-    english: Where is this? This is the Great Bao'En Temple, the most renowned temple
-      in the southern region. You are currently inside the Porcelain Pagoda. This
-      pagoda, made entirely of glazed tiles, stands unique through the ages and houses
-      numerous scriptures. You may follow me as we ascend the steps or stay here
-      to explore.
-    chinese: "\u8FD9\u91CC\u662F\u54EA\uFF1F\u8FD9\u91CC\u662F\u5927\u62A5\u6069\u5BFA\uFF0C\u662F\u5357\u90E8\u5730\u533A\u6700\u5BCC\u76DB\u540D\u7684\u5BFA\u5E99\u3002\u4F60\u76EE\u524D\u6B63\u8EAB\u5904\u7409\u7483\u5854\u4E2D\u3002\u6B64\u5854\u901A\u4F53\u7409\u7483\uFF0C\u72EC\u6B65\u53E4\u4ECA\uFF0C\u85CF\u6709\u4F17\u591A\u7ECF\u4E66\u3002\u4F60\u53EF\u968F\u6211\u62FE\u7EA7\u800C\u4E0A\uFF0C\u6216\u5728\u6B64\u505C\u7559\u63A2\u7D22\u3002"
+    english: Bye bye.
+    chinese: "\u518D\u4F1A."
   translationVoices:
   - key: intro1
-    english: {fileID: 8300000, guid: b976b4b7423a7a64facf2ef791f80728, type: 3}
-    chinese: {fileID: 8300000, guid: 0862027bc460d5d40aab5d7da18b48c0, type: 3}
+    english: {fileID: 8300000, guid: 3ea5cfe8c3b94774ea74ff43652b3fb4, type: 3}
+    chinese: {fileID: 8300000, guid: 171f9062fb70ae84ea7d8ca5a606710d, type: 3}
   - key: intro2
-    english: {fileID: 8300000, guid: e169cfb4deeb4d24ea9ed0bc78a87536, type: 3}
-    chinese: {fileID: 8300000, guid: 1f9f7d8093b7da646b3224ddcc2977d8, type: 3}
+    english: {fileID: 8300000, guid: 0d0fde2d4238928468c3d8d97ab8073e, type: 3}
+    chinese: {fileID: 8300000, guid: f76f6d5da4b456c44a19aae630c61dee, type: 3}
   - key: intro3
-    english: {fileID: 8300000, guid: 313d21ad956c224489b9b29cd9320255, type: 3}
-    chinese: {fileID: 8300000, guid: 6938a26d34fdb6e42aad3ccadd1d4ad3, type: 3}
+    english: {fileID: 8300000, guid: 5d3eb784230bc224f8dfe3efe08684e5, type: 3}
+    chinese: {fileID: 8300000, guid: 718b785ff82b7334e8c6680176f94436, type: 3}
 --- !u!224 &6444069675287398619
 RectTransform:
   m_ObjectHideFlags: 0
@@ -48547,7 +48541,7 @@ Transform:
   m_GameObject: {fileID: 2537256062067832290}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: -0.54999995, z: 0}
+  m_LocalPosition: {x: 0, y: -0.25, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -49312,6 +49306,10 @@ PrefabInstance:
     - target: {fileID: 2203596386050290596, guid: daa5078e84ded1a4cbe93f35dd73a1bc, type: 3}
       propertyPath: m_Name
       value: Hammer
+      objectReference: {fileID: 0}
+    - target: {fileID: 2203596386050290596, guid: daa5078e84ded1a4cbe93f35dd73a1bc, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2644928186146299784, guid: daa5078e84ded1a4cbe93f35dd73a1bc, type: 3}
       propertyPath: m_LocalPosition.x
