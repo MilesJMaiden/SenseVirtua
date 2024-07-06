@@ -1858,6 +1858,26 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 793397514291043146, guid: 627a78f2e3bada44cbc0142067ee940e, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 284.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 793397514291043146, guid: 627a78f2e3bada44cbc0142067ee940e, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 131.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 793397514291043146, guid: 627a78f2e3bada44cbc0142067ee940e, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 793397514291043146, guid: 627a78f2e3bada44cbc0142067ee940e, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 159.9
+      objectReference: {fileID: 0}
+    - target: {fileID: 793397514291043146, guid: 627a78f2e3bada44cbc0142067ee940e, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -5.6
+      objectReference: {fileID: 0}
     - target: {fileID: 2157665164243424633, guid: 627a78f2e3bada44cbc0142067ee940e, type: 3}
       propertyPath: leftHandModel
       value: 
@@ -1870,9 +1890,37 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3646052709108860752, guid: 627a78f2e3bada44cbc0142067ee940e, type: 3}
+      propertyPath: m_text
+      value: "\u8DF3\u8FC7\nSKIP"
+      objectReference: {fileID: 0}
+    - target: {fileID: 3646052709108860752, guid: 627a78f2e3bada44cbc0142067ee940e, type: 3}
+      propertyPath: m_fontSize
+      value: 47
+      objectReference: {fileID: 0}
+    - target: {fileID: 3646052709108860752, guid: 627a78f2e3bada44cbc0142067ee940e, type: 3}
+      propertyPath: m_fontAsset
+      value: 
+      objectReference: {fileID: 11400000, guid: b5e648e92c33ca9448efcb94274b6eee, type: 2}
+    - target: {fileID: 3646052709108860752, guid: 627a78f2e3bada44cbc0142067ee940e, type: 3}
+      propertyPath: m_fontSizeBase
+      value: 47
+      objectReference: {fileID: 0}
+    - target: {fileID: 3646052709108860752, guid: 627a78f2e3bada44cbc0142067ee940e, type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: 5955645865202824022, guid: b5e648e92c33ca9448efcb94274b6eee, type: 2}
+    - target: {fileID: 3646052709108860752, guid: 627a78f2e3bada44cbc0142067ee940e, type: 3}
+      propertyPath: m_hasFontAssetChanged
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5944343393026013241, guid: 627a78f2e3bada44cbc0142067ee940e, type: 3}
       propertyPath: m_Name
       value: Illumination Game
+      objectReference: {fileID: 0}
+    - target: {fileID: 7208747045362936903, guid: 627a78f2e3bada44cbc0142067ee940e, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8000859568540591581, guid: 627a78f2e3bada44cbc0142067ee940e, type: 3}
       propertyPath: target
