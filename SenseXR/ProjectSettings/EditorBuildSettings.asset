@@ -5,10 +5,10 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 0
+  - enabled: 1
     path: Assets/Scenes/Game/TitleCardStartScene.unity
     guid: bd05e10f26c117a4d9f1f0f54ec13a40
-  - enabled: 0
+  - enabled: 1
     path: Assets/Scenes/Game/Beginning.unity
     guid: 2b4e963505414ea46b3a39077016aa25
   - enabled: 1
