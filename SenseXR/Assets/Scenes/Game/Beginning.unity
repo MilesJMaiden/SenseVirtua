@@ -577,6 +577,32 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 479710794808476351, guid: 9a76a62d0e93d6e478eb6dcd4b710eaf, type: 3}
   m_PrefabInstance: {fileID: 663462137}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &672113265 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5335280194031583489, guid: 627a78f2e3bada44cbc0142067ee940e, type: 3}
+  m_PrefabInstance: {fileID: 5120715424736625808}
+  m_PrefabAsset: {fileID: 0}
+--- !u!65 &672113269
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 672113265}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.83076054, y: 8.1687565, z: 0.71500856}
+  m_Center: {x: 0.0000002413302, y: 2.1128447, z: 0.009859004}
 --- !u!1 &848868853
 GameObject:
   m_ObjectHideFlags: 0
@@ -1894,6 +1920,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3485766352794852364, guid: 627a78f2e3bada44cbc0142067ee940e, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 05c9257c5ac9e854086853231ce38d33, type: 2}
     - target: {fileID: 3646052709108860752, guid: 627a78f2e3bada44cbc0142067ee940e, type: 3}
       propertyPath: m_text
       value: "\u8DF3\u8FC7\nSKIP"
@@ -1918,6 +1948,10 @@ PrefabInstance:
       propertyPath: m_hasFontAssetChanged
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3835311224495167519, guid: 627a78f2e3bada44cbc0142067ee940e, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 05c9257c5ac9e854086853231ce38d33, type: 2}
     - target: {fileID: 5772965016820664256, guid: 627a78f2e3bada44cbc0142067ee940e, type: 3}
       propertyPath: m_text
       value: ...
@@ -1949,7 +1983,10 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 5335280194031583489, guid: 627a78f2e3bada44cbc0142067ee940e, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 672113269}
   m_SourcePrefab: {fileID: 100100000, guid: 627a78f2e3bada44cbc0142067ee940e, type: 3}
 --- !u!23 &5160698299084403024
 MeshRenderer:

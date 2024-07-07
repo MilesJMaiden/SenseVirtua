@@ -45800,8 +45800,9 @@ GameObject:
   - component: {fileID: 7250314250062773716}
   - component: {fileID: 3562991558189737621}
   - component: {fileID: 7089789824278661950}
+  - component: {fileID: 7250314250062773717}
   m_Layer: 0
-  m_Name: BuddhaStatueGoldMesh
+  m_Name: middle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -48961,6 +48962,27 @@ Transform:
   m_Children: []
   m_Father: {fileID: 75922690924061227}
   m_LocalEulerAnglesHint: {x: 0, y: 45, z: 0}
+--- !u!65 &7250314250062773717
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4700597348399599247}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.8307609, y: 2.458953, z: 0.7150088}
+  m_Center: {x: 0.00000009489735, y: -0.036253642, z: 0.0098587535}
 --- !u!33 &7260209660725187113
 MeshFilter:
   m_ObjectHideFlags: 0
