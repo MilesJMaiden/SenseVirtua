@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 2936729692686189769}
   - component: {fileID: 9186496840128059105}
   - component: {fileID: 1447746372361773728}
+  - component: {fileID: 492647899727304134}
   m_Layer: 0
   m_Name: Left Teleporting Ray
   m_TagString: Untagged
@@ -30,11 +31,11 @@ Transform:
   m_GameObject: {fileID: 90818531800850125}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: 1, z: -0, w: 0}
-  m_LocalPosition: {x: 0, y: -0.96, z: 9.36}
+  m_LocalPosition: {x: -1.7594796, y: 10.371911, z: 23.415478}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 2797105918606080847}
+  m_Father: {fileID: 5465226321842256072}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &5742410869525691919
 MonoBehaviour:
@@ -656,6 +657,22 @@ SortingGroup:
   m_SortingLayer: 0
   m_SortingOrder: 5
   m_SortAtRoot: 0
+--- !u!114 &492647899727304134
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 90818531800850125}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c41f1e9fc1cd09f44924f21eb364d587, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  targetController: 0
+  inputAction: {fileID: 0}
+  rayInteractor: {fileID: 0}
+  teleportationProvider: {fileID: 0}
 --- !u!1 &299323422247906325
 GameObject:
   m_ObjectHideFlags: 0
@@ -686,8 +703,8 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: -1.6, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 0.25, y: 0.25, z: 0.25}
+  m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 178750528436726998}
   m_Father: {fileID: 2827373859861736183}
@@ -906,8 +923,8 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: -1.6, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 0.25, y: 0.25, z: 0.25}
+  m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 3423285078493655817}
   m_Father: {fileID: 7409695563291597620}
@@ -1096,52 +1113,6 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_TeleportAnchorTransform: {fileID: 3423285078493655817}
---- !u!1 &726340935388176729
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 2731288354697388287}
-  - component: {fileID: 685209579508538363}
-  m_Layer: 0
-  m_Name: XR Interaction Manager
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &2731288354697388287
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 726340935388176729}
-  serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -3.0602324, y: -17.561962, z: -3.6890392}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 2797105918606080847}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &685209579508538363
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 726340935388176729}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 83e4e6cca11330d4088d729ab4fc9d9f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_StartingHoverFilters: []
-  m_StartingSelectFilters: []
 --- !u!1 &1005147823685994427
 GameObject:
   m_ObjectHideFlags: 0
@@ -1310,9 +1281,6 @@ Transform:
   m_Children:
   - {fileID: 4846409659600621743}
   - {fileID: 5465226321842256072}
-  - {fileID: 2731288354697388287}
-  - {fileID: 4520865418907235519}
-  - {fileID: 2164091972866865581}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2065586065704719234
@@ -1345,8 +1313,8 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: -1.6, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 0.25, y: 0.25, z: 0.25}
+  m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 5012045303008846775}
   m_Father: {fileID: 8393555353189486058}
@@ -1580,6 +1548,7 @@ GameObject:
   - component: {fileID: 3477923627487076506}
   - component: {fileID: 5536876995366806862}
   - component: {fileID: 4144100662210031810}
+  - component: {fileID: 8234953193572252013}
   m_Layer: 0
   m_Name: Right Teleporting Ray
   m_TagString: Untagged
@@ -1596,11 +1565,11 @@ Transform:
   m_GameObject: {fileID: 2444934413534711783}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: 1, z: -0, w: 0}
-  m_LocalPosition: {x: 0, y: -0.96, z: 9.36}
+  m_LocalPosition: {x: -1.7594796, y: 10.371911, z: 23.415478}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 2797105918606080847}
+  m_Father: {fileID: 5465226321842256072}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &2884891217109246423
 MonoBehaviour:
@@ -2222,6 +2191,22 @@ SortingGroup:
   m_SortingLayer: 0
   m_SortingOrder: 5
   m_SortAtRoot: 0
+--- !u!114 &8234953193572252013
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2444934413534711783}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c41f1e9fc1cd09f44924f21eb364d587, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  targetController: 0
+  inputAction: {fileID: 0}
+  rayInteractor: {fileID: 0}
+  teleportationProvider: {fileID: 0}
 --- !u!1 &2794349692633266407
 GameObject:
   m_ObjectHideFlags: 0
@@ -2252,8 +2237,8 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: -1.6, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 0.25, y: 0.25, z: 0.25}
+  m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 6884447371391250031}
   m_Father: {fileID: 5333107474981653687}
@@ -2855,7 +2840,9 @@ Transform:
   m_LocalPosition: {x: 1.7594796, y: -11.331911, z: -14.055478}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 4520865418907235519}
+  - {fileID: 2164091972866865581}
   m_Father: {fileID: 2797105918606080847}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &6849022359306260367
@@ -2888,8 +2875,8 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: -1.6, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 0.25, y: 0.25, z: 0.25}
+  m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 5762347494446967782}
   m_Father: {fileID: 5241689716358911969}

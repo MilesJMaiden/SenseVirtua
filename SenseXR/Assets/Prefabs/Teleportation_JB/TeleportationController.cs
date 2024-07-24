@@ -18,6 +18,7 @@ public class TeleportationController : MonoBehaviour
     public InputActionAsset inputAction;
     public XRRayInteractor rayInteractor;
     public TeleportationProvider teleportationProvider;
+
     private InputAction _thumbstickInputAction;
     private InputAction _teleportActivate;
     private InputAction _teleportCancel;
@@ -27,7 +28,7 @@ public class TeleportationController : MonoBehaviour
         rayInteractor.enabled = false;
 
         Debug.Log("XRI " + targetController.ToString());
-        _teleportActivate = inputAction.FindActionMap("XRI " +  targetController.ToString()).FindAction("Teleport Mode Activate");
+        _teleportActivate = inputAction.FindActionMap("XRI " + targetController.ToString()).FindAction("Teleport Mode Activate");
         _teleportActivate.Enable();
         _teleportActivate.performed += OnTeleportActivate;
 
@@ -36,11 +37,13 @@ public class TeleportationController : MonoBehaviour
         _teleportCancel.performed += OnTeleportCancel;
 
         _thumbstickInputAction = inputAction.FindActionMap("XRI " + targetController.ToString()).FindAction("Move");
+        _thumbstickInputAction.Enable();
     }
+
 
     void Update()
     {
-        if(!_teleportIsActive)
+        if (!_teleportIsActive)
         {
             return;
         }
@@ -48,38 +51,36 @@ public class TeleportationController : MonoBehaviour
         {
             return;
         }
-        if (!_thumbstickInputAction)
+
+        Vector2 thumbstickValue = _thumbstickInputAction.ReadValue<Vector2>();
+        if (thumbstickValue.y >= 0.75f) // Adjust threshold as needed
         {
-            return;
+            if (rayInteractor.TryGetCurrent3DRaycastHit(out RaycastHit raycastHit))
+            {
+                Debug.Log("Teleport hit: " + raycastHit.point);
+                TeleportRequest teleportRequest = new TeleportRequest()
+                {
+                    destinationPosition = raycastHit.point,
+                };
+
+                teleportationProvider.QueueTeleportRequest(teleportRequest);
+
+                rayInteractor.enabled = false;
+                _teleportIsActive = false;
+            }
+            else
+            {
+                Debug.Log("Raycast hit failed");
+                rayInteractor.enabled = false;
+                _teleportIsActive = false;
+            }
         }
-        if (!rayInteractor.TryGetCurrent3DRaycastHit(out RaycastHit raycastHit))
-        {
-            Debug.Log(raycastHit);
-            rayInteractor.enabled = false;
-            _teleportIsActive = false;
-            return;
-        }
-
-        Debug.Log(raycastHit);
-        TeleportRequest teleportRequest = new TeleportRequest()
-        {
-            destinationPosition = raycastHit.point,
-        };
-
-        teleportationProvider.QueueTeleportRequest(teleportRequest);
-
-        rayInteractor.enabled = false;
-        _teleportIsActive = false;
     }
 
-    void OnDestroy()
-    {
-        _teleportActivate.performed -= OnTeleportActivate;
-        _teleportCancel.performed -= OnTeleportCancel;
-    }
 
     private void OnTeleportActivate(InputAction.CallbackContext context)
     {
+        Debug.Log("Teleport Activate triggered");
         if (!_teleportIsActive)
         {
             rayInteractor.enabled = true;
@@ -89,11 +90,13 @@ public class TeleportationController : MonoBehaviour
 
     private void OnTeleportCancel(InputAction.CallbackContext context)
     {
-        if(_teleportIsActive && rayInteractor.enabled == true)
+        Debug.Log("Teleport Cancel triggered");
+        if (_teleportIsActive && rayInteractor.enabled == true)
         {
             rayInteractor.enabled = false;
             _teleportIsActive = false;
         }
     }
+
 
 }
