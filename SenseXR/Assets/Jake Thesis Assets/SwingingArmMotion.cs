@@ -4,62 +4,57 @@ using UnityEngine;
 
 public class SwingingArmMotion : MonoBehaviour
 {
-    // Game Objects
-    [SerializeField] private GameObject LeftHand;
-    [SerializeField] private GameObject RightHand;
-    [SerializeField] private GameObject MainCamera;
-    [SerializeField] private GameObject ForwardDirection;
+    public Transform leftController;
+    public Transform rightController;
+    public Transform targetObject; // The game object in front of the player
+    public float speedThreshold = 0.1f; // Speed threshold to start moving the character
+    public float maxMoveSpeed = 5.0f; // Maximum speed at which the character moves
 
-    //Vector3 Positions
-    [SerializeField] private Vector3 PositionPreviousFrameLeftHand;
-    [SerializeField] private Vector3 PositionPreviousFrameRightHand;
-    [SerializeField] private Vector3 PlayerPositionPreviousFrame;
-    [SerializeField] private Vector3 PlayerPositionCurrentFrame;
-    [SerializeField] private Vector3 PositionCurrentFrameLeftHand;
-    [SerializeField] private Vector3 PositionCurrentFrameRightHand;
-
-    //Speed
-    [SerializeField] private float Speed = 70;
-    [SerializeField] private float HandSpeed;
+    private Vector3 leftControllerPreviousPosition;
+    private Vector3 rightControllerPreviousPosition;
 
     void Start()
     {
-        PlayerPositionPreviousFrame = transform.position; //set current positions
-        PositionPreviousFrameLeftHand = LeftHand.transform.position; //set previous positions
-        PositionPreviousFrameRightHand = RightHand.transform.position;
+        leftControllerPreviousPosition = leftController.position;
+        rightControllerPreviousPosition = rightController.position;
     }
 
-    // Update is called once per frame
     void Update()
     {
-        // get forward direction from the center eye camera and set it to the forward direction object
-        float yRotation = MainCamera.transform.eulerAngles.y;
-        ForwardDirection.transform.eulerAngles = new Vector3(0, yRotation, 0);
+        // Calculate the velocity of the controllers
+        Vector3 leftControllerVelocity = (leftController.position - leftControllerPreviousPosition) / Time.deltaTime;
+        Vector3 rightControllerVelocity = (rightController.position - rightControllerPreviousPosition) / Time.deltaTime;
 
-        // get positons of hands
-        PositionCurrentFrameLeftHand = LeftHand.transform.position;
-        PositionCurrentFrameRightHand = RightHand.transform.position;
+        // Calculate the speed of the controllers
+        float leftControllerSpeed = leftControllerVelocity.magnitude;
+        float rightControllerSpeed = rightControllerVelocity.magnitude;
 
-        // position of player
-        PlayerPositionCurrentFrame = transform.position;
+        // Update previous positions
+        leftControllerPreviousPosition = leftController.position;
+        rightControllerPreviousPosition = rightController.position;
 
-        // get distance the hands and player has moved from last frame
-        var playerDistanceMoved = Vector3.Distance(PlayerPositionCurrentFrame, PlayerPositionPreviousFrame);
-        var leftHandDistanceMoved = Vector3.Distance(PositionPreviousFrameLeftHand, PositionCurrentFrameLeftHand);
-        var rightHandDistanceMoved = Vector3.Distance(PositionPreviousFrameRightHand, PositionCurrentFrameRightHand);
+        // Debugging velocities and speeds
+        Debug.Log($"Left Controller Velocity: {leftControllerVelocity}, Speed: {leftControllerSpeed}");
+        Debug.Log($"Right Controller Velocity: {rightControllerVelocity}, Speed: {rightControllerSpeed}");
 
-        // aggregate to get hand speed
-        HandSpeed = ((leftHandDistanceMoved - playerDistanceMoved) + (rightHandDistanceMoved - playerDistanceMoved));
-
-        if (Time.timeSinceLevelLoad > 1f)
+        // Check if the speed of either controller exceeds the threshold
+        if (leftControllerSpeed > speedThreshold || rightControllerSpeed > speedThreshold)
         {
-            transform.position += ForwardDirection.transform.forward * HandSpeed * Speed * Time.deltaTime;
-        }
+            // Calculate the move direction towards the target object
+            Vector3 moveDirection = (targetObject.position - transform.position).normalized;
 
-        // set previous position of hands for next frame
-        PositionPreviousFrameLeftHand = PositionCurrentFrameLeftHand;
-        PositionPreviousFrameRightHand = PositionCurrentFrameRightHand;
-        // set player position previous frame
-        PlayerPositionPreviousFrame = PlayerPositionCurrentFrame;
+            // Calculate the average speed of the controllers
+            float averageSpeed = (leftControllerSpeed + rightControllerSpeed) / 2.0f;
+
+            // Clamp the movement speed to the maxMoveSpeed
+            float movementSpeed = Mathf.Clamp(averageSpeed, 0, maxMoveSpeed);
+
+            // Move the character towards the target object
+            transform.position += moveDirection * movementSpeed * Time.deltaTime;
+
+            // Debug the move direction and character's new position
+            Debug.Log($"Move Direction: {moveDirection}");
+            Debug.Log($"Character Position: {transform.position}");
+        }
     }
 }

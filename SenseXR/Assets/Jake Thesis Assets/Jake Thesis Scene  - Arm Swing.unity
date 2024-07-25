@@ -503,6 +503,11 @@ Transform:
   - {fileID: 432035721}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &1116404210 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 7202322813233729149, guid: 7f56685c8182cbf44b6c843a7738c6ab, type: 3}
+  m_PrefabInstance: {fileID: 4680078948337242895}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1373636205
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -669,9 +674,37 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 482075528484485426, guid: 7f56685c8182cbf44b6c843a7738c6ab, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 975217555674640706, guid: 7f56685c8182cbf44b6c843a7738c6ab, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1164201311982827248, guid: 7f56685c8182cbf44b6c843a7738c6ab, type: 3}
       propertyPath: m_Name
       value: Jake Player Set-Up
+      objectReference: {fileID: 0}
+    - target: {fileID: 2067236167206156446, guid: 7f56685c8182cbf44b6c843a7738c6ab, type: 3}
+      propertyPath: targetObject
+      value: 
+      objectReference: {fileID: 1116404210}
+    - target: {fileID: 2067236167206156446, guid: 7f56685c8182cbf44b6c843a7738c6ab, type: 3}
+      propertyPath: leftController
+      value: 
+      objectReference: {fileID: 4680078948337242897}
+    - target: {fileID: 2067236167206156446, guid: 7f56685c8182cbf44b6c843a7738c6ab, type: 3}
+      propertyPath: speedThreshold
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2067236167206156446, guid: 7f56685c8182cbf44b6c843a7738c6ab, type: 3}
+      propertyPath: rightController
+      value: 
+      objectReference: {fileID: 4680078948337242896}
+    - target: {fileID: 3199191312727787850, guid: 7f56685c8182cbf44b6c843a7738c6ab, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3322012681889561362, guid: 7f56685c8182cbf44b6c843a7738c6ab, type: 3}
       propertyPath: m_CameraYOffset
@@ -722,6 +755,16 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7f56685c8182cbf44b6c843a7738c6ab, type: 3}
+--- !u!4 &4680078948337242896 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 7684741753755459459, guid: 7f56685c8182cbf44b6c843a7738c6ab, type: 3}
+  m_PrefabInstance: {fileID: 4680078948337242895}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &4680078948337242897 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4399967428692305667, guid: 7f56685c8182cbf44b6c843a7738c6ab, type: 3}
+  m_PrefabInstance: {fileID: 4680078948337242895}
+  m_PrefabAsset: {fileID: 0}
 --- !u!114 &4680078948337242899 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 2849307356522943654, guid: 7f56685c8182cbf44b6c843a7738c6ab, type: 3}
