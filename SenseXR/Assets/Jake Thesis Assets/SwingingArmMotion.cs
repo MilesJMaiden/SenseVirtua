@@ -1,60 +1,162 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
+using UnityEngine.XR.Interaction.Toolkit;
 
 public class SwingingArmMotion : MonoBehaviour
 {
-    public Transform leftController;
-    public Transform rightController;
-    public Transform targetObject; // The game object in front of the player
-    public float speedThreshold = 0.1f; // Speed threshold to start moving the character
-    public float maxMoveSpeed = 5.0f; // Maximum speed at which the character moves
+    // Game Objects
+    [SerializeField] private GameObject LeftHand;
+    [SerializeField] private GameObject RightHand;
+    [SerializeField] private GameObject MainCamera;
+    [SerializeField] private GameObject ForwardDirection;
 
-    private Vector3 leftControllerPreviousPosition;
-    private Vector3 rightControllerPreviousPosition;
+    //Vector3 Positions
+    [SerializeField] private Vector3 PositionPreviousFrameLeftHand;
+    [SerializeField] private Vector3 PositionPreviousFrameRightHand;
+    [SerializeField] private Vector3 PlayerPositionPreviousFrame;
+    [SerializeField] private Vector3 PlayerPositionCurrentFrame;
+    [SerializeField] private Vector3 PositionCurrentFrameLeftHand;
+    [SerializeField] private Vector3 PositionCurrentFrameRightHand;
+
+    //Speed
+    [SerializeField] private float Speed = 70;
+    [SerializeField] private float HandSpeed;
+
+    //Inputs
+    public InputActionAsset inputAction;
+    [SerializeField] private InputAction buttonPressRight;
+    [SerializeField] private InputAction buttonPressLeft;
+    private bool swingMovement;
+
+
+    public XRController targetController;
+
+
 
     void Start()
     {
-        leftControllerPreviousPosition = leftController.position;
-        rightControllerPreviousPosition = rightController.position;
+        PlayerPositionPreviousFrame = transform.position; //set current positions
+        PositionPreviousFrameLeftHand = LeftHand.transform.position; //set previous positions
+        PositionPreviousFrameRightHand = RightHand.transform.position;
+
+        swingMovement = false;
+        buttonPressRight = inputAction.FindActionMap("XRI " + targetController.ToString()).FindAction("Activate");
+        buttonPressLeft = inputAction.FindActionMap("XRI " + targetController.ToString()).FindAction("Activate");
     }
+
+    // Update is called once per frame
+    void Update()
+    {
+        // get forward direction from the center eye camera and set it to the forward direction object
+        float yRotation = MainCamera.transform.eulerAngles.y;
+        ForwardDirection.transform.eulerAngles = new Vector3(0, yRotation, 0);
+
+        // get positons of hands
+        PositionCurrentFrameLeftHand = LeftHand.transform.position;
+        PositionCurrentFrameRightHand = RightHand.transform.position;
+
+        // position of player
+        PlayerPositionCurrentFrame = transform.position;
+
+        // get distance the hands and player has moved from last frame
+        var playerDistanceMoved = Vector3.Distance(PlayerPositionCurrentFrame, PlayerPositionPreviousFrame);
+        var leftHandDistanceMoved = Vector3.Distance(PositionPreviousFrameLeftHand, PositionCurrentFrameLeftHand);
+        var rightHandDistanceMoved = Vector3.Distance(PositionPreviousFrameRightHand, PositionCurrentFrameRightHand);
+
+        // aggregate to get hand speed
+        HandSpeed = ((leftHandDistanceMoved - playerDistanceMoved) + (rightHandDistanceMoved - playerDistanceMoved));
+
+        // get the button press event
+        if (buttonPressLeft.triggered && buttonPressRight.triggered)
+        {
+            swingMovement = true;
+        }
+        else
+        {
+            swingMovement = false;
+        }
+
+        if (swingMovement && Time.timeSinceLevelLoad > 1f)
+        {
+            transform.position += ForwardDirection.transform.forward * HandSpeed * Speed * Time.deltaTime;
+        }
+
+        // set previous position of hands for next frame
+        PositionPreviousFrameLeftHand = PositionCurrentFrameLeftHand;
+        PositionPreviousFrameRightHand = PositionCurrentFrameRightHand;
+
+        // set player position previous frame
+        PlayerPositionPreviousFrame = PlayerPositionCurrentFrame;
+    }
+}
+
+
+
+
+
+
+/*using UnityEngine;
+using UnityEngine.XR;
+using UnityEngine.XR.Interaction.Toolkit;
+
+public class SwingArmMotion : MonoBehaviour
+{
+    public Transform leftController; // Reference to the left controller
+    public Transform rightController; // Reference to the right controller
+    public GameObject player; // Reference to the player GameObject
+    public GameObject target; // Target GameObject to move towards
+    public XRController xrControllerLeft;
+
+    private float speed = 3f; // Maximum speed
+    private float velocityThreshold = 0.1f; // Velocity threshold
 
     void Update()
     {
-        // Calculate the velocity of the controllers
-        Vector3 leftControllerVelocity = (leftController.position - leftControllerPreviousPosition) / Time.deltaTime;
-        Vector3 rightControllerVelocity = (rightController.position - rightControllerPreviousPosition) / Time.deltaTime;
+        Vector3 leftControllerVelocity = GetControllerVelocity(InputDeviceCharacteristics.Left);
+        Vector3 rightControllerVelocity = GetControllerVelocity(InputDeviceCharacteristics.Right);
 
-        // Calculate the speed of the controllers
-        float leftControllerSpeed = leftControllerVelocity.magnitude;
-        float rightControllerSpeed = rightControllerVelocity.magnitude;
+        Vector3 combinedVelocity = leftControllerVelocity + rightControllerVelocity;
 
-        // Update previous positions
-        leftControllerPreviousPosition = leftController.position;
-        rightControllerPreviousPosition = rightController.position;
+        Debug.Log("Left Controller Velocity: " + leftControllerVelocity);
+        Debug.Log("Right Controller Velocity: " + rightControllerVelocity);
+        Debug.Log("Combined Velocity: " + combinedVelocity.magnitude);
 
-        // Debugging velocities and speeds
-        Debug.Log($"Left Controller Velocity: {leftControllerVelocity}, Speed: {leftControllerSpeed}");
-        Debug.Log($"Right Controller Velocity: {rightControllerVelocity}, Speed: {rightControllerSpeed}");
-
-        // Check if the speed of either controller exceeds the threshold
-        if (leftControllerSpeed > speedThreshold || rightControllerSpeed > speedThreshold)
+        if (combinedVelocity.magnitude > velocityThreshold)
         {
-            // Calculate the move direction towards the target object
-            Vector3 moveDirection = (targetObject.position - transform.position).normalized;
-
-            // Calculate the average speed of the controllers
-            float averageSpeed = (leftControllerSpeed + rightControllerSpeed) / 2.0f;
-
-            // Clamp the movement speed to the maxMoveSpeed
-            float movementSpeed = Mathf.Clamp(averageSpeed, 0, maxMoveSpeed);
-
-            // Move the character towards the target object
-            transform.position += moveDirection * movementSpeed * Time.deltaTime;
-
-            // Debug the move direction and character's new position
-            Debug.Log($"Move Direction: {moveDirection}");
-            Debug.Log($"Character Position: {transform.position}");
+            Debug.Log("Moving Player");
+            MovePlayerTowardsTarget(combinedVelocity);
+        }
+        else
+        {
+            Debug.Log("Velocity below threshold");
         }
     }
-}
+
+    private Vector3 GetControllerVelocity(InputDeviceCharacteristics characteristics)
+    {
+        List<InputDevice> devices = new List<InputDevice>();
+        InputDevices.GetDevicesWithCharacteristics(characteristics, devices);
+
+        foreach (var device in devices)
+        {
+            if (device.TryGetFeatureValue(CommonUsages.deviceVelocity, out Vector3 velocity))
+            {
+                return velocity;
+            }
+        }
+
+        return Vector3.zero;
+    }
+
+    private void MovePlayerTowardsTarget(Vector3 velocity)
+    {
+        Vector3 direction = (target.transform.position - player.transform.position).normalized;
+        Vector3 moveVelocity = direction * Mathf.Clamp(velocity.magnitude, 0, speed) * Time.deltaTime;
+        player.transform.Translate(moveVelocity, Space.World);
+    }
+}*/
+
