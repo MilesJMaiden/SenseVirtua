@@ -101,7 +101,7 @@ namespace UnityEngine.XR.Content.Interaction
         {
             // Put anchor position into slider space
             var localPosition = transform.InverseTransformPoint(m_Interactor.GetAttachTransform(this).position);
-            var sliderValue = Mathf.Clamp01((localPosition.z - m_MinPosition) / (m_MaxPosition - m_MinPosition));
+            var sliderValue = Mathf.Clamp01((localPosition.x - m_MinPosition) / (m_MaxPosition - m_MinPosition));
             SetValue(sliderValue);
             SetSliderPosition(sliderValue);
         }
@@ -112,7 +112,7 @@ namespace UnityEngine.XR.Content.Interaction
                 return;
 
             var handlePos = m_Handle.localPosition;
-            handlePos.z = Mathf.Lerp(m_MinPosition, m_MaxPosition, value);
+            handlePos.x = Mathf.Lerp(m_MinPosition, m_MaxPosition, value);
             m_Handle.localPosition = handlePos;
         }
 
@@ -124,8 +124,8 @@ namespace UnityEngine.XR.Content.Interaction
 
         void OnDrawGizmosSelected()
         {
-            var sliderMinPoint = transform.TransformPoint(new Vector3(0.0f, 0.0f, m_MinPosition));
-            var sliderMaxPoint = transform.TransformPoint(new Vector3(0.0f, 0.0f, m_MaxPosition));
+            var sliderMinPoint = transform.TransformPoint(new Vector3(m_MinPosition, 0.0f, 0.0f));
+            var sliderMaxPoint = transform.TransformPoint(new Vector3(m_MaxPosition, 0.0f, 0.0f));
 
             Gizmos.color = Color.green;
             Gizmos.DrawLine(sliderMinPoint, sliderMaxPoint);
