@@ -101,7 +101,7 @@ public class TwoHandScroll : MonoBehaviour
         Debug.Log("the XRSlider Value is" + xrSlider.value);
         Debug.Log("Updating unfolding value!!!");
         value = xrSlider.value;
-        unfoldingValue = max_UnfoldingValue - value * (max_UnfoldingValue - min_UnfoldingValue);
+        unfoldingValue =  value * (max_UnfoldingValue - min_UnfoldingValue) + min_UnfoldingValue;
 
         if (coverMat.HasProperty("_Unfolding_Value"))
         {

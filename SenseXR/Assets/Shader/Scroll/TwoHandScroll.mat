@@ -25,6 +25,10 @@ Material:
   m_SavedProperties:
     serializedVersion: 3
     m_TexEnvs:
+    - _Texture2D:
+        m_Texture: {fileID: 2800000, guid: 824a71fae88112145826f8d82f89784f, type: 3}
+        m_Scale: {x: 2.34, y: 2.25}
+        m_Offset: {x: -0.17, y: -0.01}
     - unity_Lightmaps:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
@@ -41,8 +45,9 @@ Material:
     m_Floats:
     - _QueueControl: 0
     - _QueueOffset: 0
-    - _Unfolding_Value: 11.7
-    m_Colors: []
+    - _Unfolding_Value: -11.7
+    m_Colors:
+    - _BaseColor: {r: 1, g: 0.9842767, b: 0.9842767, a: 0}
   m_BuildTextureStacks: []
 --- !u!114 &3990779957614167962
 MonoBehaviour:
