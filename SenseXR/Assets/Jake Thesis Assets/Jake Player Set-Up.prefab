@@ -16,7 +16,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &8546618916810171313
 Transform:
   m_ObjectHideFlags: 0
@@ -125,8 +125,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 64d299502104b064388841ec2adf6def, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Target: {fileID: 0}
-  m_AimTargetObject: {fileID: 0}
+  m_Target: {fileID: 7684741753755459459}
+  m_AimTargetObject: {fileID: 5963333470804595644}
   m_UseLocalSpace: 1
   m_AngleStabilization: 20
   m_PositionStabilization: 0.25
@@ -301,8 +301,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 64d299502104b064388841ec2adf6def, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Target: {fileID: 0}
-  m_AimTargetObject: {fileID: 0}
+  m_Target: {fileID: 4399967428692305667}
+  m_AimTargetObject: {fileID: 5044238118067789746}
   m_UseLocalSpace: 1
   m_AngleStabilization: 20
   m_PositionStabilization: 0.25
@@ -1094,6 +1094,7 @@ MonoBehaviour:
   - {fileID: 3199191312727787846}
   - {fileID: 2810857300592114896}
   - {fileID: 9149337394980239980}
+  - {fileID: 5963333470804595644}
   m_StartingInteractionOverridesMap: []
 --- !u!1 &6003204397263309024
 GameObject:
@@ -1572,18 +1573,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 85f9fa9fb7325ab468951e899341c183, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  LeftHand: {fileID: 8362152178290932066}
-  RightHand: {fileID: 5493561598639296409}
-  MainCamera: {fileID: 6003204397263309024}
-  ForwardDirection: {fileID: 1861307668349594453}
-  PositionPreviousFrameLeftHand: {x: 0, y: 0, z: 0}
-  PositionPreviousFrameRightHand: {x: 0, y: 0, z: 0}
-  PlayerPositionPreviousFrame: {x: 0, y: 0, z: 0}
-  PlayerPositionCurrentFrame: {x: 0, y: 0, z: 0}
-  PositionCurrentFrameLeftHand: {x: 0, y: 0, z: 0}
-  PositionCurrentFrameRightHand: {x: 0, y: 0, z: 0}
-  Speed: 70
-  HandSpeed: 0
+  leftController: {fileID: 4399967428692305667}
+  rightController: {fileID: 7684741753755459459}
+  targetObject: {fileID: 7202322813233729149}
+  speedThreshold: 0.1
+  maxMoveSpeed: 5
 --- !u!1 &8362152178290932066
 GameObject:
   m_ObjectHideFlags: 0
@@ -2425,6 +2419,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Teleport Interactor
       objectReference: {fileID: 0}
+    - target: {fileID: 2761784063978902507, guid: c1800acf6366418a9b5f610249000331, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -2840,7 +2838,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1787346994484839025, guid: ad818c36731146e994540a1896ad8f24, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5888765399538998960, guid: ad818c36731146e994540a1896ad8f24, type: 3}
       propertyPath: m_LocalPosition.x
