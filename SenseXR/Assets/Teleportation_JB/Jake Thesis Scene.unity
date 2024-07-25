@@ -302,7 +302,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &841526675
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -551,17 +551,56 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 683502983029189740, guid: 42bbcf3fe43b88e4f9c4e188bdbcaa38, type: 3}
+      propertyPath: m_InteractionManager
+      value: 
+      objectReference: {fileID: 4680078948337242899}
+    - target: {fileID: 683502983029189740, guid: 42bbcf3fe43b88e4f9c4e188bdbcaa38, type: 3}
+      propertyPath: m_TeleportationProvider
+      value: 
+      objectReference: {fileID: 295710768}
+    - target: {fileID: 825793717387245893, guid: 42bbcf3fe43b88e4f9c4e188bdbcaa38, type: 3}
+      propertyPath: m_InteractionManager
+      value: 
+      objectReference: {fileID: 4680078948337242899}
+    - target: {fileID: 825793717387245893, guid: 42bbcf3fe43b88e4f9c4e188bdbcaa38, type: 3}
+      propertyPath: m_TeleportationProvider
+      value: 
+      objectReference: {fileID: 295710768}
+    - target: {fileID: 1089434855919369673, guid: 42bbcf3fe43b88e4f9c4e188bdbcaa38, type: 3}
+      propertyPath: m_InteractionManager
+      value: 
+      objectReference: {fileID: 4680078948337242899}
+    - target: {fileID: 1089434855919369673, guid: 42bbcf3fe43b88e4f9c4e188bdbcaa38, type: 3}
+      propertyPath: m_TeleportationProvider
+      value: 
+      objectReference: {fileID: 295710768}
+    - target: {fileID: 4716404856227131506, guid: 42bbcf3fe43b88e4f9c4e188bdbcaa38, type: 3}
+      propertyPath: m_InteractionLayers.m_Bits
+      value: 2147483648
+      objectReference: {fileID: 0}
     - target: {fileID: 5944343393026013241, guid: 42bbcf3fe43b88e4f9c4e188bdbcaa38, type: 3}
       propertyPath: m_Name
       value: Illumination Game Jake
       objectReference: {fileID: 0}
+    - target: {fileID: 7221426908588454211, guid: 42bbcf3fe43b88e4f9c4e188bdbcaa38, type: 3}
+      propertyPath: m_InteractionManager
+      value: 
+      objectReference: {fileID: 4680078948337242899}
+    - target: {fileID: 7221426908588454211, guid: 42bbcf3fe43b88e4f9c4e188bdbcaa38, type: 3}
+      propertyPath: m_TeleportationProvider
+      value: 
+      objectReference: {fileID: 295710768}
     - target: {fileID: 7521238649347098259, guid: 42bbcf3fe43b88e4f9c4e188bdbcaa38, type: 3}
-      propertyPath: m_InteractionLayers.m_Bits
-      value: 2147483648
-      objectReference: {fileID: 0}
+      propertyPath: m_InteractionManager
+      value: 
+      objectReference: {fileID: 4680078948337242899}
+    - target: {fileID: 7521238649347098259, guid: 42bbcf3fe43b88e4f9c4e188bdbcaa38, type: 3}
+      propertyPath: m_TeleportationProvider
+      value: 
+      objectReference: {fileID: 295710768}
     m_RemovedComponents: []
-    m_RemovedGameObjects:
-    - {fileID: 8475722894749524965, guid: 42bbcf3fe43b88e4f9c4e188bdbcaa38, type: 3}
+    m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 42bbcf3fe43b88e4f9c4e188bdbcaa38, type: 3}
@@ -617,10 +656,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 5685666407034249255, guid: 5eb8d99aaaeecfd44be1ca7150edda41, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -638,9 +673,9 @@ PrefabInstance:
       propertyPath: m_Name
       value: Jake Player Set-Up
       objectReference: {fileID: 0}
-    - target: {fileID: 4086625881170089156, guid: 7f56685c8182cbf44b6c843a7738c6ab, type: 3}
-      propertyPath: m_MaxRaycastDistance
-      value: 50
+    - target: {fileID: 3322012681889561362, guid: 7f56685c8182cbf44b6c843a7738c6ab, type: 3}
+      propertyPath: m_CameraYOffset
+      value: 1.75
       objectReference: {fileID: 0}
     - target: {fileID: 7009324605510469047, guid: 7f56685c8182cbf44b6c843a7738c6ab, type: 3}
       propertyPath: m_LocalPosition.x
@@ -652,11 +687,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7009324605510469047, guid: 7f56685c8182cbf44b6c843a7738c6ab, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 8.79
+      value: 9.06
       objectReference: {fileID: 0}
     - target: {fileID: 7009324605510469047, guid: 7f56685c8182cbf44b6c843a7738c6ab, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7009324605510469047, guid: 7f56685c8182cbf44b6c843a7738c6ab, type: 3}
       propertyPath: m_LocalRotation.x
@@ -664,7 +699,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7009324605510469047, guid: 7f56685c8182cbf44b6c843a7738c6ab, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7009324605510469047, guid: 7f56685c8182cbf44b6c843a7738c6ab, type: 3}
       propertyPath: m_LocalRotation.z
@@ -676,15 +711,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7009324605510469047, guid: 7f56685c8182cbf44b6c843a7738c6ab, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
-      value: 180
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7009324605510469047, guid: 7f56685c8182cbf44b6c843a7738c6ab, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 9099716500876925252, guid: 7f56685c8182cbf44b6c843a7738c6ab, type: 3}
-      propertyPath: m_MaxRaycastDistance
-      value: 50
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
