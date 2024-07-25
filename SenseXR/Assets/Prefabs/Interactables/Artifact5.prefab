@@ -777,11 +777,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 58ce1611057461547be688a64d8ac355, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  min_UnfoldingValue: -0.4
-  max_UnfoldingValue: 0.28
-  unfoldingValue: 0
+  min_UnfoldingValue: 9
+  max_UnfoldingValue: 11.6
+  unfoldingValue: 11.6
   cover: {fileID: 337712608559626044}
-  slider: {fileID: 4747124083188968668}
+  slideScroll: {fileID: 5558495508749611761}
 --- !u!1 &3087969780304177931
 GameObject:
   m_ObjectHideFlags: 0
@@ -1935,17 +1935,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 1193906800578951426, guid: 3739ff565f1aa8d48864956939cdba68, type: 3}
   m_PrefabInstance: {fileID: 416839342746467182}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &4747124083188968668 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 4911673608576784306, guid: 3739ff565f1aa8d48864956939cdba68, type: 3}
+--- !u!1 &5558495508749611761 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5254389165684984223, guid: 3739ff565f1aa8d48864956939cdba68, type: 3}
   m_PrefabInstance: {fileID: 416839342746467182}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0d494b658b37958449db82c0ee015fbb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!23 &9105632869153097910 stripped
 MeshRenderer:
   m_CorrespondingSourceObject: {fileID: 8905127148066616280, guid: 3739ff565f1aa8d48864956939cdba68, type: 3}
