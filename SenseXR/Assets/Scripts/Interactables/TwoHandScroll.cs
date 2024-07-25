@@ -5,9 +5,9 @@ using UnityEngine.XR.Content.Interaction;
 
 public class TwoHandScroll : MonoBehaviour
 {
-    public float min_UnfoldingValue = -1f;
-    public float max_UnfoldingValue = 0.72f;
-    public float unfoldingValue = 0.72f;
+    public float min_UnfoldingValue ;
+    public float max_UnfoldingValue ;
+    public float unfoldingValue;
 
     public GameObject cover;
     public XRSlider slider;
