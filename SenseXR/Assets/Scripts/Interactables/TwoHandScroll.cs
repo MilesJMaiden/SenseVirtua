@@ -10,7 +10,8 @@ public class TwoHandScroll : MonoBehaviour
     public float unfoldingValue;
 
     public GameObject cover;
-    public XRSlider slider;
+    public GameObject slideScroll;
+    private XRSlider xrSlider;
 
 
     private Material coverMat;
@@ -18,6 +19,7 @@ public class TwoHandScroll : MonoBehaviour
     private void OnEnable()
     {
         Material coverMat = cover.GetComponent<Material>();
+        xrSlider = slideScroll.GetComponent<XRSlider>();
         Debug.Log("the scroll is awaken");
         ConnectControlEvents();
         InitialControls();
@@ -30,12 +32,14 @@ public class TwoHandScroll : MonoBehaviour
 
     void ConnectControlEvents()
     {
-        slider.onValueChange.AddListener(UpdateUnfoldingValue);
+        xrSlider.onValueChange.AddListener(UpdateUnfoldingValue);
+        Debug.Log("Slider is changing Value");
     }
 
     void DisconnectControlEvent()
     {
-        slider.onValueChange.RemoveListener(UpdateUnfoldingValue);
+        xrSlider.onValueChange.RemoveListener(UpdateUnfoldingValue);
+        Debug.Log("Listener is removed from slider");
     }
 
     void InitialControls()
@@ -47,7 +51,7 @@ public class TwoHandScroll : MonoBehaviour
     public void UpdateUnfoldingValue(float value)
     {
         Debug.Log("Updating unfolding value!!!");
-        value = slider.value;
+        value = xrSlider.value;
         unfoldingValue = max_UnfoldingValue - value * (max_UnfoldingValue - min_UnfoldingValue);
 
         if (coverMat.HasProperty("_Unfolding_Value"))
