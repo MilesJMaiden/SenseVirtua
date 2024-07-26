@@ -134,11 +134,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 01f69dc1cb084aa42b2f2f8cd87bc770, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!1 &331347417 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 3339740451033878320, guid: 7f56685c8182cbf44b6c843a7738c6ab, type: 3}
-  m_PrefabInstance: {fileID: 4680078948337242895}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &432035720
 GameObject:
   m_ObjectHideFlags: 0
@@ -170,11 +165,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 841526679}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &528358640 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 8362152178290932066, guid: 7f56685c8182cbf44b6c843a7738c6ab, type: 3}
-  m_PrefabInstance: {fileID: 4680078948337242895}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &795976847
 GameObject:
   m_ObjectHideFlags: 0
@@ -513,52 +503,6 @@ Transform:
   - {fileID: 432035721}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &1043742226 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 5493561598639296409, guid: 7f56685c8182cbf44b6c843a7738c6ab, type: 3}
-  m_PrefabInstance: {fileID: 4680078948337242895}
-  m_PrefabAsset: {fileID: 0}
---- !u!4 &1116404210 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 7202322813233729149, guid: 7f56685c8182cbf44b6c843a7738c6ab, type: 3}
-  m_PrefabInstance: {fileID: 4680078948337242895}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &1323927558 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1861307668349594453, guid: 7f56685c8182cbf44b6c843a7738c6ab, type: 3}
-  m_PrefabInstance: {fileID: 4680078948337242895}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &1360417916
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1360417917}
-  m_Layer: 0
-  m_Name: GameManager
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1360417917
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1360417916}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 9.06}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1373636205
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -631,6 +575,10 @@ PrefabInstance:
       propertyPath: m_TeleportationProvider
       value: 
       objectReference: {fileID: 295710768}
+    - target: {fileID: 1802557260356664568, guid: 42bbcf3fe43b88e4f9c4e188bdbcaa38, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4716404856227131506, guid: 42bbcf3fe43b88e4f9c4e188bdbcaa38, type: 3}
       propertyPath: m_InteractionLayers.m_Bits
       value: 2147483648
@@ -660,11 +608,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 42bbcf3fe43b88e4f9c4e188bdbcaa38, type: 3}
---- !u!1 &1783732512 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 6003204397263309024, guid: 7f56685c8182cbf44b6c843a7738c6ab, type: 3}
-  m_PrefabInstance: {fileID: 4680078948337242895}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1833532632
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -776,7 +719,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6598815579406187037, guid: 18ddb545287c546e19cc77dc9fbb2189, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -791,137 +734,9 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 482075528484485426, guid: 7f56685c8182cbf44b6c843a7738c6ab, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 975217555674640706, guid: 7f56685c8182cbf44b6c843a7738c6ab, type: 3}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 1164201311982827248, guid: 7f56685c8182cbf44b6c843a7738c6ab, type: 3}
       propertyPath: m_Name
       value: Jake Player Set-Up
-      objectReference: {fileID: 0}
-    - target: {fileID: 2067236167206156446, guid: 7f56685c8182cbf44b6c843a7738c6ab, type: 3}
-      propertyPath: XRRig
-      value: 
-      objectReference: {fileID: 331347417}
-    - target: {fileID: 2067236167206156446, guid: 7f56685c8182cbf44b6c843a7738c6ab, type: 3}
-      propertyPath: player
-      value: 
-      objectReference: {fileID: 331347417}
-    - target: {fileID: 2067236167206156446, guid: 7f56685c8182cbf44b6c843a7738c6ab, type: 3}
-      propertyPath: target
-      value: 
-      objectReference: {fileID: 1323927558}
-    - target: {fileID: 2067236167206156446, guid: 7f56685c8182cbf44b6c843a7738c6ab, type: 3}
-      propertyPath: LeftHand
-      value: 
-      objectReference: {fileID: 528358640}
-    - target: {fileID: 2067236167206156446, guid: 7f56685c8182cbf44b6c843a7738c6ab, type: 3}
-      propertyPath: RightHand
-      value: 
-      objectReference: {fileID: 1043742226}
-    - target: {fileID: 2067236167206156446, guid: 7f56685c8182cbf44b6c843a7738c6ab, type: 3}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2067236167206156446, guid: 7f56685c8182cbf44b6c843a7738c6ab, type: 3}
-      propertyPath: MainCamera
-      value: 
-      objectReference: {fileID: 1783732512}
-    - target: {fileID: 2067236167206156446, guid: 7f56685c8182cbf44b6c843a7738c6ab, type: 3}
-      propertyPath: inputAction
-      value: 
-      objectReference: {fileID: -944628639613478452, guid: c348712bda248c246b8c49b3db54643f, type: 3}
-    - target: {fileID: 2067236167206156446, guid: 7f56685c8182cbf44b6c843a7738c6ab, type: 3}
-      propertyPath: targetObject
-      value: 
-      objectReference: {fileID: 1116404210}
-    - target: {fileID: 2067236167206156446, guid: 7f56685c8182cbf44b6c843a7738c6ab, type: 3}
-      propertyPath: leftController
-      value: 
-      objectReference: {fileID: 4680078948337242897}
-    - target: {fileID: 2067236167206156446, guid: 7f56685c8182cbf44b6c843a7738c6ab, type: 3}
-      propertyPath: speedThreshold
-      value: 0.1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2067236167206156446, guid: 7f56685c8182cbf44b6c843a7738c6ab, type: 3}
-      propertyPath: rightController
-      value: 
-      objectReference: {fileID: 4680078948337242896}
-    - target: {fileID: 2067236167206156446, guid: 7f56685c8182cbf44b6c843a7738c6ab, type: 3}
-      propertyPath: ForwardDirection
-      value: 
-      objectReference: {fileID: 1323927558}
-    - target: {fileID: 2067236167206156446, guid: 7f56685c8182cbf44b6c843a7738c6ab, type: 3}
-      propertyPath: swingMovementLeft
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2067236167206156446, guid: 7f56685c8182cbf44b6c843a7738c6ab, type: 3}
-      propertyPath: swingMovementRight
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2067236167206156446, guid: 7f56685c8182cbf44b6c843a7738c6ab, type: 3}
-      propertyPath: buttonPressLeft.m_Name
-      value: Button Press Left
-      objectReference: {fileID: 0}
-    - target: {fileID: 2067236167206156446, guid: 7f56685c8182cbf44b6c843a7738c6ab, type: 3}
-      propertyPath: buttonPressRight.m_Name
-      value: Button Press Right
-      objectReference: {fileID: 0}
-    - target: {fileID: 2067236167206156446, guid: 7f56685c8182cbf44b6c843a7738c6ab, type: 3}
-      propertyPath: buttonPressRight.m_Type
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2067236167206156446, guid: 7f56685c8182cbf44b6c843a7738c6ab, type: 3}
-      propertyPath: triggerActionLeft.m_Reference
-      value: 
-      objectReference: {fileID: 6986180202050166755, guid: e0ca4504471ca124088e1e2cfe6804ae, type: 3}
-    - target: {fileID: 2067236167206156446, guid: 7f56685c8182cbf44b6c843a7738c6ab, type: 3}
-      propertyPath: triggerActionRight.m_Reference
-      value: 
-      objectReference: {fileID: 6454596279149084813, guid: e0ca4504471ca124088e1e2cfe6804ae, type: 3}
-    - target: {fileID: 2067236167206156446, guid: 7f56685c8182cbf44b6c843a7738c6ab, type: 3}
-      propertyPath: triggerActionLeft.m_UseReference
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2067236167206156446, guid: 7f56685c8182cbf44b6c843a7738c6ab, type: 3}
-      propertyPath: triggerActionLeft.m_Action.m_Name
-      value: Trigger Action Left
-      objectReference: {fileID: 0}
-    - target: {fileID: 2067236167206156446, guid: 7f56685c8182cbf44b6c843a7738c6ab, type: 3}
-      propertyPath: triggerActionRight.m_UseReference
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2067236167206156446, guid: 7f56685c8182cbf44b6c843a7738c6ab, type: 3}
-      propertyPath: triggerActionRight.m_Action.m_Name
-      value: Trigger Action Right
-      objectReference: {fileID: 0}
-    - target: {fileID: 2067236167206156446, guid: 7f56685c8182cbf44b6c843a7738c6ab, type: 3}
-      propertyPath: buttonPressRight.m_ExpectedControlType
-      value: Button
-      objectReference: {fileID: 0}
-    - target: {fileID: 2067236167206156446, guid: 7f56685c8182cbf44b6c843a7738c6ab, type: 3}
-      propertyPath: buttonPressRight.m_SingletonActionBindings.Array.size
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2067236167206156446, guid: 7f56685c8182cbf44b6c843a7738c6ab, type: 3}
-      propertyPath: buttonPressRight.m_SingletonActionBindings.Array.data[0].m_Id
-      value: a8bd0d63-6ca1-451f-9d4b-a7a7e61ec1c8
-      objectReference: {fileID: 0}
-    - target: {fileID: 2067236167206156446, guid: 7f56685c8182cbf44b6c843a7738c6ab, type: 3}
-      propertyPath: buttonPressRight.m_SingletonActionBindings.Array.data[0].m_Action
-      value: Button Press Right
-      objectReference: {fileID: 0}
-    - target: {fileID: 3199191312727787850, guid: 7f56685c8182cbf44b6c843a7738c6ab, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3322012681889561362, guid: 7f56685c8182cbf44b6c843a7738c6ab, type: 3}
-      propertyPath: m_CameraYOffset
-      value: 1.75
       objectReference: {fileID: 0}
     - target: {fileID: 7009324605510469047, guid: 7f56685c8182cbf44b6c843a7738c6ab, type: 3}
       propertyPath: m_LocalPosition.x
@@ -968,16 +783,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7f56685c8182cbf44b6c843a7738c6ab, type: 3}
---- !u!4 &4680078948337242896 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 7684741753755459459, guid: 7f56685c8182cbf44b6c843a7738c6ab, type: 3}
-  m_PrefabInstance: {fileID: 4680078948337242895}
-  m_PrefabAsset: {fileID: 0}
---- !u!4 &4680078948337242897 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 4399967428692305667, guid: 7f56685c8182cbf44b6c843a7738c6ab, type: 3}
-  m_PrefabInstance: {fileID: 4680078948337242895}
-  m_PrefabAsset: {fileID: 0}
 --- !u!114 &4680078948337242899 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 2849307356522943654, guid: 7f56685c8182cbf44b6c843a7738c6ab, type: 3}
@@ -999,4 +804,3 @@ SceneRoots:
   - {fileID: 1373636205}
   - {fileID: 841526679}
   - {fileID: 2118921550}
-  - {fileID: 1360417917}
