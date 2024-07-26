@@ -1573,11 +1573,37 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 85f9fa9fb7325ab468951e899341c183, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  leftController: {fileID: 4399967428692305667}
-  rightController: {fileID: 7684741753755459459}
-  targetObject: {fileID: 7202322813233729149}
-  speedThreshold: 0.1
-  maxMoveSpeed: 5
+  LeftHand: {fileID: 8362152178290932066}
+  RightHand: {fileID: 5493561598639296409}
+  XRRig: {fileID: 3339740451033878320}
+  ForwardDirection: {fileID: 1861307668349594453}
+  Speed: 1
+  triggerActionRight:
+    m_UseReference: 1
+    m_Action:
+      m_Name: Trigger Action Right
+      m_Type: 0
+      m_ExpectedControlType: 
+      m_Id: e54f2d4d-be9e-43e3-b426-e088e3a1bdd8
+      m_Processors: 
+      m_Interactions: 
+      m_SingletonActionBindings: []
+      m_Flags: 0
+    m_Reference: {fileID: -5684558904543120851, guid: e0ca4504471ca124088e1e2cfe6804ae, type: 3}
+  triggerActionLeft:
+    m_UseReference: 1
+    m_Action:
+      m_Name: Trigger Action Left
+      m_Type: 0
+      m_ExpectedControlType: 
+      m_Id: b6b2ec04-1864-4dec-b575-91ce1bc1221b
+      m_Processors: 
+      m_Interactions: 
+      m_SingletonActionBindings: []
+      m_Flags: 0
+    m_Reference: {fileID: 2526168894431210536, guid: e0ca4504471ca124088e1e2cfe6804ae, type: 3}
+  swingMovementRight: 1
+  swingMovementLeft: 1
 --- !u!1 &8362152178290932066
 GameObject:
   m_ObjectHideFlags: 0
