@@ -738,6 +738,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Jake Player Set-Up
       objectReference: {fileID: 0}
+    - target: {fileID: 2429057644292239614, guid: 7f56685c8182cbf44b6c843a7738c6ab, type: 3}
+      propertyPath: m_ActionAssets.Array.data[0]
+      value: 
+      objectReference: {fileID: -944628639613478452, guid: f5ff0222bb6b037458baa95d903f8e9f, type: 3}
     - target: {fileID: 7009324605510469047, guid: 7f56685c8182cbf44b6c843a7738c6ab, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
