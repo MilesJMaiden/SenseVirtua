@@ -4,12 +4,19 @@ using UnityEngine;
 
 public class BubbleCanvas : MonoBehaviour
 {
+    public static BubbleCanvas Instance;
+
     [Tooltip("Text component for displaying dialogues.")]
     public TMP_Text dialogueText;
 
     private Coroutine showTextCoroutine;
     private bool showing = false;
 
+
+    private void Awake()
+    {
+        Instance = this;
+    }
     public void ShowDialogue(string message, float voiceTime)
     {
         gameObject.SetActive(true);

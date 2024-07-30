@@ -17,7 +17,9 @@ public class Voice : MonoBehaviour
     public TMP_Text nextText;
 
     public GameObject buddhaStatue;
-
+    
+    public event System.Action OnDialogueEnd;
+    public event System.Action OnLastDialogueEnd;
     private void Awake()
     {
         voiceAudio = GetComponent<AudioSource>();
@@ -71,6 +73,7 @@ public class Voice : MonoBehaviour
         if (currentIdx >= voiceTexts.Length)
         {
             bubbleCanvas.gameObject.SetActive(false);
+            OnLastDialogueEnd?.Invoke();
 
             if (SceneManager.GetActiveScene().name == "Beginning")
             {
@@ -147,6 +150,11 @@ public class Voice : MonoBehaviour
             onSite = true;
             bubbleCanvas.gameObject.SetActive(true);
             timer = 0;
+
+            GameObject playerObject = GameObject.Find("Player");
+            Vector3 direction = playerObject.transform.position - Guide.Instance.transform.position;
+            direction.y = 0;
+            Guide.Instance.LookAt(direction);
         }
     }
     public void OnTriggerExit(Collider other)
@@ -186,7 +194,7 @@ public class Voice : MonoBehaviour
     }
 
 
-    public event System.Action OnDialogueEnd;
+
 
     private void HandleSpecialActions()
     {
