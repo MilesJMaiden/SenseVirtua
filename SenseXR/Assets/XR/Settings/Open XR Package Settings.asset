@@ -782,7 +782,6 @@ MonoBehaviour:
   m_Name: DPadInteraction Standalone
   m_EditorClassIdentifier: Unity.XR.OpenXR:UnityEngine.XR.OpenXR.Features.Interactions:DPadInteraction
   m_enabled: 0
-  <failedInitialization>k__BackingField: 0
   nameUi: D-Pad Binding
   version: 0.0.1
   featureIdInternal: com.unity.openxr.feature.input.dpadinteraction
@@ -994,7 +993,7 @@ MonoBehaviour:
   - {fileID: -7581625304019661375}
   m_renderMode: 1
   m_depthSubmissionMode: 0
-  m_optimizeBufferDiscards: 0
+  m_optimizeBufferDiscards: 1
   m_symmetricProjection: 0
 --- !u!114 &-34596358968032513
 MonoBehaviour:
@@ -1621,7 +1620,6 @@ MonoBehaviour:
   m_Name: PalmPoseInteraction Standalone
   m_EditorClassIdentifier: Unity.XR.OpenXR:UnityEngine.XR.OpenXR.Features.Interactions:PalmPoseInteraction
   m_enabled: 0
-  <failedInitialization>k__BackingField: 0
   nameUi: Palm Pose
   version: 0.0.1
   featureIdInternal: com.unity.openxr.feature.input.palmpose
@@ -1941,7 +1939,7 @@ MonoBehaviour:
   - visibleName: Quest Pro
     manifestName: cambria
     enabled: 1
-  forceRemoveInternetPermission: 1
+  forceRemoveInternetPermission: 0
   symmetricProjection: 0
   systemSplashScreen: {fileID: 0}
   optimizeBufferDiscards: 1
@@ -2154,3 +2152,5 @@ MonoBehaviour:
   - {fileID: -7494486358618572369}
   m_renderMode: 1
   m_depthSubmissionMode: 0
+  m_optimizeBufferDiscards: 0
+  m_symmetricProjection: 0

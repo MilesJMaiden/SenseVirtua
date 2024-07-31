@@ -1,0 +1,23 @@
+{
+    "name": "Meta.Voice.Samples.TTSLipSync",
+    "rootNamespace": "",
+    "references": [
+        "Meta.WitAi.TTS",
+        "Meta.WitAi.Lib"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [
+        {
+            "define": "OVR_UNITY_PACKAGE_MANAGER",
+            "name": "com.meta.xr.sdk.voice",
+            "expression": ""
+        }
+    ],
+    "noEngineReferences": false
+}

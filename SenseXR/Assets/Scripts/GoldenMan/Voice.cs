@@ -35,6 +35,15 @@ public class Voice : MonoBehaviour
             }
             timer += Time.deltaTime;
         }
+
+        if (Input.GetKeyDown(KeyCode.N))
+        {
+            OnClickedNextBtn();
+        }
+        if (Input.GetKeyDown(KeyCode.S))
+        {
+            OnClickedSkipBtn();
+        }
     }
 
     public void OnClickedNextBtn()

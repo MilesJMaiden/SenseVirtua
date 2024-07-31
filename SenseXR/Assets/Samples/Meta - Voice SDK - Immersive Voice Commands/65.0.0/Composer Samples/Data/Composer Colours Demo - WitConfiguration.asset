@@ -1,0 +1,154 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ae5a46bda3295124c99b0e6537ac7252, type: 3}
+  m_Name: Composer Colours Demo - WitConfiguration
+  m_EditorClassIdentifier: 
+  _clientAccessToken: 
+  _appInfo:
+    name: shapes_short_demo
+    id: 1727234757643392
+    lang: en
+    isPrivate: 0
+    createdAt: 2022-06-29T07:04:13-0700
+    trainingStatus: 1
+    lastTrainDuration: 786
+    lastTrainedAt: 2022-09-09T01:34:48-0700
+    nextTrainAt: 2022-09-09T01:21:42-0700
+    intents:
+    - id: 408187434584809
+      name: color_set
+      entities:
+      - name: color:color
+        id: 3025574414362129
+    - id: 558260792572836
+      name: shape_select
+      entities:
+      - name: shape:shape
+        id: 712301993185969
+    entities:
+    - name: color
+      id: 3153129054936907
+      lookups:
+      - keywords
+      roles:
+      - name: color
+        id: 3025574414362129
+      keywords:
+      - keyword: black
+        synonyms:
+        - black
+      - keyword: blue
+        synonyms:
+        - blue
+      - keyword: brown
+        synonyms:
+        - brown
+      - keyword: cyan
+        synonyms:
+        - cyan
+        - cyanne
+        - saya
+        - zianne
+        - zion
+      - keyword: green
+        synonyms:
+        - green
+      - keyword: magenta
+        synonyms:
+        - magenta
+        - pink
+      - keyword: orange
+        synonyms:
+        - orange
+      - keyword: purple
+        synonyms:
+        - purple
+      - keyword: red
+        synonyms:
+        - red
+      - keyword: white
+        synonyms:
+        - white
+      - keyword: yellow
+        synonyms:
+        - yellow
+    - name: shape
+      id: 712343623174186
+      lookups:
+      - keywords
+      roles:
+      - name: shape
+        id: 712301993185969
+      keywords:
+      - keyword: capsule
+        synonyms:
+        - capsule
+        - pill
+      - keyword: cube
+        synonyms:
+        - block
+        - box
+        - cube
+        - square
+      - keyword: cylinder
+        synonyms:
+        - can
+        - cylinder
+      - keyword: sphere
+        synonyms:
+        - circle
+        - fear
+        - spear
+        - sphere
+    traits: []
+    voices:
+    - name: Charlie
+      locale: en_US
+      gender: male
+      styles:
+      - default
+      - soft
+      - fast
+      - projected
+    - name: Cooper
+      locale: en_US
+      gender: male
+      styles:
+      - default
+      - soft
+      - formal
+      - fast
+      - projected
+    - name: Rebecca
+      locale: en_US
+      gender: female
+      styles:
+      - default
+      - soft
+      - formal
+      - fast
+      - projected
+  _configurationId: 7aaf53bc7d2ad4a6daae646ab8cbd1a3
+  timeoutMS: 10000
+  endpointConfiguration:
+    uriScheme: 
+    authority: 
+    port: 0
+    witApiVersion: 
+    speech: 
+    message: 
+    dictation: 
+  isDemoOnly: 1
+  useConduit: 0
+  _manifestLocalPath: 
+  excludedAssemblies: []
+  relaxedResolution: 0

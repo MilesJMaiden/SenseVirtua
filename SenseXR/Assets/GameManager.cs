@@ -18,7 +18,7 @@ public class GameManager : MonoBehaviour
 
     private void Start()
     {
-        hammer.SetActive(false);
+       hammer.SetActive(false);
         bell.SetActive(false);
         charm.SetActive(false);
         changeFromMicObject.SetActive(false);
@@ -43,7 +43,7 @@ public class GameManager : MonoBehaviour
         switch (goldenManVoice.currentIdx)
         {
             case 1:
-                EnableVoiceInteractor();
+               EnableVoiceInteractor();
                 break;
             case 2:
                 EnableHammerAndBell();
