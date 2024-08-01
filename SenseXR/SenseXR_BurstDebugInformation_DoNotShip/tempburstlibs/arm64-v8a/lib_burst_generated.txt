@@ -89,6 +89,7 @@ Library: C:\Users\newhh\SenseVirtua\SenseVirtual\SenseXR\Temp\BurstOutput\tempbu
 --assembly-defines=VoiceSDK.Runtime;
 --generate-link-xml=Temp\burst.link.xml
 --temp-folder=C:\Users\newhh\SenseVirtua\SenseVirtual\SenseXR\Temp\Burst
+--debug=LineOnly
 --key-folder=C:/Program Files/Unity/Hub/Editor/2022.3.26f1/Editor/Data/PlaybackEngines/AndroidPlayer
 --decode-folder=C:\Users\newhh\SenseVirtua\SenseVirtual\SenseXR\Library\Burst
 --output=C:\Users\newhh\SenseVirtua\SenseVirtual\SenseXR\Temp\BurstOutput\tempburstlibs\arm64-v8a\lib_burst_generated
@@ -219,6 +220,7 @@ Library: C:\Users\newhh\SenseVirtua\SenseVirtual\SenseXR\Temp\BurstOutput\tempbu
 --assembly-defines=VoiceSDK.Runtime;
 --generate-link-xml=Temp\burst.link.xml
 --temp-folder=C:\Users\newhh\SenseVirtua\SenseVirtual\SenseXR\Temp\Burst
+--debug=LineOnly
 --key-folder=C:/Program Files/Unity/Hub/Editor/2022.3.26f1/Editor/Data/PlaybackEngines/AndroidPlayer
 --decode-folder=C:\Users\newhh\SenseVirtua\SenseVirtual\SenseXR\Library\Burst
 --output=C:\Users\newhh\SenseVirtua\SenseVirtual\SenseXR\Temp\BurstOutput\tempburstlibs\arm64-v8a\lib_burst_generated
@@ -416,6 +418,7 @@ Library: C:\Users\newhh\SenseVirtua\SenseVirtual\SenseXR\Temp\BurstOutput\tempbu
 --assembly-defines=VoiceSDK.Runtime;
 --generate-link-xml=Temp\burst.link.xml
 --temp-folder=C:\Users\newhh\SenseVirtua\SenseVirtual\SenseXR\Temp\Burst
+--debug=LineOnly
 --key-folder=C:/Program Files/Unity/Hub/Editor/2022.3.26f1/Editor/Data/PlaybackEngines/AndroidPlayer
 --decode-folder=C:\Users\newhh\SenseVirtua\SenseVirtual\SenseXR\Library\Burst
 --output=C:\Users\newhh\SenseVirtua\SenseVirtual\SenseXR\Temp\BurstOutput\tempburstlibs\arm64-v8a\lib_burst_generated

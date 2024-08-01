@@ -6,11 +6,12 @@ public class WaitGuideUntilCollider : MonoBehaviour
 {
     public bool active = false;
     public Transform dialoguePoint;
-
+    public Voice voice;
     private void Start()
     {
-        Voice voice = GetComponent<Voice>();
+        //voice = GetComponent<Voice>();
         voice.OnLastDialogueEnd += EndDialogue;
+        voice.enabled = false;
     }
 
     void EndDialogue()
@@ -19,6 +20,7 @@ public class WaitGuideUntilCollider : MonoBehaviour
     }
     public void ActiveArea()
     {
+        voice.enabled = true;
         active = true;
         Guide.Instance.LookAt(transform.rotation.eulerAngles);
         
@@ -29,6 +31,7 @@ public class WaitGuideUntilCollider : MonoBehaviour
             return;
         if (other.CompareTag("Player"))
         {
+            Debug.Log("Entering dntr1");
             Voice voice = GetComponent<Voice>();
             voice.PlayVoice();
             BubbleCanvas.Instance.transform.position = dialoguePoint.position;

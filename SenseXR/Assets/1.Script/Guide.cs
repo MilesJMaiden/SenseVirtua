@@ -9,7 +9,7 @@ public class Guide : MonoBehaviour
 
     Action arrivedCallback;
     Vector3 destination;
-    float moveSpeed;
+    public float moveSpeed;
     bool moving;
     public Animator animator;
     public Transform rootTr;
@@ -30,7 +30,7 @@ public class Guide : MonoBehaviour
         moving = true;
         arrivedCallback = aCallback;
         destination = d;
-        animator.Play("Walk");
+        animator.Play("Walking");
     }
 
     Vector3 targetDirection;

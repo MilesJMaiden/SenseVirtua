@@ -866,7 +866,6 @@ MonoBehaviour:
       - phoneme_events
       - word_events
   _configData:
-  - {fileID: -1931406099651105624}
   - {fileID: -3057253053784419621}
   _configurationId: 56ea2cef-f088-43c0-bfd4-1b96772ee437
   timeoutMS: 10000
@@ -888,4 +887,4 @@ MonoBehaviour:
   - Oculus.Voice.Demo, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
   - Meta.WitAi.Samples, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
   relaxedResolution: 0
-  _lastRefreshSeconds: 1704738565.7587056
+  _lastRefreshSeconds: 1722462774.7319572

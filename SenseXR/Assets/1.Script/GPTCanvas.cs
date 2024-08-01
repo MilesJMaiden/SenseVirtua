@@ -6,14 +6,17 @@ using UnityEngine;
 public class GPTCanvas : MonoBehaviour
 {
     //ΩÃ±€≈Ê √ﬂ∞°
-    public static GPTCanvas instance;
+    private static GPTCanvas instance;
+    public static GPTCanvas Instance
+    { get { 
+            if(instance == null)
+                instance = FindObjectOfType<GPTCanvas>(true);
+            return instance; } }
+
 
     Action endCallback;
 
-    private void Awake()
-    {
-        instance = this;
-    }
+   
     public void StartGPT(Action endCallback)
     {
         gameObject.SetActive(true);
@@ -23,5 +26,13 @@ public class GPTCanvas : MonoBehaviour
     {
         endCallback?.Invoke();
         gameObject.SetActive(false);
+    }
+
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.E))
+        {
+            OnClickedClose();
+        }
     }
 }
