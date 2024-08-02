@@ -32,7 +32,7 @@ public class WaitGuideUntilCollider : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             Debug.Log("Entering dntr1");
-            Voice voice = GetComponent<Voice>();
+            //Voice voice = GetComponent<Voice>();
             voice.PlayVoice();
             BubbleCanvas.Instance.transform.position = dialoguePoint.position;
             BubbleCanvas.Instance.transform.forward = dialoguePoint.forward;

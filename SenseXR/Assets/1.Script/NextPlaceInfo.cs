@@ -16,6 +16,7 @@ public class NextPlaceInfo : MonoBehaviour
         Guide.Instance.MoveTo(placeTr.position, () => {
             Debug.Log("다음 장도 도착함");
             placeTr.GetComponent<WaitGuideUntilCollider>().ActiveArea();
+            Guide.Instance.animator.Play("RightTurn");
         });
     }
 }

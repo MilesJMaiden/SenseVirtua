@@ -61,8 +61,9 @@ public class Guide : MonoBehaviour
             {
                 moving = false;
                 //도착한 상태!
-                arrivedCallback?.Invoke();
                 animator.Play("Idle");
+                arrivedCallback?.Invoke();
+                
                 return;
             }
 

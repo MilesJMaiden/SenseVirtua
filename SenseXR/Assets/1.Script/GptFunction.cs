@@ -5,6 +5,8 @@ using UnityEngine;
 public class GptFunction : MonoBehaviour
 {
     public Transform placeTr;
+    public bool lastGpt;
+    public AudioClip clip;
     public void Awake()
     {
         Voice voice = GetComponent<Voice>();
@@ -29,6 +31,10 @@ public class GptFunction : MonoBehaviour
 
     public void EndGPT() // Gpt 기능이 끝났을 때 호출
     {
-        GetComponent<NextPlaceInfo>().StartNext();
+        GetComponent<NextPlaceInfo>()?.StartNext();
+        if (lastGpt == true)
+        {
+            GuideVoice.Instance.Play(clip);
+        }
     }
 }

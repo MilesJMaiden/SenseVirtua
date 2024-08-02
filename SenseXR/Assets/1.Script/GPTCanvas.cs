@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 public class GPTCanvas : MonoBehaviour
@@ -13,6 +14,11 @@ public class GPTCanvas : MonoBehaviour
                 instance = FindObjectOfType<GPTCanvas>(true);
             return instance; } }
 
+    public TMP_Text contentsText;
+    void OnEnable()
+    {
+        contentsText.text = null;
+    }
 
     Action endCallback;
 

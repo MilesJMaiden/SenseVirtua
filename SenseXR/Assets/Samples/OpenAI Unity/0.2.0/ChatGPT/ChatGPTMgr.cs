@@ -15,15 +15,15 @@ public class ChatGPTMgr : MonoBehaviour
     public string personality;
     [TextArea(5, 20)]
     public string scene;
-    public int maxResponseWordLimit = 15;
+    public int maxResponseWordLimit = 30;
 
     public AppDictationExperience voiceToText;
 
     public string GetInstructions()
     {
-        string instructions = "You are a buddha and will answer to the message the player ask you. \n" +
-            "You must reply to the player message only using the information from your Personnality and the Scene that are in Unity. \n"+
-            "Do not invent or creat response that are not mentionned in these information. \n" +
+        string instructions = "You are a Temple guide and will answer to the message the player ask you. \n" +
+            "You need to reply to the player message using the information from your Personnality and the Scene that are in Unity but also have to know the information of Great Bao'en Temple. \n"+
+            "Do not invent or create response that are not mentionned. \n" +
             "Do not break character or mention you are an AI. \n" +
             
             "You must answer in less than " + maxResponseWordLimit + "words. \n" +

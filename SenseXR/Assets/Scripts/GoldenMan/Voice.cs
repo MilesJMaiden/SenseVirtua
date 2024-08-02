@@ -26,6 +26,11 @@ public class Voice : MonoBehaviour
 
     public event System.Action OnDialogueEnd;
     public event System.Action OnLastDialogueEnd;
+
+    public void Start()
+    {
+        animator = Guide.Instance.animator;
+    }
     private void Awake()
     {
         //voiceAudio = GetComponent<AudioSource>();
@@ -41,7 +46,7 @@ public class Voice : MonoBehaviour
         //{
         //    Debug.LogError("Voice object is not assigned.");
         //}
-        animator = GetComponentInChildren<Animator>();
+       
     }
 
     private void Update()
@@ -51,7 +56,7 @@ public class Voice : MonoBehaviour
             if (timer >= 3 && currentIdx == 0)
             {
                 PlayVoice();
-                animator.Play("talking1");
+                
             }
             timer += Time.deltaTime;
         }
@@ -91,7 +96,7 @@ public class Voice : MonoBehaviour
         playing = true;
 
         // 순차적으로 애니메이션 선택
-        
+        animator.Play("talking1");
 
         Debug.Log($"======={voiceTexts[currentIdx]}=====");
         AudioClip clip = TranslationMgr.instance.GetTranslationVoice(voiceTexts[currentIdx]);
@@ -100,6 +105,10 @@ public class Voice : MonoBehaviour
 
         string txt = TranslationMgr.instance.GetTranslationText(voiceTexts[currentIdx]);
 
+        if (clip == null)
+        {
+            Debug.Log("empty empty");
+        }
         bubbleCanvas.ShowDialogue(txt, clip.length);
         nextText.gameObject.SetActive(false);
         endText.gameObject.SetActive(false);
@@ -126,9 +135,7 @@ public class Voice : MonoBehaviour
             Debug.Log("Final dialogue ended, triggering OnDialogueEnd event.");
             OnDialogueEnd?.Invoke();
 
-            // 마지막 다이얼로그가 끝났을 때 'End' 텍스트를 보여줍니다.
-            //endText.gameObject.SetActive(false);
-            //nextText.gameObject.SetActive(false);
+           
 
             enabled = false;
             return;
