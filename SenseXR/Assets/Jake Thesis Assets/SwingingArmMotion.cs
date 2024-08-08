@@ -2,11 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
-using UnityEngine.XR;
 using UnityEngine.XR.Interaction.Toolkit;
 
 public class SwingingArmMotion : MonoBehaviour
 {
+    #region Fields
+
     // Game Objects
     [Header("Game Objects")]
     [SerializeField] private GameObject LeftHand;
@@ -29,31 +30,48 @@ public class SwingingArmMotion : MonoBehaviour
 
     // Inputs
     [Header("Input References")]
-    public InputActionProperty triggerActionRight;
-    public InputActionProperty triggerActionLeft;
+    private XRIDefaultInputActions1 inputActions;
 
     // Bools
     [SerializeField] private bool swingMovementRight;
     [SerializeField] private bool swingMovementLeft;
 
+    #endregion
+
+    #region Unity Methods
+
+    /// <summary>
+    /// Subscribes to input actions when the script is enabled.
+    /// </summary>
     void OnEnable()
     {
-        triggerActionLeft.action.performed += OnLeftTriggerPressed;
-        triggerActionRight.action.performed += OnRightTriggerPressed;
+        inputActions = new XRIDefaultInputActions1();
+        inputActions.XRILeftHandInteraction.Select.performed += OnLeftTriggerPressed;
+        inputActions.XRIRightHandInteraction.Select.performed += OnRightTriggerPressed;
 
-        triggerActionLeft.action.canceled += OnLeftTriggerReleased;
-        triggerActionRight.action.canceled += OnRightTriggerReleased;
+        inputActions.XRILeftHandInteraction.Select.canceled += OnLeftTriggerReleased;
+        inputActions.XRIRightHandInteraction.Select.canceled += OnRightTriggerReleased;
+
+        inputActions.Enable();
     }
 
+    /// <summary>
+    /// Unsubscribes from input actions when the script is disabled.
+    /// </summary>
     void OnDisable()
     {
-        triggerActionLeft.action.performed -= OnLeftTriggerPressed;
-        triggerActionRight.action.performed -= OnRightTriggerPressed;
+        inputActions.XRILeftHandInteraction.Select.performed -= OnLeftTriggerPressed;
+        inputActions.XRIRightHandInteraction.Select.performed -= OnRightTriggerPressed;
 
-        triggerActionLeft.action.canceled -= OnLeftTriggerReleased;
-        triggerActionRight.action.canceled -= OnRightTriggerReleased;
+        inputActions.XRILeftHandInteraction.Select.canceled -= OnLeftTriggerReleased;
+        inputActions.XRIRightHandInteraction.Select.canceled -= OnRightTriggerReleased;
+
+        inputActions.Disable();
     }
 
+    /// <summary>
+    /// Initializes the script and validates references.
+    /// </summary>
     void Start()
     {
         // Ensure all references are assigned
@@ -72,6 +90,9 @@ public class SwingingArmMotion : MonoBehaviour
         swingMovementLeft = false;
     }
 
+    /// <summary>
+    /// Updates the player's position based on hand movement each frame.
+    /// </summary>
     void Update()
     {
         // Get forward direction from the center eye camera and set it to the forward direction object
@@ -125,6 +146,13 @@ public class SwingingArmMotion : MonoBehaviour
         PlayerPositionPreviousFrame = PlayerPositionCurrentFrame;
     }
 
+    #endregion
+
+    #region Custom Methods
+
+    /// <summary>
+    /// Moves the player based on the calculated hand speed and forward direction.
+    /// </summary>
     public void MovePlayer()
     {
         Vector3 movement = ForwardDirection.transform.forward * HandSpeed * Speed * Time.deltaTime;
@@ -145,33 +173,56 @@ public class SwingingArmMotion : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Called when the left trigger is pressed.
+    /// </summary>
+    /// <param name="context">The context of the input action.</param>
     public void OnLeftTriggerPressed(InputAction.CallbackContext context)
     {
         swingMovementLeft = true;
         Debug.Log("Left trigger pressed");
     }
 
+    /// <summary>
+    /// Called when the right trigger is pressed.
+    /// </summary>
+    /// <param name="context">The context of the input action.</param>
     public void OnRightTriggerPressed(InputAction.CallbackContext context)
     {
         swingMovementRight = true;
         Debug.Log("Right trigger pressed");
     }
 
+    /// <summary>
+    /// Called when the left trigger is released.
+    /// </summary>
+    /// <param name="context">The context of the input action.</param>
     public void OnLeftTriggerReleased(InputAction.CallbackContext context)
     {
         swingMovementLeft = false;
         Debug.Log("Left trigger released");
     }
 
+    /// <summary>
+    /// Called when the right trigger is released.
+    /// </summary>
+    /// <param name="context">The context of the input action.</param>
     public void OnRightTriggerReleased(InputAction.CallbackContext context)
     {
         swingMovementRight = false;
         Debug.Log("Right trigger released");
     }
 
+    /// <summary>
+    /// Validates a Vector3 to ensure it does not contain invalid values.
+    /// </summary>
+    /// <param name="vector">The vector to validate.</param>
+    /// <returns>True if the vector is valid; otherwise, false.</returns>
     private bool IsValidVector3(Vector3 vector)
     {
         return !float.IsInfinity(vector.x) && !float.IsInfinity(vector.y) && !float.IsInfinity(vector.z) &&
                !float.IsNaN(vector.x) && !float.IsNaN(vector.y) && !float.IsNaN(vector.z);
     }
+
+    #endregion
 }
