@@ -3947,7 +3947,7 @@ MonoBehaviour:
   lanternFinalStartPosition: {fileID: 7202681896447541905}
   lanternFinalEndPosition: {fileID: 219312980851443599}
   zonesToIlluminate: 1
-  artifactsToInteract: 1
+  artifactsToInteract: 5
   lanternTweenDuration: 0.5
   portalTweenDuration: 3
   tweenType: 16

@@ -719,7 +719,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6598815579406187037, guid: 18ddb545287c546e19cc77dc9fbb2189, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -737,6 +737,78 @@ PrefabInstance:
     - target: {fileID: 1164201311982827248, guid: 7f56685c8182cbf44b6c843a7738c6ab, type: 3}
       propertyPath: m_Name
       value: Jake Player Set-Up
+      objectReference: {fileID: 0}
+    - target: {fileID: 2067236167206156446, guid: 7f56685c8182cbf44b6c843a7738c6ab, type: 3}
+      propertyPath: Speed
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2067236167206156446, guid: 7f56685c8182cbf44b6c843a7738c6ab, type: 3}
+      propertyPath: actionAssets
+      value: 
+      objectReference: {fileID: -944628639613478452, guid: f5ff0222bb6b037458baa95d903f8e9f, type: 3}
+    - target: {fileID: 2067236167206156446, guid: 7f56685c8182cbf44b6c843a7738c6ab, type: 3}
+      propertyPath: swingMovementLeft
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2067236167206156446, guid: 7f56685c8182cbf44b6c843a7738c6ab, type: 3}
+      propertyPath: swingMovementRight
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2067236167206156446, guid: 7f56685c8182cbf44b6c843a7738c6ab, type: 3}
+      propertyPath: selectLeft.m_Reference
+      value: 
+      objectReference: {fileID: -6131295136447488360, guid: f5ff0222bb6b037458baa95d903f8e9f, type: 3}
+    - target: {fileID: 2067236167206156446, guid: 7f56685c8182cbf44b6c843a7738c6ab, type: 3}
+      propertyPath: selectRight.m_Reference
+      value: 
+      objectReference: {fileID: 187161793506945269, guid: f5ff0222bb6b037458baa95d903f8e9f, type: 3}
+    - target: {fileID: 2067236167206156446, guid: 7f56685c8182cbf44b6c843a7738c6ab, type: 3}
+      propertyPath: selectLeft.m_UseReference
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2067236167206156446, guid: 7f56685c8182cbf44b6c843a7738c6ab, type: 3}
+      propertyPath: selectLeft.m_Action.m_Name
+      value: Select Left
+      objectReference: {fileID: 0}
+    - target: {fileID: 2067236167206156446, guid: 7f56685c8182cbf44b6c843a7738c6ab, type: 3}
+      propertyPath: selectRight.m_UseReference
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2067236167206156446, guid: 7f56685c8182cbf44b6c843a7738c6ab, type: 3}
+      propertyPath: selectRight.m_Action.m_Name
+      value: Select Right
+      objectReference: {fileID: 0}
+    - target: {fileID: 2067236167206156446, guid: 7f56685c8182cbf44b6c843a7738c6ab, type: 3}
+      propertyPath: selectActionLeft.m_Reference
+      value: 
+      objectReference: {fileID: -6131295136447488360, guid: f5ff0222bb6b037458baa95d903f8e9f, type: 3}
+    - target: {fileID: 2067236167206156446, guid: 7f56685c8182cbf44b6c843a7738c6ab, type: 3}
+      propertyPath: selectActionRight.m_Reference
+      value: 
+      objectReference: {fileID: 187161793506945269, guid: f5ff0222bb6b037458baa95d903f8e9f, type: 3}
+    - target: {fileID: 2067236167206156446, guid: 7f56685c8182cbf44b6c843a7738c6ab, type: 3}
+      propertyPath: triggerActionLeft.m_Reference
+      value: 
+      objectReference: {fileID: -6131295136447488360, guid: f5ff0222bb6b037458baa95d903f8e9f, type: 3}
+    - target: {fileID: 2067236167206156446, guid: 7f56685c8182cbf44b6c843a7738c6ab, type: 3}
+      propertyPath: triggerActionRight.m_Reference
+      value: 
+      objectReference: {fileID: 187161793506945269, guid: f5ff0222bb6b037458baa95d903f8e9f, type: 3}
+    - target: {fileID: 2067236167206156446, guid: 7f56685c8182cbf44b6c843a7738c6ab, type: 3}
+      propertyPath: selectActionLeft.m_UseReference
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2067236167206156446, guid: 7f56685c8182cbf44b6c843a7738c6ab, type: 3}
+      propertyPath: selectActionLeft.m_Action.m_Name
+      value: Select Action Left
+      objectReference: {fileID: 0}
+    - target: {fileID: 2067236167206156446, guid: 7f56685c8182cbf44b6c843a7738c6ab, type: 3}
+      propertyPath: selectActionRight.m_UseReference
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2067236167206156446, guid: 7f56685c8182cbf44b6c843a7738c6ab, type: 3}
+      propertyPath: selectActionRight.m_Action.m_Name
+      value: Select Action Right
       objectReference: {fileID: 0}
     - target: {fileID: 2429057644292239614, guid: 7f56685c8182cbf44b6c843a7738c6ab, type: 3}
       propertyPath: m_ActionAssets.Array.data[0]

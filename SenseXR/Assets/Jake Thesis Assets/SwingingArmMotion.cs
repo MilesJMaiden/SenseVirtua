@@ -24,13 +24,14 @@ public class SwingingArmMotion : MonoBehaviour
 
     // Speed
     [Header("Speed Control")]
-    [SerializeField] private float Speed = 10;
+    [SerializeField] private float Speed = 5;
     private float HandSpeed;
 
     // Inputs
     [Header("Input References")]
-    public InputActionProperty triggerActionRight;
-    public InputActionProperty triggerActionLeft;
+    public InputActionAsset actionAssets;
+    public InputActionProperty selectRight;
+    public InputActionProperty selectLeft;
 
     // Bools
     [SerializeField] private bool swingMovementRight;
@@ -38,20 +39,20 @@ public class SwingingArmMotion : MonoBehaviour
 
     void OnEnable()
     {
-        triggerActionLeft.action.performed += OnLeftTriggerPressed;
-        triggerActionRight.action.performed += OnRightTriggerPressed;
+        selectLeft.action.performed += OnLeftSelectPressed;
+        selectRight.action.performed += OnRightSelectPressed;
 
-        triggerActionLeft.action.canceled += OnLeftTriggerReleased;
-        triggerActionRight.action.canceled += OnRightTriggerReleased;
+        selectLeft.action.canceled += OnLeftSelectReleased;
+        selectRight.action.canceled += OnRightSelectReleased;
     }
 
     void OnDisable()
     {
-        triggerActionLeft.action.performed -= OnLeftTriggerPressed;
-        triggerActionRight.action.performed -= OnRightTriggerPressed;
+        selectLeft.action.performed -= OnLeftSelectPressed;
+        selectRight.action.performed -= OnRightSelectPressed;
 
-        triggerActionLeft.action.canceled -= OnLeftTriggerReleased;
-        triggerActionRight.action.canceled -= OnRightTriggerReleased;
+        selectLeft.action.canceled -= OnLeftSelectReleased;
+        selectRight.action.canceled -= OnRightSelectReleased;
     }
 
     void Start()
@@ -111,7 +112,7 @@ public class SwingingArmMotion : MonoBehaviour
         Debug.Log($"Hand Speed: {HandSpeed}");
 
         // Get the button press event
-        if (swingMovementRight && swingMovementLeft && Time.timeSinceLevelLoad > 1f)
+        if (swingMovementRight && swingMovementLeft)
         {
             Debug.Log("Both triggers pressed and valid for movement");
             MovePlayer();
@@ -145,28 +146,28 @@ public class SwingingArmMotion : MonoBehaviour
         }
     }
 
-    public void OnLeftTriggerPressed(InputAction.CallbackContext context)
+    public void OnLeftSelectPressed(InputAction.CallbackContext context)
     {
         swingMovementLeft = true;
-        Debug.Log("Left trigger pressed");
+        Debug.Log("Left select pressed");
     }
 
-    public void OnRightTriggerPressed(InputAction.CallbackContext context)
+    public void OnRightSelectPressed(InputAction.CallbackContext context)
     {
         swingMovementRight = true;
-        Debug.Log("Right trigger pressed");
+        Debug.Log("Right select pressed");
     }
 
-    public void OnLeftTriggerReleased(InputAction.CallbackContext context)
+    public void OnLeftSelectReleased(InputAction.CallbackContext context)
     {
         swingMovementLeft = false;
-        Debug.Log("Left trigger released");
+        Debug.Log("Left select released");
     }
 
-    public void OnRightTriggerReleased(InputAction.CallbackContext context)
+    public void OnRightSelectReleased(InputAction.CallbackContext context)
     {
         swingMovementRight = false;
-        Debug.Log("Right trigger released");
+        Debug.Log("Right select released");
     }
 
     private bool IsValidVector3(Vector3 vector)
