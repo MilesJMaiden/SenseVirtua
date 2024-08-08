@@ -13,7 +13,7 @@ public class SwingingArmMotion : MonoBehaviour
     [SerializeField] private GameObject LeftHand;
     [SerializeField] private GameObject RightHand;
     [SerializeField] private GameObject XRRig;
-    [SerializeField] private GameObject ForwardDirection;
+    [SerializeField] private Camera PlayerCamera;
 
     // Vector3 Positions
     private Vector3 PositionPreviousFrameLeftHand;
@@ -75,7 +75,7 @@ public class SwingingArmMotion : MonoBehaviour
     void Start()
     {
         // Ensure all references are assigned
-        if (LeftHand == null || RightHand == null || XRRig == null || ForwardDirection == null)
+        if (LeftHand == null || RightHand == null || XRRig == null || PlayerCamera == null)
         {
             Debug.LogError("One or more required GameObjects are not assigned in the Inspector.");
             enabled = false; // Disable the script to prevent further errors
@@ -95,9 +95,8 @@ public class SwingingArmMotion : MonoBehaviour
     /// </summary>
     void Update()
     {
-        // Get forward direction from the center eye camera and set it to the forward direction object
-        float yRotation = XRRig.transform.eulerAngles.y;
-        ForwardDirection.transform.eulerAngles = new Vector3(0, yRotation, 0);
+        // Get forward direction from the player camera
+        Vector3 forwardDirection = PlayerCamera.transform.forward;
 
         // Get positions of hands
         PositionCurrentFrameLeftHand = LeftHand.transform.position;
@@ -135,7 +134,7 @@ public class SwingingArmMotion : MonoBehaviour
         if (swingMovementRight && swingMovementLeft && Time.timeSinceLevelLoad > 1f)
         {
             Debug.Log("Both triggers pressed and valid for movement");
-            MovePlayer();
+            MovePlayer(forwardDirection);
         }
 
         // Set previous position of hands for next frame
@@ -153,12 +152,12 @@ public class SwingingArmMotion : MonoBehaviour
     /// <summary>
     /// Moves the player based on the calculated hand speed and forward direction.
     /// </summary>
-    public void MovePlayer()
+    public void MovePlayer(Vector3 forwardDirection)
     {
-        Vector3 movement = ForwardDirection.transform.forward * HandSpeed * Speed * Time.deltaTime;
+        Vector3 movement = forwardDirection * HandSpeed * Speed * Time.deltaTime;
         Vector3 newPosition = transform.position + movement;
 
-        Debug.Log($"Forward Direction: {ForwardDirection.transform.forward}");
+        Debug.Log($"Forward Direction: {forwardDirection}");
         Debug.Log($"Movement Vector: {movement}");
         Debug.Log($"Calculated New Position: {newPosition}");
 

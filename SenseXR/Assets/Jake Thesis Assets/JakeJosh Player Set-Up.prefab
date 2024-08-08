@@ -1,36 +1,5 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &393377028706884042
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 2352053905937032486}
-  m_Layer: 0
-  m_Name: Forward Direction
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &2352053905937032486
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 393377028706884042}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 1}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 1908996263683536970}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &481818221108361012
 GameObject:
   m_ObjectHideFlags: 0
@@ -144,7 +113,6 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 2352053905937032486}
   - {fileID: 5457259865383080939}
   - {fileID: 3471284687319424443}
   - {fileID: 8510251962931391141}
@@ -1634,32 +1602,8 @@ MonoBehaviour:
   LeftHand: {fileID: 1845606522189479194}
   RightHand: {fileID: 964994490122477834}
   XRRig: {fileID: 9037317640508348062}
-  ForwardDirection: {fileID: 393377028706884042}
+  PlayerCamera: {fileID: 1356208410739231242}
   Speed: 1
-  triggerActionRight:
-    m_UseReference: 1
-    m_Action:
-      m_Name: Trigger Action Right
-      m_Type: 0
-      m_ExpectedControlType: 
-      m_Id: e54f2d4d-be9e-43e3-b426-e088e3a1bdd8
-      m_Processors: 
-      m_Interactions: 
-      m_SingletonActionBindings: []
-      m_Flags: 0
-    m_Reference: {fileID: -5684558904543120851, guid: e0ca4504471ca124088e1e2cfe6804ae, type: 3}
-  triggerActionLeft:
-    m_UseReference: 1
-    m_Action:
-      m_Name: Trigger Action Left
-      m_Type: 0
-      m_ExpectedControlType: 
-      m_Id: b6b2ec04-1864-4dec-b575-91ce1bc1221b
-      m_Processors: 
-      m_Interactions: 
-      m_SingletonActionBindings: []
-      m_Flags: 0
-    m_Reference: {fileID: 2526168894431210536, guid: e0ca4504471ca124088e1e2cfe6804ae, type: 3}
   swingMovementRight: 1
   swingMovementLeft: 1
 --- !u!1 &4801446500641638179
