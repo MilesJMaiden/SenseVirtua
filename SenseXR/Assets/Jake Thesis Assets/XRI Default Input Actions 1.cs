@@ -808,17 +808,6 @@ public partial class @XRIDefaultInputActions1: IInputActionCollection2, IDisposa
             ""bindings"": [
                 {
                     ""name"": """",
-                    ""id"": ""71a4d23f-3e9a-4513-923b-ba388c5e84bf"",
-                    ""path"": ""<XRController>{LeftHand}/{PrimaryTrigger}"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": ""Generic XR Controller"",
-                    ""action"": ""Select"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
                     ""id"": ""73325635-d9e5-481a-9279-ae7be089422d"",
                     ""path"": ""<MetaAimHand>{LeftHand}/indexPressed"",
                     ""interactions"": """",
@@ -1048,6 +1037,15 @@ public partial class @XRIDefaultInputActions1: IInputActionCollection2, IDisposa
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": true
+                },
+                {
+                    ""name"": ""DoubleTriggerMovement"",
+                    ""type"": ""Button"",
+                    ""id"": ""ca996a39-6059-4677-8dbd-52ba73153cc8"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -1136,6 +1134,61 @@ public partial class @XRIDefaultInputActions1: IInputActionCollection2, IDisposa
                     ""processors"": """",
                     ""groups"": ""Generic XR Controller"",
                     ""action"": ""Snap Turn"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": ""DualTriggerMovement"",
+                    ""id"": ""d6b709bf-53e0-4fc2-b161-ac0c337c811a"",
+                    ""path"": ""TwoModifiers"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""DoubleTriggerMovement"",
+                    ""isComposite"": true,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": ""modifier1"",
+                    ""id"": ""25e53ed8-2593-4a52-841f-8489aa17093e"",
+                    ""path"": ""<XRController>{LeftHand}/{PrimaryTrigger}"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""DoubleTriggerMovement"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""modifier2"",
+                    ""id"": ""751fc169-8c08-41e7-aea3-1ffc9c6d0a5b"",
+                    ""path"": ""<XRController>{RightHand}/{PrimaryTrigger}"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""DoubleTriggerMovement"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""binding"",
+                    ""id"": ""fe7dac41-f7c9-4190-8096-9a16c44732c6"",
+                    ""path"": ""<XRController>{LeftHand}/{PrimaryTrigger}"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""DoubleTriggerMovement"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""c407bd22-264a-4cb0-8064-9015b4663309"",
+                    ""path"": """",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""DoubleTriggerMovement"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
@@ -2733,6 +2786,7 @@ public partial class @XRIDefaultInputActions1: IInputActionCollection2, IDisposa
         m_XRILeftHandLocomotion_Move = m_XRILeftHandLocomotion.FindAction("Move", throwIfNotFound: true);
         m_XRILeftHandLocomotion_GrabMove = m_XRILeftHandLocomotion.FindAction("Grab Move", throwIfNotFound: true);
         m_XRILeftHandLocomotion_SnapTurn = m_XRILeftHandLocomotion.FindAction("Snap Turn", throwIfNotFound: true);
+        m_XRILeftHandLocomotion_DoubleTriggerMovement = m_XRILeftHandLocomotion.FindAction("DoubleTriggerMovement", throwIfNotFound: true);
         // XRI RightHand
         m_XRIRightHand = asset.FindActionMap("XRI RightHand", throwIfNotFound: true);
         m_XRIRightHand_Position = m_XRIRightHand.FindAction("Position", throwIfNotFound: true);
@@ -3231,6 +3285,7 @@ public partial class @XRIDefaultInputActions1: IInputActionCollection2, IDisposa
     private readonly InputAction m_XRILeftHandLocomotion_Move;
     private readonly InputAction m_XRILeftHandLocomotion_GrabMove;
     private readonly InputAction m_XRILeftHandLocomotion_SnapTurn;
+    private readonly InputAction m_XRILeftHandLocomotion_DoubleTriggerMovement;
     public struct XRILeftHandLocomotionActions
     {
         private @XRIDefaultInputActions1 m_Wrapper;
@@ -3243,6 +3298,7 @@ public partial class @XRIDefaultInputActions1: IInputActionCollection2, IDisposa
         public InputAction @Move => m_Wrapper.m_XRILeftHandLocomotion_Move;
         public InputAction @GrabMove => m_Wrapper.m_XRILeftHandLocomotion_GrabMove;
         public InputAction @SnapTurn => m_Wrapper.m_XRILeftHandLocomotion_SnapTurn;
+        public InputAction @DoubleTriggerMovement => m_Wrapper.m_XRILeftHandLocomotion_DoubleTriggerMovement;
         public InputActionMap Get() { return m_Wrapper.m_XRILeftHandLocomotion; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -3276,6 +3332,9 @@ public partial class @XRIDefaultInputActions1: IInputActionCollection2, IDisposa
             @SnapTurn.started += instance.OnSnapTurn;
             @SnapTurn.performed += instance.OnSnapTurn;
             @SnapTurn.canceled += instance.OnSnapTurn;
+            @DoubleTriggerMovement.started += instance.OnDoubleTriggerMovement;
+            @DoubleTriggerMovement.performed += instance.OnDoubleTriggerMovement;
+            @DoubleTriggerMovement.canceled += instance.OnDoubleTriggerMovement;
         }
 
         private void UnregisterCallbacks(IXRILeftHandLocomotionActions instance)
@@ -3304,6 +3363,9 @@ public partial class @XRIDefaultInputActions1: IInputActionCollection2, IDisposa
             @SnapTurn.started -= instance.OnSnapTurn;
             @SnapTurn.performed -= instance.OnSnapTurn;
             @SnapTurn.canceled -= instance.OnSnapTurn;
+            @DoubleTriggerMovement.started -= instance.OnDoubleTriggerMovement;
+            @DoubleTriggerMovement.performed -= instance.OnDoubleTriggerMovement;
+            @DoubleTriggerMovement.canceled -= instance.OnDoubleTriggerMovement;
         }
 
         public void RemoveCallbacks(IXRILeftHandLocomotionActions instance)
@@ -3981,6 +4043,7 @@ public partial class @XRIDefaultInputActions1: IInputActionCollection2, IDisposa
         void OnMove(InputAction.CallbackContext context);
         void OnGrabMove(InputAction.CallbackContext context);
         void OnSnapTurn(InputAction.CallbackContext context);
+        void OnDoubleTriggerMovement(InputAction.CallbackContext context);
     }
     public interface IXRIRightHandActions
     {
