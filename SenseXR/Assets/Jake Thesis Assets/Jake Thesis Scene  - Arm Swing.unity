@@ -1027,7 +1027,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 182024351978403699, guid: 616974361b6ecc341ace644e65a7129b, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 182024351978403699, guid: 616974361b6ecc341ace644e65a7129b, type: 3}
       propertyPath: m_LocalRotation.x
@@ -1035,7 +1035,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 182024351978403699, guid: 616974361b6ecc341ace644e65a7129b, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 182024351978403699, guid: 616974361b6ecc341ace644e65a7129b, type: 3}
       propertyPath: m_LocalRotation.z
@@ -1047,7 +1047,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 182024351978403699, guid: 616974361b6ecc341ace644e65a7129b, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
-      value: 180
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 182024351978403699, guid: 616974361b6ecc341ace644e65a7129b, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
@@ -1082,6 +1082,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5178972403063847186, guid: 616974361b6ecc341ace644e65a7129b, type: 3}
+      propertyPath: Speed
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 5178972403063847186, guid: 616974361b6ecc341ace644e65a7129b, type: 3}
       propertyPath: objectToUnhide
       value: 
       objectReference: {fileID: 615444857}
@@ -1093,6 +1097,10 @@ PrefabInstance:
       propertyPath: swingMovementRight
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7550538910066597444, guid: 616974361b6ecc341ace644e65a7129b, type: 3}
+      propertyPath: m_ActionAssets.Array.data[0]
+      value: 
+      objectReference: {fileID: -944628639613478452, guid: f5ff0222bb6b037458baa95d903f8e9f, type: 3}
     - target: {fileID: 7578244048755806168, guid: 616974361b6ecc341ace644e65a7129b, type: 3}
       propertyPath: m_Enabled
       value: 0
@@ -1100,7 +1108,7 @@ PrefabInstance:
     - target: {fileID: 7708334280258336123, guid: 616974361b6ecc341ace644e65a7129b, type: 3}
       propertyPath: m_ActionAssets.Array.data[0]
       value: 
-      objectReference: {fileID: -944628639613478452, guid: f5ff0222bb6b037458baa95d903f8e9f, type: 3}
+      objectReference: {fileID: -944628639613478452, guid: c348712bda248c246b8c49b3db54643f, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects:
     - {fileID: 2315367836585662777, guid: 616974361b6ecc341ace644e65a7129b, type: 3}
