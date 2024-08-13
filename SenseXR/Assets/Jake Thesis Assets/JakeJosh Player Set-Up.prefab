@@ -2023,8 +2023,10 @@ GameObject:
   - component: {fileID: 792937893258613002}
   - component: {fileID: 3884957786124955456}
   - component: {fileID: 7708334280258336123}
-  - component: {fileID: 2047282862403285896}
-  - component: {fileID: 4511737488117726098}
+  - component: {fileID: 7881277901195987553}
+  - component: {fileID: 3050577073156454680}
+  - component: {fileID: 3222709005915460449}
+  - component: {fileID: 3190647934950433229}
   m_Layer: 0
   m_Name: XR Origin (XR Rig)
   m_TagString: Untagged
@@ -2041,7 +2043,7 @@ Transform:
   m_GameObject: {fileID: 9037317640508348062}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: -7.22}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -2080,8 +2082,51 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_ActionAssets:
   - {fileID: -944628639613478452, guid: c348712bda248c246b8c49b3db54643f, type: 3}
---- !u!143 &2047282862403285896
-CharacterController:
+--- !u!114 &7881277901195987553
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9037317640508348062}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1cd2404e564f20347b8e31752c126d46, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 15
+  leftHandNode: 4
+  rightHandNode: 5
+--- !u!114 &3050577073156454680
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9037317640508348062}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 82bc72d2ecc8add47b2fe00d40318500, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_LeftHand: {fileID: 0}
+  m_RightHand: {fileID: 0}
+  m_LeftController: {fileID: 1845606522189479194}
+  m_RightController: {fileID: 964994490122477834}
+  m_TrackedHandModeStarted:
+    m_PersistentCalls:
+      m_Calls: []
+  m_TrackedHandModeEnded:
+    m_PersistentCalls:
+      m_Calls: []
+  m_MotionControllerModeStarted:
+    m_PersistentCalls:
+      m_Calls: []
+  m_MotionControllerModeEnded:
+    m_PersistentCalls:
+      m_Calls: []
+--- !u!136 &3222709005915460449
+CapsuleCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -2098,29 +2143,38 @@ CharacterController:
   m_IsTrigger: 0
   m_ProvidesContacts: 0
   m_Enabled: 1
-  serializedVersion: 3
+  serializedVersion: 2
+  m_Radius: 0.2
   m_Height: 1.75
-  m_Radius: 0.1
-  m_SlopeLimit: 45
-  m_StepOffset: 0.5
-  m_SkinWidth: 0.08
-  m_MinMoveDistance: 0.001
-  m_Center: {x: 0, y: 0.92, z: 0}
---- !u!114 &4511737488117726098
-MonoBehaviour:
+  m_Direction: 1
+  m_Center: {x: 0, y: 0.88, z: 0}
+--- !u!54 &3190647934950433229
+Rigidbody:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 9037317640508348062}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: af6bf904e410ee8479f9093d8830d1f8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_LocomotionProvider: {fileID: 0}
-  m_MinHeight: 0
-  m_MaxHeight: Infinity
+  serializedVersion: 4
+  m_Mass: 1
+  m_Drag: 1
+  m_AngularDrag: 5
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 80
+  m_CollisionDetection: 0
 --- !u!1001 &740378334190254386
 PrefabInstance:
   m_ObjectHideFlags: 0

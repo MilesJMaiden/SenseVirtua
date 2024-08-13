@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.31453457, g: 0.55162674, b: 0.82192343, a: 1}
+  m_IndirectSpecularColor: {r: 0.31343237, g: 0.55243826, b: 0.8233737, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -5851,6 +5851,63 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 537292897}
   m_CullTransparentMesh: 1
+--- !u!1001 &537885178
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 182024351978403699, guid: 616974361b6ecc341ace644e65a7129b, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 182024351978403699, guid: 616974361b6ecc341ace644e65a7129b, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 182024351978403699, guid: 616974361b6ecc341ace644e65a7129b, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 9.06
+      objectReference: {fileID: 0}
+    - target: {fileID: 182024351978403699, guid: 616974361b6ecc341ace644e65a7129b, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 182024351978403699, guid: 616974361b6ecc341ace644e65a7129b, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 182024351978403699, guid: 616974361b6ecc341ace644e65a7129b, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 182024351978403699, guid: 616974361b6ecc341ace644e65a7129b, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 182024351978403699, guid: 616974361b6ecc341ace644e65a7129b, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 182024351978403699, guid: 616974361b6ecc341ace644e65a7129b, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 182024351978403699, guid: 616974361b6ecc341ace644e65a7129b, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 876519694088799837, guid: 616974361b6ecc341ace644e65a7129b, type: 3}
+      propertyPath: m_Name
+      value: JakeJosh Player Set-Up
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 616974361b6ecc341ace644e65a7129b, type: 3}
 --- !u!1 &545482165
 GameObject:
   m_ObjectHideFlags: 0
@@ -11181,7 +11238,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4704240698125147210, guid: 048249d9a15aa3c459399751e860bde7, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 0
+      value: 91.91
       objectReference: {fileID: 0}
     - target: {fileID: 4704240698125147210, guid: 048249d9a15aa3c459399751e860bde7, type: 3}
       propertyPath: m_AnchoredPosition.x
@@ -18080,7 +18137,7 @@ Light:
   m_BounceIntensity: 1
   m_ColorTemperature: 6570
   m_UseColorTemperature: 0
-  m_BoundingSphereOverride: {x: 1.02e-43, y: 8e-45, z: 8.636e-42, w: 0}
+  m_BoundingSphereOverride: {x: 1.02e-43, y: 6.6e-44, z: 2.257e-42, w: 0}
   m_UseBoundingSphereOverride: 0
   m_UseViewFrustumForShadowCasterCull: 1
   m_ShadowRadius: 0
@@ -24130,3 +24187,4 @@ SceneRoots:
   - {fileID: 1783572214}
   - {fileID: 1565887663878291441}
   - {fileID: 1703568386}
+  - {fileID: 537885178}
