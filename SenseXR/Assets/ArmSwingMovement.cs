@@ -16,6 +16,9 @@ public class ArmSwingMovementWithRigidbody : MonoBehaviour
     private InputAction leftTriggerAction;
     private InputAction rightTriggerAction;
 
+    // Interaction flag
+    private bool isInteracting = false;
+
     void Awake()
     {
         // Set up the Input Actions
@@ -37,6 +40,13 @@ public class ArmSwingMovementWithRigidbody : MonoBehaviour
 
     void FixedUpdate()
     {
+        // Check if the player is interacting with an object
+        if (isInteracting)
+        {
+            Debug.Log("Skipping movement logic due to interaction");
+            return; // Skip movement logic if interacting
+        }
+
         // Get the current position of both controllers
         Vector3 currentLeftPosition = InputTracking.GetLocalPosition(leftHandNode);
         Vector3 currentRightPosition = InputTracking.GetLocalPosition(rightHandNode);
@@ -90,5 +100,18 @@ public class ArmSwingMovementWithRigidbody : MonoBehaviour
         // Disable the input actions when the object is disabled
         leftTriggerAction.Disable();
         rightTriggerAction.Disable();
+    }
+
+    // Methods to handle interaction state
+    public void StartInteraction()
+    {
+        Debug.Log("Start Interaction: Disabling movement");
+        isInteracting = true;
+    }
+
+    public void StopInteraction()
+    {
+        Debug.Log("Stop Interaction: Enabling movement");
+        isInteracting = false;
     }
 }

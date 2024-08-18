@@ -22,6 +22,9 @@ public class Zone : MonoBehaviour
     private bool artifactInteracted = false; // Flag to check if the artifact is interacted with
     private Component[] lanternComponents;
 
+    // Reference to the player movement script
+    private ArmSwingMovementWithRigidbody playerMovement;
+
     private void Awake()
     {
         artifactInteractable = GetComponentInChildren<XRGrabInteractable>();
@@ -29,7 +32,11 @@ public class Zone : MonoBehaviour
         if (artifactInteractable != null)
         {
             artifactInteractable.selectEntered.AddListener(OnArtifactPickedUp);
+            artifactInteractable.selectExited.AddListener(OnArtifactReleased); // Listener for when artifact is released
         }
+
+        // Find the player's movement script
+        playerMovement = FindObjectOfType<ArmSwingMovementWithRigidbody>();
     }
 
     public void Initialize(IlluminationGame game, float duration, LeanTweenType type)
@@ -130,6 +137,12 @@ public class Zone : MonoBehaviour
             audioSource.Play();
         }
 
+        // Disable player movement
+        if (playerMovement != null)
+        {
+            playerMovement.StartInteraction();
+        }
+
         if (!artifactInteracted)
         {
             artifactInteracted = true;
@@ -144,6 +157,17 @@ public class Zone : MonoBehaviour
                 args.interactableObject.transform.GetComponent<XRGrabInteractable>().enabled = true;
                 illuminationGame.OnArtifactInteracted();
             });
+        }
+    }
+
+    private void OnArtifactReleased(SelectExitEventArgs args)
+    {
+        Debug.Log("Artifact released");
+
+        // Re-enable player movement
+        if (playerMovement != null)
+        {
+            playerMovement.StopInteraction();
         }
     }
 }

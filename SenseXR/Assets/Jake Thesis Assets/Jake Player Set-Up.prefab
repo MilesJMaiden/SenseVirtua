@@ -193,7 +193,6 @@ Transform:
   m_Children:
   - {fileID: 8546618916810171313}
   - {fileID: 4169333591182782426}
-  - {fileID: 46021111076358639}
   m_Father: {fileID: 2933106353906224420}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &8712818016797527743
@@ -358,7 +357,7 @@ MonoBehaviour:
   m_Camera: {fileID: 5289678837944701285}
   m_OriginBaseGameObject: {fileID: 3339740451033878320}
   m_CameraFloorOffsetObject: {fileID: 7075085384130982359}
-  m_RequestedTrackingOriginMode: 0
+  m_RequestedTrackingOriginMode: 2
   m_CameraYOffset: 1.75
 --- !u!114 &8684075005699278508
 MonoBehaviour:
@@ -663,7 +662,7 @@ MonoBehaviour:
       m_Name: Scale Toggle
       m_Type: 1
       m_ExpectedControlType: 
-      m_Id: 08507162-a3bd-4e4f-9854-0b3051398d03
+      m_Id: 0ec63ab1-52db-4370-be3a-274ee310dae9
       m_Processors: 
       m_Interactions: 
       m_SingletonActionBindings: []
@@ -675,7 +674,7 @@ MonoBehaviour:
       m_Name: Scale Delta
       m_Type: 0
       m_ExpectedControlType: Vector2
-      m_Id: 65d9ae9e-5581-4b2c-a1f5-2ba0614443e2
+      m_Id: 693cabdd-8776-492d-8641-2f6adc511d4c
       m_Processors: 
       m_Interactions: 
       m_SingletonActionBindings: []
@@ -1091,10 +1090,10 @@ MonoBehaviour:
   m_GroupName: Right
   m_InteractionManager: {fileID: 2849307356522943654}
   m_StartingGroupMembers:
+  - {fileID: 5963333470804595644}
   - {fileID: 3199191312727787846}
   - {fileID: 2810857300592114896}
   - {fileID: 9149337394980239980}
-  - {fileID: 5963333470804595644}
   m_StartingInteractionOverridesMap: []
 --- !u!1 &6003204397263309024
 GameObject:
@@ -1529,81 +1528,6 @@ Transform:
   - {fileID: 2240431539499660000}
   m_Father: {fileID: 2933106353906224420}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &8275101126845908636
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 46021111076358639}
-  - component: {fileID: 2067236167206156446}
-  m_Layer: 0
-  m_Name: Arm Swinging
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &46021111076358639
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8275101126845908636}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 4350847033760645846}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &2067236167206156446
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8275101126845908636}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 85f9fa9fb7325ab468951e899341c183, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  LeftHand: {fileID: 8362152178290932066}
-  RightHand: {fileID: 5493561598639296409}
-  XRRig: {fileID: 3339740451033878320}
-  ForwardDirection: {fileID: 1861307668349594453}
-  Speed: 1
-  triggerActionRight:
-    m_UseReference: 1
-    m_Action:
-      m_Name: Trigger Action Right
-      m_Type: 0
-      m_ExpectedControlType: 
-      m_Id: e54f2d4d-be9e-43e3-b426-e088e3a1bdd8
-      m_Processors: 
-      m_Interactions: 
-      m_SingletonActionBindings: []
-      m_Flags: 0
-    m_Reference: {fileID: -5684558904543120851, guid: e0ca4504471ca124088e1e2cfe6804ae, type: 3}
-  triggerActionLeft:
-    m_UseReference: 1
-    m_Action:
-      m_Name: Trigger Action Left
-      m_Type: 0
-      m_ExpectedControlType: 
-      m_Id: b6b2ec04-1864-4dec-b575-91ce1bc1221b
-      m_Processors: 
-      m_Interactions: 
-      m_SingletonActionBindings: []
-      m_Flags: 0
-    m_Reference: {fileID: 2526168894431210536, guid: e0ca4504471ca124088e1e2cfe6804ae, type: 3}
-  swingMovementRight: 1
-  swingMovementLeft: 1
 --- !u!1 &8362152178290932066
 GameObject:
   m_ObjectHideFlags: 0
@@ -1852,7 +1776,7 @@ MonoBehaviour:
       m_Name: Scale Toggle
       m_Type: 1
       m_ExpectedControlType: 
-      m_Id: a1912586-fdc4-4079-b714-faafc085fd22
+      m_Id: f154653e-fb1f-4aa0-b5a4-b7541ef2cad9
       m_Processors: 
       m_Interactions: 
       m_SingletonActionBindings: []
@@ -1864,7 +1788,7 @@ MonoBehaviour:
       m_Name: Scale Delta
       m_Type: 0
       m_ExpectedControlType: Vector2
-      m_Id: 61322b52-a380-4dd9-9782-1091163d1509
+      m_Id: a45a321f-4e2e-479e-a3ab-da25a505e44e
       m_Processors: 
       m_Interactions: 
       m_SingletonActionBindings: []
@@ -2280,9 +2204,9 @@ MonoBehaviour:
   m_GroupName: Left
   m_InteractionManager: {fileID: 2849307356522943654}
   m_StartingGroupMembers:
+  - {fileID: 5044238118067789746}
   - {fileID: 9070136630814907618}
   - {fileID: 8358070118191209391}
-  - {fileID: 5044238118067789746}
   m_StartingInteractionOverridesMap: []
 --- !u!114 &8022675586238305116
 MonoBehaviour:
@@ -2756,6 +2680,26 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7693184380767619946, guid: ad818c36731146e994540a1896ad8f24, type: 3}
+      propertyPath: m_Parameters.colorGradient.key0.b
+      value: 0.9528302
+      objectReference: {fileID: 0}
+    - target: {fileID: 7693184380767619946, guid: ad818c36731146e994540a1896ad8f24, type: 3}
+      propertyPath: m_Parameters.colorGradient.key0.g
+      value: 0.8792812
+      objectReference: {fileID: 0}
+    - target: {fileID: 7693184380767619946, guid: ad818c36731146e994540a1896ad8f24, type: 3}
+      propertyPath: m_Parameters.colorGradient.key0.r
+      value: 0.5977661
+      objectReference: {fileID: 0}
+    - target: {fileID: 7693184380767619946, guid: ad818c36731146e994540a1896ad8f24, type: 3}
+      propertyPath: m_Parameters.colorGradient.m_Mode
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7693184380767619946, guid: ad818c36731146e994540a1896ad8f24, type: 3}
+      propertyPath: m_Parameters.colorGradient.m_ColorSpace
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -2906,6 +2850,26 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7693184380767619946, guid: ad818c36731146e994540a1896ad8f24, type: 3}
+      propertyPath: m_Parameters.colorGradient.key0.b
+      value: 0.9528302
+      objectReference: {fileID: 0}
+    - target: {fileID: 7693184380767619946, guid: ad818c36731146e994540a1896ad8f24, type: 3}
+      propertyPath: m_Parameters.colorGradient.key0.g
+      value: 0.8792812
+      objectReference: {fileID: 0}
+    - target: {fileID: 7693184380767619946, guid: ad818c36731146e994540a1896ad8f24, type: 3}
+      propertyPath: m_Parameters.colorGradient.key0.r
+      value: 0.5977661
+      objectReference: {fileID: 0}
+    - target: {fileID: 7693184380767619946, guid: ad818c36731146e994540a1896ad8f24, type: 3}
+      propertyPath: m_Parameters.colorGradient.m_Mode
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7693184380767619946, guid: ad818c36731146e994540a1896ad8f24, type: 3}
+      propertyPath: m_Parameters.colorGradient.m_ColorSpace
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -2975,9 +2939,17 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1096232077998711156, guid: 27024f5809f4a4347b9cd7f26a1bdf93, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4125421792874400280, guid: 27024f5809f4a4347b9cd7f26a1bdf93, type: 3}
       propertyPath: m_Name
       value: Poke Interactor
+      objectReference: {fileID: 0}
+    - target: {fileID: 7700498066419981941, guid: 27024f5809f4a4347b9cd7f26a1bdf93, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -3048,9 +3020,17 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1096232077998711156, guid: 27024f5809f4a4347b9cd7f26a1bdf93, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4125421792874400280, guid: 27024f5809f4a4347b9cd7f26a1bdf93, type: 3}
       propertyPath: m_Name
       value: Poke Interactor
+      objectReference: {fileID: 0}
+    - target: {fileID: 7700498066419981941, guid: 27024f5809f4a4347b9cd7f26a1bdf93, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
