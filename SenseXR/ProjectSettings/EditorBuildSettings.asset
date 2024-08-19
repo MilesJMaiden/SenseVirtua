@@ -6,13 +6,13 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Jake Thesis Assets/Jake Start Menu.unity
+    path: Assets/Jake Thesis Assets/Scenes/Jake Start Menu.unity
     guid: 9f80e949d07b75e4a90a391aba2d5e6f
   - enabled: 1
-    path: Assets/Jake Thesis Assets/Jake Thesis Scene  - Arm Swing.unity
+    path: Assets/Jake Thesis Assets/Scenes/Jake Thesis Scene  - Arm Swing.unity
     guid: 51eab16db71459c47a57415854e688bb
   - enabled: 1
-    path: Assets/Jake Thesis Assets/Jake Thesis Scene  - Teleport.unity
+    path: Assets/Jake Thesis Assets/Scenes/Jake Thesis Scene  - Teleport.unity
     guid: 7df36dcaf31808843a80bf848be43308
   m_configObjects:
     Unity.XR.Oculus.Settings: {fileID: 11400000, guid: bfa1182bd221b4ca89619141f66f1260, type: 2}

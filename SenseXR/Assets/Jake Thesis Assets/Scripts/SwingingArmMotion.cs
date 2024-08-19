@@ -31,7 +31,10 @@ public class SwingingArmMotion : MonoBehaviour
 
     // Inputs
     [Header("Input References")]
-    [SerializeField] private XRIDefaultInputActions1 inputActions;
+    [SerializeField] private XRIDefaultInputActions inputActions;
+    // Input Actions for triggers
+    private InputAction leftTriggerAction;
+    private InputAction rightTriggerAction;
 
     // Bools
     [SerializeField] private bool swingMovement;
@@ -45,8 +48,11 @@ public class SwingingArmMotion : MonoBehaviour
 
     void Start()
     {
-        // Set Game Object to Unhide as InActive
-        objectToUnhide.SetActive(false);
+        // Set up the Input Actions
+        leftTriggerAction = new InputAction(type: InputActionType.Value, binding: "<XRController>{LeftHand}/trigger");
+        rightTriggerAction = new InputAction(type: InputActionType.Value, binding: "<XRController>{RightHand}/trigger");
+        leftTriggerAction.Enable();
+        rightTriggerAction.Enable();
 
         if (LeftHand == null || RightHand == null || XRRig == null || PlayerCamera == null)
         {
@@ -62,36 +68,43 @@ public class SwingingArmMotion : MonoBehaviour
 
     void Update()
     {
-        // Calculate the current hand positions and the player position
-        PositionCurrentFrameLeftHand = LeftHand.transform.position;
-        PositionCurrentFrameRightHand = RightHand.transform.position;
-        PlayerPositionCurrentFrame = transform.position;
+        // Check if both triggers are pressed
+        bool leftTriggerPressed = leftTriggerAction.ReadValue<float>() > 0.1f;
+        bool rightTriggerPressed = rightTriggerAction.ReadValue<float>() > 0.1f;
 
-        // Calculate distances moved
-        var playerDistanceMoved = Vector3.Distance(PlayerPositionCurrentFrame, PlayerPositionPreviousFrame);
-        var leftHandDistanceMoved = Vector3.Distance(PositionPreviousFrameLeftHand, PositionCurrentFrameLeftHand);
-        var rightHandDistanceMoved = Vector3.Distance(PositionPreviousFrameRightHand, PositionCurrentFrameRightHand);
-
-        // Calculate hand contribution to movement
-        float leftHandContribution = (leftHandDistanceMoved - playerDistanceMoved) * contributionMultiplier;
-        float rightHandContribution = (rightHandDistanceMoved - playerDistanceMoved) * contributionMultiplier;
-
-        // Calculate the speed based on hand contributions
-        HandSpeed = (leftHandContribution + rightHandContribution);
-        HandSpeed = Mathf.Clamp(HandSpeed, -0.5f, 5f);
-
-        // Check if hands are moving enough to warrant movement
-        if (Mathf.Abs(HandSpeed) > 0.01f) // 0.01f is a small threshold to avoid jittering
+        if (leftTriggerPressed && rightTriggerPressed)
         {
-            Debug.Log("Moving player based on hand motion at " + HandSpeed);
-            Vector3 forwardDirection = PlayerCamera.transform.forward.normalized;
-            MovePlayer(forwardDirection);
-        }
+            // Calculate the current hand positions and the player position
+            PositionCurrentFrameLeftHand = LeftHand.transform.position;
+            PositionCurrentFrameRightHand = RightHand.transform.position;
+            PlayerPositionCurrentFrame = transform.position;
 
-        // Update previous positions for the next frame
-        PositionPreviousFrameLeftHand = PositionCurrentFrameLeftHand;
-        PositionPreviousFrameRightHand = PositionCurrentFrameRightHand;
-        PlayerPositionPreviousFrame = PlayerPositionCurrentFrame;
+            // Calculate distances moved
+            var playerDistanceMoved = Vector3.Distance(PlayerPositionCurrentFrame, PlayerPositionPreviousFrame);
+            var leftHandDistanceMoved = Vector3.Distance(PositionPreviousFrameLeftHand, PositionCurrentFrameLeftHand);
+            var rightHandDistanceMoved = Vector3.Distance(PositionPreviousFrameRightHand, PositionCurrentFrameRightHand);
+
+            // Calculate hand contribution to movement
+            float leftHandContribution = (leftHandDistanceMoved - playerDistanceMoved) * contributionMultiplier;
+            float rightHandContribution = (rightHandDistanceMoved - playerDistanceMoved) * contributionMultiplier;
+
+            // Calculate the speed based on hand contributions
+            HandSpeed = (leftHandContribution + rightHandContribution);
+            HandSpeed = Mathf.Clamp(HandSpeed, -0.5f, 5f);
+
+            // Check if hands are moving enough to warrant movement
+            if (swingMovement && Mathf.Abs(HandSpeed) > 0.01f) // 0.01f is a small threshold to avoid jittering
+            {
+                Debug.Log("Moving player based on hand motion at " + HandSpeed);
+                Vector3 forwardDirection = PlayerCamera.transform.forward.normalized;
+                MovePlayer(forwardDirection);
+            }
+
+            // Update previous positions for the next frame
+            PositionPreviousFrameLeftHand = PositionCurrentFrameLeftHand;
+            PositionPreviousFrameRightHand = PositionCurrentFrameRightHand;
+            PlayerPositionPreviousFrame = PlayerPositionCurrentFrame;
+        }
     }
 
     #endregion
