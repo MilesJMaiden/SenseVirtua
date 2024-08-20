@@ -1136,6 +1136,17 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 2027373507797338871, guid: 04683d61741008c4dbfb1f9b705ada06, type: 3}
   m_PrefabInstance: {fileID: 1387325329}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1663555530 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6499226916029237596, guid: 627a78f2e3bada44cbc0142067ee940e, type: 3}
+  m_PrefabInstance: {fileID: 5120715424736625808}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0d494b658b37958449db82c0ee015fbb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &1982102850 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 3127377416852887304, guid: e367714f162349d48a5cb6f00133e149, type: 3}
@@ -1952,6 +1963,10 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 05c9257c5ac9e854086853231ce38d33, type: 2}
+    - target: {fileID: 5421904047740821513, guid: 627a78f2e3bada44cbc0142067ee940e, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5772965016820664256, guid: 627a78f2e3bada44cbc0142067ee940e, type: 3}
       propertyPath: m_text
       value: ...
@@ -1975,6 +1990,26 @@ PrefabInstance:
     - target: {fileID: 7208747045362936903, guid: 627a78f2e3bada44cbc0142067ee940e, type: 3}
       propertyPath: m_IsActive
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7353550673221245832, guid: 627a78f2e3bada44cbc0142067ee940e, type: 3}
+      propertyPath: coverMat
+      value: 
+      objectReference: {fileID: 2100000, guid: c89db246c373b974dbd8944018e36d96, type: 2}
+    - target: {fileID: 7353550673221245832, guid: 627a78f2e3bada44cbc0142067ee940e, type: 3}
+      propertyPath: xrSlider
+      value: 
+      objectReference: {fileID: 1663555530}
+    - target: {fileID: 7353550673221245832, guid: 627a78f2e3bada44cbc0142067ee940e, type: 3}
+      propertyPath: unfoldingValue
+      value: -12.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7353550673221245832, guid: 627a78f2e3bada44cbc0142067ee940e, type: 3}
+      propertyPath: max_UnfoldingValue
+      value: -9.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 7353550673221245832, guid: 627a78f2e3bada44cbc0142067ee940e, type: 3}
+      propertyPath: min_UnfoldingValue
+      value: -11.6
       objectReference: {fileID: 0}
     - target: {fileID: 8000859568540591581, guid: 627a78f2e3bada44cbc0142067ee940e, type: 3}
       propertyPath: target
