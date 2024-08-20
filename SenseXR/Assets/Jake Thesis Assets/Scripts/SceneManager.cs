@@ -32,5 +32,23 @@ public class SceneButtonManager : MonoBehaviour
         SceneManager.LoadScene("Jake Start Menu");
         Debug.Log("Load Start menu");
     }
+
+    /// <summary>
+    /// Method to load Arm Orientation scene
+    /// </summary>
+    public void ArmSwingOrientationLoad()
+    {
+        SceneManager.LoadScene("Jake Orientation - ArmSwing");
+        Debug.Log("Load Jake Orientation - ArmSwing");
+    }
+
+    /// <summary>
+    /// Method to load Arm Orientation scene
+    /// </summary>
+    public void TeleportationOrientationLoad()
+    {
+        SceneManager.LoadScene("Jake Orientation - Teleport");
+        Debug.Log("Load Jake Orientation - Teleport");
+    }
     #endregion
 }
