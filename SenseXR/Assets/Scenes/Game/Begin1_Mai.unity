@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 659835887}
-  m_IndirectSpecularColor: {r: 0.0076605435, g: 0.023735477, b: 0.08099291, a: 1}
+  m_IndirectSpecularColor: {r: 0.075422555, g: 0.06700861, b: 0.083403714, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -512,6 +512,11 @@ Transform:
   - {fileID: 1257004911}
   m_Father: {fileID: 1115479987}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &899664642 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 9014170783705847996, guid: 04683d61741008c4dbfb1f9b705ada06, type: 3}
+  m_PrefabInstance: {fileID: 1387325329}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &925370498 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 9014170783809206335, guid: 04683d61741008c4dbfb1f9b705ada06, type: 3}
@@ -637,6 +642,11 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1257004910}
   m_Mesh: {fileID: -7680154414970741574, guid: 866260c6de0d8ef458d1f98c48ba01a1, type: 3}
+--- !u!4 &1303668897 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 9014170785475729501, guid: 04683d61741008c4dbfb1f9b705ada06, type: 3}
+  m_PrefabInstance: {fileID: 1387325329}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1364867419
 GameObject:
   m_ObjectHideFlags: 0
@@ -802,6 +812,14 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 9014170783705847993, guid: 04683d61741008c4dbfb1f9b705ada06, type: 3}
+      propertyPath: m_ModelPrefab
+      value: 
+      objectReference: {fileID: 899664642}
+    - target: {fileID: 9014170785475729497, guid: 04683d61741008c4dbfb1f9b705ada06, type: 3}
+      propertyPath: m_ModelPrefab
+      value: 
+      objectReference: {fileID: 1303668897}
     - target: {fileID: 9032954039820430273, guid: 04683d61741008c4dbfb1f9b705ada06, type: 3}
       propertyPath: m_PlayAudioClipOnHoverEntered
       value: 0
