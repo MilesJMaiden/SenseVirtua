@@ -394,9 +394,49 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3205260127817855968, guid: 42bbcf3fe43b88e4f9c4e188bdbcaa38, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3932907921172781076, guid: 42bbcf3fe43b88e4f9c4e188bdbcaa38, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5831749422026289922, guid: 42bbcf3fe43b88e4f9c4e188bdbcaa38, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5831749422026289922, guid: 42bbcf3fe43b88e4f9c4e188bdbcaa38, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.04227
+      objectReference: {fileID: 0}
     - target: {fileID: 5944343393026013241, guid: 42bbcf3fe43b88e4f9c4e188bdbcaa38, type: 3}
       propertyPath: m_Name
       value: Illumination Game Jake
+      objectReference: {fileID: 0}
+    - target: {fileID: 8052751897172108002, guid: 42bbcf3fe43b88e4f9c4e188bdbcaa38, type: 3}
+      propertyPath: m_Positions.Array.data[0].x
+      value: 7.715603
+      objectReference: {fileID: 0}
+    - target: {fileID: 8052751897172108002, guid: 42bbcf3fe43b88e4f9c4e188bdbcaa38, type: 3}
+      propertyPath: m_Positions.Array.data[0].y
+      value: 1.1872001
+      objectReference: {fileID: 0}
+    - target: {fileID: 8052751897172108002, guid: 42bbcf3fe43b88e4f9c4e188bdbcaa38, type: 3}
+      propertyPath: m_Positions.Array.data[0].z
+      value: 0.28399974
+      objectReference: {fileID: 0}
+    - target: {fileID: 8052751897172108002, guid: 42bbcf3fe43b88e4f9c4e188bdbcaa38, type: 3}
+      propertyPath: m_Positions.Array.data[1].x
+      value: 8.088003
+      objectReference: {fileID: 0}
+    - target: {fileID: 8052751897172108002, guid: 42bbcf3fe43b88e4f9c4e188bdbcaa38, type: 3}
+      propertyPath: m_Positions.Array.data[1].y
+      value: 1.4192001
+      objectReference: {fileID: 0}
+    - target: {fileID: 8052751897172108002, guid: 42bbcf3fe43b88e4f9c4e188bdbcaa38, type: 3}
+      propertyPath: m_Positions.Array.data[1].z
+      value: 0.39719993
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -568,6 +608,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 5468458307087967398, guid: 969ce2dd58ee0d944b88534dc313cea2, type: 3}
+      propertyPath: m_Constraints
+      value: 80
+      objectReference: {fileID: 0}
+    - target: {fileID: 5468458307087967398, guid: 969ce2dd58ee0d944b88534dc313cea2, type: 3}
+      propertyPath: m_CollisionDetection
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 7287394363543024152, guid: 969ce2dd58ee0d944b88534dc313cea2, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0

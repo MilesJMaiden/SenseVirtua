@@ -162,5 +162,17 @@ public class ArmSwingMovementWithRigidbody : MonoBehaviour
         rb.isKinematic = false; // Enable physics interactions
     }
 
+    /// <summary>
+    /// Sets the rigidbody drag and angular drag variables to the default values to stop unintentional changes
+    /// on the collision with an object.
+    /// </summary>
+    /// <param name="collision"></param>
+    void OnCollisionExit(Collision collision)
+    {
+        // Reset drag after collision
+        GetComponent<Rigidbody>().drag = 1f;
+        GetComponent<Rigidbody>().angularDrag = 5f; 
+    }
+
     #endregion
 }
