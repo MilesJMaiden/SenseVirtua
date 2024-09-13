@@ -1,6 +1,7 @@
 using System.Collections;
 using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class BubbleCanvas : MonoBehaviour
 {
@@ -11,7 +12,8 @@ public class BubbleCanvas : MonoBehaviour
 
     private Coroutine showTextCoroutine;
     private bool showing = false;
-
+    public Button skipButton;
+    public Button nextButton;
 
     private void Awake()
     {
@@ -54,4 +56,5 @@ public class BubbleCanvas : MonoBehaviour
 
         showing = false;
     }
+
 }

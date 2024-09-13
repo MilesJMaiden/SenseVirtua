@@ -3,50 +3,32 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using TMPro;
-using GLTFast.Schema;
-//using UnityEngine.ProBuilder.MeshOperations;
 
 public class Voice : MonoBehaviour
 {
-    //public AudioSource voiceAudio;
-    //public GameObject voiceObject;
-
-    //public AudioSource specialAudioSource; 
-
     public int currentIdx = 0;
     public string[] voiceTexts;
-    public BubbleCanvas bubbleCanvas;
+
+    public GameObject bubbleCanvas;
+    private BubbleCanvas bubbleCanvasScript;
 
     public TMP_Text nextText;
     public TMP_Text endText;
 
     public GameObject buddhaStatue;
-
     public Animator animator; // 캐릭터의 Animator 컴포넌트
 
     public event System.Action OnDialogueEnd;
     public event System.Action OnLastDialogueEnd;
 
+    public bool onSite;
+    public float timer = 0;
+    public bool playing = false;
+
     public void Start()
     {
         animator = Guide.Instance.animator;
-    }
-    private void Awake()
-    {
-        //voiceAudio = GetComponent<AudioSource>();
-        //if (voiceObject != null)
-        //{
-        //    voiceAudio = voiceObject.GetComponent<AudioSource>();
-        //    if (voiceAudio == null)
-        //    {
-        //      Debug.LogError("AudioSource component not found on the assigned Voice object.");
-        //    }
-        //}
-        //else
-        //{
-        //    Debug.LogError("Voice object is not assigned.");
-        //}
-       
+        bubbleCanvasScript = bubbleCanvas.GetComponent<BubbleCanvas>();
     }
 
     private void Update()
@@ -56,7 +38,6 @@ public class Voice : MonoBehaviour
             if (timer >= 3 && currentIdx == 0)
             {
                 PlayVoice();
-                
             }
             timer += Time.deltaTime;
         }
@@ -86,8 +67,6 @@ public class Voice : MonoBehaviour
         SkipVoice();
     }
 
-    public bool playing = false;
-
     public void PlayVoice() // Changed to public
     {
         if (playing == true)
@@ -96,7 +75,27 @@ public class Voice : MonoBehaviour
         playing = true;
 
         // 순차적으로 애니메이션 선택
-        animator.Play("talking1");
+        string animationName;
+        switch (currentIdx % 3)
+        {
+            case 0:
+                animationName = "talking2";
+                break;
+            case 1:
+                animationName = "talking1";
+                break;
+            case 2:
+                animationName = "Idle"; // Idle 애니메이션
+                break;
+            default:
+                animationName = "Idle";
+                break;
+        }
+
+        // 지정한 이름의 애니메이션을 즉시 재생
+        animator.Play(animationName);
+        Debug.Log($"Playing {animationName}");
+        //animator.Play("talking1");
 
         Debug.Log($"======={voiceTexts[currentIdx]}=====");
         AudioClip clip = TranslationMgr.instance.GetTranslationVoice(voiceTexts[currentIdx]);
@@ -109,11 +108,16 @@ public class Voice : MonoBehaviour
         {
             Debug.Log("empty empty");
         }
-        bubbleCanvas.ShowDialogue(txt, clip.length);
+        bubbleCanvasScript.nextButton.onClick.RemoveAllListeners();
+        bubbleCanvasScript.skipButton.onClick.RemoveAllListeners();
+        bubbleCanvasScript.skipButton.onClick.AddListener(SkipVoice);
+        bubbleCanvasScript.nextButton.onClick.AddListener(OnClickedNextBtn);
+
+        bubbleCanvasScript.ShowDialogue(txt, clip.length);
         nextText.gameObject.SetActive(false);
         endText.gameObject.SetActive(false);
 
-        currentIdx++;
+        
 
         Invoke("EndVoice", clip.length);
     }
@@ -124,8 +128,7 @@ public class Voice : MonoBehaviour
         if (currentIdx >= voiceTexts.Length)
         {
             OnLastDialogueEnd?.Invoke();
-            bubbleCanvas.gameObject.SetActive(false);
-            
+            bubbleCanvas.SetActive(false);
 
             if (SceneManager.GetActiveScene().name == "Beginning")
             {
@@ -135,17 +138,25 @@ public class Voice : MonoBehaviour
             Debug.Log("Final dialogue ended, triggering OnDialogueEnd event.");
             OnDialogueEnd?.Invoke();
 
-           
-
             enabled = false;
             return;
         }
 
+        currentIdx++;
+
         playing = false;
-        nextText.gameObject.SetActive(true);
+        if (currentIdx >= voiceTexts.Length)
+        {
+            endText.gameObject.SetActive(true);
+        }
+        else
+        {
+            nextText.gameObject.SetActive(true);
+        }
+            
 
         Debug.Log("Dialogue ended, triggering OnDialogueEnd event.");
-        OnDialogueEnd?.Invoke(); 
+        OnDialogueEnd?.Invoke();
     }
 
     public void StopVoice()
@@ -165,21 +176,16 @@ public class Voice : MonoBehaviour
             GuideVoice.Instance.Stop();
             CancelInvoke("EndVoice");
 
-            // Show the full text immediately
-            string txt = TranslationMgr.instance.GetTranslationText(voiceTexts[currentIdx - 1]);
-            bubbleCanvas.ShowFullDialogue(txt);
+            string txt = TranslationMgr.instance.GetTranslationText(voiceTexts[currentIdx]);
+            bubbleCanvasScript.ShowFullDialogue(txt);
 
             playing = false;
-            // Check if it's the last dialogue
+
+            currentIdx++;
+
             if (currentIdx >= voiceTexts.Length)
             {
-                //bubbleCanvas.gameObject.SetActive(false);
                 endText.gameObject.SetActive(true);
-
-                //if (SceneManager.GetActiveScene().name == "Beginning")
-                //{
-                //    Invoke("HandleSpecialActions", 10f); 
-                //}
             }
             else
             {
@@ -190,20 +196,12 @@ public class Voice : MonoBehaviour
         }
     }
 
-    //public bool IsPlaying()
-    //{
-    //    return voiceAudio.isPlaying;
-    //}
-
-    public bool onSite;
-
-    public float timer = 0;
     public void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Player"))
         {
             onSite = true;
-            bubbleCanvas.gameObject.SetActive(true);
+            bubbleCanvas.SetActive(true);
             timer = 0;
 
             GameObject playerObject = GameObject.Find("Player");
@@ -212,58 +210,25 @@ public class Voice : MonoBehaviour
             Guide.Instance.LookAt(direction);
         }
     }
-    public void OnTriggerExit(Collider other)
-    {
-        if (other.CompareTag("Player"))
-        {
-            onSite = false;
-            bubbleCanvas.gameObject.SetActive(false);
-        }
-    }
 
-    // Update dialogue and voice based on the current language
     public void UpdateDialogueAndVoice()
     {
-        // Update the voice audio clip and text to the current language
         AudioClip clip = TranslationMgr.instance.GetTranslationVoice(voiceTexts[currentIdx > 0 ? currentIdx - 1 : 0]);
         string txt = TranslationMgr.instance.GetTranslationText(voiceTexts[currentIdx > 0 ? currentIdx - 1 : 0]);
 
-        // Play the updated voice and show the updated text if playing or if at the start
         if (playing || currentIdx == 0)
         {
             StopVoice();
-
             GuideVoice.Instance.Play(clip);
-            bubbleCanvas.ShowFullDialogue(txt);
+            bubbleCanvasScript.ShowFullDialogue(txt);
 
-            // Schedule the end of the current voice
             Invoke("EndVoice", clip.length);
 
             playing = true;
         }
         else
         {
-            //voiceAudio.clip = TranslationMgr.instance.GetTranslationVoice(voiceTexts[currentIdx > 0 ? currentIdx - 1 : 0]);
-            bubbleCanvas.ShowFullDialogue(txt);
+            bubbleCanvasScript.ShowFullDialogue(txt);
         }
     }
-
-
-
-
-    private void HandleSpecialActions()
-    {
-        // Buddha disappear
-        if (buddhaStatue != null)
-        {
-            buddhaStatue.SetActive(false);
-        }
-
-        // extra sound
-        //if (specialAudioSource != null)
-        //{
-        //    specialAudioSource.Play();
-        //}
-    }
-
 }

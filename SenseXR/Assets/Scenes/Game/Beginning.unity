@@ -648,14 +648,14 @@ MonoBehaviour:
   - Artefect3
   - Artefect4
   - Ending2
-  bubbleCanvas: {fileID: 7556537946961880603}
+  bubbleCanvas: {fileID: 2529600990492715223}
   nextText: {fileID: 4513989448518318197}
   endText: {fileID: 92450905}
   buddhaStatue: {fileID: 8125286868734683847}
   animator: {fileID: 0}
-  playing: 0
   onSite: 0
   timer: 0
+  playing: 0
 --- !u!65 &90422021
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1112,14 +1112,14 @@ MonoBehaviour:
   voiceTexts:
   - Artefect5
   - Ending3
-  bubbleCanvas: {fileID: 7556537946961880603}
+  bubbleCanvas: {fileID: 2529600990492715223}
   nextText: {fileID: 4513989448518318197}
   endText: {fileID: 92450905}
   buddhaStatue: {fileID: 8125286868734683847}
   animator: {fileID: 0}
-  playing: 0
   onSite: 0
   timer: 0
+  playing: 0
 --- !u!114 &214515979
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2649,14 +2649,14 @@ MonoBehaviour:
   - Artefect6
   - Artefect7
   - Ending4
-  bubbleCanvas: {fileID: 7556537946961880603}
+  bubbleCanvas: {fileID: 2529600990492715223}
   nextText: {fileID: 4513989448518318197}
   endText: {fileID: 92450905}
   buddhaStatue: {fileID: 8125286868734683847}
   animator: {fileID: 0}
-  playing: 0
   onSite: 0
   timer: 0
+  playing: 0
 --- !u!114 &594903378
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4077,14 +4077,14 @@ MonoBehaviour:
   - Artefect1
   - Artefect2
   - Ending1
-  bubbleCanvas: {fileID: 7556537946961880603}
+  bubbleCanvas: {fileID: 2529600990492715223}
   nextText: {fileID: 4513989448518318197}
   endText: {fileID: 92450905}
   buddhaStatue: {fileID: 8125286868734683847}
   animator: {fileID: 0}
-  playing: 0
   onSite: 0
   timer: 0
+  playing: 0
 --- !u!65 &997899107
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -6890,13 +6890,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1433175562}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0.98518974, z: -0, w: -0.17146772}
-  m_LocalPosition: {x: -0.868, y: 1.666, z: -0.888}
+  m_LocalRotation: {x: -0, y: -0.9955481, z: -0, w: -0.09425463}
+  m_LocalPosition: {x: -0.86799955, y: 1.666, z: -0.88799983}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 214515976}
-  m_LocalEulerAnglesHint: {x: 0, y: -199.746, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: -190.817, z: 0}
 --- !u!1 &1437072612
 GameObject:
   m_ObjectHideFlags: 0
@@ -8305,13 +8305,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2057260618}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0.87598515, z: -0, w: -0.48233813}
-  m_LocalPosition: {x: -0.372, y: 1.666, z: -0.97}
+  m_LocalRotation: {x: -0, y: -0.95682716, z: -0, w: -0.2906577}
+  m_LocalPosition: {x: -0.6530002, y: 1.666, z: -1.243}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 594903375}
-  m_LocalEulerAnglesHint: {x: 0, y: -237.676, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: -213.795, z: 0}
 --- !u!1 &2072219095
 GameObject:
   m_ObjectHideFlags: 0
@@ -9858,7 +9858,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 6976800887455362402}
         m_TargetAssemblyTypeName: GPTCanvas, Assembly-CSharp
         m_MethodName: OnClickedClose
         m_Mode: 1
@@ -18499,9 +18499,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 6191424415946533696}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: Voice, Assembly-CSharp
-        m_MethodName: OnClickedSkipBtn
+        m_MethodName: 
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -42084,14 +42084,14 @@ MonoBehaviour:
   - intro1
   - intro2
   - intro3
-  bubbleCanvas: {fileID: 7556537946961880603}
+  bubbleCanvas: {fileID: 2529600990492715223}
   nextText: {fileID: 4513989448518318197}
   endText: {fileID: 92450905}
   buddhaStatue: {fileID: 8125286868734683847}
   animator: {fileID: 0}
-  playing: 0
   onSite: 0
   timer: 0
+  playing: 0
 --- !u!4 &6198455787252518498
 Transform:
   m_ObjectHideFlags: 0
@@ -49583,7 +49583,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &6976800887455362402
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -50416,9 +50416,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 6191424415946533696}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: Voice, Assembly-CSharp
-        m_MethodName: OnClickedNextBtn
+        m_MethodName: 
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -51377,6 +51377,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dialogueText: {fileID: 1661228568682693456}
+  skipButton: {fileID: 2551574835669842661}
+  nextButton: {fileID: 7201543539384779734}
 --- !u!4 &7566059394357472633
 Transform:
   m_ObjectHideFlags: 0

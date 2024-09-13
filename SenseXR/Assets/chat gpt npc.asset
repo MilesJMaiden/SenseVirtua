@@ -20,11 +20,30 @@ MonoBehaviour:
     isPrivate: 0
     createdAt: 2024-06-17T18:09:59-0700
     trainingStatus: 1
-    lastTrainDuration: 0
-    lastTrainedAt: 1969-12-31T16:00:00-0800
-    nextTrainAt: 1969-12-31T16:00:00-0800
-    intents: []
-    entities: []
+    lastTrainDuration: 374
+    lastTrainedAt: 2024-09-05T16:39:41-0700
+    nextTrainAt: 2024-09-05T16:33:27-0700
+    intents:
+    - id: 880741250072231
+      name: wake_word
+      entities:
+      - name: wake_word:wake_word
+        id: 1025771352286776
+    entities:
+    - name: wake_word
+      id: 1702506987164629
+      lookups:
+      - free-text
+      - keywords
+      roles:
+      - name: wake_word
+        id: 1025771352286776
+      keywords:
+      - keyword: Wallflow
+        synonyms:
+        - wallflaw
+        - wallflow
+        - wordflow
     traits: []
     versionTags: []
     voices:
@@ -555,7 +574,7 @@ MonoBehaviour:
   - Oculus.Voice.Demo, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
   - Meta.WitAi.Samples, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
   relaxedResolution: 0
-  _lastRefreshSeconds: 1722511129.685122
+  _lastRefreshSeconds: 1726179176.517844
 --- !u!114 &6088234458687951559
 MonoBehaviour:
   m_ObjectHideFlags: 0
