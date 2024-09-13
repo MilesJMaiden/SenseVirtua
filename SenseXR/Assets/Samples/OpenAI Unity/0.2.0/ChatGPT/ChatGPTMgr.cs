@@ -4,6 +4,9 @@ using UnityEngine;
 using OpenAI;
 using UnityEngine.Events;
 using Oculus.Voice.Dictation;
+using Oculus.Voice;
+using System.Reflection;
+using TMPro;
 public class ChatGPTMgr : MonoBehaviour
 {
     public OnResponseEvent OnResponse;
@@ -17,7 +20,8 @@ public class ChatGPTMgr : MonoBehaviour
     public string scene;
     public int maxResponseWordLimit = 30;
 
-    public AppDictationExperience voiceToText;
+    //public AppDictationExperience voiceToText;
+    public AppVoiceExperience appVoiceExperience;
 
     public string GetInstructions()
     {
@@ -67,19 +71,28 @@ public class ChatGPTMgr : MonoBehaviour
         }
     }
 
+    public void SetTextAndRequestResponse(string transcription)
+    {
+        Debug.Log("ChatGPT: Text received from VoiceManager: " + transcription);
+
+        // Initiate the GPT request with the given transcription
+        AskChatGPT(transcription);
+    }
+
     // Start is called before the first frame update
     void Start()
     {
-        voiceToText.DictationEvents.OnFullTranscription.AddListener(AskChatGPT);
+        appVoiceExperience.VoiceEvents.OnFullTranscription.AddListener(AskChatGPT);
+        //voiceToText.DictationEvents.OnFullTranscription.AddListener(AskChatGPT);
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space))
-        { 
-            voiceToText.Activate();
-        }
+        //if (Input.GetKeyDown(KeyCode.Space))
+        //{ 
+        //    appVoiceExperience.Activate();
+        //}
 
     }
 }
