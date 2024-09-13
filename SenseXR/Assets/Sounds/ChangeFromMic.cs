@@ -21,10 +21,7 @@ public class ChangeFromMic : MonoBehaviour
         else if (loudness > threshold && audioFeedbackPS.isStopped)
             audioFeedbackPS.Play();
 
-        if (loudness > threshold)
-        {
-            gameManager.OnPlayerVoiceInput();
-        }
+        
     }
 
     private void OnDisable()
